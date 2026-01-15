@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Blog | Nick Shu</title>
+
+  <style>
+    /* ===== 背景 ===== */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #292E49, #536976);
+      overflow-x: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #fff;
+    }
+
+    .bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .bubbles li {
+      position: absolute;
+      list-style: none;
+      width: 20px;
+      height: 20px;
+      background: rgba(255,255,255,0.15);
+      animation: animate 25s linear infinite;
+      bottom: -150px;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0%;
+      }
+      100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+      }
+    }
+
+    .bubbles li:nth-child(1){ left:25%; width:80px; height:80px; }
+    .bubbles li:nth-child(2){ left:10%; animation-delay:2s; }
+    .bubbles li:nth-child(3){ left:70%; animation-delay:4s; }
+    .bubbles li:nth-child(4){ left:40%; width:60px; height:60px; animation-delay:18s; }
+
+    /* ===== 前景内容 ===== */
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 120px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: 2.4em;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 60px;
+    }
+
+    /* ===== 博客卡片 ===== */
+    .post-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(6px);
+    }
+
+    .post-card h2 {
+      margin: 0 0 6px 0;
+      font-weight: 400;
+    }
+
+    .post-card a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .post-card a:hover {
+      text-decoration: underline;
+    }
+
+    .meta {
+      font-size: 0.9em;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 12px;
+    }
+
+    .excerpt {
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+
+    /* ===== 顶部 / 底部操作 ===== */
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .actions a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .actions a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 背景气泡 -->
+  <ul class="bubbles">
+    <li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li>
+  </ul>
+
+  <!-- 内容 -->
+  <div class="content">
+    <h1>Blog</h1>
+    <p class="subtitle">Notes, thoughts, and mathematical writing.</p>
+
+    <div class="actions">
+      <a href="index.html">← Home</a>
+      <a href="new-post.html">+ New Post</a>
+    </div>
+
+    <!-- 博客卡片 1 -->
+    <div class="post-card">
+      <h2>
+        <a href="posts/2026-01-01-first-post.html">
+          First Blog Post
+        </a>
+      </h2>
+      <div class="meta">Jan 1, 2026</div>
+      <div class="excerpt">
+        This is my first blog post. I use this blog to record
+        thoughts, notes, and ideas.
+      </div>
+    </div>
+
+    <!-- 博客卡片 2（示例） -->
+    <div class="post-card">
+      <h2>
+        <a href="posts/2026-01-10-elliptic-regularity.html">
+          On Elliptic Regularity
+        </a>
+      </h2>
+      <div class="meta">Jan 10, 2026</div>
+      <div class="excerpt">
+        Some notes on regularity theory for nonlinear elliptic equations.
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
