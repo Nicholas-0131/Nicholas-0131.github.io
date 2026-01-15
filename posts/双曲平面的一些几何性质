@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>双曲平面的一些几何性质</title>
+
+<!-- MathJax -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+body {
+  font-family: "Times New Roman", "Noto Serif SC", serif;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+  padding: 40px;
+  background: #fafafa;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+}
+
+.author {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  text-align: center;
+  color: #2e7d32;
+  margin-top: 60px;
+}
+
+h3 {
+  color: #2e7d32;
+  margin-top: 40px;
+}
+
+/* 定义 / 定理盒子 */
+.box {
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.definition {
+  background: #e8f5e9;
+  border-left: 6px solid #43a047;
+}
+
+.theorem {
+  background: #e3f2fd;
+  border-left: 6px solid #1e88e5;
+}
+
+.lemma {
+  background: #fce4ec;
+  border-left: 6px solid #d81b60;
+}
+
+.proposition {
+  background: #efebe9;
+  border-left: 6px solid #6d4c41;
+}
+
+.axiom {
+  background: #fffde7;
+  border-left: 6px solid #f9a825;
+}
+
+.box-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.proof {
+  margin-top: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: 20px auto;
+}
+</style>
+</head>
+
+<body>
+
+<h1>双曲平面的一些几何性质</h1>
+<div class="author">
+  舒屹扬<br>
+  少年班学院 25级5班
+</div>
+
+<p>
+数千年来，数学家们一度认为Euclid几何是唯一正确的几何学.但是无数数学家在证明第五公设\textit{如果一条线段与两条直线相交，在某一侧的内角之和小于两直角和，则这两条直线在不断延伸后，会在该侧相交}的时候屡屡碰壁，于是数学家尝试采用反证法.自然我们的假设是“\textit{过直线外一点，没有直线与已知直线平行}”和“\textit{过直线外一点，有至少两条直线与已知直线平行}”.其中，Riemann研究了前者的几何性质，现在叫做椭圆几何，而Никола́й Ива́нович Лобаче́вский研究了后者的几何性质，现在叫做双曲几何.几乎同时，Gauss和Bolyai都给出了完全一致的结论，然而Gauss惧怕它带来的“波希米亚人的叫喊”，而Bolyai因为Gauss告诉他自己早已得到相关成果而失望. 
+<\p>
+
+<p>
+不过，尽管数学家在19世纪初已经提出了这种观点，但毫无疑问，\textit{我们永远无法在一般的平面，配以我们熟悉的几何结构，得到双曲几何学的模型}，其中，Beltrami提出了伪球面模型，即$(\mathrm{sech}\,t,t-\mathrm{tanh}\,t)$绕着$y$轴旋转一周得到的曲面；Klein利用Euclid平面上面一个圆和内部的弦构造出了一个模型，同时他提出了前文所述的“双曲几何”和“椭圆几何”的名称；而Poincar\'e提出了另一种圆盘模型和我们将要提到的半平面模型.至此，数学界才正式承认了双曲几何学作为一种几何学的“合法性”.本文我们将会讨论Poincar\'e的半平面模型，并以此为基础研究双曲平面的一些几何性质.
+</p>
+
+<h2>§1 双曲平面的 Poincaré 半平面模型</h2>
+
+<h3>§1.1 复数和复平面</h3>
+
+<div class="box definition">
+<div class="box-title">定义 1.1</div>
+<p>
+在 $\mathbb{R}$ 上定义
+$$
+(a,b)+(c,d)=(a+c,b+d),\quad
+(a,b)\times(c,d)=(ad-bc,ac+bd),
+$$
+称所得集合为 $\mathbb{C}$。
+</p>
+<p>
+定义 $\mathrm{i}=(0,1)$，则 $\mathrm{i}^2=-1$，且 $(a,b)=a+b\mathrm{i}$。
+</p>
+</div>
+
+<h3>§1.2 Poincaré 半平面模型</h3>
+
+<div class="box definition">
+<div class="box-title">定义 1.2</div>
+<p>
+上半平面
+$$
+\mathbb{H}=\{(x,y)\in\mathbb{R}^2: y>0\},
+$$
+赋予度量
+$$
+\mathrm{d}s^2=\frac{\mathrm{d}x^2+\mathrm{d}y^2}{y^2},
+$$
+称为 Poincaré 半平面模型。
+</p>
+</div>
+
+<div class="box theorem">
+<div class="box-title">定理 1.3（测地线）</div>
+<p>
+双曲测地线只有两类：
+</p>
+<ul>
+<li>垂直于 $x$ 轴的射线 $x=\text{const}$；</li>
+<li>与 $x$ 轴正交的半圆。</li>
+</ul>
+</div>
+
+<div class="proof">
+<strong>证明：</strong>
+<p>
+设曲线 $(x(t),y(t))$，其长度泛函为
+$$
+L=\int \frac{\dot x^2+\dot y^2}{y^2}\,\mathrm{d}t.
+$$
+由于 $L$ 不显含 $t$，系统能量守恒……
+</p>
+</div>
+
+<div class="box theorem">
+<div class="box-title">定理 1.4（距离公式）</div>
+<p>
+设 $A(x_A,y_A),B(x_B,y_B)$，则
+$$
+\cosh d(A,B)=1+\frac{|AB|^2}{2y_Ay_B}.
+$$
+</p>
+</div>
+
+<h2>§2 Hilbert 公理的兼容性</h2>
+
+<div class="box axiom">
+<div class="box-title">公理 I（关联公理）</div>
+<ul>
+<li>I.1 任意两点确定一条直线；</li>
+<li>I.2 至多一条；</li>
+<li>I.3 至少三点不共线。</li>
+</ul>
+</div>
+
+<div class="box theorem">
+<div class="box-title">定理 2.1</div>
+<p>
+Poincaré 半平面满足 Hilbert 关联公理 I.1–I.3。
+</p>
+</div>
+
+<h2>§3 双曲平面的变换群</h2>
+
+<div class="box theorem">
+<div class="box-title">定理 3.2</div>
+<p>
+$\mathbf{PSL}(2,\mathbb{R})$ 保持双曲距离、角度、测地线和面积。
+</p>
+</div>
+
+<h2>§4 双曲平面上的三角形</h2>
+
+<div class="box theorem">
+<div class="box-title">定理 4.1（角和定理）</div>
+<p>
+任意双曲三角形满足
+$$
+A+B+C<\pi.
+$$
+</p>
+</div>
+
+<div class="box definition">
+<div class="box-title">定义 4.2（面积）</div>
+<p>
+定义三角形面积为
+$$
+\mathcal A=\pi-(A+B+C).
+$$
+</p>
+</div>
+
+<div class="box theorem">
+<div class="box-title">定理 4.5（正弦定理）</div>
+<p>
+$$
+\frac{\sinh a}{\sin A}=\frac{\sinh b}{\sin B}=\frac{\sinh c}{\sin C}.
+$$
+</p>
+</div>
+
+<div class="box theorem">
+<div class="box-title">定理 4.6（余弦定理）</div>
+<p>
+$$
+\cosh c=\cosh a\cosh b-\sinh a\sinh b\cos C.
+$$
+</p>
+</div>
+
+<h2>§5 Pappus 与 Desargues 定理</h2>
+
+<div class="box theorem">
+<div class="box-title">定理 5.1（Pappus）</div>
+<p>
+双曲平面中 Pappus 定理成立。
+</p>
+</div>
+
+<div class="box theorem">
+<div class="box-title">定理 5.2（Desargues）</div>
+<p>
+两个三角形共点当且仅当对应交点共线。
+</p>
+</div>
+
+<h2>参考文献</h2>
+<ol>
+<li>Gauss, Lobachevsky, Bolyai, 非欧几何原始文献</li>
+<li>Mei, 双曲几何教材</li>
+<li>Chern–Gauss–Bonnet 定理</li>
+</ol>
+
+</body>
+</html>
