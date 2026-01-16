@@ -206,7 +206,19 @@
     </h2>
 
     <p>
-      这里我想简单说说基本解，一般而言，对于微分算子$L$，如果一个$\mathbb{R}^n$上面的分布$E$满足$LE=\delta$，那么我们就称$E$为$L$的<strong>基本解</strong>.为什么说它基本？是因为方程$Lu=f$的解可以写成$$u(\boldsymbol{x})=\int_{\mathbb{R}^n}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y}.$$
+      这里我想简单说说基本解，一般而言，对于<strong>常系数线性微分算子</strong>$L$，如果一个$\mathbb{R}^n$上面的分布$E$满足$LE=\delta$，那么我们就称$E$为$L$的<strong>基本解</strong>.为什么说它基本？是因为方程$Lu=f$的解可以写成$$u(\boldsymbol{x})=\int_{\mathbb{R}^n}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y}.$$
+
+      以下将在分布意义下证明$Lu=f$.
+    </p>
+
+    <p>
+      考虑对于$\varphi\in C_c^\infty(\mathbb{R}^n)$，我们要证明$\langle Lu,\varphi\rangle=\langle f,\varphi\rangle$，从而分布意义下$Lu=f$.首先，利用分部积分法，不难验证$$\langle\partial^{\boldsymbol{\alpha}}u,\varphi\rangle=(-1)^{|\boldsymbol{\alpha}|\langle u,\partial^{\boldsymbol{\alpha}}\varphi\rangle.$$
+      
+      再利用定义，可以写$u=E*f$，从而原式$=\langle E,\Tilde{f}*L^*u\rangle$，其中$L^*$就是把$L$的每一个$\partial^{\boldsymbol{\alpha}}$元素乘上一个$(-1)^{|\boldsymbol{\alpha}|}$.然后在把$L$拉回到左边来，又变成$\langle LE,\Tilde{f}*\varphi\rangle$.而重要的是，$LE=\delta$，这下这个式子只剩下了$(\Tilde{f}*\varphi)(0)$这一项，有趣的是，这就是$$\int_{\mathbb{R}^n}f(-\boldsymbol{y})\varphi(-\boldsymbol{y})\text{d}\boldsymbol{y}=\int_{\mathbb{R}^n}f(\boldsymbol{y})\varphi(\boldsymbol{y})\text{d}\boldsymbol{y}=\langle f,\varphi\rangle.$$由此可见，$Lu=f$在分布意义下成立.
+    </p>
+
+    <p>
+      不过一般情形下，不一定成立，例如假如系数$a_{\boldsymbol{\alpha}}=a_{\boldsymbol{\alpha}}(\boldsymbol{x})$，那么$$\begin{split}L(E*f)&=a_{\boldsymbol{\alpha}}\int\partial_{\boldsymbol{\alpha}}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y},\\(LE)*f&=\int a_{\boldsymbol{\alpha}}\partial_{\boldsymbol{\alpha}}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y}.\end{split}$$两者不见得相等（究其原因就是系数不能提出积分号外）.
     </p>
 
     
