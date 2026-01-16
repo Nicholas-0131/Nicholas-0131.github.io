@@ -147,8 +147,14 @@
     </p>
 
     <p>
-      <strong>例</strong>$\quad$求解方程$$\begin{cases}x_1u_{x_2}-x_2u_{x_1}=u\quad\text{on}\quad\{x_1>0,x_2>0\},\\u(\boldsymbol{x})=g(\bm{x})\end{cases}$$
+      <strong>例</strong>$\quad$求解方程$$\begin{cases}x_1u_{x_2}-x_2u_{x_1}=u\quad\text{on}\quad\{x_1>0,x_2>0\},\\u(\boldsymbol{x})=g(\boldsymbol{x})\quad\text{on}\Gamma=\{x_1>0,x_2=0\}.\end{cases}$$
     </p>
+
+    <p>
+      <strong>解答</strong>$\quad$利用上述方程，我们发现，特征ODE为$\dot{x}_1=-x_2,\dot{x}_2=x_1,\dot{z}=z$，不嫩发现，$x_1(s)=(x_1^2+x_2^2)^{1/2}\cos s,x_2(s)=(x_1^2+x_2^2)^{1/2}\sin s$，可以解出，$z(s)=z_0\text{e}^s=g((x_1^2+x_2^2)^{1/2})\text{e}^{\arctan(x_2/x_1)}$.
+    </p>
+
+    
     <div class="back">
       <a href="../blog.html">← Back to Blog</a>
     </div>
