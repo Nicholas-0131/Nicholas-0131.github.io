@@ -1,3 +1,13 @@
+body {
+  font-family:
+    "Times New Roman",
+    "SimSun",
+    "Songti SC",
+    "Noto Serif CJK SC",
+    serif;
+  font-weight: 400;
+}
+
 /* 页面整体居中 */
 .center {
   min-height: 100vh;
