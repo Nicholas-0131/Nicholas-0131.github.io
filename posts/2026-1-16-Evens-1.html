@@ -186,6 +186,16 @@
       同理，如果上述方程变得非齐次，即形如$u_t+\boldsymbol{b}\cdot\mathbf{D}u=f$，那么我们只需要注意到这时候$\dot{z}(s)=f$，从而$$u(\boldsymbol{x},t)-g(\boldsymbol{x}-t\boldsymbol{b})=\int_0^tf(\boldsymbol{x}+(s-t)\boldsymbol{b},s)\text{d}s.$$我们将会看到这个公式非常有用.
     </p>
 
+    <h2>
+      波动方程
+    </h2>
+
+    <p>
+      为什么先讲波动方程，因为它和非齐次传输方程关系密切，我们先不讨论物理背景，只关心怎么解出$u_{tt}-u_{xx}=0$这个方程.首先我们因式分解一下就发现，需要的是$(\partial_t+\partial x)(\partial_t-\partial_x)u=0$.
+
+      首先对算子$(\partial_t+\partial_x)$用传输方程的结论，不难得到这需要$(\partial_t-\partial_x)u=a(x-t)$，然后在对它利用传输方程的结论，其中$f(x,t)=a(x-t)$，这样，$u(x,t)=b(x+t)+\int_0^ta(x+(t-s)-s)\text{d}s=b(x+t)+\frac{1}{2}\int_{x-t}^{x+t}a(y)\text{d}y$.如果再写的好看一点（或者说按照一般初值条件的写法），就是$$u(x,t)=\frac{1}{2}[g(x+t)+g(x-t)]+\frac{1}{2}\int_{x-t}^{x+t}h(y)\text{d}y,$$其中初值条件为$u(x,0)=g(x),u_t(x,)=h(x)$.
+    </p>
+
     
     <div class="back">
       <a href="../blog.html">← Back to Blog</a>
