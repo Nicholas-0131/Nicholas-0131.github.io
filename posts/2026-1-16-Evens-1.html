@@ -111,16 +111,16 @@
 
   <!-- 前景文章内容 -->
   <div class="content">
-    <h1>First Blog Post</h1>
-    <div class="meta">Jan 1, 2026 · Nick Shu</div>
+    <h1>EVENS NOTES</h1>
+    <div class="meta">Jan 16, 2026 · Nick Shu</div>
 
     <p>
       这是Evens的<em>偏微分方程（Partial Differential Equation）</em>的读书笔记。我对正文的第一章进行了一个简单的回顾，顺序和书上不太一样。
     </p>
 
-    <h1>
+    <h2>
       特征与传输方程
-    </h1>
+    </h2>
 
     <p>
       一般而言，我们研究的PDE通常是这样的$$\begin{cases}Lu=f\quad\text{on}\quad\Omega,\\Bu=h\quad\text{on}\quad\Gamma\subseteq\partial\Omega,\end{cases}$$其中$L,B$是两个算子.
@@ -149,7 +149,7 @@
     </p>
 
     <p>
-      对于拟线性方程而言，他的形式一般是$F(\mathbf{D}u,u,\boldsymbol{x})=\boldsymbol{b}(\boldsymbol{x},u(\boldsymbol{x}))\cdot\mathbf{D}u(\boldsymbol{x})\cdot\mathbf{D}u(\boldsymbol{x})+c(\boldsymbol{x},u(\boldsymbol{x}))=0$.对应的特征方程就是$$\begin{cases}\dot{\boldsymbol{x}}(s)=\boldsymbol{b}(\boldsymbol{x}(s),z(s)),\\\dot{z}(s)=-c(\boldsymbol{x}(s),z(s)).\end{cases}$$
+      对于拟线性方程而言，他的形式一般是$F(\mathbf{D}u,u,\boldsymbol{x})=\boldsymbol{b}(\boldsymbol{x},u(\boldsymbol{x}))\cdot\mathbf{D}u(\boldsymbol{x})\cdot\mathbf{D}u(\boldsymbol{x})+c(\boldsymbol{x},u(\boldsymbol{x}))=0$.对应的特征方程就是$$\begin{cases}\dot{\boldsymbol{x}}(s)=\boldsymbol{b}(\boldsymbol{x}(s),z(s)),\\\dot{z}(s)=-c(\boldsymbol{x}(s),z(s)).\end{cases}$$实际上，绝大多数情况这已经非常困难了，下面只能举出一个较为简单的例子.
     </p>
 
     <p>
@@ -159,6 +159,20 @@
     <p>
       <strong>解答</strong>$\quad$利用前面所说的式子来看，也就是要求$\dot{x}_1(s)=1,\dot{x}_2(s)=1,\dot{z}(s)=z^2(s)$，从而$x_1(s)=x_1^0+s,x_2(s)=s$（注意边界上，$x_2(0)=0$），因此，$z(s)=\frac{z^0}{1-sz^0}=\frac{g(x_1-x_2)}{1-x_2g(x_1-x_2)}$.
     </p>
+
+    <p>
+      对于完全非线性方程来说，我们通常需要进行积分.这里没有一般方法解决，甚至绝大多数情况下完全不可能得到任何有效结论.
+    </p>
+
+    <p>
+      <strong>例</strong>$\quad\Omega$不变而$\Gamma$变为$\{x_1=0\}$，求解方程$$\begin{cases}u_{x_1}u_{x_2}=u,\\u(0,x_2)=x_2^2.\end{cases}$$
+    </p>
+
+    <p>
+      <strong>解答</strong>$\quad$这时候应该说$F(\boldsymbol{p},z,\boldsymbol{x})=p_1p_2-z$，从而特征ODE写作$$\begin{cases}\dot{p}_1=p_1,\;\dot{p}_2=p_2,\\\dot{z}=2p_1p_2,\\\dot{x}_1=p_2,\;\dot{x}_2=p_1.\end{cases}$$从而，$x_1(s)=c(\text{e}^s-1)$从而$c=p_2^0$，同理，$x_2(s)=x_2^0+p_1^0(\text{e}^s-1)$.于是特征ODE的解就得到了，进而代入一下就能得到$u=\frac{(x_1+4x_2)^2}{16}$.
+    </p>
+
+    
 
     
     <div class="back">
