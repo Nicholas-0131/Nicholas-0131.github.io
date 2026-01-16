@@ -123,25 +123,25 @@
     </h2>
 
     <p>
-      一般而言，我们研究的PDE通常是这样的$$\begin{cases}Lu=f\quad\text{on}\quad\Omega,\\Bu=h\quad\text{on}\quad\Gamma\subseteq\partial\Omega,\end{cases}$$其中$L,B$是两个算子.
+      一般而言，我们研究的PDE通常是这样的$$\begin{cases}Lu=f\quad\text{in}\quad\Omega,\\Bu=h\quad\text{on}\quad\Gamma\subseteq\partial\Omega,\end{cases}$$其中$L,B$是两个算子.
       
       因此，我们希望能够找到一族曲线，在其中每一条曲线上面，我们可以把$Lu$写成一个ODE.进而，我们可以通过把$\Omega$上面的点和$\Gamma$上的点进行一个连接，利用ODE方法研究PDE.这条曲线就叫做<strong>特征曲线</strong>，相应地那个ODE叫做<strong>特征ODE</strong>.
     </p>
 
     <p>
-      因此重要的问题是，如何求得特征曲线，考虑一阶PDE$F(\mathbf{D}u,u,\mathbf{x})=0$，并令$z(s)=u(\mathbf{x}(s)),\mathbf{p}(s)=\mathbf{D}_{\mathbf{x}}u(\mathbf{x}(s))$.那么特征曲线的方程就是$$\begin{cases}\dot{\mathbf{p}}(s)=-\mathbf{D}_{\mathbf{x}}F(\mathbf{p}(s),z(s),\mathbf{x}(s))-F_z(\mathbf{p}(s),z(s),\mathbf{x}(s))\mathbf{p}(s),\\\dot{z}(s)=\mathbf{D}_{\mathbf{p}}F(\mathbf{p}(s),z(s),\mathbf{x}(s))\cdot\mathbf{p}(s),\\\dot{\mathbf{x}}(s)=\mathbf{D}_{\mathbf{p}}F(\mathbf{p}(s),z(s),\mathbf{x}(s)).\end{cases}$$
+      因此重要的问题是，如何求得特征曲线，考虑一阶PDE$F(\mathbf{D}u,u,\boldsymbol{x})=0$，并令$z(s)=u(\boldsymbol{x}(s)),\boldsymbol{p}(s)=\mathbf{D}_{\boldsymbol{x}}u(\boldsymbol{x}(s))$.那么特征曲线的方程就是$$\begin{cases}\dot{\boldsymbol{p}}(s)=-\mathbf{D}_{\boldsymbol{x}}F(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s))-F_z(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s))\boldsymbol{p}(s),\\\dot{z}(s)=\mathbf{D}_{\boldsymbol{p}}F(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s))\cdot\boldsymbol{p}(s),\\\dot{\boldsymbol{x}}(s)=\mathbf{D}_{\boldsymbol{p}}F(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s)).\end{cases}$$
 
       这个方程组将会确定一族曲线，在其中任何一条曲线上面，我们总可以把PDE改写成$s$的ODE.
     </p>
 
     <p>
-      对于线性方程，即$F(\mathbf{D}u,u,\mathbf{x})=\mathbf{b}(\mathbf{c})\cdot\mathbf{D}u(\mathbf{x})+c(\mathbf{x})u(\mathbf{x})=0$而言，特征方程可以写成$$\begin{cases}\dot{\mathbf{x}}(s)=\mathbf{b}(\mathbf{x}(s)),\\\dot{z}(s)=-c(\mathbf{x}(s))z(s).\end{cases}$$
+      对于线性方程，即$F(\mathbf{D}u,u,\boldsymbol{x})=\boldsymbol{b}(\boldsymbol{c})\cdot\mathbf{D}u(\boldsymbol{x})+c(\boldsymbol{x})u(\boldsymbol{x})=0$而言，特征方程可以写成$$\begin{cases}\dot{\boldsymbol{x}}(s)=\boldsymbol{b}(\boldsymbol{x}(s)),\\\dot{z}(s)=-c(\boldsymbol{x}(s))z(s).\end{cases}$$
 
-      我们可以直接通过第一个式子求出$\mathbf{x}$作为$s$的函数，代入第二个式子当中就可以方便地得到$z(s)$了，不过可能需要一个“回代”过程，即还是需要把$z(s)$改写成$\mathbf{x}$的函数.
+      我们可以直接通过第一个式子求出$\boldsymbol{x}$作为$s$的函数，代入第二个式子当中就可以方便地得到$z(s)$了，不过可能需要一个“回代”过程，即还是需要把$z(s)$改写成$\boldsymbol{x}$的函数.
     </p>
 
     <p>
-      <strong>例</strong>$\quad$求解方程$$\begin{cases}x_1u_{x_2}-x_2u_{x_1}=u\quad\text{on}\quad\{x_1>0,x_2>0\},\\u(\mathbf{x})=g(\mathbf{x})\quad\text{on}\{x_1>0,x_2=0\}.\end{cases}$$
+      <strong>例</strong>$\quad$求解方程$$\begin{cases}x_1u_{x_2}-x_2u_{x_1}=u\quad\text{in}\quad\{x_1>0,x_2>0\},\\u(\boldsymbol{x})=g(\boldsymbol{x})\quad\text{on}\quad\{x_1>0,x_2=0\}.\end{cases}$$
     </p>
 
     <p>
@@ -149,7 +149,7 @@
     </p>
 
     <p>
-      对于拟线性方程而言，他的形式一般是$F(\mathbf{D}u,u,\mathbf{x})=\mathbf{b}(\mathbf{x},u(\mathbf{x}))\cdot\mathbf{D}u(\mathbf{x})\cdot\mathbf{D}u(\mathbf{x})+c(\mathbf{x},u(\mathbf{x}))=0$.对应的特征方程就是$$\begin{cases}\dot{\mathbf{x}}(s)=\mathbf{b}(\mathbf{x}(s),z(s)),\\\dot{z}(s)=-c(\mathbf{x}(s),z(s)).\end{cases}$$实际上，绝大多数情况这已经非常困难了，下面只能举出一个较为简单的例子.
+      对于拟线性方程而言，他的形式一般是$F(\mathbf{D}u,u,\boldsymbol{x})=\boldsymbol{b}(\boldsymbol{x},u(\boldsymbol{x}))\cdot\mathbf{D}u(\boldsymbol{x})\cdot\mathbf{D}u(\boldsymbol{x})+c(\boldsymbol{x},u(\boldsymbol{x}))=0$.对应的特征方程就是$$\begin{cases}\dot{\boldsymbol{x}}(s)=\boldsymbol{b}(\boldsymbol{x}(s),z(s)),\\\dot{z}(s)=-c(\boldsymbol{x}(s),z(s)).\end{cases}$$实际上，绝大多数情况这已经非常困难了，下面只能举出一个较为简单的例子.
     </p>
 
     <p>
@@ -169,7 +169,7 @@
     </p>
 
     <p>
-      <strong>解答</strong>$\quad$这时候应该说$F(\mathbf{p},z,\mathbf{x})=p_1p_2-z$，从而特征ODE写作$$\begin{cases}\dot{p}_1=p_1,\;\dot{p}_2=p_2,\\\dot{z}=2p_1p_2,\\\dot{x}_1=p_2,\;\dot{x}_2=p_1.\end{cases}$$从而，$x_1(s)=c(\text{e}^s-1)$从而$c=p_2^0$，同理，$x_2(s)=x_2^0+p_1^0(\text{e}^s-1)$.于是特征ODE的解就得到了，进而代入一下就能得到$u=\frac{(x_1+4x_2)^2}{16}$.
+      <strong>解答</strong>$\quad$这时候应该说$F(\boldsymbol{p},z,\boldsymbol{x})=p_1p_2-z$，从而特征ODE写作$$\begin{cases}\dot{p}_1=p_1,\;\dot{p}_2=p_2,\\\dot{z}=2p_1p_2,\\\dot{x}_1=p_2,\;\dot{x}_2=p_1.\end{cases}$$从而，$x_1(s)=c(\text{e}^s-1)$从而$c=p_2^0$，同理，$x_2(s)=x_2^0+p_1^0(\text{e}^s-1)$.于是特征ODE的解就得到了，进而代入一下就能得到$u=\frac{(x_1+4x_2)^2}{16}$.
     </p>
 
     <p>
@@ -177,7 +177,13 @@
     </p>
 
     <p>
-      考虑方程$u_t+\mathbf{b}\cdot\mathbf{D}u=0$，其中$(\mathbf{x},t)\in\mathbb{R}^n\times[0,+\infty)$.
+      考虑方程$u_t+\boldsymbol{b}\cdot\mathbf{D}u=0$，其中$(\boldsymbol{x},t)\in\mathbb{R}^n\times[0,+\infty)$.不难发现（事实上不需要特征曲线方程），如果记$z(s)=u(\boldsymbol{x}+s\boldsymbol{b},t+s)$，那么$\dot{z}(s)=0$.
+
+      这就不难看出，$z(s)$是一个定值，从而，沿着直线$(\boldsymbol{x}+s\boldsymbol{b},t+s)$当中，$z$保持不变，这样我们可以把所有$(\boldsymbol{x},t)\in\mathbb{R}^n\times(0,+\infty)$通过$(\boldsymbol{x}-t\boldsymbol{b},0)$变到$\mathbb{R}^n\times\{t=0\}$上面去，从而这个方程的解就是（取一般意义的$t=0$为边值，这上面$u=g$）$$u(\boldsymbol{x},t)=g(\boldsymbol{x}-t\boldsymbol{b}).$$
+    </p>
+
+    <p>
+      同理，如果上述方程变得非齐次，即形如$u_t+\boldsymbol{b}\cdot\mathbf{D}u=f$，那么我们只需要注意到这时候$\dot{z}(s)=f$，从而$$u(\boldsymbol{x},t)-g(\boldsymbol{x}-t\boldsymbol{b})=\int_0^tf(\boldsymbol{x}+(s-t)\boldsymbol{b},s)\text{d}s.$$我们将会看到这个公式非常有用.
     </p>
 
     
