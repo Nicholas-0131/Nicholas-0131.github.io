@@ -10,6 +10,12 @@
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
         displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        macros: {
+        '\\bm': '\\boldsymbol{#1}',  // \bm 需要一个参数
+        // 还可以定义其他常用宏
+        '\\RR': '\\mathbb{R}',
+        '\\dd': '\\mathrm{d}'
+      }
       }
     };
   </script>
@@ -134,6 +140,13 @@
       这个方程组将会确定一族曲线，在其中任何一条曲线上面，我们总可以把PDE改写成$s$的ODE.
     </p>
 
+    <p>
+      对于线性方程，即$F(\mathbf{D}u,u,\boldsymbol{x})=\boldsymbol{b}(\boldsymbol{c})\cdot\mathbf{D}u(\boldsymbol{x})+c(\boldsymbol{x})u(\boldsymbol{x})=0$而言，特征方程可以写成$$\begin{cases}\dot{\boldsymbol{x}}(s)=\boldsymbol{b}(\boldsymbol{x}(s)),\\\dot{z}(s)=-c(\boldsymbol{x}(s))z(s).\end{cases}$$
+
+      我们可以直接通过第一个式子求出$\boldsymbol{x}$作为$s$的函数，代入第二个式子当中就可以方便地得到$z(s)$了，不过可能需要一个“回代”过程，即还是需要把$z(s)$改写成$\boldsymbol{x}$的函数.
+
+      <strong>例</strong>$\quad$求解方程$$\begin{cases}x_1u_{x_2}-x_2u_{x_1}=u\quad\text{on}\quad\{x_1>0,x_2>0\},\\u(\boldsymbol{x})=g(\bm{x})
+    </p>
     <div class="back">
       <a href="../blog.html">← Back to Blog</a>
     </div>
