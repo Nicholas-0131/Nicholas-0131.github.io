@@ -212,11 +212,7 @@
     </p>
 
     <p>
-      考虑对于$\varphi\in C_c^\infty(\mathbb{R}^n)$，我们要证明$\langle Lu,\varphi\rangle=\langle f,\varphi\rangle$，从而分布意义下$Lu=f$.首先，利用分部积分法，不难验证$$\langle\partial^{\boldsymbol{\alpha}}u,\varphi\rangle=(-1)^{|\boldsymbol{\alpha}|}\langle u,\partial^{\boldsymbol{\alpha}}\varphi\rangle.$$
-      
-      再利用定义，可以写$u=E*f$，从而原式$=\langle E,\tilde{f}*L^*u\rangle$，其中$L^*$就是把$L$的每一个$\partial^{\boldsymbol{\alpha}}$元素乘上一个$(-1)^{|\boldsymbol{\alpha}|}$.
-      
-      然后在把$L$拉回到左边来，又变成$\langle LE,\tilde{f}*\varphi\rangle$.而重要的是，$LE=\delta$，这下这个式子只剩下了$(\tilde{f}*\varphi)(0)$这一项，有趣的是，这就是$$\int_{\mathbb{R}^n}f(-\boldsymbol{y})\varphi(-\boldsymbol{y})\text{d}\boldsymbol{y}=\int_{\mathbb{R}^n}f(\boldsymbol{y})\varphi(\boldsymbol{y})\text{d}\boldsymbol{y}=\langle f,\varphi\rangle.$$由此可见，$Lu=f$在分布意义下成立.
+      考虑对于$\varphi\in C_c^\infty(\mathbb{R}^n)$，我们要证明$\langle Lu,\varphi\rangle=\langle f,\varphi\rangle$，从而分布意义下$Lu=f$.首先，利用分部积分法，不难验证\[\langle\partial^{\boldsymbol{\alpha}}u,\varphi\rangle=(-1)^{|\boldsymbol{\alpha}|}\langle u,\partial^{\boldsymbol{\alpha}}\varphi\rangle.\]再利用定义，可以写$u=E*f$，从而原式$=\langle E,\tilde{f}*L^*u\rangle$，其中$L^*$就是把$L$的每一个$\partial^{\boldsymbol{\alpha}}$元素乘上一个$(-1)^{|\boldsymbol{\alpha}|}$.然后把$L$拉回到左边来，又变成$\langle LE,\tilde{f}*\varphi\rangle$.而重要的是，$LE=\delta$，这下这个式子只剩下了$(\tilde{f}*\varphi)(0)$这一项，有趣的是，这就是$$\int_{\mathbb{R}^n}f(-\boldsymbol{y})\varphi(-\boldsymbol{y})\text{d}\boldsymbol{y}=\int_{\mathbb{R}^n}f(\boldsymbol{y})\varphi(\boldsymbol{y})\text{d}\boldsymbol{y}=\langle f,\varphi\rangle.$$由此可见，$Lu=f$在分布意义下成立.
     </p>
 
     <p>
