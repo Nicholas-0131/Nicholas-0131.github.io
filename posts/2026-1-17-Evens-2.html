@@ -190,10 +190,20 @@
       以下我们讨论方程$u_t-\Delta u=0$的解.和前面一样，我们发现径向解和基本解完全一致.不过值得注意的是，我们通常的做法，是找一个具有形式$u(\boldsymbol{x},t)=\frac{1}{t^\alpha}v(|\boldsymbol{x}|/t^\beta)$的解，之后我们发现这个算子可以写作$\left(r^{n-1}v'+\frac{1}{2}r^nv\right)'=0$，从而就可以得到函数
     </p>
 
-    $$\Phi(\boldsymbol{x},t)=\begin{cases}\frac{1}{(4\pi t)^{n/2}}\text{e}^{-\frac{|\boldsymbol{x}|^2}{4t},\quad t>0;\\0,&t=0\end{cases}
+    $$\Phi(\boldsymbol{x},t)=\begin{cases}\frac{1}{(4\pi t)^{n/2}}\text{e}^{-\frac{|\boldsymbol{x}|^2}{4t},\quad t>0;\\0,&t=0\end{cases}$$
 
     <p>
       为热算子$\partial_t-\Delta$的<strong>基本解</strong>.从物理角度考虑，上述基本解得到的一般解$$u(\boldsymbol{x},t)=\frac{1}{(4\pi t)^{n/2}}\int_{\mathbb{R}^n}\text{e}^{-\frac{|\boldsymbol{x}-\boldsymbol{y}|}{4t}}g(\boldsymbol{y})\text{d}\boldsymbol{y}$$具有这样的性质，即如果$g\geq0$且$g\not\equiv0$，那么对于一切$\boldsymbol{x}\in\mathbb{R}^n,t>0$，其实都有$u>0$.从而这意味着（满足<strong>Fourier定律$\boldsymbol{q}=-k\boldsymbol{\nabla}u$</strong>的）热传导速率是<strong>无穷大的</strong>.
+    </p>
+
+    <p>
+      接下来需要讨论的就是非齐次情况，应该说，对于非齐次问题，我们需要<em>Duhamel原理</em>，物理上就是把一段时间内源源不断的外力变成$[\tau,\tau+\text{d}\tau]$时刻的瞬时冲量经过$t-\tau$时间的传播之后的影响；数学上就是把非齐次项$f(\boldsymbol{x},t)$变成一个个时间$s$时候的量并积分.具体而言，考虑方程组
+    </p>
+
+    $$\begin{cases}u_t(\boldsymbol{x},t;s)-\Delta u(\boldsymbol{x},t;s)=0,&(\boldsymbol{x},t)\in\mathbb{R}\times(s,\infty);\\u(\boldsymbol{x},s;s)=f(\boldsymbol{x},s),&\boldsymbol{x}\in\mathbb{R}^n.\end{cases}$$
+
+    <p>
+      然后我们对$s$积分，得到$u(\boldsymbol{x},t)=\int_0^tu(\boldsymbol{x},t;s)\text{d}s$就是所要求的解了.
     </p>
 
     
