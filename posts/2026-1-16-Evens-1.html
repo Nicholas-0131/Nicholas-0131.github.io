@@ -234,7 +234,12 @@
     </h2>
 
     <p>
-      我们求解Laplace（Poisson）方程$-\Delta u=f$.首先，我们将推导$-\Delta$的基本解.首先我们限制$u(\boldsymbol{x})=v(r)$，然后注意到，$\mathbf{D}v(r)=\frac{v'(r)}{r}\boldsymbol{x}$.从而就能知道$\Delta v(r)=\frac{n-1}{r}v'(r)+v''(r)$.进行一次积分就是$$v'(r)=-\frac{1}{n\alpha(n)r^{n-1}}\quad\text{where $n\alpha(n)$ is the area of $n-$dimension unit sphere}.$$因此我们得到了基本解就是$$\Phi(\boldsymbol{x})=\begin{cases}-\frac{1}{2\pi}\ln|\boldsymbol{x}|,&n=2;\\\frac{1}{n\alpha(n)|\boldsymbol{x}|^{n-2}},&n\geq3.\end{cases}$$当然应该注意这个解是径向的.
+      我们求解Laplace（Poisson）方程$-\Delta u=f$.首先，我们将推导$-\Delta$的基本解.首先我们限制$u(\boldsymbol{x})=v(r)$，然后注意到，$\mathbf{D}v(r)=\frac{v'(r)}{r}\boldsymbol{x}$.从而就能知道$\Delta v(r)=\frac{n-1}{r}v'(r)+v''(r)=\frac{1}{r^{n-1}}(r^{n-1}v'(r))'$.进行一次积分就是$$v'(r)=-\frac{1}{n\alpha(n)r^{n-1}}\quad\text{where $n\alpha(n)$ is the area of $n-$dimension unit sphere}.$$因此我们得到了基本解就是$$\Phi(\boldsymbol{x})=\begin{cases}-\frac{1}{2\pi}\ln|\boldsymbol{x}|,&n=2;\\\frac{1}{n\alpha(n)(n-2)|\boldsymbol{x}|^{n-2}},&n\geq3.\end{cases}$$当然应该注意这个解是径向的.
+    </p>
+
+    <p>
+      因此，对于一般的Poisson方程，我们就可以直接使用前述结论进行卷积了，结论是，Poisson方程的根为$$u(\boldsymbol{x})=\begin{cases}-\frac{1}{2\pi}\int_{\mathbb{R}^2}\ln(|\boldsymbol{x}-\boldsymbol{y}|)f(\boldsymbol{y})\text{d}\boldsymbol{y},&n=2;\\\frac{1}{n\alpha(n)(n-2)}\int_{\mathbb{R}^n}\frac{f(\boldsymbol{y})}{|\boldsymbol{x}-\boldsymbol{y}|^{n-2}\text{d}\boldsymbol{y},&n\geq3.\end{cases}$$这是Poisson方程的一个解公式.
+    
     </p>
 
     
