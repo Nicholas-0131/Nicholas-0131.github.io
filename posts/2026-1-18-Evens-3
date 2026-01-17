@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>First Blog Post | Nick Shu</title>
+
+  <!-- MathJax（数学公式） -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    /* ===== 页面背景 ===== */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #292E49, #536976);
+      overflow-x: hidden;
+      font-family:
+        "Times New Roman",
+        "SimSun",
+        "Songti SC",
+        "Noto Serif CJK SC",
+        serif;
+      color: #fff;
+    }
+
+    /* ===== 气泡动画 ===== */
+    .bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .bubbles li {
+      position: absolute;
+      list-style: none;
+      width: 20px;
+      height: 20px;
+      background: rgba(255,255,255,0.15);
+      animation: animate 25s linear infinite;
+      bottom: -150px;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0%;
+      }
+      100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+      }
+    }
+
+    /* ===== 前景内容层 ===== */
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 120px auto;
+      padding: 0 24px;
+      line-height: 1.8;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: 2.2em;
+      margin-bottom: 8px;
+    }
+
+    .meta {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+
+    p {
+      margin: 20px 0;
+    }
+
+    a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back {
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 背景气泡 -->
+  <ul class="bubbles">
+    <li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li>
+  </ul>
+
+  <!-- 前景文章内容 -->
+  <div class="content">
+    <h1>EVENS NOTES</h1>
+    <div class="meta">Jan 18, 2026 · Nick Shu</div>
+
+    
+
+    
+    <div class="back">
+      <a href="../blog.html">← Back to Blog</a>
+    </div>
+  </div>
+
+</body>
+</html>
