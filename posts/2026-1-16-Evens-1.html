@@ -229,43 +229,6 @@
     由此可以发现奇数维情况下<strong>Huygens原理</strong>成立.当然还有其他很多算子也都具有基本解，例如算子$L=\partial_t-\Delta$的基本解就是<strong>热核</strong>$E_L=\mathbf{1}_{\{t>0\}}\frac{1}{(4\pi t)^{n/2}}\exp\left(-\frac{|\boldsymbol{x}|^2}{4t}\right)$.
     </p>
 
-    <h2>
-      Laplace（Poisson）方程
-    </h2>
-
-    <h3>
-      这个方程的解
-    </h3>
-
-    <p>
-      我们求解Laplace（Poisson）方程$-\Delta u=f$.首先，我们将推导$-\Delta$的基本解.首先我们限制$u(\boldsymbol{x})=v(r)$，然后注意到，$\mathbf{D}v(r)=\frac{v'(r)}{r}\boldsymbol{x}$.从而就能知道$\Delta v(r)=\frac{n-1}{r}v'(r)+v''(r)=\frac{1}{r^{n-1}}(r^{n-1}v'(r))'$.进行一次积分就是$$v'(r)=-\frac{1}{n\alpha(n)r^{n-1}}\quad\text{where $n\alpha(n)$ is the area of $n-$dimension unit sphere}.$$因此我们得到了基本解就是$$\Phi(\boldsymbol{x})=\begin{cases}-\frac{1}{2\pi}\ln|\boldsymbol{x}|,&n=2;\\\frac{1}{n\alpha(n)(n-2)|\boldsymbol{x}|^{n-2}},&n\geq3.\end{cases}$$当然应该注意这个解是径向的.
-    </p>
-
-    <p>
-      因此，对于一般的Poisson方程，我们就可以直接使用前述结论进行卷积了，结论是，Poisson方程的根为
-
-    </p>
-
-    $$u(\boldsymbol{x})=\begin{cases}-\frac{1}{2\pi}\int_{\mathbb{R}^2}\ln(|\boldsymbol{x}-\boldsymbol{y}|)f(\boldsymbol{y})\text{d}\boldsymbol{y},&n=2;\\ \frac{1}{n\alpha(n)(n-2)}\int_{\mathbb{R}^n}\frac{f(\boldsymbol{y})}{|\boldsymbol{x}-\boldsymbol{y}|^{n-2}}\text{d}\boldsymbol{y},&n\geq3.\end{cases}$$
-    
-    <p>
-      
-    这是Poisson方程的一个解公式.当然我们可以直接证明出来而不用基本解的方法.首先在远离$\boldsymbol{0}$的位置上面，我们的措施就是直接利用定义，而$\boldsymbol{0}$的附近，采用小球$B_{(\boldsymbol{0},\varepsilon)}$进行隔离逼近即可.
-    
-    </p>
-
-    <h3>
-      一些重要的性质
-    </h3>
-
-    <p>
-      最重要的性质就是<strong>平均值公式</strong>，换言之，对于$U$上面的调和函数$u$，每一个球$B(\boldsymbol{x},r)\subseteq U上面$，等式$$u(\boldsymbol{x})=\frac{1}{|\partial B(\boldsymbol{x},r)|}\int_{\partial B(\boldsymbol{x},r)}u\text{d}S=\frac{1}{|B(\boldsymbol{x},r)|}\int_{B(\boldsymbol{x},r)}u\text{d}\boldsymbol{y}$$成立.
-    </p>
-
-    <p>
-      接下来，可以利用平均值公式得到许许多多相关的定理，例如假设有一个点$\boldsymbol{x}^0\in U$取到$\bar{U}$上面的最大值$M$，那么直接对任何一个$r$做平均值公式，就发现每一个点处都是$M$（当然如果问假设$\boldsymbol{x}^0$特别靠近$\partial U$怎么办呢？答案是不断地利用前述推理）.这样我们就得到了<strong>强最大值原理</strong>，即如果调和函数在连通域内部取到最值，那么它是常数函数；进而可以得到最大值一定在边界，这叫做<strong>最大值原理</strong>.
-    </p>
-
     
     <div class="back">
       <a href="../blog.html">← Back to Blog</a>
