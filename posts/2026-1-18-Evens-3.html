@@ -125,7 +125,11 @@
     热传导方程（续）
   </h2>
 
-    
+  <p>
+    我们展开$u$的表达式，就是
+  </p>
+
+    $$\begin{split}u(\boldsymbol{x},t)&=\int_0^t\int_{\mathbb{R}^n}\Phi(\boldsymbol{x}-\boldsymbol{y},t-s)f(\boldsymbol{y},s)\text{d}\boldsymbol{y}\text{d}s\\&=\int_0^t\frac{1}{(4\pi(t-s))^{n/2}}\int_{\mathbb{R}^n}\text{e}^{-\frac{|\boldsymbol{x}-\boldsymbol{y}|}{4(t-s)}}f(\boldsymbol{y},s)\text{d}\boldsymbol{y}\text{d}s.\end{split}$$
 
      <div class="back">
       <a href="../blog.html">← Back to Blog</a>
