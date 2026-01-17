@@ -169,7 +169,11 @@
     </p>
 
     <p>
-      最后讲一个非常重要的<strong>Harnack不等式</strong>，即对于连通开集$V\subseteq\subseteq U$，存在一个$C$只依赖于$V$满足$$\sup_Vu\leq C\inf_Vu,$$换言之，调和函数的最大值和最小值相差“不太大”.
+      最后讲一个非常重要的<strong>Harnack不等式</strong>，即对于连通开集$V\subseteq\subseteq U$，存在一个$C$只依赖于$V$满足$$\sup_Vu\leq C\inf_Vu,$$换言之，调和函数的最大值和最小值相差“不太大”.直观上看，$V$和边界$\partial U$之间有一定距离，所以Laplace方程可以在这段距离上发生一定作用，让一切得以继续下去.
+    </p>
+
+    <p>
+      假设$r=\frac{1}{4}\text{dist}(V,\partial U)$，对于距离小于$r$的两个点$\boldsymbol{x}$和$\boldsymbol{y}$，那么$u(\boldsymbol{x})=\frac{1}{|B(\boldsymbol{x},2r)|}\int_{B(\boldsymbol{x},2r)}u\text{d}\boldsymbol{z}$ $\geq\frac{1}{\alpha(n)2^nr^n}\int_{B(\boldsymbol{y},r)}u\text{d}\boldsymbol{z}=\frac{1}{2^n}\frac{1}{|B(\boldsymbol{y},r)|}u\text{d}\boldsymbol{z}$ $=\frac{1}{2^n}u(\boldsymbol{y})$.从而我们可以看出，对于任何两个点他们函数值的差距最多是$2^n$.然后我们完全可以用有限个（设为$N$）半径为$r$的球体覆盖$V$，这样，任何两个点的函数值最多是一个$2^{n(N+1)}$倍，即Harnack不等式当中$C=2^{n(N+1)}$满足条件.
     </p>
 
     
