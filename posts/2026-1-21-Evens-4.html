@@ -145,11 +145,19 @@
       能量方法
     </h2>
 
+    <p>
+
     在PDE问题当中，能量方法是非常重要的.在热传导当中，特别是边界为$\Gamma_T$上面$w=0$的时候，能量为$$e(t)=\int_Uw^2(\boldsymbol{x},t)\text{d}\boldsymbol{x},$$注意这不是一般意义下的能量，某种意义上，表征的是“距离热平衡有多远”.
 
     这样$$\dot{e}(t)=2\int_Uww_t\text{d}\boldsymbol{x}=2\int_Uw\Delta w\text{d}\boldsymbol{x}=-2\int_U|\mathbf{D}w|^2\text{d}\boldsymbol{x}\leq0,$$从而，$e(t)\leq e(0)=0$.这意味着$w=0$是唯一合理的解.<em>这里有一个问题</em>，即为什么前面说了不仅仅有零解，但是这里又说<em>唯一解$w\equiv0$</em>呢？答案是因为，这里有一个隐含条件，即$w\in L^2(U)$，所以严格说来，这句话意思是，这个方程的<strong>$L^2$解最多能有一个</strong>.
 
-    
+    更进一步，对于$\Gamma$上满足$u=g$的解$u$仍然也只能存在一个，因为如果有两个解，<strong>他们的差是$g=0$的解</strong>.这证明了$L^2$解的唯一性；更进一步，在$U$有界的情况下，还能说明$C_1^2(\bar{U}_T)$解的唯一性.
+
+    </p>
+
+    <p>
+      进一步，可以考虑反向问题，即如果两个函数$u,\tilde{u}$在$U\times[0,T]$上面都满足热方程，并且在$\partial U\times[0,T]$和$U\times\{t=T\}$上面相等，那么在整个$U_T$上面都相等.看起来很不显然，但是事实上还是对$w=u-\tilde{u}$利用能量分析，发现$\ddot{e}(t)=4\int_U(\Delta w)^2\text{d}\boldsymbol{x}$.利用Cauchy不等式，可以证明$$\int_U|\mathbf{D}w|^2\text{d}\boldsymbol{x}=-\int_Uw\Delta w\text{d}\boldsymbol{x}\leq\left(\int_Uw^2\text{d}\boldsymbol{x}\right)^{1/2}\left(\int_U(\Delta w)^2\text{d}\boldsymbol{x}\right)^{1/2},$$即$\ddot{e}(t)e(t)\geq(\dot{e}(t))^2$.
+    </p>
 
      <div class="back">
       <a href="../blog.html">← Back to Blog</a>
