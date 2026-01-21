@@ -137,7 +137,17 @@
 
     <p>
       利用平均值定理，可以证明热传导方程的解永远是光滑的，并且有估计$$\max_{C(\boldsymbol{x},t;r/2)}|\mathbf{D}_{\boldsymbol{x}}^k\text{D}_t^lu|\leq\frac{C_{kl}}{r^{k+2l+n+2}}||u||_{L^1(C(\boldsymbol{x},t;r))},$$其中$C(\boldsymbol{x},t;r):=\{(\boldsymbol{y},s):|\boldsymbol{x}-\boldsymbol{y}|\leq r,t-r^2\leq s\leq t\}$.
+
+      有意思的是，对于每一个$t_0>0$，$u|_{t=t_0}$都是解析的，但一般情况下，$u(\boldsymbol{x},t)$却不解析.
     </p>
+
+    <h2>
+      能量方法
+    </h2>
+
+    在PDE问题当中，能量方法是非常重要的.在热传导当中，特别是边界为$\Gamma_T$上面$w=0$的时候，能量为$$e(t)=\int_Uw^2(\boldsymbol{x},t)\text{d}\boldsymbol{x},$$注意这不是一般意义下的能量，某种意义上，表征的是“距离热平衡有多远”.
+
+    这样$$\dot{e}(t)=2\int_Uww_t\text{d}\boldsymbol{x}=2\int_Uw\Delta w\text{d}\boldsymbol{x}=-2\int_U|\mathbf{D}w|^2\text{d}\boldsymbol{x}\leq0,$$从而，$e(t)\leq e(0)=0$.这意味着$w=0$是唯一合理的解.<em>这里有一个问题</em>，即为什么前面说了不仅仅有零解，但是这里又说<em>唯一解$w\equiv0$</em>呢？答案是因为，这里有一个隐含条件，即$w\in L^2(U)$，所以严格说来，这句话意思是，这个方程的<strong>$L^2$解最多能有一个</strong>.
 
     
 
