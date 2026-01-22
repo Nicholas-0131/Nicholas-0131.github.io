@@ -166,7 +166,17 @@
     </h2>
 
     <p>
-      前面，利用因式分解和传输方程的结论，解决了一维波动方程，现在我们将要解决$n\geq2$维的情况.
+      前面，利用因式分解和传输方程的结论，解决了一维波动方程，现在我们将要解决$n\geq2$维的情况.我们将要解决的一般情况是$$\begin{cases}u_{tt}-\Delta u=0,&u\in\mathbb{R}^n\times(0,\infty);\\u(\boldsymbol{x},0)=g(\boldsymbol{x}),u_t(\boldsymbol{x},0)=h(t),&\boldsymbol{x}\in\mathbb{R}^n.\end{cases}$$我们想要尝试得到$u$的表达式（利用$g,h$）.
+
+      首先引入$u$在球面$\partial B(\boldsymbol{x},r)$的积分平均为$$U(\boldsymbol{x};r,t)=\frac{1}{|\partial B(\boldsymbol{x},t)|}\int_{\partial B(\boldsymbol{x},t)}u(\boldsymbol{y},t)\text{d}S_{\boldsymbol{y}}.$$同样地定义$G,H$分别是$g,h$的平均，那么$U$满足的PDE为$$\begin{cases}U_{tt}-U_{rr}-\frac{n-1}{r}U_r=0,&(r,t)\in\mathb{R}_+\times(0,\infty);\\U(r,0)=G(r),U_t(r,0)=H(r),&r\in\mathbb{R}_+.\end{cases}$$这个方程叫做<strong>Euler-Poisson-Darboux方程</strong>，其中的$U_{rr}+\frac{n-1}{r}U_r$恰好是Laplace算子的径向部分.
+
+      在$n=3$的时候，引入$\tilde{U}= rU$，同样定义$\tilde{G}$和$\tilde{H}$.那么$\tilde{U}_{tt}-\tilde{U}_{rr}=0$并且边值条件多了一个$\tilde{U}(0,t)=0$.这样就可以求出来，$$\tilde{U}(\boldsymbol{x};r,t)=\frac{1}{2}(\tilde{G}(\boldsymbol{x},t+r)-\tilde{G}(\boldsymbol{x},t-r))+\frac{1}{2}\int_{t-r}^{t+r}\tilde[H}(\boldsymbol{x},\tau)\text{d}\tau.$$进而可以得到$$u(\boldsymbol{x},t)=\frac{1}{|\partial B(\boldsymbol{x},t)|}(g(\boldsymbol{y})=(\boldsymbol{y}-\boldsymbol{x})\cdot\mathbf{D}g+h(\boldsymbol{y})t\text{d}S_{\bodlsymbol{y}}.$$这就是$n=3$时候的解.
+
+      更一般地，这种做法可以用在$n=2k+1$为奇数的情况，定义$\tilde{U}=\left(\frac{1}{r}\frac{\partial}{\partial r}\right)^{k-1}(r^{2k-1}U)$，同样定义$\tilde{G},\tilde{H}$，从而$n$为奇数的时候，波动方程的解为$$\frac{1}{(n-2)!!}\left[\frac{\partial}{\partial t}\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-3)/2}\left(t^{n-2}\frac{1}{|\partial B(\boldsymbol{x},t|)}\int_{\partial B(\boldsymbol{x},t)}g\text{d}S\right)+\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-3)/2}\left(t^{n-2}\frac{1}{|\partial B(\boldsymbol{x},t)|}\int_{\partial B(\boldsymbol{x},t)}h\text{d}S\right)\right].$$但是这个方法对于$n=2k$没有用.这是因为过程中我们需要的恒等式几乎都依赖$n$是奇数的条件.
+    </p>
+
+    <p>
+      
     </p>
 
      <div class="back">
