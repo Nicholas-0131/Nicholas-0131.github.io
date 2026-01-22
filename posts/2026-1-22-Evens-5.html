@@ -126,7 +126,23 @@
     </h2>
 
     <p>
-      对于$n=2k$为偶数的情况，我们需要
+      对于$n=2k$为偶数的情况，我们首先看看$n=2$怎么办.首先，把$\mathbb{R}^2$嵌入到$\mathbb{R}^3$，具体把$\boldsymbol{x}$变成$\var{\boldsymbol{x}}=(\boldsymbol{x},0)$.然后我们可以把$u(\boldsymbol{x},t)$也变成一个$\bar{u}(\bar{\boldsymbol{x}},t)$，同理定义$\bar{g},\bar{h}$.不难看出，$\bar{u}$是三维Laplace方程有初值$g,h$的解.这样利用上面的公式，我们得到$\bar{u}(\bar{x},t)$的表达式.
+
+      接下来，我们利用投影方法，比较重要的一点是，点$\bar{y}=(\boldsymbol{y},z)\in\partial\bar{B}(\bar{\boldsymbol{x}},t)$其实是指$z^2+|\boldsymbol{y}-\boldsymbol{x}|^2=t^2$，从而外法向为$\boldsymbol{\nu}=(\boldsymbol{y}-\boldsymbol{x},z)/t$.从而$\text{d}\boldsymbol{y}=|\boldsymbol{\nu}\cdot\boldsymbol{e}_3|\text{d}\bar{S}_{\bar{\boldsymbol{y}}}=\frac{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}{t}\text{d}\bar{S}_{\bar{\boldsymbol{y}}}$.
+
+      从而得到了$n=2$时候的解为
+    </p>
+
+    $$u(\boldsymbol{x},t)=\frac{t}{2}\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{g(\boldsymbol{y})+(\boldsymbol{y}-\boldsymbol{x})\cdot\mathbf{D}g(\boldsymbol{y})+h(\boldsymbol{y})t}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}.$$
+
+    <p>
+      利用同样的方法可以把所有$n=2k$为偶数的情况算出来，答案为
+    </p>
+
+    $$u(\boldsymbol{x},t)=\frac{1}{n!!}\left[\frac{\partial}{\partial t}\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-2)/2}\left(t^n\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{g(\boldsymbol{y})}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}\right)+\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-2)/2}\left(t^n\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{h(\boldsymbol{y})}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}\right)\right].$$
+
+    <p>
+      从而，我们求出了齐次波动方程的解的表达式，更进一步，我们发现对于$n\geq3$的奇数来说，数据$g,h$仅仅影响了锥面$\partial\{(\boldsymbol{y},t):t>0,|\boldsymbol{x}-\boldsymbol{y}| &lt t\}=\{(\boldsymbol{y},t):t>0,|\boldsymbol{y}-\boldsymbol{x}|=t\}$上面的取值；但是在$n$为偶数的时候，影响了整个锥体.这说明，奇数维的时候，扰动沿着波前传播出去；而偶数维的时候，扰动则会继续影响.这便是<strong>Hutgens原理</strong>.
     </p>
 
      <div class="back">
