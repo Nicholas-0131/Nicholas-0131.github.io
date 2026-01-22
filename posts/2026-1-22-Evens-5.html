@@ -145,6 +145,10 @@
       从而，我们求出了齐次波动方程的解的表达式，更进一步，我们发现对于$n\geq3$的奇数来说，数据$g,h$仅仅影响了锥面$\partial\{(\boldsymbol{y},t):t>0,|\boldsymbol{x}-\boldsymbol{y}| &lt t\}=\{(\boldsymbol{y},t):t>0,|\boldsymbol{y}-\boldsymbol{x}|=t\}$上面的取值；但是在$n$为偶数的时候，影响了整个锥体.这说明，奇数维的时候，扰动沿着波前传播出去；而偶数维的时候，扰动则会继续影响.这便是<strong>Hutgens原理</strong>.
     </p>
 
+    <p>
+      对于非齐次情况（注意这时候我们一般设定$u|_{t=0}=u_t|_{t=0}=0$，如果不是的话，直接把它写成非齐次的解和一个齐次的解的和即可），我们需要做的就是利用Duhamel原理做积分即可，即如果$u(\boldsymbol{x},t;s)$满足波动方程，且有初值$u(\boldsymbol{x},s;s)=0,u_t(\boldsymbol{x},s;s)=f(\boldsymbol{x},s)$，那么$u(\boldsymbol{x},t)=\int_0^tu(\boldsymbol{x},t;s)\text{d}s$是非齐次波动方程的解.特别地，$n=3$的时候，这个解正是$$u(\boldsymbol{x},t)=\frac{1}{4\pi}\int_{B(\boldsymbol{x},t)}\frac{f(\boldsymbol{y},t-|\boldsymbol{y}-\boldsymbol{x}|)}{|\boldsymbol{y}-\boldsymbol{x}|}\text{d}\boldsymbol{y},$$也就是物理中所谓<strong>推迟势</strong>.
+    </p>
+
      <div class="back">
       <a href="../blog.html">← Back to Blog</a>
     </div>
