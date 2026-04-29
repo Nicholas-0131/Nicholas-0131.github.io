@@ -1,28 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>About | Nick Shu</title>
-  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #292E49, #536976);
+      font-family: "Times New Roman", "SimSun", "Songti SC", serif;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* Background Animation */
+    .bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .bubbles li {
+      position: absolute;
+      list-style: none;
+      background: rgba(255, 255, 255, 0.1);
+      animation: animate 25s linear infinite;
+      bottom: -150px;
+    }
+    @keyframes animate {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0%; }
+      100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
+    }
+    /* Simple bubble positioning */
+    .bubbles li:nth-child(1){ left:25%; width:80px; height:80px; }
+    .bubbles li:nth-child(2){ left:10%; width:20px; height:20px; animation-delay:2s; }
+    .bubbles li:nth-child(3){ left:70%; width:20px; height:20px; animation-delay:4s; }
+    .bubbles li:nth-child(4){ left:40%; width:60px; height:60px; animation-delay:10s; }
+
+    /* Content Layout */
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 20px;
+    }
+
+    h1 { font-weight: 400; font-size: 2.4em; margin: 0; }
+    h2 { font-weight: 400; font-size: 1.8em; margin-top: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px;}
+    
+    .back-nav { margin-bottom: 20px; }
+    .back-nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9em; }
+    .back-nav a:hover { color: #fff; }
+
+    /* CV Styles */
+    .cv-section { margin-bottom: 30px; }
+    .cv-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .cv-date { min-width: 120px; text-align: right; color: rgba(255,255,255,0.7); font-style: italic; }
+    .cv-content { flex: 1; padding-right: 20px; }
+    
+    p { margin: 15px 0; font-size: 1.05em; color: rgba(255,255,255,0.9); }
+    
+    ul.skills { column-count: 2; padding-left: 20px; }
+  </style>
 </head>
-
 <body>
-  <div class="container" style="text-align:left; margin-top:60px;">
-    <h1>About</h1>
 
-    <p>
-      I am a undergraduate student in the School of Gifted Young of University of Science and Technology of China, who is interested in partial differential equations
-      and geometric analysis.
-    </p>
+  <ul class="bubbles">
+    <li></li><li></li><li></li><li></li><li></li>
+  </ul>
 
-    <p>
-      My work focuses on analytical aspects of nonlinear elliptic and parabolic
-      equations.
-    </p>
+  <div class="container">
+    <nav class="back-nav">
+      <a href="index.html">← Back to Home</a>
+    </nav>
 
-    <p>
-      <a href="index.html">← Back to home</a>
-    </p>
+    <header>
+      <h1>About Me</h1>
+    </header>
+
+    <section>
+      <p>
+        Hello! I am <strong>Nick Shu</strong>, an undergraduate student at the <strong>School of the Gifted Young (SGY)</strong>, University of Science and Technology of China (USTC). 
+      </p>
+      <p>
+        My primary academic interests lie in the field of Mathematics. 
+      </p>
+    </section>
+
+    <section class="cv-section">
+      <h2>Short CV</h2>
+
+      <h3>Education</h3>
+      <div class="cv-item">
+        <div class="cv-content">
+          <strong>University of Science and Technology of China (USTC), School of the Gifted Young(SGY)</strong><br>
+          Class Youth League Branch Secretary of Class 5, Grade 25
+          Member of the Academic Practice Department of the College Student Union
+        </div>
+        <div class="cv-content>
+          <strong>Anqing No.1 Middle School</strong><br>
+          Class Youth League Branch Secretary of Class 1, Grade 23
+          President of the Mathematics Club
+          Minister of the Learning Department of the Student Union
+        </div>
+      </div>
+
+      <h3>Skills</h3>
+      <ul class="skills">
+        <li>LaTeX (Academic Typesetting)</li>
+        <li>Mathematics</li>
+        <li>Languages: Chinese (Native), English (Fluent)</li>
+      </ul>
+    </section>
+
+    <footer style="margin-top: 100px; font-size: 0.8em; opacity: 0.5; text-align: center;">
+      &copy; 2026 Nick Shu. Built with passion for Mathematics.
+    </footer>
   </div>
+
 </body>
 </html>
