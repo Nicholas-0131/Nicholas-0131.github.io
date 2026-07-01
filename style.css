@@ -39,6 +39,50 @@ h1 {
 .nav-list li {
   margin: 18px 0;
 }
+.social{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:22px;
+
+    margin:30px 0;
+    flex-wrap:wrap;
+}
+
+.social-btn{
+
+    width:64px;
+    height:64px;
+
+    border-radius:50%;
+
+    background:#1d2433;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    transition:0.25s;
+}
+
+.social-btn:hover{
+
+    transform:translateY(-4px) scale(1.08);
+
+    background:#2b3550;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.social-btn img{
+
+    width:34px;
+    height:34px;
+
+    object-fit:contain;
+}
 
 /* 链接本身 */
 .nav-list a {
