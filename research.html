@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh" data-title-zh="研究 | 舒屹扬" data-title-en="Research | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
   <meta name="description" content="Research interests — differential geometry, geometric analysis, elliptic PDEs, and convex geometry.">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <script>
-    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'zh';}catch(e){var d='light',l='zh';}r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <script>
     window.MathJax = {
@@ -27,15 +27,18 @@
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="index.html" class="brand">Nick Shu</a>
+      <a href="index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="about.html">About</a>
-          <a href="research.html" class="active" aria-current="page">Research</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact.html">Contact</a>
+          <a href="about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
+          <a href="research.html" class="active" aria-current="page"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
+          <a href="blog.html"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
+          <a href="contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
         </nav>
         <div class="nav-actions">
+          <button class="lang-toggle" aria-label="Switch language / 切换语言">
+            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
+          </button>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -51,13 +54,12 @@
   <main class="page container">
     <!-- Header -->
     <section class="section-head" style="margin-bottom: 4rem;">
-      <span class="eyebrow">Research</span>
-      <h1 class="section-title" style="font-size: clamp(2.2rem, 6vw, 3.6rem); letter-spacing: 0.02em;">RESEARCH</h1>
-      <p class="tag">Geometry · Analysis · Partial Differential Equations</p>
-      <p class="tag" lang="zh">几何 · 分析 · 偏微分方程</p>
+      <span class="eyebrow"><span data-lang="zh">研究</span><span data-lang="en">Research</span></span>
+      <h1 class="section-title" style="font-size: clamp(2.2rem, 6vw, 3.6rem); letter-spacing: 0.02em;"><span data-lang="zh">研究</span><span data-lang="en">RESEARCH</span></h1>
+      <p class="tag"><span data-lang="zh">几何 · 分析 · 偏微分方程</span><span data-lang="en">Geometry · Analysis · Partial Differential Equations</span></p>
       <p class="section-desc" style="margin-top: 0.75rem;">
-        My current interests lie mainly at the interface of differential geometry,
-        geometric analysis, elliptic PDEs, and convex geometry.
+        <span data-lang="zh">我目前的兴趣主要集中在微分几何、几何分析、椭圆型偏微分方程与凸几何的交汇处。</span>
+        <span data-lang="en">My current interests lie mainly at the interface of differential geometry, geometric analysis, elliptic PDEs, and convex geometry.</span>
       </p>
     </section>
 
@@ -65,7 +67,7 @@
     <section class="section">
       <div class="section-head">
         <span class="eyebrow">01</span>
-        <h2 class="section-title">Research Interests</h2>
+        <h2 class="section-title"><span data-lang="zh">研究方向</span><span data-lang="en">Research Interests</span></h2>
       </div>
 
       <div class="r-index">
@@ -73,19 +75,21 @@
         <div class="r-block">
           <div class="r-num">01</div>
           <div>
-            <h3 class="r-title">Differential Geometry &amp; Geometric Analysis</h3>
-            <p class="r-cn" lang="zh">微分几何与几何分析</p>
+            <h3 class="r-title"><span data-lang="zh">微分几何与几何分析</span><span data-lang="en">Differential Geometry &amp; Geometric Analysis</span></h3>
             <div class="r-tags">
-              <span>Differential Geometry</span>
-              <span><strong>Minimal Surfaces</strong></span>
-              <span>Geometric Analysis</span>
-              <span>Riemann Surfaces</span>
-              <span>Conformal Geometry</span>
-              <span>Hodge-theoretic ideas</span>
-              <span>Geometric PDE</span>
+              <span data-lang="zh">微分几何</span><span data-lang="en">Differential Geometry</span>
+              <span data-lang="zh"><strong>极小曲面</strong></span><span data-lang="en"><strong>Minimal Surfaces</strong></span>
+              <span data-lang="zh">几何分析</span><span data-lang="en">Geometric Analysis</span>
+              <span data-lang="zh">黎曼曲面</span><span data-lang="en">Riemann Surfaces</span>
+              <span data-lang="zh">共形几何</span><span data-lang="en">Conformal Geometry</span>
+              <span data-lang="zh">Hodge 理论观点</span><span data-lang="en">Hodge-theoretic ideas</span>
+              <span data-lang="zh">几何 PDE</span><span data-lang="en">Geometric PDE</span>
             </div>
             <div class="r-body">
-              <p>
+              <p data-lang="zh">
+                这是我目前兴趣的核心——几何与分析交汇之处，涉及曲率、共形几何，以及支配它们的偏微分方程。其中，<strong>极小曲面</strong>是我反复回归的主题。
+              </p>
+              <p data-lang="en">
                 This is the core of my current interests — the place where geometry and
                 analysis meet, through curvature, conformal geometry, and the partial
                 differential equations that govern them. Of these, <strong>Minimal
@@ -99,20 +103,22 @@
         <div class="r-block">
           <div class="r-num">02</div>
           <div>
-            <h3 class="r-title">Elliptic Partial Differential Equations</h3>
-            <p class="r-cn" lang="zh">椭圆型偏微分方程</p>
+            <h3 class="r-title"><span data-lang="zh">椭圆型偏微分方程</span><span data-lang="en">Elliptic Partial Differential Equations</span></h3>
             <div class="r-tags">
-              <span>nonlinear elliptic equations</span>
-              <span>a priori estimates</span>
-              <span>maximum principles</span>
-              <span>Harnack inequalities</span>
-              <span>blow-up analysis</span>
-              <span>Sobolev methods</span>
-              <span>Moser iteration</span>
-              <span>variational methods</span>
+              <span data-lang="zh">非线性椭圆方程</span><span data-lang="en">nonlinear elliptic equations</span>
+              <span data-lang="zh">先验估计</span><span data-lang="en">a priori estimates</span>
+              <span data-lang="zh">极大值原理</span><span data-lang="en">maximum principles</span>
+              <span data-lang="zh">Harnack 不等式</span><span data-lang="en">Harnack inequalities</span>
+              <span data-lang="zh">blow-up 分析</span><span data-lang="en">blow-up analysis</span>
+              <span data-lang="zh">Sobolev 方法</span><span data-lang="en">Sobolev methods</span>
+              <span data-lang="zh">Moser 迭代</span><span data-lang="en">Moser iteration</span>
+              <span data-lang="zh">变分方法</span><span data-lang="en">variational methods</span>
             </div>
             <div class="r-body">
-              <p>
+              <p data-lang="zh">
+                这是一个研究兴趣，也是正在进行的学习。我正在通过仔细阅读来学习椭圆理论的经典技巧——先验估计、极大值原理、Harnack 不等式和 blow-up 分析，而非新的结果。
+              </p>
+              <p data-lang="en">
                 A research interest and an ongoing study. I am learning the classical
                 techniques of elliptic theory — a priori estimates, maximum principles,
                 Harnack inequalities, and blow-up analysis — through careful reading
@@ -126,16 +132,22 @@
         <div class="r-block">
           <div class="r-num">03</div>
           <div>
-            <h3 class="r-title">Convex Geometry &amp; Kakeya-type Problems</h3>
-            <p class="r-cn" lang="zh">凸几何与 Kakeya 型问题</p>
+            <h3 class="r-title"><span data-lang="zh">凸几何与 Kakeya 型问题</span><span data-lang="en">Convex Geometry &amp; Kakeya-type Problems</span></h3>
             <div class="r-tags">
-              <span>Convex Geometry</span>
-              <span>Kakeya Problem</span>
-              <span>Rotations</span>
-              <span>Geometric Optimization</span>
+              <span data-lang="zh">凸几何</span><span data-lang="en">Convex Geometry</span>
+              <span data-lang="zh">Kakeya 问题</span><span data-lang="en">Kakeya Problem</span>
+              <span data-lang="zh">旋转</span><span data-lang="en">Rotations</span>
+              <span data-lang="zh">几何优化</span><span data-lang="en">Geometric Optimization</span>
             </div>
             <div class="r-body">
-              <p>
+              <p data-lang="zh">
+                这是一个我正在探索的方向。考虑平面集合 \(S \subset \mathbb{R}^2\) 以及连续平移函数
+                \(x : [0, 2\pi) \to \mathbb{R}^2\)。我感兴趣的是包含所有旋转平移副本的集合 \(A\)，
+                \[
+                R_\theta S + x(\theta).
+                \]
+              </p>
+              <p data-lang="en">
                 A direction I am currently exploring. Consider a planar set
                 \(S \subset \mathbb{R}^2\) and a continuous translation function
                 \(x : [0, 2\pi) \to \mathbb{R}^2\). I am interested in a set \(A\) that
@@ -144,17 +156,25 @@
                 R_\theta S + x(\theta).
                 \]
               </p>
-              <p>Questions I am currently thinking about include:</p>
+              <p data-lang="zh">我目前正在思考的问题包括：</p>
+              <p data-lang="en">Questions I am currently thinking about include:</p>
               <ul>
-                <li>minimal possible area</li>
-                <li>diameter</li>
-                <li>perimeter</li>
-                <li>geometric structure of optimal configurations</li>
-                <li>dependence on the original set \(S\)</li>
-                <li>behavior under convergence of \(S\)</li>
-                <li>the transition between line-segment-type configurations and rotationally symmetric configurations</li>
+                <li data-lang="zh">最小可能面积</li>
+                <li data-lang="en">minimal possible area</li>
+                <li data-lang="zh">直径</li>
+                <li data-lang="en">diameter</li>
+                <li data-lang="zh">周长</li>
+                <li data-lang="en">perimeter</li>
+                <li data-lang="zh">最优构型的几何结构</li>
+                <li data-lang="en">geometric structure of optimal configurations</li>
+                <li data-lang="zh">对原集合 \(S\) 的依赖</li>
+                <li data-lang="en">dependence on the original set \(S\)</li>
+                <li data-lang="zh">\(S\) 收敛时的行为</li>
+                <li data-lang="en">behavior under convergence of \(S\)</li>
+                <li data-lang="zh">线段型构型与旋转对称构型之间的过渡</li>
+                <li data-lang="en">the transition between line-segment-type configurations and rotationally symmetric configurations</li>
               </ul>
-              <p><span class="status">Ongoing Exploration</span></p>
+              <p><span class="status"><span data-lang="zh">持续探索中</span><span data-lang="en">Ongoing Exploration</span></span></p>
             </div>
           </div>
         </div>
@@ -165,10 +185,10 @@
     <section class="section">
       <div class="section-head">
         <span class="eyebrow">02</span>
-        <h2 class="section-title">Current Projects</h2>
+        <h2 class="section-title"><span data-lang="zh">当前项目</span><span data-lang="en">Current Projects</span></h2>
         <p class="section-desc">
-          These are problems and directions I am actively working through — not completed
-          results, but questions I am trying to understand.
+          <span data-lang="zh">这些是我正在积极研究的问题和方向——不是已完成的成果，而是我正在尝试理解的问题。</span>
+          <span data-lang="en">These are problems and directions I am actively working through — not completed results, but questions I am trying to understand.</span>
         </p>
       </div>
 
@@ -177,11 +197,14 @@
         <div class="project-num">01</div>
         <div>
           <div class="project-head">
-            <h3 class="project-title">Convex Kakeya Sets</h3>
-            <span class="status">Ongoing Exploration</span>
+            <h3 class="project-title"><span data-lang="zh">凸 Kakeya 集合</span><span data-lang="en">Convex Kakeya Sets</span></h3>
+            <span class="status"><span data-lang="zh">持续探索中</span><span data-lang="en">Ongoing Exploration</span></span>
           </div>
           <div class="project-kw">
-            <span>Convex Geometry</span><span>Kakeya Problem</span><span>Rotations</span><span>Geometric Optimization</span>
+            <span data-lang="zh">凸几何</span><span data-lang="en">Convex Geometry</span>
+            <span data-lang="zh">Kakeya 问题</span><span data-lang="en">Kakeya Problem</span>
+            <span data-lang="zh">旋转</span><span data-lang="en">Rotations</span>
+            <span data-lang="zh">几何优化</span><span data-lang="en">Geometric Optimization</span>
           </div>
           <div class="project-body">
             <svg class="viz-inline" viewBox="0 0 200 200" aria-hidden="true">
@@ -192,7 +215,11 @@
                 <circle cx="186" cy="100" r="3" class="viz-fill"></circle>
               </g>
             </svg>
-            <p>
+            <p data-lang="zh">
+              我正在探索 Kakeya 问题的一个凸几何变体：一个集合必须包含给定平面集合 \(S\)
+              的所有连续平移旋转副本。我感兴趣的是面积、直径和周长等几何量，以及最优构型的稳定性与极限行为。
+            </p>
+            <p data-lang="en">
               I am exploring a convex-geometric variant of the Kakeya problem in which a
               set must contain continuously translated rotated copies of a prescribed planar
               set \(S\). I am interested in geometric quantities such as area, diameter and
@@ -207,11 +234,14 @@
         <div class="project-num">02</div>
         <div>
           <div class="project-head">
-            <h3 class="project-title">Minimal Surfaces &amp; Geometric Analysis</h3>
-            <span class="status">Current Interest · Ongoing Study</span>
+            <h3 class="project-title"><span data-lang="zh">极小曲面与几何分析</span><span data-lang="en">Minimal Surfaces &amp; Geometric Analysis</span></h3>
+            <span class="status"><span data-lang="zh">当前兴趣 · 持续学习中</span><span data-lang="en">Current Interest · Ongoing Study</span></span>
           </div>
           <div class="project-kw">
-            <span>Minimal Surfaces</span><span>Differential Geometry</span><span>Geometric Analysis</span><span>Riemann Surfaces</span>
+            <span data-lang="zh">极小曲面</span><span data-lang="en">Minimal Surfaces</span>
+            <span data-lang="zh">微分几何</span><span data-lang="en">Differential Geometry</span>
+            <span data-lang="zh">几何分析</span><span data-lang="en">Geometric Analysis</span>
+            <span data-lang="zh">黎曼曲面</span><span data-lang="en">Riemann Surfaces</span>
           </div>
           <div class="project-body">
             <svg class="viz-inline" viewBox="0 0 200 200" aria-hidden="true">
@@ -223,17 +253,26 @@
               <path d="M38 26 C 24 62, 68 78, 78 100 C 68 122, 24 138, 38 174" class="viz-line"></path>
               <path d="M162 26 C 176 62, 132 78, 122 100 C 132 122, 176 138, 162 174" class="viz-line"></path>
             </svg>
-            <p>
+            <p data-lang="zh">
+              我感兴趣的是极小曲面，它作为微分几何、复分析与椭圆型偏微分方程的交汇点。
+            </p>
+            <p data-lang="en">
               I am interested in minimal surfaces as a meeting point of differential
               geometry, complex analysis and elliptic PDEs.
             </p>
             <ul>
-              <li>classical minimal surface theory</li>
-              <li>Weierstrass representation</li>
-              <li>conformal parametrizations</li>
-              <li>curvature</li>
-              <li>harmonic coordinate functions</li>
-              <li>relations with Riemann surfaces</li>
+              <li data-lang="zh">经典极小曲面理论</li>
+              <li data-lang="en">classical minimal surface theory</li>
+              <li data-lang="zh">Weierstrass 表示</li>
+              <li data-lang="en">Weierstrass representation</li>
+              <li data-lang="zh">共形参数化</li>
+              <li data-lang="en">conformal parametrizations</li>
+              <li data-lang="zh">曲率</li>
+              <li data-lang="en">curvature</li>
+              <li data-lang="zh">调和坐标函数</li>
+              <li data-lang="en">harmonic coordinate functions</li>
+              <li data-lang="zh">与黎曼曲面的关系</li>
+              <li data-lang="en">relations with Riemann surfaces</li>
             </ul>
           </div>
         </div>
@@ -244,11 +283,14 @@
         <div class="project-num">03</div>
         <div>
           <div class="project-head">
-            <h3 class="project-title">Nonlinear Elliptic Equations</h3>
-            <span class="status">Reading · Research Study</span>
+            <h3 class="project-title"><span data-lang="zh">非线性椭圆方程</span><span data-lang="en">Nonlinear Elliptic Equations</span></h3>
+            <span class="status"><span data-lang="zh">阅读 · 研究学习</span><span data-lang="en">Reading · Research Study</span></span>
           </div>
           <div class="project-kw">
-            <span>Harnack inequalities</span><span>blow-up analysis</span><span>a priori estimates</span><span>positive solutions</span>
+            <span data-lang="zh">Harnack 不等式</span><span data-lang="en">Harnack inequalities</span>
+            <span data-lang="zh">blow-up 分析</span><span data-lang="en">blow-up analysis</span>
+            <span data-lang="zh">先验估计</span><span data-lang="en">a priori estimates</span>
+            <span data-lang="zh">正解</span><span data-lang="en">positive solutions</span>
           </div>
           <div class="project-body">
             <svg class="viz-inline" viewBox="0 0 200 200" aria-hidden="true">
@@ -257,25 +299,39 @@
               <ellipse cx="100" cy="100" rx="80" ry="80" class="viz-line" opacity="0.45"></ellipse>
               <ellipse cx="100" cy="100" rx="96" ry="96" class="viz-line" opacity="0.22"></ellipse>
             </svg>
-            <p>
+            <p data-lang="zh">
+              这与我对 Gidas–Spruck 等经典工作的长期阅读有关。我正在通过分析正解、先验估计和
+              blow-up 论证来学习非线性椭圆 PDE 的经典技巧。
+            </p>
+            <p data-lang="en">
               This is tied to a long-running reading of classical work such as
               Gidas–Spruck. I am studying classical techniques in nonlinear elliptic PDE
               through the analysis of positive solutions, a priori estimates and blow-up
               arguments.
             </p>
             <ul>
-              <li>Harnack inequalities</li>
-              <li>local and global behavior of positive solutions</li>
-              <li>blow-up analysis</li>
-              <li>scaling arguments</li>
-              <li>a priori estimates</li>
-              <li>Sobolev inequalities</li>
-              <li>conformal transformations</li>
-              <li>nonlinear elliptic equations</li>
+              <li data-lang="zh">Harnack 不等式</li>
+              <li data-lang="en">Harnack inequalities</li>
+              <li data-lang="zh">正解的局部与全局行为</li>
+              <li data-lang="en">local and global behavior of positive solutions</li>
+              <li data-lang="zh">blow-up 分析</li>
+              <li data-lang="en">blow-up analysis</li>
+              <li data-lang="zh">尺度论证</li>
+              <li data-lang="en">scaling arguments</li>
+              <li data-lang="zh">先验估计</li>
+              <li data-lang="en">a priori estimates</li>
+              <li data-lang="zh">Sobolev 不等式</li>
+              <li data-lang="en">Sobolev inequalities</li>
+              <li data-lang="zh">共形变换</li>
+              <li data-lang="en">conformal transformations</li>
+              <li data-lang="zh">非线性椭圆方程</li>
+              <li data-lang="en">nonlinear elliptic equations</li>
             </ul>
             <p>
               <a href="posts/Gidas-Spruck.pdf" target="_blank" rel="noopener" class="arrow-link">
-                Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations 笔记 <span class="arrow">→</span>
+                <span data-lang="zh">《Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations》笔记</span>
+                <span data-lang="en">Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations 笔记</span>
+                <span class="arrow">→</span>
               </a>
             </p>
           </div>
@@ -287,28 +343,45 @@
         <div class="project-num">04</div>
         <div>
           <div class="project-head">
-            <h3 class="project-title">Poisson Equation on the Sphere</h3>
-            <span class="status">Exploration · Expository Project</span>
+            <h3 class="project-title"><span data-lang="zh">球面上的 Poisson 方程</span><span data-lang="en">Poisson Equation on the Sphere</span></h3>
+            <span class="status"><span data-lang="zh">探索 · 阐述性项目</span><span data-lang="en">Exploration · Expository Project</span></span>
           </div>
           <div class="project-kw">
-            <span>Elliptic PDE</span><span>Spherical Analysis</span><span>Regularity</span>
+            <span data-lang="zh">椭圆 PDE</span><span data-lang="en">Elliptic PDE</span>
+            <span data-lang="zh">球面分析</span><span data-lang="en">Spherical Analysis</span>
+            <span data-lang="zh">正则性</span><span data-lang="en">Regularity</span>
           </div>
           <div class="project-body">
-            <p>
+            <p data-lang="zh">
+              我正在研究球面上的 Poisson 方程，
+              \[\Delta_{S^2} u = f,\]
+              目标是尽可能纯粹地从分析的角度理解它。
+            </p>
+            <p data-lang="en">
               I am working through the Poisson equation on the sphere,
               \[\Delta_{S^2} u = f,\]
               with the aim of understanding it as purely analytically as possible.
             </p>
             <ul>
-              <li>weak formulation</li>
-              <li>Lax–Milgram theorem</li>
-              <li>Poincaré inequality</li>
-              <li>\(H^1\) estimates</li>
-              <li>regularity</li>
-              <li>Moser iteration</li>
-              <li>Green functions</li>
+              <li data-lang="zh">弱形式</li>
+              <li data-lang="en">weak formulation</li>
+              <li data-lang="zh">Lax–Milgram 定理</li>
+              <li data-lang="en">Lax–Milgram theorem</li>
+              <li data-lang="zh">Poincaré 不等式</li>
+              <li data-lang="en">Poincaré inequality</li>
+              <li data-lang="zh">\(H^1\) 估计</li>
+              <li data-lang="en">\(H^1\) estimates</li>
+              <li data-lang="zh">正则性</li>
+              <li data-lang="en">regularity</li>
+              <li data-lang="zh">Moser 迭代</li>
+              <li data-lang="en">Moser iteration</li>
+              <li data-lang="zh">Green 函数</li>
+              <li data-lang="en">Green functions</li>
             </ul>
-            <p>
+            <p data-lang="zh">
+              主要目标是先理解其分析结构，再引入谱分解——之后再引入球谐函数与谱理论作为另一种观点。
+            </p>
+            <p data-lang="en">
               The main goal is to understand the analytic structure first, before
               introducing the spectral decomposition — later bringing in spherical
               harmonics and spectral theory as another point of view.
@@ -322,20 +395,28 @@
         <div class="project-num">05</div>
         <div>
           <div class="project-head">
-            <h3 class="project-title">Spectral Geometry</h3>
-            <span class="status">Exploring</span>
+            <h3 class="project-title"><span data-lang="zh">谱几何</span><span data-lang="en">Spectral Geometry</span></h3>
+            <span class="status"><span data-lang="zh">探索中</span><span data-lang="en">Exploring</span></span>
           </div>
           <div class="project-kw">
-            <span>Laplacian eigenvalues</span><span>Geometry of domains</span><span>Spectral inequalities</span>
+            <span data-lang="zh">拉普拉斯特征值</span><span data-lang="en">Laplacian eigenvalues</span>
+            <span data-lang="zh">区域的几何</span><span data-lang="en">Geometry of domains</span>
+            <span data-lang="zh">谱不等式</span><span data-lang="en">Spectral inequalities</span>
           </div>
           <div class="project-body">
-            <p>An exploratory direction, rather than a main project. I am interested in:</p>
+            <p data-lang="zh">这是一个探索性方向，而非主要项目。我感兴趣于：</p>
+            <p data-lang="en">An exploratory direction, rather than a main project. I am interested in:</p>
             <ul>
-              <li>Laplacian eigenvalues</li>
-              <li>geometry of domains</li>
-              <li>spectral inequalities</li>
-              <li>relationships between geometry and spectrum</li>
-              <li>analytic proofs versus computer-assisted proofs</li>
+              <li data-lang="zh">拉普拉斯特征值</li>
+              <li data-lang="en">Laplacian eigenvalues</li>
+              <li data-lang="zh">区域的几何</li>
+              <li data-lang="en">geometry of domains</li>
+              <li data-lang="zh">谱不等式</li>
+              <li data-lang="en">spectral inequalities</li>
+              <li data-lang="zh">几何与谱之间的关系</li>
+              <li data-lang="en">relationships between geometry and spectrum</li>
+              <li data-lang="zh">解析证明与计算机辅助证明</li>
+              <li data-lang="en">analytic proofs versus computer-assisted proofs</li>
             </ul>
           </div>
         </div>
@@ -346,52 +427,52 @@
     <section class="section">
       <div class="section-head">
         <span class="eyebrow">03</span>
-        <h2 class="section-title">Reading &amp; Background</h2>
+        <h2 class="section-title"><span data-lang="zh">阅读与背景</span><span data-lang="en">Reading &amp; Background</span></h2>
         <p class="section-desc">
-          Things I am studying systematically, but which I do not treat as independent
-          research projects.
+          <span data-lang="zh">我正在系统学习的内容，但我不将其视为独立的研究项目。</span>
+          <span data-lang="en">Things I am studying systematically, but which I do not treat as independent research projects.</span>
         </p>
       </div>
 
       <div class="split">
         <div class="split-left">
-          <h3 style="font-family: var(--font-ui); font-size: 1.02rem; margin-bottom: 0.6rem;">Differential Manifolds</h3>
+          <h3 style="font-family: var(--font-ui); font-size: 1.02rem; margin-bottom: 0.6rem;"><span data-lang="zh">微分流形</span><span data-lang="en">Differential Manifolds</span></h3>
           <ul class="r-body" style="list-style:none;">
-            <li>partitions of unity</li>
-            <li>Sard theorem</li>
-            <li>Whitney embedding theorem</li>
-            <li>vector fields and flows</li>
-            <li>Frobenius theorem</li>
-            <li>Lie groups and Lie algebras</li>
-            <li>differential forms</li>
-            <li>Stokes theorem</li>
-            <li>de Rham cohomology</li>
-            <li>degree theory</li>
-            <li>Poincaré duality</li>
-            <li>introductory Chern–Weil theory</li>
+            <li data-lang="zh">单位分解</li><li data-lang="en">partitions of unity</li>
+            <li data-lang="zh">Sard 定理</li><li data-lang="en">Sard theorem</li>
+            <li data-lang="zh">Whitney 嵌入定理</li><li data-lang="en">Whitney embedding theorem</li>
+            <li data-lang="zh">向量场与流</li><li data-lang="en">vector fields and flows</li>
+            <li data-lang="zh">Frobenius 定理</li><li data-lang="en">Frobenius theorem</li>
+            <li data-lang="zh">李群与李代数</li><li data-lang="en">Lie groups and Lie algebras</li>
+            <li data-lang="zh">微分形式</li><li data-lang="en">differential forms</li>
+            <li data-lang="zh">Stokes 定理</li><li data-lang="en">Stokes theorem</li>
+            <li data-lang="zh">de Rham 上同调</li><li data-lang="en">de Rham cohomology</li>
+            <li data-lang="zh">度理论</li><li data-lang="en">degree theory</li>
+            <li data-lang="zh">Poincaré 对偶</li><li data-lang="en">Poincaré duality</li>
+            <li data-lang="zh">Chern–Weil 理论入门</li><li data-lang="en">introductory Chern–Weil theory</li>
           </ul>
         </div>
         <div class="split-left">
-          <h3 style="font-family: var(--font-ui); font-size: 1.02rem; margin-bottom: 0.6rem;">Geometric Analysis</h3>
+          <h3 style="font-family: var(--font-ui); font-size: 1.02rem; margin-bottom: 0.6rem;"><span data-lang="zh">几何分析</span><span data-lang="en">Geometric Analysis</span></h3>
           <ul class="r-body" style="list-style:none;">
-            <li>minimal surfaces</li>
-            <li>Riemann surfaces</li>
-            <li>Hodge theory</li>
-            <li>elliptic PDE</li>
+            <li data-lang="zh">极小曲面</li><li data-lang="en">minimal surfaces</li>
+            <li data-lang="zh">黎曼曲面</li><li data-lang="en">Riemann surfaces</li>
+            <li data-lang="zh">Hodge 理论</li><li data-lang="en">Hodge theory</li>
+            <li data-lang="zh">椭圆 PDE</li><li data-lang="en">elliptic PDE</li>
           </ul>
         </div>
       </div>
 
       <div class="split" style="margin-top: 3rem;">
         <div class="split-left">
-          <h3 style="font-family: var(--font-ui); font-size: 1.02rem; margin-bottom: 0.6rem;">Mathematical Physics</h3>
-          <span class="status" style="margin-bottom: 0.8rem;">Long-term interest · currently learning</span>
+          <h3 style="font-family: var(--font-ui); font-size: 1.02rem; margin-bottom: 0.6rem;"><span data-lang="zh">数学物理</span><span data-lang="en">Mathematical Physics</span></h3>
+          <span class="status" style="margin-bottom: 0.8rem;"><span data-lang="zh">长期兴趣 · 正在学习</span><span data-lang="en">Long-term interest · currently learning</span></span>
           <ul class="r-body" style="list-style:none;">
-            <li>Quantum Mechanics</li>
-            <li>Quantum Field Theory</li>
-            <li>Gauge Theory</li>
-            <li>Yang–Mills Theory</li>
-            <li>String Theory</li>
+            <li data-lang="zh">量子力学</li><li data-lang="en">Quantum Mechanics</li>
+            <li data-lang="zh">量子场论</li><li data-lang="en">Quantum Field Theory</li>
+            <li data-lang="zh">规范理论</li><li data-lang="en">Gauge Theory</li>
+            <li data-lang="zh">Yang–Mills 理论</li><li data-lang="en">Yang–Mills Theory</li>
+            <li data-lang="zh">弦论</li><li data-lang="en">String Theory</li>
           </ul>
         </div>
       </div>
@@ -400,16 +481,16 @@
     <!-- Related writing -->
     <section class="section">
       <div class="section-head">
-        <span class="eyebrow">Writing</span>
-        <h2 class="section-title">Related Notes</h2>
+        <span class="eyebrow"><span data-lang="zh">写作</span><span data-lang="en">Writing</span></span>
+        <h2 class="section-title"><span data-lang="zh">相关笔记</span><span data-lang="en">Related Notes</span></h2>
       </div>
       <div class="post-list">
         <article>
           <a class="post-item" href="posts/Gidas-Spruck.pdf" target="_blank" rel="noopener">
             <span class="post-date">Mar 15, 2026</span>
             <span class="post-main">
-              <span class="post-title">Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations 笔记</span>
-              <span class="post-desc">Reading note on the classical paper by Gidas &amp; Spruck.</span>
+              <span class="post-title"><span data-lang="zh">《Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations》笔记</span><span data-lang="en">Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations 笔记</span></span>
+              <span class="post-desc"><span data-lang="zh">对 Gidas 与 Spruck 经典论文的阅读笔记。</span><span data-lang="en">Reading note on the classical paper by Gidas &amp; Spruck.</span></span>
             </span>
             <span class="post-arrow">→</span>
           </a>
@@ -418,8 +499,8 @@
           <a class="post-item" href="blog.html">
             <span class="post-date">2026</span>
             <span class="post-main">
-              <span class="post-title">Evens 读书笔记系列</span>
-              <span class="post-desc">Reading notes on Evans, Partial Differential Equations.</span>
+              <span class="post-title"><span data-lang="zh">Evens 读书笔记系列</span><span data-lang="en">Evens Reading Notes</span></span>
+              <span class="post-desc"><span data-lang="zh">Evans《偏微分方程》读书笔记。</span><span data-lang="en">Reading notes on Evans, Partial Differential Equations.</span></span>
             </span>
             <span class="post-arrow">→</span>
           </a>
@@ -428,8 +509,8 @@
           <a class="post-item" href="posts/Geometric%20Properties%20of%20the%20Hyperbolic%20Plane.pdf" target="_blank" rel="noopener">
             <span class="post-date">Nov 08, 2025</span>
             <span class="post-main">
-              <span class="post-title">双曲平面的一些几何性质</span>
-              <span class="post-desc">2025 年秋季学期科大数学强基讨论班大作业.</span>
+              <span class="post-title"><span data-lang="zh">双曲平面的一些几何性质</span><span data-lang="en">Some Geometric Properties of the Hyperbolic Plane</span></span>
+              <span class="post-desc"><span data-lang="zh">2025 年秋季学期科大数学强基讨论班大作业。</span><span data-lang="en">Fall 2025 USTC mathematics seminar assignment.</span></span>
             </span>
             <span class="post-arrow">→</span>
           </a>
@@ -441,11 +522,11 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
         <span class="footer-meta">Mathematics · USTC</span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline">Built with passion for Mathematics.</p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
     </div>
   </footer>
 

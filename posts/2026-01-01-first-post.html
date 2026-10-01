@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh" data-title-zh="第一篇博客 | 舒屹扬" data-title-en="First Blog Post | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>First Blog Post | Nick Shu</title>
   <link rel="icon" href="../favicon.jpg" type="image/jpeg">
   <script>
-    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'zh';}catch(e){var d='light',l='zh';}r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <script>
     window.MathJax = {
@@ -26,15 +26,18 @@
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="../index.html" class="brand">Nick Shu</a>
+      <a href="../index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="../about.html">About</a>
-          <a href="../research.html">Research</a>
-          <a href="../blog.html" class="active" aria-current="page">Blog</a>
-          <a href="../contact.html">Contact</a>
+          <a href="../about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
+          <a href="../research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
+          <a href="../blog.html" class="active" aria-current="page"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
+          <a href="../contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
         </nav>
         <div class="nav-actions">
+          <button class="lang-toggle" aria-label="Switch language / 切换语言">
+            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
+          </button>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -50,26 +53,37 @@
   <main class="page container">
     <article class="article">
       <div class="article-header">
-        <h1>First Blog Post</h1>
-        <div class="article-meta">Jan 1, 2026 · Nick Shu</div>
+        <h1><span data-lang="zh">第一篇博客</span><span data-lang="en">First Blog Post</span></h1>
+        <div class="article-meta"><span data-lang="zh">2026 年 1 月 1 日 · 舒屹扬</span><span data-lang="en">Jan 1, 2026 · Nick Shu</span></div>
       </div>
 
-      <p>
-        我的第一个博客！
-      </p>
+      <div data-lang="zh">
+        <p>
+          我的第一个博客！
+        </p>
 
-      <p>
-        早上好，或者说，大家好！
-      </p>
+        <p>
+          早上好，或者说，大家好！
+        </p>
 
-      <p>
-        作为一名大一学生，我对微分几何颇有兴趣。因此，我可能暂时会以几何分析为自己的研究方向。
+        <p>
+          作为一名大一学生，我对微分几何颇有兴趣。因此，我可能暂时会以几何分析为自己的研究方向。
 
-        我现在阅读了Evens的《偏微分方程》的一大部分并且正在读Gidas&Spruck的论文《Global and local behavior of positive solutions of nonlinear elliptic equations》，将会不定期写下自己的一些阅读思考和理解。偶尔也会夹杂一些我写的简单的小论文。
-      </p>
+          我现在阅读了Evens的《偏微分方程》的一大部分并且正在读Gidas&Spruck的论文《Global and local behavior of positive solutions of nonlinear elliptic equations》，将会不定期写下自己的一些阅读思考和理解。偶尔也会夹杂一些我写的简单的小论文。
+        </p>
+      </div>
+
+      <div data-lang="en">
+        <p>
+          An introductory post: as a first-year undergraduate I am interested in
+          differential geometry and plan to focus on geometric analysis. I am reading
+          Evans's <em>Partial Differential Equations</em> and the Gidas–Spruck paper, and
+          will write down my reading notes from time to time.
+        </p>
+      </div>
 
       <div style="margin-top: 3rem;">
-        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> Back to Blog</a>
+        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> <span data-lang="zh">返回博客</span><span data-lang="en">Back to Blog</span></a>
       </div>
     </article>
   </main>
@@ -77,11 +91,11 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
         <span class="footer-meta">Mathematics · USTC</span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline">Built with passion for Mathematics.</p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
     </div>
   </footer>
 

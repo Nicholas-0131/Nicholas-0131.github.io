@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh" data-title-zh="关于 | 舒屹扬" data-title-en="About | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
   <meta name="description" content="About Nick Shu — undergraduate student in Mathematics at the School of the Gifted Young, USTC.">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <script>
-    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'zh';}catch(e){var d='light',l='zh';}r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,15 +18,18 @@
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="index.html" class="brand">Nick Shu</a>
+      <a href="index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="about.html" class="active" aria-current="page">About</a>
-          <a href="research.html">Research</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact.html">Contact</a>
+          <a href="about.html" class="active" aria-current="page"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
+          <a href="research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
+          <a href="blog.html"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
+          <a href="contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
         </nav>
         <div class="nav-actions">
+          <button class="lang-toggle" aria-label="Switch language / 切换语言">
+            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
+          </button>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -41,45 +44,56 @@
 
   <main class="page container">
     <section class="section-head">
-      <span class="eyebrow">About</span>
-      <h1 class="section-title">About Me</h1>
+      <span class="eyebrow"><span data-lang="zh">关于</span><span data-lang="en">About</span></span>
+      <h1 class="section-title"><span data-lang="zh">关于我</span><span data-lang="en">About Me</span></h1>
     </section>
 
     <div class="split">
       <div class="split-left">
-        <p>
+        <p data-lang="zh">
+          你好！我是 <strong>舒屹扬</strong>（Nick Shu），中国科学技术大学（USTC）<strong>少年班学院（SGY）</strong>的一名本科生。
+        </p>
+        <p data-lang="en">
           Hello! I am <strong>Nick Shu</strong>, an undergraduate student at the
           <strong>School of the Gifted Young (SGY)</strong>, University of Science
           and Technology of China (USTC).
         </p>
-        <p>
+        <p data-lang="zh">
+          我的主要学术兴趣在数学领域。
+        </p>
+        <p data-lang="en">
           My primary academic interests lie in the field of Mathematics.
         </p>
       </div>
 
       <div>
-        <h2 class="section-title" style="font-size: 1.3rem; margin-bottom: 1.25rem;">Short CV</h2>
+        <h2 class="section-title" style="font-size: 1.3rem; margin-bottom: 1.25rem;"><span data-lang="zh">简历</span><span data-lang="en">Short CV</span></h2>
         <div class="timeline">
           <div class="tl-item">
-            <span class="tl-date">Present</span>
+            <span class="tl-date"><span data-lang="zh">现在</span><span data-lang="en">Present</span></span>
             <div class="tl-body">
-              <h3>University of Science and Technology of China</h3>
-              <div class="role">School of the Gifted Young</div>
+              <h3><span data-lang="zh">中国科学技术大学</span><span data-lang="en">University of Science and Technology of China</span></h3>
+              <div class="role"><span data-lang="zh">少年班学院</span><span data-lang="en">School of the Gifted Young</span></div>
               <ul>
-                <li>Class Youth League Branch Secretary of Class 5, Grade 25</li>
-                <li>Member of the Academic Practice Department of the College Student Union</li>
+                <li data-lang="zh">25 级 5 班团支部书记</li>
+                <li data-lang="en">Class Youth League Branch Secretary of Class 5, Grade 25</li>
+                <li data-lang="zh">院学生会学术实践部成员</li>
+                <li data-lang="en">Member of the Academic Practice Department of the College Student Union</li>
               </ul>
             </div>
           </div>
           <div class="tl-item">
-            <span class="tl-date">Previously</span>
+            <span class="tl-date"><span data-lang="zh">此前</span><span data-lang="en">Previously</span></span>
             <div class="tl-body">
-              <h3><a href="http://www.aqyz.net" target="_blank" rel="noopener" class="link">Anqing No.1 Middle School</a></h3>
-              <div class="role">Secondary education</div>
+              <h3><a href="http://www.aqyz.net" target="_blank" rel="noopener" class="link"><span data-lang="zh">安庆市第一中学</span><span data-lang="en">Anqing No.1 Middle School</span></a></h3>
+              <div class="role"><span data-lang="zh">中学教育</span><span data-lang="en">Secondary education</span></div>
               <ul>
-                <li>Class Youth League Branch Secretary of Class 1, Grade 23</li>
-                <li>President of the Mathematics Club</li>
-                <li>Minister of the Learning Department of the Student Union</li>
+                <li data-lang="zh">23 级 1 班团支部书记</li>
+                <li data-lang="en">Class Youth League Branch Secretary of Class 1, Grade 23</li>
+                <li data-lang="zh">数学社社长</li>
+                <li data-lang="en">President of the Mathematics Club</li>
+                <li data-lang="zh">学生会学习部部长</li>
+                <li data-lang="en">Minister of the Learning Department of the Student Union</li>
               </ul>
             </div>
           </div>
@@ -89,28 +103,28 @@
 
     <section class="section">
       <div class="section-head">
-        <span class="eyebrow">Skills</span>
-        <h2 class="section-title">Skills</h2>
+        <span class="eyebrow"><span data-lang="zh">技能</span><span data-lang="en">Skills</span></span>
+        <h2 class="section-title"><span data-lang="zh">技能</span><span data-lang="en">Skills</span></h2>
       </div>
       <div class="timeline">
         <div class="tl-item">
-          <span class="tl-date">Typesetting</span>
+          <span class="tl-date"><span data-lang="zh">排版</span><span data-lang="en">Typesetting</span></span>
           <div class="tl-body">
             <h3>LaTeX</h3>
-            <div class="role">Academic typesetting</div>
+            <div class="role"><span data-lang="zh">学术排版</span><span data-lang="en">Academic typesetting</span></div>
           </div>
         </div>
         <div class="tl-item">
-          <span class="tl-date">Field</span>
+          <span class="tl-date"><span data-lang="zh">领域</span><span data-lang="en">Field</span></span>
           <div class="tl-body">
-            <h3>Mathematics</h3>
-            <div class="role">Primary academic interest</div>
+            <h3><span data-lang="zh">数学</span><span data-lang="en">Mathematics</span></h3>
+            <div class="role"><span data-lang="zh">主要学术兴趣</span><span data-lang="en">Primary academic interest</span></div>
           </div>
         </div>
         <div class="tl-item">
-          <span class="tl-date">Languages</span>
+          <span class="tl-date"><span data-lang="zh">语言</span><span data-lang="en">Languages</span></span>
           <div class="tl-body">
-            <h3>Chinese (Native) · English (Fluent)</h3>
+            <h3><span data-lang="zh">中文（母语）· 英语（流利）</span><span data-lang="en">Chinese (Native) · English (Fluent)</span></h3>
           </div>
         </div>
       </div>
@@ -120,11 +134,11 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
         <span class="footer-meta">Mathematics · USTC</span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline">Built with passion for Mathematics.</p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
     </div>
   </footer>
 

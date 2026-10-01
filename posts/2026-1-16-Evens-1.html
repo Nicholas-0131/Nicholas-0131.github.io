@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evens-1 | Nick Shu</title>
   <link rel="icon" href="../favicon.jpg" type="image/jpeg">
   <script>
-    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'zh';}catch(e){var d='light',l='zh';}r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <script>
     window.MathJax = {
@@ -26,15 +26,18 @@
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="../index.html" class="brand">Nick Shu</a>
+      <a href="../index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="../about.html">About</a>
-          <a href="../research.html">Research</a>
-          <a href="../blog.html" class="active" aria-current="page">Blog</a>
-          <a href="../contact.html">Contact</a>
+          <a href="../about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
+          <a href="../research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
+          <a href="../blog.html" class="active" aria-current="page"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
+          <a href="../contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
         </nav>
         <div class="nav-actions">
+          <button class="lang-toggle" aria-label="Switch language / 切换语言">
+            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
+          </button>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -50,122 +53,135 @@
   <main class="page container">
     <article class="article">
       <div class="article-header">
-        <h1>EVENS NOTES</h1>
-        <div class="article-meta">Jan 16, 2026 · Nick Shu</div>
+        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span></h1>
+        <div class="article-meta"><span data-lang="zh">2026 年 1 月 16 日 · 舒屹扬</span><span data-lang="en">Jan 16, 2026 · Nick Shu</span></div>
       </div>
 
-      <p>
-        这是Evens的<em>偏微分方程（Partial Differential Equation）</em>的读书笔记。我对正文的第一章进行了一个简单的回顾，顺序和书上不太一样。
-      </p>
+      <div data-lang="zh">
+        <p>
+          这是Evens的<em>偏微分方程（Partial Differential Equation）</em>的读书笔记。我对正文的第一章进行了一个简单的回顾，顺序和书上不太一样。
+        </p>
 
-      <h2>
-        特征与传输方程
-      </h2>
+        <h2>
+          特征与传输方程
+        </h2>
 
-      <p>
-        一般而言，我们研究的PDE通常是这样的$$\begin{cases}Lu=f\quad\text{in}\quad\Omega,\\Bu=h\quad\text{on}\quad\Gamma\subseteq\partial\Omega,\end{cases}$$其中$L,B$是两个算子.
+        <p>
+          一般而言，我们研究的PDE通常是这样的$$\begin{cases}Lu=f\quad\text{in}\quad\Omega,\\Bu=h\quad\text{on}\quad\Gamma\subseteq\partial\Omega,\end{cases}$$其中$L,B$是两个算子.
 
-        因此，我们希望能够找到一族曲线，在其中每一条曲线上面，我们可以把$Lu$写成一个ODE.进而，我们可以通过把$\Omega$上面的点和$\Gamma$上的点进行一个连接，利用ODE方法研究PDE.这条曲线就叫做<strong>特征曲线</strong>，相应地那个ODE叫做<strong>特征ODE</strong>.
-      </p>
+          因此，我们希望能够找到一族曲线，在其中每一条曲线上面，我们可以把$Lu$写成一个ODE.进而，我们可以通过把$\Omega$上面的点和$\Gamma$上的点进行一个连接，利用ODE方法研究PDE.这条曲线就叫做<strong>特征曲线</strong>，相应地那个ODE叫做<strong>特征ODE</strong>.
+        </p>
 
-      <p>
-        因此重要的问题是，如何求得特征曲线，考虑一阶PDE$F(\mathbf{D}u,u,\boldsymbol{x})=0$，并令$z(s)=u(\boldsymbol{x}(s)),\boldsymbol{p}(s)=\mathbf{D}_{\boldsymbol{x}}u(\boldsymbol{x}(s))$.那么特征曲线的方程就是$$\begin{cases}\dot{\boldsymbol{p}}(s)=-\mathbf{D}_{\boldsymbol{x}}F(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s))-F_z(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s))\boldsymbol{p}(s),\\\dot{z}(s)=\mathbf{D}_{\boldsymbol{p}}F(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s))\cdot\boldsymbol{p}(s),\\\dot{\boldsymbol{x}}(s)=\mathbf{D}_{\boldsymbol{p}}F(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s)).\end{cases}$$
+        <p>
+          因此重要的问题是，如何求得特征曲线，考虑一阶PDE$F(\mathbf{D}u,u,\boldsymbol{x})=0$，并令$z(s)=u(\boldsymbol{x}(s)),\boldsymbol{p}(s)=\mathbf{D}_{\boldsymbol{x}}u(\boldsymbol{x}(s))$.那么特征曲线的方程就是$$\begin{cases}\dot{\boldsymbol{p}}(s)=-\mathbf{D}_{\boldsymbol{x}}F(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s))-F_z(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s))\boldsymbol{p}(s),\\\dot{z}(s)=\mathbf{D}_{\boldsymbol{p}}F(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s))\cdot\boldsymbol{p}(s),\\\dot{\boldsymbol{x}}(s)=\mathbf{D}_{\boldsymbol{p}}F(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s)).\end{cases}$$
 
-        这个方程组将会确定一族曲线，在其中任何一条曲线上面，我们总可以把PDE改写成$s$的ODE.
-      </p>
+          这个方程组将会确定一族曲线，在其中任何一条曲线上面，我们总可以把PDE改写成$s$的ODE.
+        </p>
 
-      <p>
-        对于线性方程，即$F(\mathbf{D}u,u,\boldsymbol{x})=\boldsymbol{b}(\boldsymbol{c})\cdot\mathbf{D}u(\boldsymbol{x})+c(\boldsymbol{x})u(\boldsymbol{x})=0$而言，特征方程可以写成$$\begin{cases}\dot{\boldsymbol{x}}(s)=\boldsymbol{b}(\boldsymbol{x}(s)),\\\dot{z}(s)=-c(\boldsymbol{x}(s))z(s).\end{cases}$$
+        <p>
+          对于线性方程，即$F(\mathbf{D}u,u,\boldsymbol{x})=\boldsymbol{b}(\boldsymbol{c})\cdot\mathbf{D}u(\boldsymbol{x})+c(\boldsymbol{x})u(\boldsymbol{x})=0$而言，特征方程可以写成$$\begin{cases}\dot{\boldsymbol{x}}(s)=\boldsymbol{b}(\boldsymbol{x}(s)),\\\dot{z}(s)=-c(\boldsymbol{x}(s))z(s).\end{cases}$$
 
-        我们可以直接通过第一个式子求出$\boldsymbol{x}$作为$s$的函数，代入第二个式子当中就可以方便地得到$z(s)$了，不过可能需要一个“回代”过程，即还是需要把$z(s)$改写成$\boldsymbol{x}$的函数.
-      </p>
+          我们可以直接通过第一个式子求出$\boldsymbol{x}$作为$s$的函数，代入第二个式子当中就可以方便地得到$z(s)$了，不过可能需要一个“回代”过程，即还是需要把$z(s)$改写成$\boldsymbol{x}$的函数.
+        </p>
 
-      <p>
-        <strong>例</strong>$\quad$求解方程$$\begin{cases}x_1u_{x_2}-x_2u_{x_1}=u\quad\text{in}\quad\{x_1>0,x_2>0\},\\u(\boldsymbol{x})=g(\boldsymbol{x})\quad\text{on}\quad\{x_1>0,x_2=0\}.\end{cases}$$
-      </p>
+        <p>
+          <strong>例</strong>$\quad$求解方程$$\begin{cases}x_1u_{x_2}-x_2u_{x_1}=u\quad\text{in}\quad\{x_1>0,x_2>0\},\\u(\boldsymbol{x})=g(\boldsymbol{x})\quad\text{on}\quad\{x_1>0,x_2=0\}.\end{cases}$$
+        </p>
 
-      <p>
-        <strong>解答</strong>$\quad$利用上述方程，我们发现，特征ODE为$\dot{x}_1=-x_2,\dot{x}_2=x_1,\dot{z}=z$，不难发现，$x_1(s)=(x_1^2+x_2^2)^{1/2}\cos s,x_2(s)=(x_1^2+x_2^2)^{1/2}\sin s$，可以解出，$z(s)=z_0\text{e}^s=g((x_1^2+x_2^2)^{1/2})\text{e}^{\arctan(x_2/x_1)}$.
-      </p>
+        <p>
+          <strong>解答</strong>$\quad$利用上述方程，我们发现，特征ODE为$\dot{x}_1=-x_2,\dot{x}_2=x_1,\dot{z}=z$，不难发现，$x_1(s)=(x_1^2+x_2^2)^{1/2}\cos s,x_2(s)=(x_1^2+x_2^2)^{1/2}\sin s$，可以解出，$z(s)=z_0\text{e}^s=g((x_1^2+x_2^2)^{1/2})\text{e}^{\arctan(x_2/x_1)}$.
+        </p>
 
-      <p>
-        对于拟线性方程而言，他的形式一般是$F(\mathbf{D}u,u,\boldsymbol{x})=\boldsymbol{b}(\boldsymbol{x},u(\boldsymbol{x}))\cdot\mathbf{D}u(\boldsymbol{x})\cdot\mathbf{D}u(\boldsymbol{x})+c(\boldsymbol{x},u(\boldsymbol{x}))=0$.对应的特征方程就是$$\begin{cases}\dot{\boldsymbol{x}}(s)=\boldsymbol{b}(\boldsymbol{x}(s),z(s)),\\\dot{z}(s)=-c(\boldsymbol{x}(s),z(s)).\end{cases}$$实际上，绝大多数情况这已经非常困难了，下面只能举出一个较为简单的例子.
-      </p>
+        <p>
+          对于拟线性方程而言，他的形式一般是$F(\mathbf{D}u,u,\boldsymbol{x})=\boldsymbol{b}(\boldsymbol{x},u(\boldsymbol{x}))\cdot\mathbf{D}u(\boldsymbol{x})\cdot\mathbf{D}u(\boldsymbol{x})+c(\boldsymbol{x},u(\boldsymbol{x}))=0$.对应的特征方程就是$$\begin{cases}\dot{\boldsymbol{x}}(s)=\boldsymbol{b}(\boldsymbol{x}(s),z(s)),\\\dot{z}(s)=-c(\boldsymbol{x}(s),z(s)).\end{cases}$$实际上，绝大多数情况这已经非常困难了，下面只能举出一个较为简单的例子.
+        </p>
 
-      <p>
-        <strong>例</strong>$\quad$$\Omega$和$\Gamma$的设定和上面例子一样，而方程变成$\begin{cases}u_{x_1}+u_{x_2}=u^2,\\u(x_1,0)=g(x_1).\end{cases}$
-      </p>
+        <p>
+          <strong>例</strong>$\quad$$\Omega$和$\Gamma$的设定和上面例子一样，而方程变成$\begin{cases}u_{x_1}+u_{x_2}=u^2,\\u(x_1,0)=g(x_1).\end{cases}$
+        </p>
 
-      <p>
-        <strong>解答</strong>$\quad$利用前面所说的式子来看，也就是要求$\dot{x}_1(s)=1,\dot{x}_2(s)=1,\dot{z}(s)=z^2(s)$，从而$x_1(s)=x_1^0+s,x_2(s)=s$（注意边界上，$x_2(0)=0$），因此，$z(s)=\frac{z^0}{1-sz^0}=\frac{g(x_1-x_2)}{1-x_2g(x_1-x_2)}$.
-      </p>
+        <p>
+          <strong>解答</strong>$\quad$利用前面所说的式子来看，也就是要求$\dot{x}_1(s)=1,\dot{x}_2(s)=1,\dot{z}(s)=z^2(s)$，从而$x_1(s)=x_1^0+s,x_2(s)=s$（注意边界上，$x_2(0)=0$），因此，$z(s)=\frac{z^0}{1-sz^0}=\frac{g(x_1-x_2)}{1-x_2g(x_1-x_2)}$.
+        </p>
 
-      <p>
-        对于完全非线性方程来说，我们通常需要进行积分.这里没有一般方法解决，甚至绝大多数情况下完全不可能得到任何有效结论.
-      </p>
+        <p>
+          对于完全非线性方程来说，我们通常需要进行积分.这里没有一般方法解决，甚至绝大多数情况下完全不可能得到任何有效结论.
+        </p>
 
-      <p>
-        <strong>例</strong>$\quad\Omega$不变而$\Gamma$变为$\{x_1=0\}$，求解方程$$\begin{cases}u_{x_1}u_{x_2}=u,\\u(0,x_2)=x_2^2.\end{cases}$$
-      </p>
+        <p>
+          <strong>例</strong>$\quad\Omega$不变而$\Gamma$变为$\{x_1=0\}$，求解方程$$\begin{cases}u_{x_1}u_{x_2}=u,\\u(0,x_2)=x_2^2.\end{cases}$$
+        </p>
 
-      <p>
-        <strong>解答</strong>$\quad$这时候应该说$F(\boldsymbol{p},z,\boldsymbol{x})=p_1p_2-z$，从而特征ODE写作$$\begin{cases}\dot{p}_1=p_1,\;\dot{p}_2=p_2,\\\dot{z}=2p_1p_2,\\\dot{x}_1=p_2,\;\dot{x}_2=p_1.\end{cases}$$从而，$x_1(s)=c(\text{e}^s-1)$从而$c=p_2^0$，同理，$x_2(s)=x_2^0+p_1^0(\text{e}^s-1)$.于是特征ODE的解就得到了，进而代入一下就能得到$u=\frac{(x_1+4x_2)^2}{16}$.
-      </p>
+        <p>
+          <strong>解答</strong>$\quad$这时候应该说$F(\boldsymbol{p},z,\boldsymbol{x})=p_1p_2-z$，从而特征ODE写作$$\begin{cases}\dot{p}_1=p_1,\;\dot{p}_2=p_2,\\\dot{z}=2p_1p_2,\\\dot{x}_1=p_2,\;\dot{x}_2=p_1.\end{cases}$$从而，$x_1(s)=c(\text{e}^s-1)$从而$c=p_2^0$，同理，$x_2(s)=x_2^0+p_1^0(\text{e}^s-1)$.于是特征ODE的解就得到了，进而代入一下就能得到$u=\frac{(x_1+4x_2)^2}{16}$.
+        </p>
 
-      <p>
-        由此可以看出，特征法将PDE变成了ODE让我们可以解决，但是绝大多数方法无法通过这种方法解决，其原因包括特征曲线和特征ODE都很难得到，也不容易求解.不过从上面推导来看，线性方程是简单的，最经典的就是<strong>传输方程</strong>.
-      </p>
+        <p>
+          由此可以看出，特征法将PDE变成了ODE让我们可以解决，但是绝大多数方法无法通过这种方法解决，其原因包括特征曲线和特征ODE都很难得到，也不容易求解.不过从上面推导来看，线性方程是简单的，最经典的就是<strong>传输方程</strong>.
+        </p>
 
-      <p>
-        考虑方程$u_t+\boldsymbol{b}\cdot\mathbf{D}u=0$，其中$(\boldsymbol{x},t)\in\mathbb{R}^n\times[0,+\infty)$.不难发现（事实上不需要特征曲线方程），如果记$z(s)=u(\boldsymbol{x}+s\boldsymbol{b},t+s)$，那么$\dot{z}(s)=0$.
+        <p>
+          考虑方程$u_t+\boldsymbol{b}\cdot\mathbf{D}u=0$，其中$(\boldsymbol{x},t)\in\mathbb{R}^n\times[0,+\infty)$.不难发现（事实上不需要特征曲线方程），如果记$z(s)=u(\boldsymbol{x}+s\boldsymbol{b},t+s)$，那么$\dot{z}(s)=0$.
 
-        这就不难看出，$z(s)$是一个定值，从而，沿着直线$(\boldsymbol{x}+s\boldsymbol{b},t+s)$当中，$z$保持不变，这样我们可以把所有$(\boldsymbol{x},t)\in\mathbb{R}^n\times(0,+\infty)$通过$(\boldsymbol{x}-t\boldsymbol{b},0)$变到$\mathbb{R}^n\times\{t=0\}$上面去，从而这个方程的解就是（取一般意义的$t=0$为边值，这上面$u=g$）$$u(\boldsymbol{x},t)=g(\boldsymbol{x}-t\boldsymbol{b}).$$
-      </p>
+          这就不难看出，$z(s)$是一个定值，从而，沿着直线$(\boldsymbol{x}+s\boldsymbol{b},t+s)$当中，$z$保持不变，这样我们可以把所有$(\boldsymbol{x},t)\in\mathbb{R}^n\times(0,+\infty)$通过$(\boldsymbol{x}-t\boldsymbol{b},0)$变到$\mathbb{R}^n\times\{t=0\}$上面去，从而这个方程的解就是（取一般意义的$t=0$为边值，这上面$u=g$）$$u(\boldsymbol{x},t)=g(\boldsymbol{x}-t\boldsymbol{b}).$$
+        </p>
 
-      <p>
-        同理，如果上述方程变得非齐次，即形如$u_t+\boldsymbol{b}\cdot\mathbf{D}u=f$，那么我们只需要注意到这时候$\dot{z}(s)=f$，从而$$u(\boldsymbol{x},t)-g(\boldsymbol{x}-t\boldsymbol{b})=\int_0^tf(\boldsymbol{x}+(s-t)\boldsymbol{b},s)\text{d}s.$$我们将会看到这个公式非常有用.
-      </p>
+        <p>
+          同理，如果上述方程变得非齐次，即形如$u_t+\boldsymbol{b}\cdot\mathbf{D}u=f$，那么我们只需要注意到这时候$\dot{z}(s)=f$，从而$$u(\boldsymbol{x},t)-g(\boldsymbol{x}-t\boldsymbol{b})=\int_0^tf(\boldsymbol{x}+(s-t)\boldsymbol{b},s)\text{d}s.$$我们将会看到这个公式非常有用.
+        </p>
 
-      <p>
-        作为传播方程的应用，我们来讲讲二维波动方程.为什么先讲二维波动方程呢？因为它和非齐次传输方程关系密切，我们先不讨论物理背景，只关心怎么解出$u_{tt}-u_{xx}=0$这个方程.首先我们因式分解一下就发现，需要的是$(\partial_t+\partial_x)(\partial_t-\partial_x)u=0$.
+        <p>
+          作为传播方程的应用，我们来讲讲二维波动方程.为什么先讲二维波动方程呢？因为它和非齐次传输方程关系密切，我们先不讨论物理背景，只关心怎么解出$u_{tt}-u_{xx}=0$这个方程.首先我们因式分解一下就发现，需要的是$(\partial_t+\partial_x)(\partial_t-\partial_x)u=0$.
 
-        首先对算子$(\partial_t+\partial_x)$用传输方程的结论，不难得到这需要$(\partial_t-\partial_x)u=a(x-t)$，然后在对它利用传输方程的结论，其中$f(x,t)=a(x-t)$，这样，$u(x,t)=b(x+t)+\int_0^ta(x+(t-s)-s)\text{d}s=b(x+t)+\frac{1}{2}\int_{x-t}^{x+t}a(y)\text{d}y$.如果再写的好看一点（或者说按照一般初值条件的写法），就是$$u(x,t)=\frac{1}{2}[g(x+t)+g(x-t)]+\frac{1}{2}\int_{x-t}^{x+t}h(y)\text{d}y,$$其中初值条件为$u(x,0)=g(x),u_t(x,0)=h(x)$.这个公式叫做<strong>d'Alembert公式</strong>.
-      </p>
+          首先对算子$(\partial_t+\partial_x)$用传输方程的结论，不难得到这需要$(\partial_t-\partial_x)u=a(x-t)$，然后在对它利用传输方程的结论，其中$f(x,t)=a(x-t)$，这样，$u(x,t)=b(x+t)+\int_0^ta(x+(t-s)-s)\text{d}s=b(x+t)+\frac{1}{2}\int_{x-t}^{x+t}a(y)\text{d}y$.如果再写的好看一点（或者说按照一般初值条件的写法），就是$$u(x,t)=\frac{1}{2}[g(x+t)+g(x-t)]+\frac{1}{2}\int_{x-t}^{x+t}h(y)\text{d}y,$$其中初值条件为$u(x,0)=g(x),u_t(x,0)=h(x)$.这个公式叫做<strong>d'Alembert公式</strong>.
+        </p>
 
-      <p>
-        当然我们可以把波动方程推广到高维，不过我们需要更深入的方法，毕竟我们没有办法进行因式分解，当然也就无法利用传播方程的公式了.
-      </p>
+        <p>
+          当然我们可以把波动方程推广到高维，不过我们需要更深入的方法，毕竟我们没有办法进行因式分解，当然也就无法利用传播方程的公式了.
+        </p>
 
-      <h2>
-        算子的基本解
-      </h2>
+        <h2>
+          算子的基本解
+        </h2>
 
-      <p>
-        这里我想简单说说基本解，一般而言，对于<strong>常系数线性微分算子</strong>$L$，如果一个$\mathbb{R}^n$上面的分布$E$满足$LE=\delta$，那么我们就称$E$为$L$的<strong>基本解</strong>.为什么说它基本？是因为方程$Lu=f$的解可以写成$$u(\boldsymbol{x})=\int_{\mathbb{R}^n}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y}.$$
+        <p>
+          这里我想简单说说基本解，一般而言，对于<strong>常系数线性微分算子</strong>$L$，如果一个$\mathbb{R}^n$上面的分布$E$满足$LE=\delta$，那么我们就称$E$为$L$的<strong>基本解</strong>.为什么说它基本？是因为方程$Lu=f$的解可以写成$$u(\boldsymbol{x})=\int_{\mathbb{R}^n}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y}.$$
 
-        以下将在分布意义下证明$Lu=f$.
-      </p>
+          以下将在分布意义下证明$Lu=f$.
+        </p>
 
-      <p>
-        考虑对于$\varphi\in C_c^\infty(\mathbb{R}^n)$，我们要证明$\langle Lu,\varphi\rangle=\langle f,\varphi\rangle$，从而分布意义下$Lu=f$.首先，利用分部积分法，不难验证\[\langle\partial^{\boldsymbol{\alpha}}u,\varphi\rangle=(-1)^{|\boldsymbol{\alpha}|}\langle u,\partial^{\boldsymbol{\alpha}}\varphi\rangle.\]再利用定义，可以写$u=E*f$，从而原式$=\langle E,\tilde{f}*L^*u\rangle$，其中$L^*$就是把$L$的每一个$\partial^{\boldsymbol{\alpha}}$元素乘上一个$(-1)^{|\boldsymbol{\alpha}|}$.然后把$L$拉回到左边来，又变成$\langle LE,\tilde{f}*\varphi\rangle$.而重要的是，$LE=\delta$，这下这个式子只剩下了$(\tilde{f}*\varphi)(0)$这一项，有趣的是，这就是$$\int_{\mathbb{R}^n}f(-\boldsymbol{y})\varphi(-\boldsymbol{y})\text{d}\boldsymbol{y}=\int_{\mathbb{R}^n}f(\boldsymbol{y})\varphi(\boldsymbol{y})\text{d}\boldsymbol{y}=\langle f,\varphi\rangle.$$由此可见，$Lu=f$在分布意义下成立.
-      </p>
+        <p>
+          考虑对于$\varphi\in C_c^\infty(\mathbb{R}^n)$，我们要证明$\langle Lu,\varphi\rangle=\langle f,\varphi\rangle$，从而分布意义下$Lu=f$.首先，利用分部积分法，不难验证\[\langle\partial^{\boldsymbol{\alpha}}u,\varphi\rangle=(-1)^{|\boldsymbol{\alpha}|}\langle u,\partial^{\boldsymbol{\alpha}}\varphi\rangle.\]再利用定义，可以写$u=E*f$，从而原式$=\langle E,\tilde{f}*L^*u\rangle$，其中$L^*$就是把$L$的每一个$\partial^{\boldsymbol{\alpha}}$元素乘上一个$(-1)^{|\boldsymbol{\alpha}|}$.然后把$L$拉回到左边来，又变成$\langle LE,\tilde{f}*\varphi\rangle$.而重要的是，$LE=\delta$，这下这个式子只剩下了$(\tilde{f}*\varphi)(0)$这一项，有趣的是，这就是$$\int_{\mathbb{R}^n}f(-\boldsymbol{y})\varphi(-\boldsymbol{y})\text{d}\boldsymbol{y}=\int_{\mathbb{R}^n}f(\boldsymbol{y})\varphi(\boldsymbol{y})\text{d}\boldsymbol{y}=\langle f,\varphi\rangle.$$由此可见，$Lu=f$在分布意义下成立.
+        </p>
 
-      <p>
-        不过一般情形下，不一定成立，例如假如系数$a_{\boldsymbol{\alpha}}=a_{\boldsymbol{\alpha}}(\boldsymbol{x})$，那么$$\begin{split}L(E*f)&=a_{\boldsymbol{\alpha}}\int\partial_{\boldsymbol{\alpha}}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y},\\(LE)*f&=\int a_{\boldsymbol{\alpha}}\partial_{\boldsymbol{\alpha}}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y}.\end{split}$$两者不见得相等（究其原因就是系数不能提出积分号外）.
-      </p>
+        <p>
+          不过一般情形下，不一定成立，例如假如系数$a_{\boldsymbol{\alpha}}=a_{\boldsymbol{\alpha}}(\boldsymbol{x})$，那么$$\begin{split}L(E*f)&=a_{\boldsymbol{\alpha}}\int\partial_{\boldsymbol{\alpha}}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y},\\(LE)*f&=\int a_{\boldsymbol{\alpha}}\partial_{\boldsymbol{\alpha}}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y}.\end{split}$$两者不见得相等（究其原因就是系数不能提出积分号外）.
+        </p>
 
-      <p>
-        当然基本解可以让我知道很多东西，例如最经典的例子就是我们可以利用基本解求出高维波动方程，即$L=\partial_t^2-\Delta$，那么它的基本解就是
-      </p>
+        <p>
+          当然基本解可以让我知道很多东西，例如最经典的例子就是我们可以利用基本解求出高维波动方程，即$L=\partial_t^2-\Delta$，那么它的基本解就是
+        </p>
 
-      \[E_L=\begin{cases}\frac{1}{2(2\pi)^m}\partial_t^{m-1}\left(\frac{\delta(t-|\boldsymbol{x}|)}{|\boldsymbol{x}|}\right),&n=2m+1;\\ \frac{1}{(2\pi)^m}\partial_t^{m-1}\left(\frac{\mathbf{1}_{\{t>|\boldsymbol{x}|\}}}{\sqrt{t^2-\boldsymbol{x}^2}}\right),&n=2m.\end{cases}\]
+        \[E_L=\begin{cases}\frac{1}{2(2\pi)^m}\partial_t^{m-1}\left(\frac{\delta(t-|\boldsymbol{x}|)}{|\boldsymbol{x}|}\right),&n=2m+1;\\ \frac{1}{(2\pi)^m}\partial_t^{m-1}\left(\frac{\mathbf{1}_{\{t>|\boldsymbol{x}|\}}}{\sqrt{t^2-\boldsymbol{x}^2}}\right),&n=2m.\end{cases}\]
 
-      <p>
-      由此可以发现奇数维情况下<strong>Huygens原理</strong>成立.当然还有其他很多算子也都具有基本解，例如算子$L=\partial_t-\Delta$的基本解就是<strong>热核</strong>$E_L=\mathbf{1}_{\{t>0\}}\frac{1}{(4\pi t)^{n/2}}\exp\left(-\frac{|\boldsymbol{x}|^2}{4t}\right)$.
-      </p>
+        <p>
+        由此可以发现奇数维情况下<strong>Huygens原理</strong>成立.当然还有其他很多算子也都具有基本解，例如算子$L=\partial_t-\Delta$的基本解就是<strong>热核</strong>$E_L=\mathbf{1}_{\{t>0\}}\frac{1}{(4\pi t)^{n/2}}\exp\left(-\frac{|\boldsymbol{x}|^2}{4t}\right)$.
+        </p>
+      </div>
+
+      <div data-lang="en">
+        <p>
+          This note reviews the first chapter of Evans's <em>Partial Differential Equations</em>,
+          in an order slightly different from the book. It covers the method of characteristics
+          for first-order PDEs — linear, quasilinear, and fully nonlinear equations — the
+          transport equation, d'Alembert's formula for the one-dimensional wave equation, and
+          the notion of fundamental solutions, including the wave and heat kernels and
+          Huygens' principle.
+        </p>
+      </div>
 
       <div style="margin-top: 3rem;">
-        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> Back to Blog</a>
+        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> <span data-lang="zh">返回博客</span><span data-lang="en">Back to Blog</span></a>
       </div>
     </article>
   </main>
@@ -173,11 +189,11 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
         <span class="footer-meta">Mathematics · USTC</span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline">Built with passion for Mathematics.</p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
     </div>
   </footer>
 

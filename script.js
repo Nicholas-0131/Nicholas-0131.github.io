@@ -20,15 +20,36 @@
     try { localStorage.setItem("theme", theme); } catch (e) {}
   }
 
-  // Early application to avoid flash is done by the inline snippet in <head>;
-  // here we only wire up the toggle and keep the icon consistent.
-  var toggles = document.querySelectorAll(".theme-toggle");
-  toggles.forEach(function (btn) {
+  var themeToggles = document.querySelectorAll(".theme-toggle");
+  themeToggles.forEach(function (btn) {
     btn.addEventListener("click", function () {
       var current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
       applyTheme(current === "dark" ? "light" : "dark");
     });
   });
+
+  /* ---------- Language ---------- */
+  function getLang() {
+    return root.getAttribute("data-lang") === "en" ? "en" : "zh";
+  }
+
+  function applyLang(lang) {
+    root.setAttribute("lang", lang);
+    root.setAttribute("data-lang", lang);
+    var t = root.getAttribute("data-title-" + lang);
+    if (t) document.title = t;
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+  }
+
+  var langToggles = document.querySelectorAll(".lang-toggle");
+  langToggles.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      applyLang(getLang() === "zh" ? "en" : "zh");
+    });
+  });
+
+  // Ensure title is set correctly on first paint.
+  applyLang(getLang());
 
   /* ---------- Header border on scroll ---------- */
   var header = document.querySelector(".site-header");
@@ -48,7 +69,6 @@
       var open = nav.classList.toggle("open");
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
-    // Close on link click (mobile)
     nav.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () {
         nav.classList.remove("open");
@@ -61,10 +81,13 @@
   document.querySelectorAll("[data-copy]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var value = btn.getAttribute("data-copy");
-      var original = btn.textContent;
+      var lang = getLang();
+      var el = btn.querySelector('[data-lang="' + lang + '"]') || btn;
+      var original = el.textContent;
       function done() {
-        btn.textContent = "Copied";
-        setTimeout(function () { btn.textContent = original; }, 1600);
+        el.textContent = btn.getAttribute("data-copied-" + lang) ||
+          (lang === "en" ? "Copied" : "已复制");
+        setTimeout(function () { el.textContent = original; }, 1600);
       }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(value).then(done, function () { fallbackCopy(value, done); });

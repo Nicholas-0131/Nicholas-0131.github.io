@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evens-5 | Nick Shu</title>
   <link rel="icon" href="../favicon.jpg" type="image/jpeg">
   <script>
-    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'zh';}catch(e){var d='light',l='zh';}r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <script>
     window.MathJax = {
@@ -26,15 +26,18 @@
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="../index.html" class="brand">Nick Shu</a>
+      <a href="../index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="../about.html">About</a>
-          <a href="../research.html">Research</a>
-          <a href="../blog.html" class="active" aria-current="page">Blog</a>
-          <a href="../contact.html">Contact</a>
+          <a href="../about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
+          <a href="../research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
+          <a href="../blog.html" class="active" aria-current="page"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
+          <a href="../contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
         </nav>
         <div class="nav-actions">
+          <button class="lang-toggle" aria-label="Switch language / 切换语言">
+            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
+          </button>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -50,62 +53,72 @@
   <main class="page container">
     <article class="article">
       <div class="article-header">
-        <h1>EVENS NOTES</h1>
-        <div class="article-meta">Jan 21, 2026 · Nick Shu</div>
+        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span></h1>
+        <div class="article-meta"><span data-lang="zh">2026 年 1 月 22 日 · 舒屹扬</span><span data-lang="en">Jan 22, 2026 · Nick Shu</span></div>
       </div>
 
-      <h2>
-        一般波动方程（续）
-      </h2>
+      <div data-lang="zh">
+        <h2>
+          一般波动方程（续）
+        </h2>
 
-      <p>
-        对于$n=2k$为偶数的情况，我们首先看看$n=2$怎么办.首先，把$\mathbb{R}^2$嵌入到$\mathbb{R}^3$，具体把$\boldsymbol{x}$变成$\bar{\boldsymbol{x}}=(\boldsymbol{x},0)$.然后我们可以把$u(\boldsymbol{x},t)$也变成一个$\bar{u}(\bar{\boldsymbol{x}},t)$，同理定义$\bar{g},\bar{h}$.不难看出，$\bar{u}$是三维Laplace方程有初值$g,h$的解.这样利用上面的公式，我们得到$\bar{u}(\bar{x},t)$的表达式.
+        <p>
+          对于$n=2k$为偶数的情况，我们首先看看$n=2$怎么办.首先，把$\mathbb{R}^2$嵌入到$\mathbb{R}^3$，具体把$\boldsymbol{x}$变成$\bar{\boldsymbol{x}}=(\boldsymbol{x},0)$.然后我们可以把$u(\boldsymbol{x},t)$也变成一个$\bar{u}(\bar{\boldsymbol{x}},t)$，同理定义$\bar{g},\bar{h}$.不难看出，$\bar{u}$是三维Laplace方程有初值$g,h$的解.这样利用上面的公式，我们得到$\bar{u}(\bar{x},t)$的表达式.
 
-        接下来，我们利用投影方法，比较重要的一点是，点$\bar{y}=(\boldsymbol{y},z)\in\partial\bar{B}(\bar{\boldsymbol{x}},t)$其实是指$z^2+|\boldsymbol{y}-\boldsymbol{x}|^2=t^2$，从而外法向为$\boldsymbol{\nu}=(\boldsymbol{y}-\boldsymbol{x},z)/t$.从而$\text{d}\boldsymbol{y}=|\boldsymbol{\nu}\cdot\boldsymbol{e}_3|\text{d}\bar{S}_{\bar{\boldsymbol{y}}}=\frac{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}{t}\text{d}\bar{S}_{\bar{\boldsymbol{y}}}$.
+          接下来，我们利用投影方法，比较重要的一点是，点$\bar{y}=(\boldsymbol{y},z)\in\partial\bar{B}(\bar{\boldsymbol{x}},t)$其实是指$z^2+|\boldsymbol{y}-\boldsymbol{x}|^2=t^2$，从而外法向为$\boldsymbol{\nu}=(\boldsymbol{y}-\boldsymbol{x},z)/t$.从而$\text{d}\boldsymbol{y}=|\boldsymbol{\nu}\cdot\boldsymbol{e}_3|\text{d}\bar{S}_{\bar{\boldsymbol{y}}}=\frac{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}{t}\text{d}\bar{S}_{\bar{\boldsymbol{y}}}$.
 
-        从而得到了$n=2$时候的解为
-      </p>
+          从而得到了$n=2$时候的解为
+        </p>
 
-      $$u(\boldsymbol{x},t)=\frac{t}{2}\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{g(\boldsymbol{y})+(\boldsymbol{y}-\boldsymbol{x})\cdot\mathbf{D}g(\boldsymbol{y})+h(\boldsymbol{y})t}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}.$$
+        $$u(\boldsymbol{x},t)=\frac{t}{2}\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{g(\boldsymbol{y})+(\boldsymbol{y}-\boldsymbol{x})\cdot\mathbf{D}g(\boldsymbol{y})+h(\boldsymbol{y})t}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}.$$
 
-      <p>
-        利用同样的方法可以把所有$n=2k$为偶数的情况算出来，答案为
-      </p>
+        <p>
+          利用同样的方法可以把所有$n=2k$为偶数的情况算出来，答案为
+        </p>
 
-      $$u(\boldsymbol{x},t)=\frac{1}{n!!}\left[\frac{\partial}{\partial t}\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-2)/2}\left(t^n\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{g(\boldsymbol{y})}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}\right)+\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-2)/2}\left(t^n\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{h(\boldsymbol{y})}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}\right)\right].$$
+        $$u(\boldsymbol{x},t)=\frac{1}{n!!}\left[\frac{\partial}{\partial t}\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-2)/2}\left(t^n\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{g(\boldsymbol{y})}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}\right)+\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-2)/2}\left(t^n\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{h(\boldsymbol{y})}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}\right)\right].$$
 
-      <p>
-        从而，我们求出了齐次波动方程的解的表达式，更进一步，我们发现对于$n\geq3$的奇数来说，数据$g,h$仅仅影响了锥面$\partial\{(\boldsymbol{y},t):t>0,|\boldsymbol{x}-\boldsymbol{y}| &lt t\}=\{(\boldsymbol{y},t):t>0,|\boldsymbol{y}-\boldsymbol{x}|=t\}$上面的取值；但是在$n$为偶数的时候，影响了整个锥体.这说明，奇数维的时候，扰动沿着波前传播出去；而偶数维的时候，扰动则会继续影响.这便是<strong>Huygens原理</strong>.
-      </p>
+        <p>
+          从而，我们求出了齐次波动方程的解的表达式，更进一步，我们发现对于$n\geq3$的奇数来说，数据$g,h$仅仅影响了锥面$\partial\{(\boldsymbol{y},t):t>0,|\boldsymbol{x}-\boldsymbol{y}| &lt t\}=\{(\boldsymbol{y},t):t>0,|\boldsymbol{y}-\boldsymbol{x}|=t\}$上面的取值；但是在$n$为偶数的时候，影响了整个锥体.这说明，奇数维的时候，扰动沿着波前传播出去；而偶数维的时候，扰动则会继续影响.这便是<strong>Huygens原理</strong>.
+        </p>
 
-      <p>
-        对于非齐次情况（注意这时候我们一般设定$u|_{t=0}=u_t|_{t=0}=0$，如果不是的话，直接把它写成非齐次的解和一个齐次的解的和即可），我们需要做的就是利用Duhamel原理做积分即可，即如果$u(\boldsymbol{x},t;s)$满足波动方程，且有初值$u(\boldsymbol{x},s;s)=0,u_t(\boldsymbol{x},s;s)=f(\boldsymbol{x},s)$，那么$u(\boldsymbol{x},t)=\int_0^tu(\boldsymbol{x},t;s)\text{d}s$是非齐次波动方程的解.特别地，$n=3$的时候，这个解正是$$u(\boldsymbol{x},t)=\frac{1}{4\pi}\int_{B(\boldsymbol{x},t)}\frac{f(\boldsymbol{y},t-|\boldsymbol{y}-\boldsymbol{x}|)}{|\boldsymbol{y}-\boldsymbol{x}|}\text{d}\boldsymbol{y},$$也就是物理中所谓<strong>推迟势</strong>.
-      </p>
+        <p>
+          对于非齐次情况（注意这时候我们一般设定$u|_{t=0}=u_t|_{t=0}=0$，如果不是的话，直接把它写成非齐次的解和一个齐次的解的和即可），我们需要做的就是利用Duhamel原理做积分即可，即如果$u(\boldsymbol{x},t;s)$满足波动方程，且有初值$u(\boldsymbol{x},s;s)=0,u_t(\boldsymbol{x},s;s)=f(\boldsymbol{x},s)$，那么$u(\boldsymbol{x},t)=\int_0^tu(\boldsymbol{x},t;s)\text{d}s$是非齐次波动方程的解.特别地，$n=3$的时候，这个解正是$$u(\boldsymbol{x},t)=\frac{1}{4\pi}\int_{B(\boldsymbol{x},t)}\frac{f(\boldsymbol{y},t-|\boldsymbol{y}-\boldsymbol{x}|)}{|\boldsymbol{y}-\boldsymbol{x}|}\text{d}\boldsymbol{y},$$也就是物理中所谓<strong>推迟势</strong>.
+        </p>
 
-      <p>
-        现在考虑利用能量方法解决波动方程.考虑能量定义为$$E(t)=\frac{1}{2}\int_Uw_t^2+|\mathbf{D}w|^2\text{d}\boldsymbol{x},$$然后我们假设$w$是边值条件为$0$的齐次方程的解，那么$$\dot{E}(t)=\int_Uw_tw_{tt}+\mathbf{D}w\cdot\mathbf{D}w_t\text{d}\boldsymbol{x}=\int_Uw_t(w_{tt}-\Delta w)\text{d}\boldsymbol{x}=0.$$从而$E(t)\equiv E(0)=0$，于是只能是$w=0$.这再次证明了初值问题解是唯一的.
+        <p>
+          现在考虑利用能量方法解决波动方程.考虑能量定义为$$E(t)=\frac{1}{2}\int_Uw_t^2+|\mathbf{D}w|^2\text{d}\boldsymbol{x},$$然后我们假设$w$是边值条件为$0$的齐次方程的解，那么$$\dot{E}(t)=\int_Uw_tw_{tt}+\mathbf{D}w\cdot\mathbf{D}w_t\text{d}\boldsymbol{x}=\int_Uw_t(w_{tt}-\Delta w)\text{d}\boldsymbol{x}=0.$$从而$E(t)\equiv E(0)=0$，于是只能是$w=0$.这再次证明了初值问题解是唯一的.
 
-        更进一步，考虑波动方程的解的<strong>依赖区域</strong>，即$(\boldsymbol{x}_0,t_0)$到底和哪些位置的点有关系，我们猜想这个点只与平面上$B(\boldsymbol{x}_0,t_0)\times\{t=0\}$有关系，但是我们其实有更强的结论，那就是这个圆盘<strong>事实上决定了整个$K(\boldsymbol{x}_0,t_0)=\{(\boldsymbol{x},t):t\in[0,t_0],|\boldsymbol{x}-\boldsymbol{x}_0|\leq t_0-t\}$</strong>.
-      </p>
+          更进一步，考虑波动方程的解的<strong>依赖区域</strong>，即$(\boldsymbol{x}_0,t_0)$到底和哪些位置的点有关系，我们猜想这个点只与平面上$B(\boldsymbol{x}_0,t_0)\times\{t=0\}$有关系，但是我们其实有更强的结论，那就是这个圆盘<strong>事实上决定了整个$K(\boldsymbol{x}_0,t_0)=\{(\boldsymbol{x},t):t\in[0,t_0],|\boldsymbol{x}-\boldsymbol{x}_0|\leq t_0-t\}$</strong>.
+        </p>
 
-      <p>
-      至此，我们完整地回顾了第二章里面重要的内容。后面的内容将会根据我的需要和理解，进行较大程度的“从心所欲”的改编。
-      </p>
+        <p>
+        至此，我们完整地回顾了第二章里面重要的内容。后面的内容将会根据我的需要和理解，进行较大程度的“从心所欲”的改编。
+        </p>
 
-      <h2>
-        线性PDE的理论
-      </h2>
+        <h2>
+          线性PDE的理论
+        </h2>
 
-      <p>
-        首先讨论一下各种函数空间.在PDE中用的多的有两种：<strong>H$\boldsymbol{\ddot{\text{o}}}$lder空间和Sobolev空间</strong>.
-      </p>
+        <p>
+          首先讨论一下各种函数空间.在PDE中用的多的有两种：<strong>H$\boldsymbol{\ddot{\text{o}}}$lder空间和Sobolev空间</strong>.
+        </p>
 
-      <p>
-        所谓H$\ddot{\text{o}}$lder空间就是在$C^k(\bar{U})$当中且\[||u||_{C^{k,\gamma}(\bar{U})}=\sum_{|\boldsymbol{\alpha}|\leq k}||\mathbf{D}^{\boldsymbol{\alpha}}u||_{C(\bar{U})}+\sum_{|\boldsymbol{\alpha}|=k}[\mathbf{D}^{\boldsymbol{\alpha}}u]_{C^{0,\gamma}(\bar{U})}\]有限的函数，其中\[[u]_{C^{0,\gamma}(\bar{U})}=\sup_{\boldsymbol{x},\boldsymbol{y}\in I}\left\{\frac{|u(\boldsymbol{x})-u(\boldsymbol{y})|}{|\boldsymbol{x}-\boldsymbol{y}|^{\gamma}}\right\}\]叫做<strong>H$\boldsymbol{\ddot{\text{o}}}$lder半范数</strong>.
-      </p>
+        <p>
+          所谓H$\ddot{\text{o}}$lder空间就是在$C^k(\bar{U})$当中且\[||u||_{C^{k,\gamma}(\bar{U})}=\sum_{|\boldsymbol{\alpha}|\leq k}||\mathbf{D}^{\boldsymbol{\alpha}}u||_{C(\bar{U})}+\sum_{|\boldsymbol{\alpha}|=k}[\mathbf{D}^{\boldsymbol{\alpha}}u]_{C^{0,\gamma}(\bar{U})}\]有限的函数，其中\[[u]_{C^{0,\gamma}(\bar{U})}=\sup_{\boldsymbol{x},\boldsymbol{y}\in I}\left\{\frac{|u(\boldsymbol{x})-u(\boldsymbol{y})|}{|\boldsymbol{x}-\boldsymbol{y}|^{\gamma}}\right\}\]叫做<strong>H$\boldsymbol{\ddot{\text{o}}}$lder半范数</strong>.
+        </p>
+      </div>
+
+      <div data-lang="en">
+        <p>
+          This note treats the wave equation in even dimensions via the method of descent
+          and Huygens' principle, the energy method and domains of dependence, and
+          introduces Hölder and Sobolev spaces for the linear theory of PDEs.
+        </p>
+      </div>
 
       <div style="margin-top: 3rem;">
-        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> Back to Blog</a>
+        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> <span data-lang="zh">返回博客</span><span data-lang="en">Back to Blog</span></a>
       </div>
     </article>
   </main>
@@ -113,11 +126,11 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
         <span class="footer-meta">Mathematics · USTC</span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline">Built with passion for Mathematics.</p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
     </div>
   </footer>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh" data-title-zh="联系 | 舒屹扬" data-title-en="Contact | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
   <meta name="description" content="Contact Nick Shu — email and online profiles.">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <script>
-    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'zh';}catch(e){var d='light',l='zh';}r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,15 +18,18 @@
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="index.html" class="brand">Nick Shu</a>
+      <a href="index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="about.html">About</a>
-          <a href="research.html">Research</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact.html" class="active" aria-current="page">Contact</a>
+          <a href="about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
+          <a href="research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
+          <a href="blog.html"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
+          <a href="contact.html" class="active" aria-current="page"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
         </nav>
         <div class="nav-actions">
+          <button class="lang-toggle" aria-label="Switch language / 切换语言">
+            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
+          </button>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -41,49 +44,53 @@
 
   <main class="page container">
     <section class="section-head">
-      <span class="eyebrow">Contact</span>
-      <h1 class="section-title" style="font-size: clamp(2.2rem, 6vw, 3.6rem);">Contact</h1>
-      <p class="section-desc">Feel free to get in touch for academic discussion.</p>
+      <span class="eyebrow"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></span>
+      <h1 class="section-title" style="font-size: clamp(2.2rem, 6vw, 3.6rem);"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></h1>
+      <p class="section-desc"><span data-lang="zh">欢迎就学术问题进行交流。</span><span data-lang="en">Feel free to get in touch for academic discussion.</span></p>
     </section>
 
     <div class="split">
       <div class="split-left">
         <div class="timeline">
           <div class="tl-item">
-            <span class="tl-date">Name</span>
-            <div class="tl-body"><h3>Nick</h3></div>
+            <span class="tl-date"><span data-lang="zh">姓名</span><span data-lang="en">Name</span></span>
+            <div class="tl-body"><h3><span data-lang="zh">舒屹扬（Nick Shu）</span><span data-lang="en">Nick</span></h3></div>
           </div>
           <div class="tl-item">
-            <span class="tl-date">Email</span>
+            <span class="tl-date"><span data-lang="zh">邮箱</span><span data-lang="en">Email</span></span>
             <div class="tl-body">
               <h3>flybook (at) mail (dot) ustc (dot) edu (dot) cn</h3>
               <div class="copy-row" style="margin-top: 0.4rem;">
-                <button class="copy-btn" data-copy="flybook@mail.ustc.edu.cn">Copy address</button>
+                <button class="copy-btn" data-copy="flybook@mail.ustc.edu.cn" data-copied-zh="已复制" data-copied-en="Copied">
+                  <span data-lang="zh">复制邮箱</span><span data-lang="en">Copy address</span>
+                </button>
               </div>
             </div>
           </div>
           <div class="tl-item">
-            <span class="tl-date">Email</span>
+            <span class="tl-date"><span data-lang="zh">邮箱</span><span data-lang="en">Email</span></span>
             <div class="tl-body">
               <h3>nickshu75@gmail.com</h3>
               <div class="copy-row" style="margin-top: 0.4rem;">
-                <button class="copy-btn" data-copy="nickshu75@gmail.com">Copy address</button>
+                <button class="copy-btn" data-copy="nickshu75@gmail.com" data-copied-zh="已复制" data-copied-en="Copied">
+                  <span data-lang="zh">复制邮箱</span><span data-lang="en">Copy address</span>
+                </button>
               </div>
             </div>
           </div>
           <div class="tl-item">
-            <span class="tl-date">Affiliation</span>
-            <div class="tl-body"><h3>Mathematics (Research &amp; Study)</h3></div>
+            <span class="tl-date"><span data-lang="zh">所属</span><span data-lang="en">Affiliation</span></span>
+            <div class="tl-body"><h3><span data-lang="zh">数学（研究与学习）</span><span data-lang="en">Mathematics (Research &amp; Study)</span></h3></div>
           </div>
           <div class="tl-item">
-            <span class="tl-date">Interests</span>
-            <div class="tl-body"><h3>Geometry, PDEs</h3></div>
+            <span class="tl-date"><span data-lang="zh">兴趣</span><span data-lang="en">Interests</span></span>
+            <div class="tl-body"><h3><span data-lang="zh">几何，偏微分方程</span><span data-lang="en">Geometry, PDEs</span></h3></div>
           </div>
         </div>
       </div>
 
       <div class="split-left">
-        <h3 style="font-family: var(--font-ui); font-size: 1rem; color: var(--muted); margin-bottom: 1rem;">Online profiles</h3>
+        <h3 style="font-family: var(--font-ui); font-size: 1rem; color: var(--muted); margin-bottom: 1rem;"><span data-lang="zh">网络主页</span><span data-lang="en">Online profiles</span></h3>
         <div class="social">
           <a href="https://www.zhihu.com/people/zhixhn5bk3a" target="_blank" rel="noopener">Zhihu</a>
           <a href="https://space.bilibili.com/3494365775268684" target="_blank" rel="noopener">Bilibili</a>
@@ -96,11 +103,11 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
         <span class="footer-meta">Mathematics · USTC</span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline">Built with passion for Mathematics.</p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
     </div>
   </footer>
 

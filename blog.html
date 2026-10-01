@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh" data-title-zh="博客 | 舒屹扬" data-title-en="Blog | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
   <meta name="description" content="Notes, thoughts, and mathematical writing by Nick Shu.">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <script>
-    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'zh';}catch(e){var d='light',l='zh';}r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,15 +18,18 @@
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="index.html" class="brand">Nick Shu</a>
+      <a href="index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="about.html">About</a>
-          <a href="research.html">Research</a>
-          <a href="blog.html" class="active" aria-current="page">Blog</a>
-          <a href="contact.html">Contact</a>
+          <a href="about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
+          <a href="research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
+          <a href="blog.html" class="active" aria-current="page"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
+          <a href="contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
         </nav>
         <div class="nav-actions">
+          <button class="lang-toggle" aria-label="Switch language / 切换语言">
+            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
+          </button>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -41,9 +44,9 @@
 
   <main class="page container">
     <section class="section-head">
-      <span class="eyebrow">Blog</span>
-      <h1 class="section-title" style="font-size: clamp(2.2rem, 6vw, 3.6rem);">Notes</h1>
-      <p class="section-desc">Notes, thoughts, and mathematical writing.</p>
+      <span class="eyebrow"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></span>
+      <h1 class="section-title" style="font-size: clamp(2.2rem, 6vw, 3.6rem);"><span data-lang="zh">笔记</span><span data-lang="en">Notes</span></h1>
+      <p class="section-desc"><span data-lang="zh">笔记、思考与数学写作。</span><span data-lang="en">Notes, thoughts, and mathematical writing.</span></p>
     </section>
 
     <div class="post-list">
@@ -53,8 +56,8 @@
         <a class="post-item" href="posts/Gidas-Spruck.pdf" target="_blank" rel="noopener">
           <span class="post-date">Mar 15</span>
           <span class="post-main">
-            <span class="post-title"><em>Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations</em> 笔记</span>
-            <span class="post-desc">This is my note on <em>Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations</em>, which is written from Jan.30th, 2026 to Mar.15th, 2026.</span>
+            <span class="post-title"><span data-lang="zh">《Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations》笔记</span><span data-lang="en"><em>Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations</em> 笔记</span></span>
+            <span class="post-desc"><span data-lang="zh">这是我对《Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations》的笔记，写于 2026 年 1 月 30 日至 3 月 15 日。</span><span data-lang="en">This is my note on <em>Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations</em>, which is written from Jan.30th, 2026 to Mar.15th, 2026.</span></span>
           </span>
           <span class="post-arrow">→</span>
         </a>
@@ -64,8 +67,8 @@
         <a class="post-item" href="posts/2026-1-22-Evens-5.html">
           <span class="post-date">Jan 22</span>
           <span class="post-main">
-            <span class="post-title">Evens读书笔记（第五次），写于2026.1.22.</span>
-            <span class="post-desc">This is my note on <em>Evens</em>, which is written on Jan.22nd, 2026.</span>
+            <span class="post-title"><span data-lang="zh">Evens读书笔记（第五次），写于2026.1.22.</span><span data-lang="en">Evens Reading Notes (5th)</span></span>
+            <span class="post-desc"><span data-lang="zh">这是我对《Evens》的笔记，写于 2026 年 1 月 22 日。</span><span data-lang="en">This is my note on <em>Evens</em>, which is written on Jan.22nd, 2026.</span></span>
           </span>
           <span class="post-arrow">→</span>
         </a>
@@ -75,8 +78,8 @@
         <a class="post-item" href="posts/2026-1-21-Evens-4.html">
           <span class="post-date">Jan 21</span>
           <span class="post-main">
-            <span class="post-title">Evens读书笔记（第四次），写于2026.1.21.</span>
-            <span class="post-desc">This is my note on <em>Evens</em>, which is written on Jan.21st, 2026.</span>
+            <span class="post-title"><span data-lang="zh">Evens读书笔记（第四次），写于2026.1.21.</span><span data-lang="en">Evens Reading Notes (4th)</span></span>
+            <span class="post-desc"><span data-lang="zh">这是我对《Evens》的笔记，写于 2026 年 1 月 21 日。</span><span data-lang="en">This is my note on <em>Evens</em>, which is written on Jan.21st, 2026.</span></span>
           </span>
           <span class="post-arrow">→</span>
         </a>
@@ -86,8 +89,8 @@
         <a class="post-item" href="posts/2026-1-18-Evens-3.html">
           <span class="post-date">Jan 18</span>
           <span class="post-main">
-            <span class="post-title">Evens读书笔记（第三次），写于2026.1.18.</span>
-            <span class="post-desc">This is my note on <em>Evens</em>, which is written on Jan.18th, 2026.</span>
+            <span class="post-title"><span data-lang="zh">Evens读书笔记（第三次），写于2026.1.18.</span><span data-lang="en">Evens Reading Notes (3rd)</span></span>
+            <span class="post-desc"><span data-lang="zh">这是我对《Evens》的笔记，写于 2026 年 1 月 18 日。</span><span data-lang="en">This is my note on <em>Evens</em>, which is written on Jan.18th, 2026.</span></span>
           </span>
           <span class="post-arrow">→</span>
         </a>
@@ -97,8 +100,8 @@
         <a class="post-item" href="posts/2026-1-17-Evens-2.html">
           <span class="post-date">Jan 17</span>
           <span class="post-main">
-            <span class="post-title">Evens读书笔记（第二次），写于2026.1.17.</span>
-            <span class="post-desc">This is my note on <em>Evens</em>, which is written on Jan.17th, 2026.</span>
+            <span class="post-title"><span data-lang="zh">Evens读书笔记（第二次），写于2026.1.17.</span><span data-lang="en">Evens Reading Notes (2nd)</span></span>
+            <span class="post-desc"><span data-lang="zh">这是我对《Evens》的笔记，写于 2026 年 1 月 17 日。</span><span data-lang="en">This is my note on <em>Evens</em>, which is written on Jan.17th, 2026.</span></span>
           </span>
           <span class="post-arrow">→</span>
         </a>
@@ -108,8 +111,8 @@
         <a class="post-item" href="posts/2026-1-16-Evens-1.html">
           <span class="post-date">Jan 16</span>
           <span class="post-main">
-            <span class="post-title">Evens读书笔记（第一次），写于2026.1.16.</span>
-            <span class="post-desc">This is my first note on <em>Evens</em>, which is written on Jan.16th, 2026.</span>
+            <span class="post-title"><span data-lang="zh">Evens读书笔记（第一次），写于2026.1.16.</span><span data-lang="en">Evens Reading Notes (1st)</span></span>
+            <span class="post-desc"><span data-lang="zh">这是我对《Evens》的第一篇笔记，写于 2026 年 1 月 16 日。</span><span data-lang="en">This is my first note on <em>Evens</em>, which is written on Jan.16th, 2026.</span></span>
           </span>
           <span class="post-arrow">→</span>
         </a>
@@ -121,8 +124,8 @@
         <a class="post-item" href="posts/Geometric%20Properties%20of%20the%20Hyperbolic%20Plane.pdf" target="_blank" rel="noopener">
           <span class="post-date">Nov 08</span>
           <span class="post-main">
-            <span class="post-title">双曲平面的一些几何性质</span>
-            <span class="post-desc">2025年秋季学期科大数学强基讨论班大作业</span>
+            <span class="post-title"><span data-lang="zh">双曲平面的一些几何性质</span><span data-lang="en">Some Geometric Properties of the Hyperbolic Plane</span></span>
+            <span class="post-desc"><span data-lang="zh">2025年秋季学期科大数学强基讨论班大作业</span><span data-lang="en">Fall 2025 USTC mathematics seminar assignment.</span></span>
           </span>
           <span class="post-arrow">→</span>
         </a>
@@ -133,11 +136,11 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
         <span class="footer-meta">Mathematics · USTC</span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline">Built with passion for Mathematics.</p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
     </div>
   </footer>
 

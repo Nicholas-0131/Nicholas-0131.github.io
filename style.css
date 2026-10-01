@@ -73,6 +73,10 @@ body {
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; }
 
+/* ---------- Language visibility ---------- */
+html[data-lang="zh"] [data-lang="en"] { display: none !important; }
+html[data-lang="en"] [data-lang="zh"] { display: none !important; }
+
 /* ---------- Typography ---------- */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
@@ -245,6 +249,30 @@ html[data-theme="dark"] .site-header {
 .theme-toggle svg { width: 1rem; height: 1rem; }
 html[data-theme="light"] .icon-sun { display: none; }
 html[data-theme="dark"] .icon-moon { display: none; }
+
+/* Language toggle */
+.lang-toggle {
+  height: 2.2rem;
+  padding: 0 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.lang-toggle:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+  background: var(--accent-soft);
+}
 
 /* Mobile toggle */
 .nav-toggle {
