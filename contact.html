@@ -1,107 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Nick</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Nick Shu</title>
+  <meta name="description" content="Contact Nick Shu — email and online profiles.">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #292E49, #536976);
-      overflow-x: hidden;
-      font-family:
-        "Times New Roman",
-        "SimSun",
-        "Songti SC",
-        "Noto Serif CJK SC",
-        serif;
-      color: #fff;
-    }
-    header {
-      padding: 40px 20px 20px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.4rem;
-      letter-spacing: 2px;
-    }
-    header p {
-      margin-top: 10px;
-      opacity: 0.85;
-      font-size: 1rem;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 30px 20px 60px 20px;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 30px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(6px);
-    }
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.6rem;
-      letter-spacing: 1px;
-    }
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0 0 0;
-    }
-    .contact-list li {
-      margin: 14px 0;
-      font-size: 1rem;
-    }
-    .contact-list span {
-      display: inline-block;
-      min-width: 120px;
-      opacity: 0.8;
-    }
-    a {
-      color: #aad7ff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-      opacity: 0.7;
-    }
-  </style>
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="index.html" style="padding:8px 18px;border-radius:20px;background:#ffffff33;color:white;text-decoration:none;">
-      ← 返回主页
-    </a>
-  <header>
-    <h1>Contact</h1>
-    <p>Feel free to get in touch for academic description or discussion.</p>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">Nick Shu</a>
+      <div class="header-right">
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html" class="active" aria-current="page">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+          </button>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <div class="container">
-    <div class="card">
-      <h2>Contact Information</h2>
-      <ul class="contact-list">
-        <li><span>Name</span> Nick</li>
-        <li><span>Email</span> flybook (at) mail (dot) ustc (dot) edu (dot) cn
-        <li><span>Affiliation</span> Mathematics (Research & Study)</li>
-        <li><span>Interests</span> Geometry, PDEs</li>
-      </ul>
-    </div>
-  </div>
+  <main class="page container">
+    <section class="section-head">
+      <span class="eyebrow">Contact</span>
+      <h1 class="section-title" style="font-size: clamp(2.2rem, 6vw, 3.6rem);">Contact</h1>
+      <p class="section-desc">Feel free to get in touch for academic discussion.</p>
+    </section>
 
-  <footer>
-    © 2026 Nick · Powered by GitHub Pages
+    <div class="split">
+      <div class="split-left">
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-date">Name</span>
+            <div class="tl-body"><h3>Nick</h3></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">Email</span>
+            <div class="tl-body">
+              <h3>flybook (at) mail (dot) ustc (dot) edu (dot) cn</h3>
+              <div class="copy-row" style="margin-top: 0.4rem;">
+                <button class="copy-btn" data-copy="flybook@mail.ustc.edu.cn">Copy address</button>
+              </div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">Email</span>
+            <div class="tl-body">
+              <h3>nickshu75@gmail.com</h3>
+              <div class="copy-row" style="margin-top: 0.4rem;">
+                <button class="copy-btn" data-copy="nickshu75@gmail.com">Copy address</button>
+              </div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">Affiliation</span>
+            <div class="tl-body"><h3>Mathematics (Research &amp; Study)</h3></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">Interests</span>
+            <div class="tl-body"><h3>Geometry, PDEs</h3></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="split-left">
+        <h3 style="font-family: var(--font-ui); font-size: 1rem; color: var(--muted); margin-bottom: 1rem;">Online profiles</h3>
+        <div class="social">
+          <a href="https://www.zhihu.com/people/zhixhn5bk3a" target="_blank" rel="noopener">Zhihu</a>
+          <a href="https://space.bilibili.com/3494365775268684" target="_blank" rel="noopener">Bilibili</a>
+          <a href="https://x.com/nick_shu66256" target="_blank" rel="noopener">X</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-meta">Mathematics · USTC</span>
+      </div>
+      <p class="footer-meta">© 2026 Nick Shu</p>
+      <p class="footer-tagline">Built with passion for Mathematics.</p>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

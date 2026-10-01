@@ -2,200 +2,197 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nick Shu | Mathematics</title>
+  <meta name="description" content="Nick Shu — Mathematics student at the School of the Gifted Young, University of Science and Technology of China.">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #292E49, #536976);
-      overflow-x: hidden;
-      font-family:
-        "Times New Roman",
-        "SimSun",
-        "Songti SC",
-        "Noto Serif CJK SC",
-        serif;
-      color: #fff;
-    }
-
-    .bubbles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none; /* 不挡点击 */
-    }
-
-    .bubbles li {
-      position: absolute;
-      list-style: none;
-      display: block;
-      width: 20px;
-      height: 20px;
-      background: rgba(255, 255, 255, 0.15);
-      animation: animate 25s linear infinite;
-      bottom: -150px;
-    }
-
-    @keyframes animate {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0%;
-      }
-      100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-      }
-    }
-
-    /* 示例气泡（保留你原来的即可） */
-    .bubbles li:nth-child(1){ left:25%; width:80px; height:80px; }
-    .bubbles li:nth-child(2){ left:10%; width:20px; height:20px; animation-delay:2s; }
-    .bubbles li:nth-child(3){ left:70%; width:20px; height:20px; animation-delay:4s; }
-    .bubbles li:nth-child(4){ left:40%; width:60px; height:60px; animation-delay:18s; animation-duration:18s; }
-
-    /* ===== 内容层 ===== */
-    .content {
-      position: relative;
-      z-index: 2;
-      min-height: 100vh;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      text-align: center;
-    }
-
-    h1 {
-      font-weight: 400;
-      font-size: 2.6em;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      font-size: 1.1em;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 50px;
-    }
-
-    .nav-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-list li {
-      margin: 18px 0;
-    }
-
-    .nav-list a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.1em;
-      margin-right: 10px;
-    }
-
-    .nav-list a:hover {
-      text-decoration: underline;
-    }
-
-    .nav-list span {
-      font-size: 0.95em;
-      color: rgba(255,255,255,0.65);
-    }
-  </style>
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- 背景气泡 -->
-  <ul class="bubbles">
-    <li></li><li></li><li></li><li></li><li></li>
-    <li></li><li></li><li></li><li></li><li></li>
-  </ul>
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">Nick Shu</a>
+      <div class="header-right">
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <!-- 前景内容 -->
-  <div class="content">
-    <h1>Nick Shu</h1>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <svg class="hero-viz" viewBox="0 0 400 400" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+        <circle cx="200" cy="200" r="150" class="viz-line" opacity="0.5"></circle>
+        <circle cx="200" cy="200" r="186" class="viz-line" opacity="0.22"></circle>
+        <g class="spin-slow">
+          <line x1="50" y1="200" x2="350" y2="200" class="viz-line" opacity="0.9"></line>
+          <circle cx="50" cy="200" r="3.5" class="viz-fill"></circle>
+          <circle cx="350" cy="200" r="3.5" class="viz-fill"></circle>
+        </g>
+      </svg>
 
-     <a href="https://www.ustc.edu.cn" target="_blank">
-<em>University of Science and Technology of China</em>
-</a> <a href="https://sgy.ustc.edu.cn" target="_blank">
-<em>School of the Gifted Young</em>
-</a>
-    <em>96 Jinzhai Road<br>
-      
-   Hefei, Anhui 230026<br>
-      
-   P. R. China</em> 
-    
-    <p class="subtitle">Mathematics</p>
+      <div class="container hero-inner">
+        <p class="hero-eyebrow">Mathematics</p>
+        <h1 class="display hero-name">
+          <span class="line">Nick</span>
+          <span class="line">Shu</span>
+        </h1>
+        <p class="hero-sub">
+          Undergraduate student in Mathematics at the
+          <a href="https://www.ustc.edu.cn" target="_blank" rel="noopener">University of Science and Technology of China</a>,
+          <a href="https://sgy.ustc.edu.cn" target="_blank" rel="noopener">School of the Gifted Young</a>.
+        </p>
+        <p class="hero-meta">
+          96 Jinzhai Road, Hefei, Anhui 230026, P. R. China
+        </p>
+      </div>
+    </section>
 
-    <ul class="nav-list">
-      <li>
-        <a href="about.html">About</a>
-        <span>Brief personal and academic background.</span>
-      </li>
-      <li>
-        <a href="research.html">Research</a>
-        <span>Research interests and current directions.</span>
-      </li>
-      <li>
-        <a href="publications.html">Publications</a>
-        <span>Papers, preprints, and notes.</span>
-      </li>
-      <li>
-        <a href="blog.html">Blog</a>
-        <span>Some ideas and thinking.</span>
-      </li>
-      <li>
-        <a href="contact.html">Contact</a>
-        <span>Email and online profiles.</span>
-      </li>
-    </ul>
-    <div class="social">
+    <!-- About preview -->
+    <section class="section container">
+      <div class="section-head">
+        <span class="eyebrow">About</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="split">
+        <div class="split-left">
+          <p>
+            Hello! I am <strong>Nick Shu</strong>, an undergraduate student at the
+            <strong>School of the Gifted Young (SGY)</strong>, University of Science
+            and Technology of China (USTC). My primary academic interests lie in the
+            field of Mathematics.
+          </p>
+          <div>
+            <a href="about.html" class="arrow-link">More about me <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <a href="https://www.zhihu.com/people/zhixhn5bk3a"
-       target="_blank"
-       class="social-btn">
-        <img src="images/zhihu.png" alt="Zhihu">
-    </a>
+    <!-- Research preview -->
+    <section class="section container">
+      <div class="section-head">
+        <span class="eyebrow">Research</span>
+        <h2 class="section-title">Research Interests</h2>
+      </div>
+      <div class="split">
+        <div class="split-left">
+          <p class="r-tags">
+            <span>Geometric Analysis</span><span>Elliptic PDE</span><span>Convex Geometry</span>
+          </p>
+          <p>
+            My current interests lie mainly at the interface of differential geometry,
+            geometric analysis, elliptic PDEs, and convex geometry. I am exploring a
+            number of questions at the moment — minimal surfaces, convex Kakeya-type
+            problems, and nonlinear elliptic equations.
+          </p>
+          <div>
+            <a href="research.html" class="arrow-link">View research <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <a href="https://space.bilibili.com/3494365775268684"
-       target="_blank"
-       class="social-btn">
-        <img src="images/bilibili.png" alt="Bilibili">
-    </a>
+    <!-- Latest posts -->
+    <section class="section container">
+      <div class="section-head">
+        <span class="eyebrow">Writing</span>
+        <h2 class="section-title">Latest Notes</h2>
+      </div>
+      <div class="post-list">
+        <article>
+          <a class="post-item" href="posts/Gidas-Spruck.pdf" target="_blank" rel="noopener">
+            <span class="post-date">Mar 15, 2026</span>
+            <span class="post-main">
+              <span class="post-title">Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations 笔记</span>
+              <span class="post-desc">Reading note on the classical paper, written from Jan. 30 to Mar. 15, 2026.</span>
+            </span>
+            <span class="post-arrow">→</span>
+          </a>
+        </article>
+        <article>
+          <a class="post-item" href="posts/2026-1-22-Evens-5.html">
+            <span class="post-date">Jan 22, 2026</span>
+            <span class="post-main">
+              <span class="post-title">Evens读书笔记（第五次）</span>
+              <span class="post-desc">Reading notes on Evans, Partial Differential Equations.</span>
+            </span>
+            <span class="post-arrow">→</span>
+          </a>
+        </article>
+        <article>
+          <a class="post-item" href="posts/2026-1-21-Evens-4.html">
+            <span class="post-date">Jan 21, 2026</span>
+            <span class="post-main">
+              <span class="post-title">Evens读书笔记（第四次）</span>
+              <span class="post-desc">Reading notes on Evans, Partial Differential Equations.</span>
+            </span>
+            <span class="post-arrow">→</span>
+          </a>
+        </article>
+      </div>
+      <div style="margin-top: 2rem;">
+        <a href="blog.html" class="arrow-link">All notes <span class="arrow">→</span></a>
+      </div>
+    </section>
 
-    <a href="https://x.com/nick_shu66256"
-       target="_blank"
-       class="social-btn">
-        <img src="images/X.png" alt="X">
-    </a>
+    <!-- Contact -->
+    <section class="section container">
+      <div class="section-head">
+        <span class="eyebrow">Contact</span>
+        <h2 class="section-title">Get in touch</h2>
+      </div>
+      <div class="split">
+        <div class="split-left">
+          <p>
+            <a href="mailto:flybook@mail.ustc.edu.cn" class="link">flybook@mail.ustc.edu.cn</a><br>
+            <a href="mailto:nickshu75@gmail.com" class="link">nickshu75@gmail.com</a>
+          </p>
+          <div class="social">
+            <a href="https://www.zhihu.com/people/zhixhn5bk3a" target="_blank" rel="noopener">Zhihu</a>
+            <a href="https://space.bilibili.com/3494365775268684" target="_blank" rel="noopener">Bilibili</a>
+            <a href="https://x.com/nick_shu66256" target="_blank" rel="noopener">X</a>
+          </div>
+          <div>
+            <a href="contact.html" class="arrow-link">Contact page <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <a href="mailto:nickshu75@gmail.com"
-       class="social-btn">
-        <img src="images/mail.png" alt="Gmail">
-    </a>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-meta">Mathematics · USTC</span>
+      </div>
+      <p class="footer-meta">© 2026 Nick Shu</p>
+      <p class="footer-tagline">Built with passion for Mathematics.</p>
+    </div>
+  </footer>
 
-    <a href="mailto:flybook@mail.ustc.edu.cn"
-       class="social-btn">
-        <img src="images/mail.png" alt="USTC Mail">
-    </a>
-
-</div>
-  </div>
-
+  <script src="script.js"></script>
 </body>
 </html>

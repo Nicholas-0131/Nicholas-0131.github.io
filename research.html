@@ -1,116 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research | Nick</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research | Nick Shu</title>
+  <meta name="description" content="Research interests — differential geometry, geometric analysis, elliptic PDEs, and convex geometry.">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #292E49, #536976);
-      overflow-x: hidden;
-      font-family:
-        "Times New Roman",
-        "SimSun",
-        "Songti SC",
-        "Noto Serif CJK SC",
-        serif;
-      color: #fff;
-    }
-    header {
-      padding: 40px 20px 20px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.4rem;
-      letter-spacing: 2px;
-    }
-    header p {
-      margin-top: 10px;
-      opacity: 0.85;
-      font-size: 1rem;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 30px 20px 60px 20px;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 30px;
-      margin-bottom: 30px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(6px);
-    }
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.6rem;
-      letter-spacing: 1px;
-    }
-    .card h3 {
-      margin-bottom: 8px;
-      font-size: 1.15rem;
-      font-weight: 600;
-    }
-    .card p {
-      margin-top: 6px;
-      line-height: 1.7;
-      opacity: 0.95;
-    }
-    ul {
-      margin: 10px 0 0 20px;
-      padding: 0;
-    }
-    li {
-      margin: 8px 0;
-    }
-    a {
-      color: #aad7ff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-      opacity: 0.7;
-    }
-  </style>
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="index.html" style="padding:8px 18px;border-radius:20px;background:#ffffff33;color:white;text-decoration:none;">
-  ← 返回主页
-  </a>
-  <header>
-    <h1>Research</h1>
-    <p>Mathematics · Geometry\<br/>
-    数学 · 几何 · 偏微分方程</p>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">Nick Shu</a>
+      <div class="header-right">
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a href="about.html">About</a>
+          <a href="research.html" class="active" aria-current="page">Research</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+          </button>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <div class="container">
+  <main class="page container">
+    <!-- Header -->
+    <section class="section-head" style="margin-bottom: 4rem;">
+      <span class="eyebrow">Research</span>
+      <h1 class="section-title" style="font-size: clamp(2.2rem, 6vw, 3.6rem); letter-spacing: 0.02em;">RESEARCH</h1>
+      <p class="tag">Geometry · Analysis · Partial Differential Equations</p>
+      <p class="tag" lang="zh">几何 · 分析 · 偏微分方程</p>
+      <p class="section-desc" style="margin-top: 0.75rem;">
+        My current interests lie mainly at the interface of differential geometry,
+        geometric analysis, elliptic PDEs, and convex geometry.
+      </p>
+    </section>
 
-    <div class="card">
-      <h2>Research Interests / 研究方向</h2>
-      <ul>
-        <li>Differential Geometry and Geometric Analysis<br/>微分几何与几何分析</li>
-      </ul>
+    <!-- Research Interests -->
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">01</span>
+        <h2 class="section-title">Research Interests</h2>
+      </div>
+
+      <div class="r-index">
+        <!-- 01 -->
+        <div class="r-block">
+          <div class="r-num">01</div>
+          <div>
+            <h3 class="r-title">Differential Geometry &amp; Geometric Analysis</h3>
+            <p class="r-cn" lang="zh">微分几何与几何分析</p>
+            <div class="r-tags">
+              <span>Differential Geometry</span>
+              <span><strong>Minimal Surfaces</strong></span>
+              <span>Geometric Analysis</span>
+              <span>Riemann Surfaces</span>
+              <span>Conformal Geometry</span>
+              <span>Hodge-theoretic ideas</span>
+              <span>Geometric PDE</span>
+            </div>
+            <div class="r-body">
+              <p>
+                This is the core of my current interests — the place where geometry and
+                analysis meet, through curvature, conformal geometry, and the partial
+                differential equations that govern them. Of these, <strong>Minimal
+                Surfaces</strong> is the theme I keep returning to.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="r-block">
+          <div class="r-num">02</div>
+          <div>
+            <h3 class="r-title">Elliptic Partial Differential Equations</h3>
+            <p class="r-cn" lang="zh">椭圆型偏微分方程</p>
+            <div class="r-tags">
+              <span>nonlinear elliptic equations</span>
+              <span>a priori estimates</span>
+              <span>maximum principles</span>
+              <span>Harnack inequalities</span>
+              <span>blow-up analysis</span>
+              <span>Sobolev methods</span>
+              <span>Moser iteration</span>
+              <span>variational methods</span>
+            </div>
+            <div class="r-body">
+              <p>
+                A research interest and an ongoing study. I am learning the classical
+                techniques of elliptic theory — a priori estimates, maximum principles,
+                Harnack inequalities, and blow-up analysis — through careful reading
+                rather than new results.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="r-block">
+          <div class="r-num">03</div>
+          <div>
+            <h3 class="r-title">Convex Geometry &amp; Kakeya-type Problems</h3>
+            <p class="r-cn" lang="zh">凸几何与 Kakeya 型问题</p>
+            <div class="r-tags">
+              <span>Convex Geometry</span>
+              <span>Kakeya Problem</span>
+              <span>Rotations</span>
+              <span>Geometric Optimization</span>
+            </div>
+            <div class="r-body">
+              <p>
+                A direction I am currently exploring. Consider a planar set
+                \(S \subset \mathbb{R}^2\) and a continuous translation function
+                \(x : [0, 2\pi) \to \mathbb{R}^2\). I am interested in a set \(A\) that
+                contains all the rotated translated copies
+                \[
+                R_\theta S + x(\theta).
+                \]
+              </p>
+              <p>Questions I am currently thinking about include:</p>
+              <ul>
+                <li>minimal possible area</li>
+                <li>diameter</li>
+                <li>perimeter</li>
+                <li>geometric structure of optimal configurations</li>
+                <li>dependence on the original set \(S\)</li>
+                <li>behavior under convergence of \(S\)</li>
+                <li>the transition between line-segment-type configurations and rotationally symmetric configurations</li>
+              </ul>
+              <p><span class="status">Ongoing Exploration</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Current Projects -->
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">02</span>
+        <h2 class="section-title">Current Projects</h2>
+        <p class="section-desc">
+          These are problems and directions I am actively working through — not completed
+          results, but questions I am trying to understand.
+        </p>
+      </div>
+
+      <!-- 01 -->
+      <article class="project">
+        <div class="project-num">01</div>
+        <div>
+          <div class="project-head">
+            <h3 class="project-title">Convex Kakeya Sets</h3>
+            <span class="status">Ongoing Exploration</span>
+          </div>
+          <div class="project-kw">
+            <span>Convex Geometry</span><span>Kakeya Problem</span><span>Rotations</span><span>Geometric Optimization</span>
+          </div>
+          <div class="project-body">
+            <svg class="viz-inline" viewBox="0 0 200 200" aria-hidden="true">
+              <circle cx="100" cy="100" r="86" class="viz-line" opacity="0.5"></circle>
+              <g class="spin-slow">
+                <line x1="14" y1="100" x2="186" y2="100" class="viz-line" opacity="0.85"></line>
+                <circle cx="14" cy="100" r="3" class="viz-fill"></circle>
+                <circle cx="186" cy="100" r="3" class="viz-fill"></circle>
+              </g>
+            </svg>
+            <p>
+              I am exploring a convex-geometric variant of the Kakeya problem in which a
+              set must contain continuously translated rotated copies of a prescribed planar
+              set \(S\). I am interested in geometric quantities such as area, diameter and
+              perimeter, as well as stability and limiting behavior of optimal configurations.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 -->
+      <article class="project">
+        <div class="project-num">02</div>
+        <div>
+          <div class="project-head">
+            <h3 class="project-title">Minimal Surfaces &amp; Geometric Analysis</h3>
+            <span class="status">Current Interest · Ongoing Study</span>
+          </div>
+          <div class="project-kw">
+            <span>Minimal Surfaces</span><span>Differential Geometry</span><span>Geometric Analysis</span><span>Riemann Surfaces</span>
+          </div>
+          <div class="project-body">
+            <svg class="viz-inline" viewBox="0 0 200 200" aria-hidden="true">
+              <ellipse cx="100" cy="26" rx="62" ry="9" class="viz-line"></ellipse>
+              <ellipse cx="100" cy="62" rx="40" ry="8" class="viz-line"></ellipse>
+              <ellipse cx="100" cy="100" rx="22" ry="7" class="viz-line"></ellipse>
+              <ellipse cx="100" cy="138" rx="40" ry="8" class="viz-line"></ellipse>
+              <ellipse cx="100" cy="174" rx="62" ry="9" class="viz-line"></ellipse>
+              <path d="M38 26 C 24 62, 68 78, 78 100 C 68 122, 24 138, 38 174" class="viz-line"></path>
+              <path d="M162 26 C 176 62, 132 78, 122 100 C 132 122, 176 138, 162 174" class="viz-line"></path>
+            </svg>
+            <p>
+              I am interested in minimal surfaces as a meeting point of differential
+              geometry, complex analysis and elliptic PDEs.
+            </p>
+            <ul>
+              <li>classical minimal surface theory</li>
+              <li>Weierstrass representation</li>
+              <li>conformal parametrizations</li>
+              <li>curvature</li>
+              <li>harmonic coordinate functions</li>
+              <li>relations with Riemann surfaces</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="project">
+        <div class="project-num">03</div>
+        <div>
+          <div class="project-head">
+            <h3 class="project-title">Nonlinear Elliptic Equations</h3>
+            <span class="status">Reading · Research Study</span>
+          </div>
+          <div class="project-kw">
+            <span>Harnack inequalities</span><span>blow-up analysis</span><span>a priori estimates</span><span>positive solutions</span>
+          </div>
+          <div class="project-body">
+            <svg class="viz-inline" viewBox="0 0 200 200" aria-hidden="true">
+              <ellipse cx="100" cy="100" rx="24" ry="24" class="viz-line"></ellipse>
+              <ellipse cx="100" cy="100" rx="52" ry="52" class="viz-line" opacity="0.7"></ellipse>
+              <ellipse cx="100" cy="100" rx="80" ry="80" class="viz-line" opacity="0.45"></ellipse>
+              <ellipse cx="100" cy="100" rx="96" ry="96" class="viz-line" opacity="0.22"></ellipse>
+            </svg>
+            <p>
+              This is tied to a long-running reading of classical work such as
+              Gidas–Spruck. I am studying classical techniques in nonlinear elliptic PDE
+              through the analysis of positive solutions, a priori estimates and blow-up
+              arguments.
+            </p>
+            <ul>
+              <li>Harnack inequalities</li>
+              <li>local and global behavior of positive solutions</li>
+              <li>blow-up analysis</li>
+              <li>scaling arguments</li>
+              <li>a priori estimates</li>
+              <li>Sobolev inequalities</li>
+              <li>conformal transformations</li>
+              <li>nonlinear elliptic equations</li>
+            </ul>
+            <p>
+              <a href="posts/Gidas-Spruck.pdf" target="_blank" rel="noopener" class="arrow-link">
+                Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations 笔记 <span class="arrow">→</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 -->
+      <article class="project">
+        <div class="project-num">04</div>
+        <div>
+          <div class="project-head">
+            <h3 class="project-title">Poisson Equation on the Sphere</h3>
+            <span class="status">Exploration · Expository Project</span>
+          </div>
+          <div class="project-kw">
+            <span>Elliptic PDE</span><span>Spherical Analysis</span><span>Regularity</span>
+          </div>
+          <div class="project-body">
+            <p>
+              I am working through the Poisson equation on the sphere,
+              \[\Delta_{S^2} u = f,\]
+              with the aim of understanding it as purely analytically as possible.
+            </p>
+            <ul>
+              <li>weak formulation</li>
+              <li>Lax–Milgram theorem</li>
+              <li>Poincaré inequality</li>
+              <li>\(H^1\) estimates</li>
+              <li>regularity</li>
+              <li>Moser iteration</li>
+              <li>Green functions</li>
+            </ul>
+            <p>
+              The main goal is to understand the analytic structure first, before
+              introducing the spectral decomposition — later bringing in spherical
+              harmonics and spectral theory as another point of view.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 05 -->
+      <article class="project">
+        <div class="project-num">05</div>
+        <div>
+          <div class="project-head">
+            <h3 class="project-title">Spectral Geometry</h3>
+            <span class="status">Exploring</span>
+          </div>
+          <div class="project-kw">
+            <span>Laplacian eigenvalues</span><span>Geometry of domains</span><span>Spectral inequalities</span>
+          </div>
+          <div class="project-body">
+            <p>An exploratory direction, rather than a main project. I am interested in:</p>
+            <ul>
+              <li>Laplacian eigenvalues</li>
+              <li>geometry of domains</li>
+              <li>spectral inequalities</li>
+              <li>relationships between geometry and spectrum</li>
+              <li>analytic proofs versus computer-assisted proofs</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Reading & Background -->
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">03</span>
+        <h2 class="section-title">Reading &amp; Background</h2>
+        <p class="section-desc">
+          Things I am studying systematically, but which I do not treat as independent
+          research projects.
+        </p>
+      </div>
+
+      <div class="split">
+        <div class="split-left">
+          <h3 style="font-family: var(--font-ui); font-size: 1.02rem; margin-bottom: 0.6rem;">Differential Manifolds</h3>
+          <ul class="r-body" style="list-style:none;">
+            <li>partitions of unity</li>
+            <li>Sard theorem</li>
+            <li>Whitney embedding theorem</li>
+            <li>vector fields and flows</li>
+            <li>Frobenius theorem</li>
+            <li>Lie groups and Lie algebras</li>
+            <li>differential forms</li>
+            <li>Stokes theorem</li>
+            <li>de Rham cohomology</li>
+            <li>degree theory</li>
+            <li>Poincaré duality</li>
+            <li>introductory Chern–Weil theory</li>
+          </ul>
+        </div>
+        <div class="split-left">
+          <h3 style="font-family: var(--font-ui); font-size: 1.02rem; margin-bottom: 0.6rem;">Geometric Analysis</h3>
+          <ul class="r-body" style="list-style:none;">
+            <li>minimal surfaces</li>
+            <li>Riemann surfaces</li>
+            <li>Hodge theory</li>
+            <li>elliptic PDE</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="split" style="margin-top: 3rem;">
+        <div class="split-left">
+          <h3 style="font-family: var(--font-ui); font-size: 1.02rem; margin-bottom: 0.6rem;">Mathematical Physics</h3>
+          <span class="status" style="margin-bottom: 0.8rem;">Long-term interest · currently learning</span>
+          <ul class="r-body" style="list-style:none;">
+            <li>Quantum Mechanics</li>
+            <li>Quantum Field Theory</li>
+            <li>Gauge Theory</li>
+            <li>Yang–Mills Theory</li>
+            <li>String Theory</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related writing -->
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">Writing</span>
+        <h2 class="section-title">Related Notes</h2>
+      </div>
+      <div class="post-list">
+        <article>
+          <a class="post-item" href="posts/Gidas-Spruck.pdf" target="_blank" rel="noopener">
+            <span class="post-date">Mar 15, 2026</span>
+            <span class="post-main">
+              <span class="post-title">Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations 笔记</span>
+              <span class="post-desc">Reading note on the classical paper by Gidas &amp; Spruck.</span>
+            </span>
+            <span class="post-arrow">→</span>
+          </a>
+        </article>
+        <article>
+          <a class="post-item" href="blog.html">
+            <span class="post-date">2026</span>
+            <span class="post-main">
+              <span class="post-title">Evens 读书笔记系列</span>
+              <span class="post-desc">Reading notes on Evans, Partial Differential Equations.</span>
+            </span>
+            <span class="post-arrow">→</span>
+          </a>
+        </article>
+        <article>
+          <a class="post-item" href="posts/Geometric%20Properties%20of%20the%20Hyperbolic%20Plane.pdf" target="_blank" rel="noopener">
+            <span class="post-date">Nov 08, 2025</span>
+            <span class="post-main">
+              <span class="post-title">双曲平面的一些几何性质</span>
+              <span class="post-desc">2025 年秋季学期科大数学强基讨论班大作业.</span>
+            </span>
+            <span class="post-arrow">→</span>
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-meta">Mathematics · USTC</span>
+      </div>
+      <p class="footer-meta">© 2026 Nick Shu</p>
+      <p class="footer-tagline">Built with passion for Mathematics.</p>
     </div>
-
-    <div class="card">
-      <h2>Current Projects / 当前研究课题</h2>
-      <h3>Minimal Surface<br/>极小曲面</h3>
-    </div>
-      
-  </div>
-
-  <footer>
-    © 2026 Nick · Research Page · GitHub Pages
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

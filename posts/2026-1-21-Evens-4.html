@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evens-4 | Nick Shu</title>
-<link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <!-- MathJax（数学公式） -->
+  <link rel="icon" href="../favicon.jpg" type="image/jpeg">
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
   <script>
     window.MathJax = {
       tex: {
@@ -13,177 +16,115 @@
       }
     };
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-  <style>
-    /* ===== 页面背景 ===== */
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #292E49, #536976);
-      overflow-x: hidden;
-      font-family:
-        "Times New Roman",
-        "SimSun",
-        "Songti SC",
-        "Noto Serif CJK SC",
-        serif;
-      color: #fff;
-    }
-
-    /* ===== 气泡动画 ===== */
-    .bubbles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .bubbles li {
-      position: absolute;
-      list-style: none;
-      width: 20px;
-      height: 20px;
-      background: rgba(255,255,255,0.15);
-      animation: animate 25s linear infinite;
-      bottom: -150px;
-    }
-
-    @keyframes animate {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0%;
-      }
-      100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-      }
-    }
-
-    /* ===== 前景内容层 ===== */
-    .content {
-      position: relative;
-      z-index: 2;
-      max-width: 860px;
-      margin: 120px auto;
-      padding: 0 24px;
-      line-height: 1.8;
-    }
-
-    h1 {
-      font-weight: 400;
-      font-size: 2.2em;
-      margin-bottom: 8px;
-    }
-
-    .meta {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.95em;
-      margin-bottom: 40px;
-    }
-
-    p {
-      margin: 20px 0;
-    }
-
-    a {
-      color: rgba(255,255,255,0.9);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .back {
-      margin-top: 60px;
-    }
-  </style>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
 
- 
-
-  <!-- 背景气泡 -->
-  <ul class="bubbles">
-    <li></li><li></li><li></li><li></li><li></li>
-    <li></li><li></li><li></li><li></li><li></li>
-  </ul>
-
-  <!-- 前景文章内容 -->
-  <div class="content">
-    <h1>EVENS NOTES</h1>
-    <div class="meta">Jan 21, 2026 · Nick Shu</div>
-
-    <h2>
-      解的性质（续）
-    </h2>
-
-    <p>
-      同理，利用强最大值原理，<strong>有界域</strong>上面，热传导的边值问题解是唯一的.同样，取$\pm(u-\tilde{u})$使用最大值原理即可.而对于整个$U=\mathbb{R}^n$上面的初值问题，我们需要防止无穷远处输送热量，因此需要做一个限制.考虑热核的形式，我们猜想，大概需要$u$的增长速度不超过$\text{e}^{a|\boldsymbol{x}|^2}$量级才能实现.
-
-      事实上，如果满足$u(\boldsymbol{x},t)\leq A\text{e}^{a|\boldsymbol{x}|^2}$恒成立，那么首先可以证明的一点是$$\sup_{\mathbb{R}^n\times[0,T]}u=\sup_{\mathbb{R}^n}g,$$其中$g$是$t=0$的边界条件.然后，利用这个“最大值定理”，就可以证明唯一存在了.
-    </p>
-
-    <p>
-      事实上，对于$g=0$来说，方程$$\begin{cases}u_t(\boldsymbol{x},t)-\Delta u(\boldsymbol{x},t)=0,\\u(\boldsymbol{x},0)=0\end{cases}$$存在无穷多个解，但是真正有意义的只有$u\equiv0$这一种，而对于其他的解，都是<strong>数学上正确，物理上不可承认</strong>的.
-    </p>
-
-    <p>
-      利用平均值定理，可以证明热传导方程的解永远是光滑的，并且有估计$$\max_{C(\boldsymbol{x},t;r/2)}|\mathbf{D}_{\boldsymbol{x}}^k\text{D}_t^lu|\leq\frac{C_{kl}}{r^{k+2l+n+2}}||u||_{L^1(C(\boldsymbol{x},t;r))},$$其中$C(\boldsymbol{x},t;r):=\{(\boldsymbol{y},s):|\boldsymbol{x}-\boldsymbol{y}|\leq r,t-r^2\leq s\leq t\}$.
-
-      有意思的是，对于每一个$t_0>0$，$u|_{t=t_0}$都是解析的，但一般情况下，$u(\boldsymbol{x},t)$却不解析.
-    </p>
-
-    <h2>
-      能量方法
-    </h2>
-
-    <p>
-
-    在PDE问题当中，能量方法是非常重要的.在热传导当中，特别是边界为$\Gamma_T$上面$w=0$的时候，能量为$$e(t)=\int_Uw^2(\boldsymbol{x},t)\text{d}\boldsymbol{x},$$注意这不是一般意义下的能量，某种意义上，表征的是“距离热平衡有多远”.
-
-    这样$$\dot{e}(t)=2\int_Uww_t\text{d}\boldsymbol{x}=2\int_Uw\Delta w\text{d}\boldsymbol{x}=-2\int_U|\mathbf{D}w|^2\text{d}\boldsymbol{x}\leq0,$$从而，$e(t)\leq e(0)=0$.这意味着$w=0$是唯一合理的解.<em>这里有一个问题</em>，即为什么前面说了不仅仅有零解，但是这里又说<em>唯一解$w\equiv0$</em>呢？答案是因为，这里有一个隐含条件，即$w\in L^2(U)$，所以严格说来，这句话意思是，这个方程的<strong>$L^2$解最多能有一个</strong>.
-
-    更进一步，对于$\Gamma$上满足$u=g$的解$u$仍然也只能存在一个，因为如果有两个解，<strong>他们的差是$g=0$的解</strong>.这证明了$L^2$解的唯一性；更进一步，在$U$有界的情况下，还能说明$C_1^2(\bar{U}_T)$解的唯一性.
-
-    </p>
-
-    <p>
-      进一步，可以考虑反向问题，即如果两个函数$u,\tilde{u}$在$U\times[0,T]$上面都满足热方程，并且在$\partial U\times[0,T]$和$U\times\{t=T\}$上面相等，那么在整个$U_T$上面都相等.看起来很不显然，但是事实上还是对$w=u-\tilde{u}$利用能量分析，发现$\ddot{e}(t)=4\int_U(\Delta w)^2\text{d}\boldsymbol{x}$.利用Cauchy不等式，可以证明$$\int_U|\mathbf{D}w|^2\text{d}\boldsymbol{x}=-\int_Uw\Delta w\text{d}\boldsymbol{x}\leq\left(\int_Uw^2\text{d}\boldsymbol{x}\right)^{1/2}\left(\int_U(\Delta w)^2\text{d}\boldsymbol{x}\right)^{1/2},$$即$\ddot{e}(t)e(t)\geq(\dot{e}(t))^2$.
-
-      初等微积分已经知道这意味着$f(t)=\ln e(t)$是一个凸函数，所以可以得到$e((t_1+t_2)/2)\leq e^{1/2}(t_1)e^{1/2}(t_2)$.假设在$[t_1,t_2)$上面，$e(t)>0$，而$e(t_2)=0$，那么就会发现$$0 &lt e((t_1+t_2)/2)\leq e^{1/2}(t_1)e^{1/2}(t_2)=0.$$矛盾！从而只能是全部为$0$.
-    </p>
-
-    <h2>
-      一般波动方程
-    </h2>
-
-    <p>
-      前面，利用因式分解和传输方程的结论，解决了一维波动方程，现在我们将要解决$n\geq2$维的情况.我们将要解决的一般情况是$$\begin{cases}u_{tt}-\Delta u=0,&u\in\mathbb{R}^n\times(0,\infty);\\u(\boldsymbol{x},0)=g(\boldsymbol{x}),u_t(\boldsymbol{x},0)=h(t),&\boldsymbol{x}\in\mathbb{R}^n.\end{cases}$$我们想要尝试得到$u$的表达式（利用$g,h$）.
-
-      首先引入$u$在球面$\partial B(\boldsymbol{x},r)$的积分平均为$$U(\boldsymbol{x};r,t)=\frac{1}{|\partial B(\boldsymbol{x},t)|}\int_{\partial B(\boldsymbol{x},t)}u(\boldsymbol{y},t)\text{d}S_{\boldsymbol{y}}.$$同样地定义$G,H$分别是$g,h$的平均，那么$U$满足的PDE为$$\begin{cases}U_{tt}-U_{rr}-\frac{n-1}{r}U_r=0,&(r,t)\in\mathbb{R}_+\times(0,\infty);\\U(r,0)=G(r),U_t(r,0)=H(r),&r\in\mathbb{R}_+.\end{cases}$$这个方程叫做<strong>Euler-Poisson-Darboux方程</strong>，其中的$U_{rr}+\frac{n-1}{r}U_r$恰好是Laplace算子的径向部分.
-
-      在$n=3$的时候，引入$\tilde{U}= rU$，同样定义$\tilde{G}$和$\tilde{H}$.那么$\tilde{U}_{tt}-\tilde{U}_{rr}=0$并且边值条件多了一个$\tilde{U}(0,t)=0$.这样就可以求出来，$$\tilde{U}(\boldsymbol{x};r,t)=\frac{1}{2}(\tilde{G}(\boldsymbol{x},t+r)-\tilde{G}(\boldsymbol{x},t-r))+\frac{1}{2}\int_{t-r}^{t+r}\tilde{H}(\boldsymbol{x},\tau)\text{d}\tau.$$进而可以得到$$u(\boldsymbol{x},t)=\frac{1}{|\partial B(\boldsymbol{x},t)|}(g(\boldsymbol{y})=(\boldsymbol{y}-\boldsymbol{x})\cdot\mathbf{D}g+h(\boldsymbol{y})t\text{d}S_{\boldsymbol{y}}.$$这就是$n=3$时候的解.
-
-      更一般地，这种做法可以用在$n=2k+1$为奇数的情况，定义$\tilde{U}=\left(\frac{1}{r}\frac{\partial}{\partial r}\right)^{k-1}(r^{2k-1}U)$，同样定义$\tilde{G},\tilde{H}$，从而$n$为奇数的时候，波动方程的解为$$\frac{1}{(n-2)!!}\left[\frac{\partial}{\partial t}\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-3)/2}\left(t^{n-2}\frac{1}{|\partial B(\boldsymbol{x},t|)}\int_{\partial B(\boldsymbol{x},t)}g\text{d}S\right)+\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-3)/2}\left(t^{n-2}\frac{1}{|\partial B(\boldsymbol{x},t)|}\int_{\partial B(\boldsymbol{x},t)}h\text{d}S\right)\right].$$但是这个方法对于$n=2k$没有用.这是因为过程中我们需要的恒等式几乎都依赖$n$是奇数的条件.
-    </p>
-
-    <p>
-      
-    </p>
-
-     <div class="back">
-      <a href="../blog.html">← Back to Blog</a>
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand">Nick Shu</a>
+      <div class="header-right">
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a href="../about.html">About</a>
+          <a href="../research.html">Research</a>
+          <a href="../blog.html" class="active" aria-current="page">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-    
+  </header>
 
+  <main class="page container">
+    <article class="article">
+      <div class="article-header">
+        <h1>EVENS NOTES</h1>
+        <div class="article-meta">Jan 21, 2026 · Nick Shu</div>
+      </div>
+
+      <h2>
+        解的性质（续）
+      </h2>
+
+      <p>
+        同理，利用强最大值原理，<strong>有界域</strong>上面，热传导的边值问题解是唯一的.同样，取$\pm(u-\tilde{u})$使用最大值原理即可.而对于整个$U=\mathbb{R}^n$上面的初值问题，我们需要防止无穷远处输送热量，因此需要做一个限制.考虑热核的形式，我们猜想，大概需要$u$的增长速度不超过$\text{e}^{a|\boldsymbol{x}|^2}$量级才能实现.
+
+        事实上，如果满足$u(\boldsymbol{x},t)\leq A\text{e}^{a|\boldsymbol{x}|^2}$恒成立，那么首先可以证明的一点是$$\sup_{\mathbb{R}^n\times[0,T]}u=\sup_{\mathbb{R}^n}g,$$其中$g$是$t=0$的边界条件.然后，利用这个“最大值定理”，就可以证明唯一存在了.
+      </p>
+
+      <p>
+        事实上，对于$g=0$来说，方程$$\begin{cases}u_t(\boldsymbol{x},t)-\Delta u(\boldsymbol{x},t)=0,\\u(\boldsymbol{x},0)=0\end{cases}$$存在无穷多个解，但是真正有意义的只有$u\equiv0$这一种，而对于其他的解，都是<strong>数学上正确，物理上不可承认</strong>的.
+      </p>
+
+      <p>
+        利用平均值定理，可以证明热传导方程的解永远是光滑的，并且有估计$$\max_{C(\boldsymbol{x},t;r/2)}|\mathbf{D}_{\boldsymbol{x}}^k\text{D}_t^lu|\leq\frac{C_{kl}}{r^{k+2l+n+2}}||u||_{L^1(C(\boldsymbol{x},t;r))},$$其中$C(\boldsymbol{x},t;r):=\{(\boldsymbol{y},s):|\boldsymbol{x}-\boldsymbol{y}|\leq r,t-r^2\leq s\leq t\}$.
+
+        有意思的是，对于每一个$t_0>0$，$u|_{t=t_0}$都是解析的，但一般情况下，$u(\boldsymbol{x},t)$却不解析.
+      </p>
+
+      <h2>
+        能量方法
+      </h2>
+
+      <p>
+
+      在PDE问题当中，能量方法是非常重要的.在热传导当中，特别是边界为$\Gamma_T$上面$w=0$的时候，能量为$$e(t)=\int_Uw^2(\boldsymbol{x},t)\text{d}\boldsymbol{x},$$注意这不是一般意义下的能量，某种意义上，表征的是“距离热平衡有多远”.
+
+      这样$$\dot{e}(t)=2\int_Uww_t\text{d}\boldsymbol{x}=2\int_Uw\Delta w\text{d}\boldsymbol{x}=-2\int_U|\mathbf{D}w|^2\text{d}\boldsymbol{x}\leq0,$$从而，$e(t)\leq e(0)=0$.这意味着$w=0$是唯一合理的解.<em>这里有一个问题</em>，即为什么前面说了不仅仅有零解，但是这里又说<em>唯一解$w\equiv0$</em>呢？答案是因为，这里有一个隐含条件，即$w\in L^2(U)$，所以严格说来，这句话意思是，这个方程的<strong>$L^2$解最多能有一个</strong>.
+
+      更进一步，对于$\Gamma$上满足$u=g$的解$u$仍然也只能存在一个，因为如果有两个解，<strong>他们的差是$g=0$的解</strong>.这证明了$L^2$解的唯一性；更进一步，在$U$有界的情况下，还能说明$C_1^2(\bar{U}_T)$解的唯一性.
+
+      </p>
+
+      <p>
+        进一步，可以考虑反向问题，即如果两个函数$u,\tilde{u}$在$U\times[0,T]$上面都满足热方程，并且在$\partial U\times[0,T]$和$U\times\{t=T\}$上面相等，那么在整个$U_T$上面都相等.看起来很不显然，但是事实上还是对$w=u-\tilde{u}$利用能量分析，发现$\ddot{e}(t)=4\int_U(\Delta w)^2\text{d}\boldsymbol{x}$.利用Cauchy不等式，可以证明$$\int_U|\mathbf{D}w|^2\text{d}\boldsymbol{x}=-\int_Uw\Delta w\text{d}\boldsymbol{x}\leq\left(\int_Uw^2\text{d}\boldsymbol{x}\right)^{1/2}\left(\int_U(\Delta w)^2\text{d}\boldsymbol{x}\right)^{1/2},$$即$\ddot{e}(t)e(t)\geq(\dot{e}(t))^2$.
+
+        初等微积分已经知道这意味着$f(t)=\ln e(t)$是一个凸函数，所以可以得到$e((t_1+t_2)/2)\leq e^{1/2}(t_1)e^{1/2}(t_2)$.假设在$[t_1,t_2)$上面，$e(t)>0$，而$e(t_2)=0$，那么就会发现$$0 &lt e((t_1+t_2)/2)\leq e^{1/2}(t_1)e^{1/2}(t_2)=0.$$矛盾！从而只能是全部为$0$.
+      </p>
+
+      <h2>
+        一般波动方程
+      </h2>
+
+      <p>
+        前面，利用因式分解和传输方程的结论，解决了一维波动方程，现在我们将要解决$n\geq2$维的情况.我们将要解决的一般情况是$$\begin{cases}u_{tt}-\Delta u=0,&u\in\mathbb{R}^n\times(0,\infty);\\u(\boldsymbol{x},0)=g(\boldsymbol{x}),u_t(\boldsymbol{x},0)=h(t),&\boldsymbol{x}\in\mathbb{R}^n.\end{cases}$$我们想要尝试得到$u$的表达式（利用$g,h$）.
+
+        首先引入$u$在球面$\partial B(\boldsymbol{x},r)$的积分平均为$$U(\boldsymbol{x};r,t)=\frac{1}{|\partial B(\boldsymbol{x},t)|}\int_{\partial B(\boldsymbol{x},t)}u(\boldsymbol{y},t)\text{d}S_{\boldsymbol{y}}.$$同样地定义$G,H$分别是$g,h$的平均，那么$U$满足的PDE为$$\begin{cases}U_{tt}-U_{rr}-\frac{n-1}{r}U_r=0,&(r,t)\in\mathbb{R}_+\times(0,\infty);\\U(r,0)=G(r),U_t(r,0)=H(r),&r\in\mathbb{R}_+.\end{cases}$$这个方程叫做<strong>Euler-Poisson-Darboux方程</strong>，其中的$U_{rr}+\frac{n-1}{r}U_r$恰好是Laplace算子的径向部分.
+
+        在$n=3$的时候，引入$\tilde{U}= rU$，同样定义$\tilde{G}$和$\tilde{H}$.那么$\tilde{U}_{tt}-\tilde{U}_{rr}=0$并且边值条件多了一个$\tilde{U}(0,t)=0$.这样就可以求出来，$$\tilde{U}(\boldsymbol{x};r,t)=\frac{1}{2}(\tilde{G}(\boldsymbol{x},t+r)-\tilde{G}(\boldsymbol{x},t-r))+\frac{1}{2}\int_{t-r}^{t+r}\tilde{H}(\boldsymbol{x},\tau)\text{d}\tau.$$进而可以得到$$u(\boldsymbol{x},t)=\frac{1}{|\partial B(\boldsymbol{x},t)|}(g(\boldsymbol{y})=(\boldsymbol{y}-\boldsymbol{x})\cdot\mathbf{D}g+h(\boldsymbol{y})t\text{d}S_{\boldsymbol{y}}.$$这就是$n=3$时候的解.
+
+        更一般地，这种做法可以用在$n=2k+1$为奇数的情况，定义$\tilde{U}=\left(\frac{1}{r}\frac{\partial}{\partial r}\right)^{k-1}(r^{2k-1}U)$，同样定义$\tilde{G},\tilde{H}$，从而$n$为奇数的时候，波动方程的解为$$\frac{1}{(n-2)!!}\left[\frac{\partial}{\partial t}\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-3)/2}\left(t^{n-2}\frac{1}{|\partial B(\boldsymbol{x},t|)}\int_{\partial B(\boldsymbol{x},t)}g\text{d}S\right)+\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-3)/2}\left(t^{n-2}\frac{1}{|\partial B(\boldsymbol{x},t)|}\int_{\partial B(\boldsymbol{x},t)}h\text{d}S\right)\right].$$但是这个方法对于$n=2k$没有用.这是因为过程中我们需要的恒等式几乎都依赖$n$是奇数的条件.
+      </p>
+
+      <div style="margin-top: 3rem;">
+        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> Back to Blog</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-meta">Mathematics · USTC</span>
+      </div>
+      <p class="footer-meta">© 2026 Nick Shu</p>
+      <p class="footer-tagline">Built with passion for Mathematics.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>

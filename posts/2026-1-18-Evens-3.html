@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evens-3 | Nick Shu</title>
-<link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <!-- MathJax（数学公式） -->
+  <link rel="icon" href="../favicon.jpg" type="image/jpeg">
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
   <script>
     window.MathJax = {
       tex: {
@@ -13,154 +16,96 @@
       }
     };
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-  <style>
-    /* ===== 页面背景 ===== */
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #292E49, #536976);
-      overflow-x: hidden;
-      font-family:
-        "Times New Roman",
-        "SimSun",
-        "Songti SC",
-        "Noto Serif CJK SC",
-        serif;
-      color: #fff;
-    }
-
-    /* ===== 气泡动画 ===== */
-    .bubbles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .bubbles li {
-      position: absolute;
-      list-style: none;
-      width: 20px;
-      height: 20px;
-      background: rgba(255,255,255,0.15);
-      animation: animate 25s linear infinite;
-      bottom: -150px;
-    }
-
-    @keyframes animate {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0%;
-      }
-      100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-      }
-    }
-
-    /* ===== 前景内容层 ===== */
-    .content {
-      position: relative;
-      z-index: 2;
-      max-width: 860px;
-      margin: 120px auto;
-      padding: 0 24px;
-      line-height: 1.8;
-    }
-
-    h1 {
-      font-weight: 400;
-      font-size: 2.2em;
-      margin-bottom: 8px;
-    }
-
-    .meta {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.95em;
-      margin-bottom: 40px;
-    }
-
-    p {
-      margin: 20px 0;
-    }
-
-    a {
-      color: rgba(255,255,255,0.9);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .back {
-      margin-top: 60px;
-    }
-  </style>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
 
- 
-
-  <!-- 背景气泡 -->
-  <ul class="bubbles">
-    <li></li><li></li><li></li><li></li><li></li>
-    <li></li><li></li><li></li><li></li><li></li>
-  </ul>
-
-  <!-- 前景文章内容 -->
-  <div class="content">
-    <h1>EVENS NOTES</h1>
-    <div class="meta">Jan 18, 2026 · Nick Shu</div>
-
-  <h2>
-    热传导方程（续）
-  </h2>
-
-  <p>
-    我们展开$u$的表达式，就是
-  </p>
-
-    $$\begin{split}u(\boldsymbol{x},t)&=\int_0^t\int_{\mathbb{R}^n}\Phi(\boldsymbol{x}-\boldsymbol{y},t-s)f(\boldsymbol{y},s)\text{d}\boldsymbol{y}\text{d}s\\&=\int_0^t\frac{1}{(4\pi(t-s))^{n/2}}\int_{\mathbb{R}^n}\text{e}^{-\frac{|\boldsymbol{x}-\boldsymbol{y}|}{4(t-s)}}f(\boldsymbol{y},s)\text{d}\boldsymbol{y}\text{d}s.\end{split}$$
-
-  <p>
-    这是方程组\[\begin{cases}u_t-\Delta u=0,&(\boldsymbol{x},t)\in\mathbb{R}^n\times(0,\infty),\\u(\boldsymbol{x},0)=0,&\boldsymbol{x}\in\mathbb{R}^n\end{cases}\]的解.当然，确实有一些又臭又长的方法可以不用任何物理/泛函背景证明它.不过，既然这种做法优雅简洁直观，而且很大程度上并没有过大的严谨性问题，不妨直接把它当成是证明好了.另外，如果边界条件变成了$u(\boldsymbol{x},0)=g(\boldsymbol{x})$，那么解就应该加上一个$g$卷积，具体来说，\[u(\boldsymbol{x},t)=\int_{\mathbb{R}^n}\Phi(\boldsymbol{x}-\boldsymbol{y},t)g(\boldsymbol{y})\text{d}\boldsymbol{y}+\int_0^t\int_{\mathbb{R}^n}\Phi(\boldsymbol{x}-\boldsymbol{y},t-s)f(\boldsymbol{y},s)\text{d}\boldsymbol{y}\text{d}s.\]后一项是扰动$f(\boldsymbol{x},t)$的叠加，前一项是初始条件的影响.
-  </p>
-
-    <h2>
-      解的性质
-    </h2>
-
-    <p>
-      和前面一样，我们将讨论其性质.首先还是<strong>平均值公式</strong>，应该注意，球面是Laplace基本解的水平集，因此我们猜想
-    </p>
-
-    \[E(\boldsymbol{x},t;r):=\left\{(\boldsymbol{y},s)\in\mathbb{R}^{n+1}:s\leq t,\Phi(\boldsymbol{x}-\boldsymbol{y},t-s)\geq\frac{1}{r^n}\right\}\]
-
-
-    <p>
-      上面$\Phi$的积分和$\Phi(\boldsymbol{x})$很有关联.事实上，可以证明\[u(\boldsymbol{x},t)=\frac{1}{4r^n}\int_{E(\boldsymbol{x},t;r)}u(\boldsymbol{y},s)\frac{|\boldsymbol{x}-\boldsymbol{y}|}{(t-s)^2}\text{d}\boldsymbol{y}\text{d}s.\]这是热传导方程的平均值公式.直观上这很有道理，因为，$t$时刻发生的故事永远只跟那些$t$之前的时刻有关联.
-    </p>
-
-    <p>
-      同理，我们可以构造出相应的最大值原理，不过考虑到物理图像上，$t$和空间坐标并不平权，因此不是所有样子的几何图像都合理.当然如果要把空间坐标和时间坐标分开来，最简单的一种就是$U_T=U\times(0,T]$，其中$U\subseteq\mathbb{R}^n$而$T\geq0$.而事实上，所有联通的$U$和$T\geq0$形成的$U_T$都满足：如果有一个内点达到最大/小值，那么在$U_T$内部是定值.物理上解读就是如果这个点取到最大/小值，那么必定不存在传热情况，从而只能是大家温度都一样.
-
-      证明和波动方程完全一致，我们需要的就是通过不断构造“完全包含在$U_T$里面的水平集，发现这上面必须一直是最大值”然后一直往外捅出去，从而整个$U_T$都是最大值了.
-    </p>
-
-     <div class="back">
-      <a href="../blog.html">← Back to Blog</a>
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand">Nick Shu</a>
+      <div class="header-right">
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a href="../about.html">About</a>
+          <a href="../research.html">Research</a>
+          <a href="../blog.html" class="active" aria-current="page">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-    
+  </header>
 
+  <main class="page container">
+    <article class="article">
+      <div class="article-header">
+        <h1>EVENS NOTES</h1>
+        <div class="article-meta">Jan 18, 2026 · Nick Shu</div>
+      </div>
+
+      <h2>
+        热传导方程（续）
+      </h2>
+
+      <p>
+        我们展开$u$的表达式，就是
+      </p>
+
+      $$\begin{split}u(\boldsymbol{x},t)&=\int_0^t\int_{\mathbb{R}^n}\Phi(\boldsymbol{x}-\boldsymbol{y},t-s)f(\boldsymbol{y},s)\text{d}\boldsymbol{y}\text{d}s\\&=\int_0^t\frac{1}{(4\pi(t-s))^{n/2}}\int_{\mathbb{R}^n}\text{e}^{-\frac{|\boldsymbol{x}-\boldsymbol{y}|}{4(t-s)}}f(\boldsymbol{y},s)\text{d}\boldsymbol{y}\text{d}s.\end{split}$$
+
+      <p>
+        这是方程组\[\begin{cases}u_t-\Delta u=0,&(\boldsymbol{x},t)\in\mathbb{R}^n\times(0,\infty),\\u(\boldsymbol{x},0)=0,&\boldsymbol{x}\in\mathbb{R}^n\end{cases}\]的解.当然，确实有一些又臭又长的方法可以不用任何物理/泛函背景证明它.不过，既然这种做法优雅简洁直观，而且很大程度上并没有过大的严谨性问题，不妨直接把它当成是证明好了.另外，如果边界条件变成了$u(\boldsymbol{x},0)=g(\boldsymbol{x})$，那么解就应该加上一个$g$卷积，具体来说，\[u(\boldsymbol{x},t)=\int_{\mathbb{R}^n}\Phi(\boldsymbol{x}-\boldsymbol{y},t)g(\boldsymbol{y})\text{d}\boldsymbol{y}+\int_0^t\int_{\mathbb{R}^n}\Phi(\boldsymbol{x}-\boldsymbol{y},t-s)f(\boldsymbol{y},s)\text{d}\boldsymbol{y}\text{d}s.\]后一项是扰动$f(\boldsymbol{x},t)$的叠加，前一项是初始条件的影响.
+      </p>
+
+      <h2>
+        解的性质
+      </h2>
+
+      <p>
+        和前面一样，我们将讨论其性质.首先还是<strong>平均值公式</strong>，应该注意，球面是Laplace基本解的水平集，因此我们猜想
+      </p>
+
+      \[E(\boldsymbol{x},t;r):=\left\{(\boldsymbol{y},s)\in\mathbb{R}^{n+1}:s\leq t,\Phi(\boldsymbol{x}-\boldsymbol{y},t-s)\geq\frac{1}{r^n}\right\}\]
+
+
+      <p>
+        上面$\Phi$的积分和$\Phi(\boldsymbol{x})$很有关联.事实上，可以证明\[u(\boldsymbol{x},t)=\frac{1}{4r^n}\int_{E(\boldsymbol{x},t;r)}u(\boldsymbol{y},s)\frac{|\boldsymbol{x}-\boldsymbol{y}|}{(t-s)^2}\text{d}\boldsymbol{y}\text{d}s.\]这是热传导方程的平均值公式.直观上这很有道理，因为，$t$时刻发生的故事永远只跟那些$t$之前的时刻有关联.
+      </p>
+
+      <p>
+        同理，我们可以构造出相应的最大值原理，不过考虑到物理图像上，$t$和空间坐标并不平权，因此不是所有样子的几何图像都合理.当然如果要把空间坐标和时间坐标分开来，最简单的一种就是$U_T=U\times(0,T]$，其中$U\subseteq\mathbb{R}^n$而$T\geq0$.而事实上，所有联通的$U$和$T\geq0$形成的$U_T$都满足：如果有一个内点达到最大/小值，那么在$U_T$内部是定值.物理上解读就是如果这个点取到最大/小值，那么必定不存在传热情况，从而只能是大家温度都一样.
+
+        证明和波动方程完全一致，我们需要的就是通过不断构造“完全包含在$U_T$里面的水平集，发现这上面必须一直是最大值”然后一直往外捅出去，从而整个$U_T$都是最大值了.
+      </p>
+
+      <div style="margin-top: 3rem;">
+        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> Back to Blog</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-meta">Mathematics · USTC</span>
+      </div>
+      <p class="footer-meta">© 2026 Nick Shu</p>
+      <p class="footer-tagline">Built with passion for Mathematics.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>

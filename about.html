@@ -2,137 +2,132 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Nick Shu</title>
-<link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #292E49, #536976);
-      font-family: "Times New Roman", "SimSun", "Songti SC", serif;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    /* Background Animation */
-    .bubbles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-    .bubbles li {
-      position: absolute;
-      list-style: none;
-      background: rgba(255, 255, 255, 0.1);
-      animation: animate 25s linear infinite;
-      bottom: -150px;
-    }
-    @keyframes animate {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0%; }
-      100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
-    }
-    /* Simple bubble positioning */
-    .bubbles li:nth-child(1){ left:25%; width:80px; height:80px; }
-    .bubbles li:nth-child(2){ left:10%; width:20px; height:20px; animation-delay:2s; }
-    .bubbles li:nth-child(3){ left:70%; width:20px; height:20px; animation-delay:4s; }
-    .bubbles li:nth-child(4){ left:40%; width:60px; height:60px; animation-delay:10s; }
-
-    /* Content Layout */
-    .container {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-
-    header {
-      margin-bottom: 40px;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      padding-bottom: 20px;
-    }
-
-    h1 { font-weight: 400; font-size: 2.4em; margin: 0; }
-    h2 { font-weight: 400; font-size: 1.8em; margin-top: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px;}
-    
-    .back-nav { margin-bottom: 20px; }
-    .back-nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9em; }
-    .back-nav a:hover { color: #fff; }
-
-    /* CV Styles */
-    .cv-section { margin-bottom: 30px; }
-    .cv-item {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-    .cv-date { min-width: 120px; text-align: right; color: rgba(255,255,255,0.7); font-style: italic; }
-    .cv-content { flex: 1; padding-right: 20px; }
-    
-    p { margin: 15px 0; font-size: 1.05em; color: rgba(255,255,255,0.9); }
-    
-    ul.skills { column-count: 2; padding-left: 20px; }
-  </style>
+  <meta name="description" content="About Nick Shu — undergraduate student in Mathematics at the School of the Gifted Young, USTC.">
+  <link rel="icon" href="favicon.jpg" type="image/jpeg">
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <ul class="bubbles">
-    <li></li><li></li><li></li><li></li><li></li>
-  </ul>
-
-  <div class="container">
-    <nav class="back-nav">
-      <a href="index.html">← Back to Home</a>
-    </nav>
-
-    <header>
-      <h1>About Me</h1>
-    </header>
-
-    <section>
-      <p>
-        Hello! I am <strong>Nick Shu</strong>, an undergraduate student at the <strong>School of the Gifted Young (SGY)</strong>, University of Science and Technology of China (USTC). 
-      </p>
-      <p>
-        My primary academic interests lie in the field of Mathematics. 
-      </p>
-    </section>
-
-    <section class="cv-section">
-      <h2>Short CV</h2>
-
-      <h3>Education</h3>
-      <div class="cv-item">
-        <div class="cv-content">
-          <em>University of Science and Technology of China (USTC)<br> School of the Gifted Young(SGY)</em><br>
-          Class Youth League Branch Secretary of Class 5, Grade 25<br>
-          Member of the Academic Practice Department of the College Student Union<br>
-        </div>
-        <div class="cv-content">
-         <a href="http://www.aqyz.net" target="_blank">
-          <em>Anqing No.1 Middle School</em></a><br>
-          Class Youth League Branch Secretary of Class 1, Grade 23<br>
-          President of the Mathematics Club<br>
-          Minister of the Learning Department of the Student Union<br>
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">Nick Shu</a>
+      <div class="header-right">
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a href="about.html" class="active" aria-current="page">About</a>
+          <a href="research.html">Research</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+          </button>
         </div>
       </div>
+    </div>
+  </header>
 
-      <h3>Skills</h3>
-      <ul class="skills">
-        <li>LaTeX (Academic Typesetting)</li>
-        <li>Mathematics</li>
-        <li>Languages: Chinese (Native), English (Fluent)</li>
-      </ul>
+  <main class="page container">
+    <section class="section-head">
+      <span class="eyebrow">About</span>
+      <h1 class="section-title">About Me</h1>
     </section>
 
-    <footer style="margin-top: 100px; font-size: 0.8em; opacity: 0.5; text-align: center;">
-      &copy; 2026 Nick Shu. Built with passion for Mathematics.
-    </footer>
-  </div>
+    <div class="split">
+      <div class="split-left">
+        <p>
+          Hello! I am <strong>Nick Shu</strong>, an undergraduate student at the
+          <strong>School of the Gifted Young (SGY)</strong>, University of Science
+          and Technology of China (USTC).
+        </p>
+        <p>
+          My primary academic interests lie in the field of Mathematics.
+        </p>
+      </div>
 
+      <div>
+        <h2 class="section-title" style="font-size: 1.3rem; margin-bottom: 1.25rem;">Short CV</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-date">Present</span>
+            <div class="tl-body">
+              <h3>University of Science and Technology of China</h3>
+              <div class="role">School of the Gifted Young</div>
+              <ul>
+                <li>Class Youth League Branch Secretary of Class 5, Grade 25</li>
+                <li>Member of the Academic Practice Department of the College Student Union</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">Previously</span>
+            <div class="tl-body">
+              <h3><a href="http://www.aqyz.net" target="_blank" rel="noopener" class="link">Anqing No.1 Middle School</a></h3>
+              <div class="role">Secondary education</div>
+              <ul>
+                <li>Class Youth League Branch Secretary of Class 1, Grade 23</li>
+                <li>President of the Mathematics Club</li>
+                <li>Minister of the Learning Department of the Student Union</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">Skills</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-date">Typesetting</span>
+          <div class="tl-body">
+            <h3>LaTeX</h3>
+            <div class="role">Academic typesetting</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">Field</span>
+          <div class="tl-body">
+            <h3>Mathematics</h3>
+            <div class="role">Primary academic interest</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">Languages</span>
+          <div class="tl-body">
+            <h3>Chinese (Native) · English (Fluent)</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-meta">Mathematics · USTC</span>
+      </div>
+      <p class="footer-meta">© 2026 Nick Shu</p>
+      <p class="footer-tagline">Built with passion for Mathematics.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

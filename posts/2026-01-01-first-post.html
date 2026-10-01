@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>First Blog Post | Nick Shu</title>
-<link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <!-- MathJax（数学公式） -->
+  <link rel="icon" href="../favicon.jpg" type="image/jpeg">
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
   <script>
     window.MathJax = {
       tex: {
@@ -13,125 +16,75 @@
       }
     };
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-  <style>
-    /* ===== 页面背景 ===== */
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #292E49, #536976);
-      overflow-x: hidden;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #fff;
-    }
-
-    /* ===== 气泡动画 ===== */
-    .bubbles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .bubbles li {
-      position: absolute;
-      list-style: none;
-      width: 20px;
-      height: 20px;
-      background: rgba(255,255,255,0.15);
-      animation: animate 25s linear infinite;
-      bottom: -150px;
-    }
-
-    @keyframes animate {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0%;
-      }
-      100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-      }
-    }
-
-    /* ===== 前景内容层 ===== */
-    .content {
-      position: relative;
-      z-index: 2;
-      max-width: 860px;
-      margin: 120px auto;
-      padding: 0 24px;
-      line-height: 1.8;
-    }
-
-    h1 {
-      font-weight: 400;
-      font-size: 2.2em;
-      margin-bottom: 8px;
-    }
-
-    .meta {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.95em;
-      margin-bottom: 40px;
-    }
-
-    p {
-      margin: 20px 0;
-    }
-
-    a {
-      color: rgba(255,255,255,0.9);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .back {
-      margin-top: 60px;
-    }
-  </style>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
 
-  <!-- 背景气泡 -->
-  <ul class="bubbles">
-    <li></li><li></li><li></li><li></li><li></li>
-    <li></li><li></li><li></li><li></li><li></li>
-  </ul>
-
-  <!-- 前景文章内容 -->
-  <div class="content">
-    <h1>First Blog Post</h1>
-    <div class="meta">Jan 1, 2026 · Nick Shu</div>
-
-    <p>
-      我的第一个博客！
-    </p>
-
-    <p>
-      早上好，或者说，大家好！
-    </p>
-
-    <p>
-      作为一名大一学生，我对微分几何颇有兴趣。因此，我可能暂时会以几何分析为自己的研究方向。
-      
-      我现在阅读了Evens的《偏微分方程》的一大部分并且正在读Gidas&Spruck的论文《Global and local behavior of positive solutions of nonlinear elliptic equations》，将会不定期写下自己的一些阅读思考和理解。偶尔也会夹杂一些我写的简单的小论文。
-    </p>
-
-    <div class="back">
-      <a href="../blog.html">← Back to Blog</a>
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand">Nick Shu</a>
+      <div class="header-right">
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a href="../about.html">About</a>
+          <a href="../research.html">Research</a>
+          <a href="../blog.html" class="active" aria-current="page">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
+  </header>
 
+  <main class="page container">
+    <article class="article">
+      <div class="article-header">
+        <h1>First Blog Post</h1>
+        <div class="article-meta">Jan 1, 2026 · Nick Shu</div>
+      </div>
+
+      <p>
+        我的第一个博客！
+      </p>
+
+      <p>
+        早上好，或者说，大家好！
+      </p>
+
+      <p>
+        作为一名大一学生，我对微分几何颇有兴趣。因此，我可能暂时会以几何分析为自己的研究方向。
+
+        我现在阅读了Evens的《偏微分方程》的一大部分并且正在读Gidas&Spruck的论文《Global and local behavior of positive solutions of nonlinear elliptic equations》，将会不定期写下自己的一些阅读思考和理解。偶尔也会夹杂一些我写的简单的小论文。
+      </p>
+
+      <div style="margin-top: 3rem;">
+        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> Back to Blog</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-meta">Mathematics · USTC</span>
+      </div>
+      <p class="footer-meta">© 2026 Nick Shu</p>
+      <p class="footer-tagline">Built with passion for Mathematics.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>

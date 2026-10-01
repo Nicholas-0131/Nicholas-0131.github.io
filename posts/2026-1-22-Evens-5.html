@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evens-5 | Nick Shu</title>
-<link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <!-- MathJax（数学公式） -->
+  <link rel="icon" href="../favicon.jpg" type="image/jpeg">
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
   <script>
     window.MathJax = {
       tex: {
@@ -13,167 +16,111 @@
       }
     };
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-  <style>
-    /* ===== 页面背景 ===== */
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #292E49, #536976);
-      overflow-x: hidden;
-      font-family:
-        "Times New Roman",
-        "SimSun",
-        "Songti SC",
-        "Noto Serif CJK SC",
-        serif;
-      color: #fff;
-    }
-
-    /* ===== 气泡动画 ===== */
-    .bubbles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .bubbles li {
-      position: absolute;
-      list-style: none;
-      width: 20px;
-      height: 20px;
-      background: rgba(255,255,255,0.15);
-      animation: animate 25s linear infinite;
-      bottom: -150px;
-    }
-
-    @keyframes animate {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0%;
-      }
-      100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-      }
-    }
-
-    /* ===== 前景内容层 ===== */
-    .content {
-      position: relative;
-      z-index: 2;
-      max-width: 860px;
-      margin: 120px auto;
-      padding: 0 24px;
-      line-height: 1.8;
-    }
-
-    h1 {
-      font-weight: 400;
-      font-size: 2.2em;
-      margin-bottom: 8px;
-    }
-
-    .meta {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.95em;
-      margin-bottom: 40px;
-    }
-
-    p {
-      margin: 20px 0;
-    }
-
-    a {
-      color: rgba(255,255,255,0.9);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .back {
-      margin-top: 60px;
-    }
-  </style>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
 
- 
-
-  <!-- 背景气泡 -->
-  <ul class="bubbles">
-    <li></li><li></li><li></li><li></li><li></li>
-    <li></li><li></li><li></li><li></li><li></li>
-  </ul>
-
-  <!-- 前景文章内容 -->
-  <div class="content">
-    <h1>EVENS NOTES</h1>
-    <div class="meta">Jan 21, 2026 · Nick Shu</div>
-
-    <h2>
-      一般波动方程（续）
-    </h2>
-
-    <p>
-      对于$n=2k$为偶数的情况，我们首先看看$n=2$怎么办.首先，把$\mathbb{R}^2$嵌入到$\mathbb{R}^3$，具体把$\boldsymbol{x}$变成$\bar{\boldsymbol{x}}=(\boldsymbol{x},0)$.然后我们可以把$u(\boldsymbol{x},t)$也变成一个$\bar{u}(\bar{\boldsymbol{x}},t)$，同理定义$\bar{g},\bar{h}$.不难看出，$\bar{u}$是三维Laplace方程有初值$g,h$的解.这样利用上面的公式，我们得到$\bar{u}(\bar{x},t)$的表达式.
-
-      接下来，我们利用投影方法，比较重要的一点是，点$\bar{y}=(\boldsymbol{y},z)\in\partial\bar{B}(\bar{\boldsymbol{x}},t)$其实是指$z^2+|\boldsymbol{y}-\boldsymbol{x}|^2=t^2$，从而外法向为$\boldsymbol{\nu}=(\boldsymbol{y}-\boldsymbol{x},z)/t$.从而$\text{d}\boldsymbol{y}=|\boldsymbol{\nu}\cdot\boldsymbol{e}_3|\text{d}\bar{S}_{\bar{\boldsymbol{y}}}=\frac{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}{t}\text{d}\bar{S}_{\bar{\boldsymbol{y}}}$.
-
-      从而得到了$n=2$时候的解为
-    </p>
-
-    $$u(\boldsymbol{x},t)=\frac{t}{2}\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{g(\boldsymbol{y})+(\boldsymbol{y}-\boldsymbol{x})\cdot\mathbf{D}g(\boldsymbol{y})+h(\boldsymbol{y})t}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}.$$
-
-    <p>
-      利用同样的方法可以把所有$n=2k$为偶数的情况算出来，答案为
-    </p>
-
-    $$u(\boldsymbol{x},t)=\frac{1}{n!!}\left[\frac{\partial}{\partial t}\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-2)/2}\left(t^n\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{g(\boldsymbol{y})}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}\right)+\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-2)/2}\left(t^n\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{h(\boldsymbol{y})}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}\right)\right].$$
-
-    <p>
-      从而，我们求出了齐次波动方程的解的表达式，更进一步，我们发现对于$n\geq3$的奇数来说，数据$g,h$仅仅影响了锥面$\partial\{(\boldsymbol{y},t):t>0,|\boldsymbol{x}-\boldsymbol{y}| &lt t\}=\{(\boldsymbol{y},t):t>0,|\boldsymbol{y}-\boldsymbol{x}|=t\}$上面的取值；但是在$n$为偶数的时候，影响了整个锥体.这说明，奇数维的时候，扰动沿着波前传播出去；而偶数维的时候，扰动则会继续影响.这便是<strong>Huygens原理</strong>.
-    </p>
-
-    <p>
-      对于非齐次情况（注意这时候我们一般设定$u|_{t=0}=u_t|_{t=0}=0$，如果不是的话，直接把它写成非齐次的解和一个齐次的解的和即可），我们需要做的就是利用Duhamel原理做积分即可，即如果$u(\boldsymbol{x},t;s)$满足波动方程，且有初值$u(\boldsymbol{x},s;s)=0,u_t(\boldsymbol{x},s;s)=f(\boldsymbol{x},s)$，那么$u(\boldsymbol{x},t)=\int_0^tu(\boldsymbol{x},t;s)\text{d}s$是非齐次波动方程的解.特别地，$n=3$的时候，这个解正是$$u(\boldsymbol{x},t)=\frac{1}{4\pi}\int_{B(\boldsymbol{x},t)}\frac{f(\boldsymbol{y},t-|\boldsymbol{y}-\boldsymbol{x}|)}{|\boldsymbol{y}-\boldsymbol{x}|}\text{d}\boldsymbol{y},$$也就是物理中所谓<strong>推迟势</strong>.
-    </p>
-
-    <p>
-      现在考虑利用能量方法解决波动方程.考虑能量定义为$$E(t)=\frac{1}{2}\int_Uw_t^2+|\mathbf{D}w|^2\text{d}\boldsymbol{x},$$然后我们假设$w$是边值条件为$0$的齐次方程的解，那么$$\dot{E}(t)=\int_Uw_tw_{tt}+\mathbf{D}w\cdot\mathbf{D}w_t\text{d}\boldsymbol{x}=\int_Uw_t(w_{tt}-\Delta w)\text{d}\boldsymbol{x}=0.$$从而$E(t)\equiv E(0)=0$，于是只能是$w=0$.这再次证明了初值问题解是唯一的.
-
-      更进一步，考虑波动方程的解的<strong>依赖区域</strong>，即$(\boldsymbol{x}_0,t_0)$到底和哪些位置的点有关系，我们猜想这个点只与平面上$B(\boldsymbol{x}_0,t_0)\times\{t=0\}$有关系，但是我们其实有更强的结论，那就是这个圆盘<strong>事实上决定了整个$K(\boldsymbol{x}_0,t_0)=\{(\boldsymbol{x},t):t\in[0,t_0],|\boldsymbol{x}-\boldsymbol{x}_0|\leq t_0-t\}$</strong>.
-    </p>
-
-    至此，我们完整地回顾了第二章里面重要的内容。后面的内容将会根据我的需要和理解，进行较大程度的“从心所欲”的改编。
-
-    <h2>
-      线性PDE的理论
-    </h2>
-
-    <p>
-      首先讨论一下各种函数空间.在PDE中用的多的有两种：<strong>H$\boldsymbol{\ddot{\text{o}}}$lder空间和Sobolev空间</strong>.
-    </p>
-
-    <p>
-      所谓H$\ddot{\text{o}}$lder空间就是在$C^k(\bar{U})$当中且\[||u||_{C^{k,\gamma}(\bar{U})}=\sum_{|\boldsymbol{\alpha}|\leq k}||\mathbf{D}^{\boldsymbol{\alpha}}u||_{C(\bar{U})}+\sum_{|\boldsymbol{\alpha}|=k}[\mathbf{D}^{\boldsymbol{\alpha}}u]_{C^{0,\gamma}(\bar{U})}\]有限的函数，其中\[[u]_{C^{0,\gamma}(\bar{U})}=\sup_{\boldsymbol{x},\boldsymbol{y}\in I}\left\{\frac{|u(\boldsymbol{x})-u(\boldsymbol{y})|}{|\boldsymbol{x}-\boldsymbol{y}|^{\gamma}}\right\}\]叫做<strong>H$\boldsymbol{\ddot{\text{o}}}$lder半范数</strong>.
-    </p>
-
-     <div class="back">
-      <a href="../blog.html">← Back to Blog</a>
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand">Nick Shu</a>
+      <div class="header-right">
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a href="../about.html">About</a>
+          <a href="../research.html">Research</a>
+          <a href="../blog.html" class="active" aria-current="page">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-    
+  </header>
 
+  <main class="page container">
+    <article class="article">
+      <div class="article-header">
+        <h1>EVENS NOTES</h1>
+        <div class="article-meta">Jan 21, 2026 · Nick Shu</div>
+      </div>
+
+      <h2>
+        一般波动方程（续）
+      </h2>
+
+      <p>
+        对于$n=2k$为偶数的情况，我们首先看看$n=2$怎么办.首先，把$\mathbb{R}^2$嵌入到$\mathbb{R}^3$，具体把$\boldsymbol{x}$变成$\bar{\boldsymbol{x}}=(\boldsymbol{x},0)$.然后我们可以把$u(\boldsymbol{x},t)$也变成一个$\bar{u}(\bar{\boldsymbol{x}},t)$，同理定义$\bar{g},\bar{h}$.不难看出，$\bar{u}$是三维Laplace方程有初值$g,h$的解.这样利用上面的公式，我们得到$\bar{u}(\bar{x},t)$的表达式.
+
+        接下来，我们利用投影方法，比较重要的一点是，点$\bar{y}=(\boldsymbol{y},z)\in\partial\bar{B}(\bar{\boldsymbol{x}},t)$其实是指$z^2+|\boldsymbol{y}-\boldsymbol{x}|^2=t^2$，从而外法向为$\boldsymbol{\nu}=(\boldsymbol{y}-\boldsymbol{x},z)/t$.从而$\text{d}\boldsymbol{y}=|\boldsymbol{\nu}\cdot\boldsymbol{e}_3|\text{d}\bar{S}_{\bar{\boldsymbol{y}}}=\frac{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}{t}\text{d}\bar{S}_{\bar{\boldsymbol{y}}}$.
+
+        从而得到了$n=2$时候的解为
+      </p>
+
+      $$u(\boldsymbol{x},t)=\frac{t}{2}\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{g(\boldsymbol{y})+(\boldsymbol{y}-\boldsymbol{x})\cdot\mathbf{D}g(\boldsymbol{y})+h(\boldsymbol{y})t}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}.$$
+
+      <p>
+        利用同样的方法可以把所有$n=2k$为偶数的情况算出来，答案为
+      </p>
+
+      $$u(\boldsymbol{x},t)=\frac{1}{n!!}\left[\frac{\partial}{\partial t}\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-2)/2}\left(t^n\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{g(\boldsymbol{y})}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}\right)+\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-2)/2}\left(t^n\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{h(\boldsymbol{y})}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}\right)\right].$$
+
+      <p>
+        从而，我们求出了齐次波动方程的解的表达式，更进一步，我们发现对于$n\geq3$的奇数来说，数据$g,h$仅仅影响了锥面$\partial\{(\boldsymbol{y},t):t>0,|\boldsymbol{x}-\boldsymbol{y}| &lt t\}=\{(\boldsymbol{y},t):t>0,|\boldsymbol{y}-\boldsymbol{x}|=t\}$上面的取值；但是在$n$为偶数的时候，影响了整个锥体.这说明，奇数维的时候，扰动沿着波前传播出去；而偶数维的时候，扰动则会继续影响.这便是<strong>Huygens原理</strong>.
+      </p>
+
+      <p>
+        对于非齐次情况（注意这时候我们一般设定$u|_{t=0}=u_t|_{t=0}=0$，如果不是的话，直接把它写成非齐次的解和一个齐次的解的和即可），我们需要做的就是利用Duhamel原理做积分即可，即如果$u(\boldsymbol{x},t;s)$满足波动方程，且有初值$u(\boldsymbol{x},s;s)=0,u_t(\boldsymbol{x},s;s)=f(\boldsymbol{x},s)$，那么$u(\boldsymbol{x},t)=\int_0^tu(\boldsymbol{x},t;s)\text{d}s$是非齐次波动方程的解.特别地，$n=3$的时候，这个解正是$$u(\boldsymbol{x},t)=\frac{1}{4\pi}\int_{B(\boldsymbol{x},t)}\frac{f(\boldsymbol{y},t-|\boldsymbol{y}-\boldsymbol{x}|)}{|\boldsymbol{y}-\boldsymbol{x}|}\text{d}\boldsymbol{y},$$也就是物理中所谓<strong>推迟势</strong>.
+      </p>
+
+      <p>
+        现在考虑利用能量方法解决波动方程.考虑能量定义为$$E(t)=\frac{1}{2}\int_Uw_t^2+|\mathbf{D}w|^2\text{d}\boldsymbol{x},$$然后我们假设$w$是边值条件为$0$的齐次方程的解，那么$$\dot{E}(t)=\int_Uw_tw_{tt}+\mathbf{D}w\cdot\mathbf{D}w_t\text{d}\boldsymbol{x}=\int_Uw_t(w_{tt}-\Delta w)\text{d}\boldsymbol{x}=0.$$从而$E(t)\equiv E(0)=0$，于是只能是$w=0$.这再次证明了初值问题解是唯一的.
+
+        更进一步，考虑波动方程的解的<strong>依赖区域</strong>，即$(\boldsymbol{x}_0,t_0)$到底和哪些位置的点有关系，我们猜想这个点只与平面上$B(\boldsymbol{x}_0,t_0)\times\{t=0\}$有关系，但是我们其实有更强的结论，那就是这个圆盘<strong>事实上决定了整个$K(\boldsymbol{x}_0,t_0)=\{(\boldsymbol{x},t):t\in[0,t_0],|\boldsymbol{x}-\boldsymbol{x}_0|\leq t_0-t\}$</strong>.
+      </p>
+
+      <p>
+      至此，我们完整地回顾了第二章里面重要的内容。后面的内容将会根据我的需要和理解，进行较大程度的“从心所欲”的改编。
+      </p>
+
+      <h2>
+        线性PDE的理论
+      </h2>
+
+      <p>
+        首先讨论一下各种函数空间.在PDE中用的多的有两种：<strong>H$\boldsymbol{\ddot{\text{o}}}$lder空间和Sobolev空间</strong>.
+      </p>
+
+      <p>
+        所谓H$\ddot{\text{o}}$lder空间就是在$C^k(\bar{U})$当中且\[||u||_{C^{k,\gamma}(\bar{U})}=\sum_{|\boldsymbol{\alpha}|\leq k}||\mathbf{D}^{\boldsymbol{\alpha}}u||_{C(\bar{U})}+\sum_{|\boldsymbol{\alpha}|=k}[\mathbf{D}^{\boldsymbol{\alpha}}u]_{C^{0,\gamma}(\bar{U})}\]有限的函数，其中\[[u]_{C^{0,\gamma}(\bar{U})}=\sup_{\boldsymbol{x},\boldsymbol{y}\in I}\left\{\frac{|u(\boldsymbol{x})-u(\boldsymbol{y})|}{|\boldsymbol{x}-\boldsymbol{y}|^{\gamma}}\right\}\]叫做<strong>H$\boldsymbol{\ddot{\text{o}}}$lder半范数</strong>.
+      </p>
+
+      <div style="margin-top: 3rem;">
+        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> Back to Blog</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-meta">Mathematics · USTC</span>
+      </div>
+      <p class="footer-meta">© 2026 Nick Shu</p>
+      <p class="footer-tagline">Built with passion for Mathematics.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>

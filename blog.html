@@ -2,237 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Nick Shu</title>
-<link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <style>
-    /* ===== 背景 ===== */
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #292E49, #536976);
-      overflow-x: hidden;
-      font-family:
-        "Times New Roman",
-        "SimSun",
-        "Songti SC",
-        "Noto Serif CJK SC",
-        serif;
-      color: #fff;
-    }
-
-    .bubbles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .bubbles li {
-      position: absolute;
-      list-style: none;
-      width: 20px;
-      height: 20px;
-      background: rgba(255,255,255,0.15);
-      animation: animate 25s linear infinite;
-      bottom: -150px;
-    }
-
-    @keyframes animate {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0%;
-      }
-      100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-      }
-    }
-
-    .bubbles li:nth-child(1){ left:25%; width:80px; height:80px; }
-    .bubbles li:nth-child(2){ left:10%; animation-delay:2s; }
-    .bubbles li:nth-child(3){ left:70%; animation-delay:4s; }
-    .bubbles li:nth-child(4){ left:40%; width:60px; height:60px; animation-delay:18s; }
-
-    /* ===== 前景内容 ===== */
-    .content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-      margin: 120px auto;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-weight: 400;
-      font-size: 2.4em;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 60px;
-    }
-
-    /* ===== 博客卡片 ===== */
-    .post-card {
-      background: rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 24px 28px;
-      margin-bottom: 28px;
-      backdrop-filter: blur(6px);
-    }
-
-    .post-card h2 {
-      margin: 0 0 6px 0;
-      font-weight: 400;
-    }
-
-    .post-card a {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .post-card a:hover {
-      text-decoration: underline;
-    }
-
-    .meta {
-      font-size: 0.9em;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 12px;
-    }
-
-    .excerpt {
-      color: rgba(255,255,255,0.85);
-      line-height: 1.6;
-    }
-
-    /* ===== 顶部 / 底部操作 ===== */
-    .actions {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 40px;
-    }
-
-    .actions a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      font-size: 0.95em;
-    }
-
-    .actions a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta name="description" content="Notes, thoughts, and mathematical writing by Nick Shu.">
+  <link rel="icon" href="favicon.jpg" type="image/jpeg">
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <a href="index.html" style="padding:8px 18px;border-radius:20px;background:#ffffff33;color:white;text-decoration:none;">
-      ← 返回主页
-    </a>
 
-  <!-- 背景气泡 -->
-  <ul class="bubbles">
-    <li></li><li></li><li></li><li></li><li></li>
-    <li></li><li></li><li></li><li></li><li></li>
-  </ul>
-
-  <!-- 内容 -->
-  <div class="content">
-    <h1>Blog</h1>
-    <p class="subtitle">Notes, thoughts, and mathematical writing.</p>
-
-    <div class="post-card">
-  <h2>
-    <a href="posts/Geometric%20Properties%20of%20the%20Hyperbolic%20Plane.pdf" target="_blank">
-     双曲平面的一些几何性质
-    </a>
-  </h2>
-  <div class="meta">Nov 08, 2025</div>
-  <div class="excerpt">
-    2025年秋季学期科大数学强基讨论班大作业
-  </div>
-</div>
-    <div class="post-card">
-      <h2>
-        <a href="posts/2026-1-16-Evens-1.html" target="_blank">
-          Evens读书笔记（第一次），写于2026.1.16.
-        </a>
-      </h2>
-      <div class="meta">Jan 16, 2026</div>
-      <div class="excerpt">
-        This is my first note on <em>Evens</em>, which is written on Jan.16th, 2026.
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">Nick Shu</a>
+      <div class="header-right">
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="blog.html" class="active" aria-current="page">Blog</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+          </button>
+        </div>
       </div>
     </div>
+  </header>
 
-    <div class="post-card">
-      <h2>
-        <a href="posts/2026-1-17-Evens-2.html" target="_blank">
-          Evens读书笔记（第二次），写于2026.1.17.
+  <main class="page container">
+    <section class="section-head">
+      <span class="eyebrow">Blog</span>
+      <h1 class="section-title" style="font-size: clamp(2.2rem, 6vw, 3.6rem);">Notes</h1>
+      <p class="section-desc">Notes, thoughts, and mathematical writing.</p>
+    </section>
+
+    <div class="post-list">
+      <div class="post-year">2026</div>
+
+      <article>
+        <a class="post-item" href="posts/Gidas-Spruck.pdf" target="_blank" rel="noopener">
+          <span class="post-date">Mar 15</span>
+          <span class="post-main">
+            <span class="post-title"><em>Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations</em> 笔记</span>
+            <span class="post-desc">This is my note on <em>Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations</em>, which is written from Jan.30th, 2026 to Mar.15th, 2026.</span>
+          </span>
+          <span class="post-arrow">→</span>
         </a>
-      </h2>
-      <div class="meta">Jan 17, 2026</div>
-      <div class="excerpt">
-        This is my note on <em>Evens</em>, which is written on Jan.17th, 2026.
-      </div>
-    </div>
+      </article>
 
-    <div class="post-card">
-      <h2>
-        <a href="posts/2026-1-18-Evens-3.html" target="_blank">
-          Evens读书笔记（第三次），写于2026.1.18.
+      <article>
+        <a class="post-item" href="posts/2026-1-22-Evens-5.html">
+          <span class="post-date">Jan 22</span>
+          <span class="post-main">
+            <span class="post-title">Evens读书笔记（第五次），写于2026.1.22.</span>
+            <span class="post-desc">This is my note on <em>Evens</em>, which is written on Jan.22nd, 2026.</span>
+          </span>
+          <span class="post-arrow">→</span>
         </a>
-      </h2>
-      <div class="meta">Jan 18, 2026</div>
-      <div class="excerpt">
-        This is my note on <em>Evens</em>, which is written on Jan.18th, 2026.
-      </div>
-    </div>
+      </article>
 
-    <div class="post-card">
-      <h2>
-        <a href="posts/2026-1-21-Evens-4.html" target="_blank">
-          Evens读书笔记（第四次），写于2026.1.21.
+      <article>
+        <a class="post-item" href="posts/2026-1-21-Evens-4.html">
+          <span class="post-date">Jan 21</span>
+          <span class="post-main">
+            <span class="post-title">Evens读书笔记（第四次），写于2026.1.21.</span>
+            <span class="post-desc">This is my note on <em>Evens</em>, which is written on Jan.21st, 2026.</span>
+          </span>
+          <span class="post-arrow">→</span>
         </a>
-      </h2>
-      <div class="meta">Jan 21, 2026</div>
-      <div class="excerpt">
-        This is my note on <em>Evens</em>, which is written on Jan.21st, 2026.
-      </div>
-    </div>
+      </article>
 
- <div class="post-card">
-      <h2>
-        <a href="posts/2026-1-22-Evens-5.html" target="_blank">
-          Evens读书笔记（第五次），写于2026.1.22.
+      <article>
+        <a class="post-item" href="posts/2026-1-18-Evens-3.html">
+          <span class="post-date">Jan 18</span>
+          <span class="post-main">
+            <span class="post-title">Evens读书笔记（第三次），写于2026.1.18.</span>
+            <span class="post-desc">This is my note on <em>Evens</em>, which is written on Jan.18th, 2026.</span>
+          </span>
+          <span class="post-arrow">→</span>
         </a>
-      </h2>
-      <div class="meta">Jan 22, 2026</div>
-      <div class="excerpt">
-        This is my note on <em>Evens</em>, which is written on Jan.22nd, 2026.
-      </div>
-    </div>
-  
-<div class="post-card">
-      <h2>
-        <a href="posts/Gidas-Spruck.pdf" target="_blank">
-          <em>Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations</em>笔记
+      </article>
+
+      <article>
+        <a class="post-item" href="posts/2026-1-17-Evens-2.html">
+          <span class="post-date">Jan 17</span>
+          <span class="post-main">
+            <span class="post-title">Evens读书笔记（第二次），写于2026.1.17.</span>
+            <span class="post-desc">This is my note on <em>Evens</em>, which is written on Jan.17th, 2026.</span>
+          </span>
+          <span class="post-arrow">→</span>
         </a>
-      </h2>
-      <div class="meta">Mar 15, 2026</div>
-      <div class="excerpt">
-        This is my note on <em>Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations</em>, which is written from Jan.30th, 2026 to Mar.15th, 2026.
-      </div>
+      </article>
+
+      <article>
+        <a class="post-item" href="posts/2026-1-16-Evens-1.html">
+          <span class="post-date">Jan 16</span>
+          <span class="post-main">
+            <span class="post-title">Evens读书笔记（第一次），写于2026.1.16.</span>
+            <span class="post-desc">This is my first note on <em>Evens</em>, which is written on Jan.16th, 2026.</span>
+          </span>
+          <span class="post-arrow">→</span>
+        </a>
+      </article>
+
+      <div class="post-year">2025</div>
+
+      <article>
+        <a class="post-item" href="posts/Geometric%20Properties%20of%20the%20Hyperbolic%20Plane.pdf" target="_blank" rel="noopener">
+          <span class="post-date">Nov 08</span>
+          <span class="post-main">
+            <span class="post-title">双曲平面的一些几何性质</span>
+            <span class="post-desc">2025年秋季学期科大数学强基讨论班大作业</span>
+          </span>
+          <span class="post-arrow">→</span>
+        </a>
+      </article>
     </div>
+  </main>
 
-  </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <span class="footer-brand">Nick Shu</span>
+        <span class="footer-meta">Mathematics · USTC</span>
+      </div>
+      <p class="footer-meta">© 2026 Nick Shu</p>
+      <p class="footer-tagline">Built with passion for Mathematics.</p>
+    </div>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
