@@ -70,6 +70,11 @@
           <span data-lang="zh">中国安徽省合肥市金寨路 96 号，230026</span>
           <span data-lang="en">96 Jinzhai Road, Hefei, Anhui 230026, P. R. China</span>
         </p>
+        <button class="cv-trigger" id="cv-trigger" type="button" aria-haspopup="dialog" aria-controls="cv-dialog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg>
+          <span data-lang="zh">我的简历</span><span data-lang="en">My CV</span>
+          <span aria-hidden="true">↓</span>
+        </button>
       </div>
     </section>
 
@@ -199,6 +204,24 @@
       </div>
     </section>
   </main>
+
+  <dialog class="cv-dialog" id="cv-dialog" aria-labelledby="cv-dialog-title" aria-describedby="cv-dialog-description">
+    <h2 id="cv-dialog-title"><span data-lang="zh">下载简历</span><span data-lang="en">Download CV</span></h2>
+    <p id="cv-dialog-description"><span data-lang="zh">请选择简历语言，下载 PDF 文件。</span><span data-lang="en">Choose a language to download the PDF.</span></p>
+    <div class="cv-options">
+      <a class="cv-option" href="中文CV.pdf" download>
+        <span data-lang="zh">下载中文版</span><span data-lang="en">Download Chinese CV</span>
+        <span class="cv-format" aria-hidden="true">PDF ↓</span>
+      </a>
+      <a class="cv-option" href="英文CV.pdf" download>
+        <span data-lang="zh">下载英文版</span><span data-lang="en">Download English CV</span>
+        <span class="cv-format" aria-hidden="true">PDF ↓</span>
+      </a>
+    </div>
+    <form method="dialog">
+      <button class="cv-close" type="submit"><span data-lang="zh">取消</span><span data-lang="en">Cancel</span></button>
+    </form>
+  </dialog>
 
   <footer class="site-footer">
     <div class="container footer-inner">

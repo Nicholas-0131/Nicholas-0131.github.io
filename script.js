@@ -51,6 +51,26 @@
   // Ensure title is set correctly on first paint.
   applyLang(getLang());
 
+  /* ---------- CV language picker ---------- */
+  var cvTrigger = document.getElementById("cv-trigger");
+  var cvDialog = document.getElementById("cv-dialog");
+  if (cvTrigger && cvDialog) {
+    cvTrigger.addEventListener("click", function () {
+      cvDialog.showModal();
+    });
+    cvDialog.addEventListener("click", function (event) {
+      if (event.target !== cvDialog) return;
+      var bounds = cvDialog.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right ||
+          event.clientY < bounds.top || event.clientY > bounds.bottom) {
+        cvDialog.close();
+      }
+    });
+    cvDialog.querySelectorAll("a[download]").forEach(function (link) {
+      link.addEventListener("click", function () { cvDialog.close(); });
+    });
+  }
+
   /* ---------- Header border on scroll ---------- */
   var header = document.querySelector(".site-header");
   function onScroll() {
