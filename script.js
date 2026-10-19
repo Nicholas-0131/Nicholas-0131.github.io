@@ -30,7 +30,7 @@
 
   /* ---------- Language ---------- */
   function getLang() {
-    return root.getAttribute("data-lang") === "en" ? "en" : "zh";
+    return root.getAttribute("data-lang") === "zh" ? "zh" : "en";
   }
 
   function applyLang(lang) {
