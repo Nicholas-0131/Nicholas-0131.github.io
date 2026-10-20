@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-title-zh="舒屹扬 | 数学" data-title-en="Nick Shu | Mathematics">
+<html lang="en" data-title-ja="舒屹扬 | 数学" data-title-zh="舒屹扬 | 数学" data-title-en="Nick Shu | Mathematics">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +7,36 @@
   <meta name="description" content="Nick Shu — Mathematics student at the School of the Gifted Young, University of Science and Technology of China.">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <script>
-    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'en';}catch(e){var d='light',l='en';}r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
+    (function(){var r=document.documentElement,d='light',l='en';try{var t=localStorage.getItem('theme');l=localStorage.getItem('lang');d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}var q=new URLSearchParams(location.search).get('lang');if(q==='zh'||q==='en'||q==='ja')l=q;if(l!=='zh'&&l!=='en'&&l!=='ja')l='en';r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261020-ja1">
 </head>
 <body>
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
+      <a href="index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
-          <a href="research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
-          <a href="blog.html"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
-          <a href="contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
+          <a href="about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span>
+<span data-lang="ja" lang="ja">プロフィール</span></a>
+          <a href="research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span>
+<span data-lang="ja" lang="ja">研究</span></a>
+          <a href="blog.html"><span data-lang="zh">博客</span><span data-lang="en">Blog</span>
+<span data-lang="ja" lang="ja">ブログ</span></a>
+          <a href="contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span>
+<span data-lang="ja" lang="ja">お問い合わせ</span></a>
         </nav>
         <div class="nav-actions">
-          <button class="lang-toggle" aria-label="Switch language / 切换语言">
-            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
-          </button>
+          <select class="lang-select" aria-label="Language / 语言 / 言語">
+            <option value="zh" lang="zh">中文</option>
+            <option value="en" lang="en">English</option>
+            <option value="ja" lang="ja">日本語</option>
+          </select>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -56,23 +63,29 @@
       </svg>
 
       <div class="container hero-inner">
-        <p class="hero-eyebrow"><span data-lang="zh">数学</span><span data-lang="en">Mathematics</span></p>
+        <p class="hero-eyebrow"><span data-lang="zh">数学</span><span data-lang="en">Mathematics</span>
+<span data-lang="ja" lang="ja">数学</span></p>
         <h1 class="display hero-name">
           <span class="line" data-lang="zh">舒屹扬</span>
           <span class="line" data-lang="en">Nick</span>
+<span class="line" data-lang="ja" lang="ja">舒屹扬</span>
           <span class="line" data-lang="en">Shu</span>
+
         </h1>
         <p class="hero-sub">
           <span data-lang="zh">数学专业本科生，就读于 <a href="https://www.ustc.edu.cn" target="_blank" rel="noopener">中国科学技术大学</a><a href="https://sgy.ustc.edu.cn" target="_blank" rel="noopener">少年班学院</a>。</span>
           <span data-lang="en">Undergraduate student in Mathematics at the <a href="https://www.ustc.edu.cn" target="_blank" rel="noopener">University of Science and Technology of China</a>, <a href="https://sgy.ustc.edu.cn" target="_blank" rel="noopener">School of the Gifted Young</a>.</span>
+<span data-lang="ja" lang="ja"><a href="https://www.ustc.edu.cn" target="_blank" rel="noopener">中国科学技術大学</a><a href="https://sgy.ustc.edu.cn" target="_blank" rel="noopener">少年班学院</a>で数学を学ぶ学部生です。</span>
         </p>
         <p class="hero-meta">
           <span data-lang="zh">中国安徽省合肥市金寨路 96 号，230026</span>
           <span data-lang="en">96 Jinzhai Road, Hefei, Anhui 230026, P. R. China</span>
+<span data-lang="ja" lang="ja">中国安徽省合肥市金寨路96号、郵便番号230026</span>
         </p>
         <a class="cv-trigger" href="cv.html" data-cv-link>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg>
           <span data-lang="zh">我的简历</span><span data-lang="en">My CV</span>
+<span data-lang="ja" lang="ja">履歴書</span>
           <span aria-hidden="true">→</span>
         </a>
       </div>
@@ -81,8 +94,10 @@
     <!-- About preview -->
     <section class="section container">
       <div class="section-head">
-        <span class="eyebrow"><span data-lang="zh">关于</span><span data-lang="en">About</span></span>
-        <h2 class="section-title"><span data-lang="zh">关于我</span><span data-lang="en">About Me</span></h2>
+        <span class="eyebrow"><span data-lang="zh">关于</span><span data-lang="en">About</span>
+<span data-lang="ja" lang="ja">プロフィール</span></span>
+        <h2 class="section-title"><span data-lang="zh">关于我</span><span data-lang="en">About Me</span>
+<span data-lang="ja" lang="ja">自己紹介</span></h2>
       </div>
       <div class="split">
         <div class="split-left">
@@ -95,8 +110,10 @@
             and Technology of China (USTC). My primary academic interests lie in the
             field of Mathematics.
           </p>
+<p data-lang="ja" lang="ja"><strong>舒屹扬（Nick Shu）</strong>です。中国科学技術大学（USTC）<strong>少年班学院（SGY）</strong>の学部生で、主に数学に関心を持っています。</p>
           <div>
-            <a href="about.html" class="arrow-link"><span data-lang="zh">了解更多</span><span data-lang="en">More about me</span> <span class="arrow">→</span></a>
+            <a href="about.html" class="arrow-link"><span data-lang="zh">了解更多</span><span data-lang="en">More about me</span>
+<span data-lang="ja" lang="ja">プロフィールを見る</span> <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -105,15 +122,20 @@
     <!-- Research preview -->
     <section class="section container">
       <div class="section-head">
-        <span class="eyebrow"><span data-lang="zh">研究</span><span data-lang="en">Research</span></span>
-        <h2 class="section-title"><span data-lang="zh">研究方向</span><span data-lang="en">Research Interests</span></h2>
+        <span class="eyebrow"><span data-lang="zh">研究</span><span data-lang="en">Research</span>
+<span data-lang="ja" lang="ja">研究</span></span>
+        <h2 class="section-title"><span data-lang="zh">研究方向</span><span data-lang="en">Research Interests</span>
+<span data-lang="ja" lang="ja">研究関心</span></h2>
       </div>
       <div class="split">
         <div class="split-left">
           <p class="r-tags">
             <span data-lang="zh">几何分析</span><span data-lang="en">Geometric Analysis</span>
+<span data-lang="ja" lang="ja">幾何解析</span>
             <span data-lang="zh">椭圆型偏微分方程</span><span data-lang="en">Elliptic PDE</span>
+<span data-lang="ja" lang="ja">楕円型偏微分方程式</span>
             <span data-lang="zh">凸几何</span><span data-lang="en">Convex Geometry</span>
+<span data-lang="ja" lang="ja">凸幾何学</span>
           </p>
           <p data-lang="zh">
             我目前的兴趣主要集中在微分几何、几何分析、椭圆型偏微分方程与凸几何的交汇处。我正在探索一些问题——极小曲面、凸 Kakeya 型问题以及非线性椭圆方程。
@@ -124,8 +146,10 @@
             number of questions at the moment — minimal surfaces, convex Kakeya-type
             problems, and nonlinear elliptic equations.
           </p>
+<p data-lang="ja" lang="ja">現在は、微分幾何学、幾何解析、楕円型偏微分方程式、凸幾何学が交わる領域に関心があります。極小曲面、凸掛谷型問題、非線形楕円型方程式などの問題を探究しています。</p>
           <div>
-            <a href="research.html" class="arrow-link"><span data-lang="zh">查看研究</span><span data-lang="en">View research</span> <span class="arrow">→</span></a>
+            <a href="research.html" class="arrow-link"><span data-lang="zh">查看研究</span><span data-lang="en">View research</span>
+<span data-lang="ja" lang="ja">研究を見る</span> <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -134,57 +158,68 @@
     <!-- Latest posts -->
     <section class="section container">
       <div class="section-head">
-        <span class="eyebrow"><span data-lang="zh">写作</span><span data-lang="en">Writing</span></span>
-        <h2 class="section-title"><span data-lang="zh">最近笔记</span><span data-lang="en">Latest Notes</span></h2>
+        <span class="eyebrow"><span data-lang="zh">写作</span><span data-lang="en">Writing</span>
+<span data-lang="ja" lang="ja">執筆</span></span>
+        <h2 class="section-title"><span data-lang="zh">最近笔记</span><span data-lang="en">Latest Notes</span>
+<span data-lang="ja" lang="ja">最近のノート</span></h2>
       </div>
       <div class="post-list">
         <article>
           <a class="post-item" href="posts/Gidas-Spruck.pdf" target="_blank" rel="noopener">
-            <span class="post-date">Mar 15, 2026</span>
+            <span class="post-date"><span data-lang="zh">2026年3月15日</span><span data-lang="en">Mar 15, 2026</span><span data-lang="ja" lang="ja">2026年3月15日</span></span>
             <span class="post-main">
-              <span class="post-title"><span data-lang="zh">《Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations》笔记</span><span data-lang="en">Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations 笔记</span></span>
-              <span class="post-desc"><span data-lang="zh">对这篇经典论文的阅读笔记，写于 2026 年 1 月 30 日至 3 月 15 日。</span><span data-lang="en">Reading note on the classical paper, written from Jan. 30 to Mar. 15, 2026.</span></span>
+              <span class="post-title"><span data-lang="zh">《Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations》笔记</span><span data-lang="en">Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations 笔记</span>
+<span data-lang="ja" lang="ja">Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations 読書ノート</span></span>
+              <span class="post-desc"><span data-lang="zh">对这篇经典论文的阅读笔记，写于 2026 年 1 月 30 日至 3 月 15 日。</span><span data-lang="en">Reading note on the classical paper, written from Jan. 30 to Mar. 15, 2026.</span>
+<span data-lang="ja" lang="ja">2026年1月30日から3月15日に執筆した、古典的論文の読書ノート。</span></span>
             </span>
             <span class="post-arrow">→</span>
           </a>
         </article>
         <article>
           <a class="post-item" href="posts/2026-1-22-Evens-5.html">
-            <span class="post-date">Jan 22, 2026</span>
+            <span class="post-date"><span data-lang="zh">2026年1月22日</span><span data-lang="en">Jan 22, 2026</span><span data-lang="ja" lang="ja">2026年1月22日</span></span>
             <span class="post-main">
-              <span class="post-title"><span data-lang="zh">Evens读书笔记（第五次）</span><span data-lang="en">Evens Reading Notes (5th)</span></span>
-              <span class="post-desc"><span data-lang="zh">Evans《偏微分方程》读书笔记。</span><span data-lang="en">Reading notes on Evans, Partial Differential Equations.</span></span>
+              <span class="post-title"><span data-lang="zh">Evens读书笔记（第五次）</span><span data-lang="en">Evens Reading Notes (5th)</span>
+<span data-lang="ja" lang="ja">Evans 読書ノート（第5回）</span></span>
+              <span class="post-desc"><span data-lang="zh">Evans《偏微分方程》读书笔记。</span><span data-lang="en">Reading notes on Evans, Partial Differential Equations.</span>
+<span data-lang="ja" lang="ja">Evans『Partial Differential Equations』の読書ノート。</span></span>
             </span>
             <span class="post-arrow">→</span>
           </a>
         </article>
         <article>
           <a class="post-item" href="posts/2026-1-21-Evens-4.html">
-            <span class="post-date">Jan 21, 2026</span>
+            <span class="post-date"><span data-lang="zh">2026年1月21日</span><span data-lang="en">Jan 21, 2026</span><span data-lang="ja" lang="ja">2026年1月21日</span></span>
             <span class="post-main">
-              <span class="post-title"><span data-lang="zh">Evens读书笔记（第四次）</span><span data-lang="en">Evens Reading Notes (4th)</span></span>
-              <span class="post-desc"><span data-lang="zh">Evans《偏微分方程》读书笔记。</span><span data-lang="en">Reading notes on Evans, Partial Differential Equations.</span></span>
+              <span class="post-title"><span data-lang="zh">Evens读书笔记（第四次）</span><span data-lang="en">Evens Reading Notes (4th)</span>
+<span data-lang="ja" lang="ja">Evans 読書ノート（第4回）</span></span>
+              <span class="post-desc"><span data-lang="zh">Evans《偏微分方程》读书笔记。</span><span data-lang="en">Reading notes on Evans, Partial Differential Equations.</span>
+<span data-lang="ja" lang="ja">Evans『Partial Differential Equations』の読書ノート。</span></span>
             </span>
             <span class="post-arrow">→</span>
           </a>
         </article>
       </div>
       <div style="margin-top: 2rem;">
-        <a href="blog.html" class="arrow-link"><span data-lang="zh">全部笔记</span><span data-lang="en">All notes</span> <span class="arrow">→</span></a>
+        <a href="blog.html" class="arrow-link"><span data-lang="zh">全部笔记</span><span data-lang="en">All notes</span>
+<span data-lang="ja" lang="ja">すべてのノート</span> <span class="arrow">→</span></a>
       </div>
     </section>
 
     <!-- Contact -->
     <section class="section container">
       <div class="section-head">
-        <span class="eyebrow"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></span>
-        <h2 class="section-title"><span data-lang="zh">联系我</span><span data-lang="en">Get in touch</span></h2>
+        <span class="eyebrow"><span data-lang="zh">联系</span><span data-lang="en">Contact</span>
+<span data-lang="ja" lang="ja">お問い合わせ</span></span>
+        <h2 class="section-title"><span data-lang="zh">联系我</span><span data-lang="en">Get in touch</span>
+<span data-lang="ja" lang="ja">お問い合わせ</span></h2>
       </div>
       <div class="split">
         <div class="split-left">
           <p>
             <a href="mailto:flybook@mail.ustc.edu.cn" class="link">flybook@mail.ustc.edu.cn</a><br>
-            <a href="mailto:nickshu75@gmail.com" class="link">nickshu75 (at) gmail (dot) com</a>
+            <a href="mailto:nickshu75@gmail.com" class="link">nickshu75@gmail.com</a>
           </p>
           <div class="social">
             <a class="social-icon" href="https://www.zhihu.com/people/zhixhn5bk3a" target="_blank" rel="noopener" aria-label="Zhihu" title="Zhihu">
@@ -198,7 +233,8 @@
             </a>
           </div>
           <div>
-            <a href="contact.html" class="arrow-link"><span data-lang="zh">联系页面</span><span data-lang="en">Contact page</span> <span class="arrow">→</span></a>
+            <a href="contact.html" class="arrow-link"><span data-lang="zh">联系页面</span><span data-lang="en">Contact page</span>
+<span data-lang="ja" lang="ja">連絡先を見る</span> <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -208,14 +244,16 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
-        <span class="footer-meta">Mathematics · USTC</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></span>
+        <span class="footer-meta"><span data-lang="zh">数学 · 中国科大</span><span data-lang="en">Mathematics · USTC</span><span data-lang="ja" lang="ja">数学 · 中国科学技術大学</span></span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span>
+<span data-lang="ja" lang="ja">数学への情熱を込めて。</span></p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20261020-ja1"></script>
 </body>
 </html>

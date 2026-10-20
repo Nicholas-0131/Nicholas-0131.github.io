@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
+<html lang="en" data-title-ja="Evans 読書ノート（第1回） | 舒屹扬" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evens-1 | Nick Shu</title>
   <link rel="icon" href="../favicon.jpg" type="image/jpeg">
   <script>
-    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'en';}catch(e){var d='light',l='en';}r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
+    (function(){var r=document.documentElement,d='light',l='en';try{var t=localStorage.getItem('theme');l=localStorage.getItem('lang');d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}var q=new URLSearchParams(location.search).get('lang');if(q==='zh'||q==='en'||q==='ja')l=q;if(l!=='zh'&&l!=='en'&&l!=='ja')l='en';r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <script>
     window.MathJax = {
@@ -19,25 +19,32 @@
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=20261020-ja1">
 </head>
 <body>
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="../index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
+      <a href="../index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="../about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
-          <a href="../research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
-          <a href="../blog.html" class="active" aria-current="page"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
-          <a href="../contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
+          <a href="../about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span>
+<span data-lang="ja" lang="ja">プロフィール</span></a>
+          <a href="../research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span>
+<span data-lang="ja" lang="ja">研究</span></a>
+          <a href="../blog.html" class="active" aria-current="page"><span data-lang="zh">博客</span><span data-lang="en">Blog</span>
+<span data-lang="ja" lang="ja">ブログ</span></a>
+          <a href="../contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span>
+<span data-lang="ja" lang="ja">お問い合わせ</span></a>
         </nav>
         <div class="nav-actions">
-          <button class="lang-toggle" aria-label="Switch language / 切换语言">
-            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
-          </button>
+          <select class="lang-select" aria-label="Language / 语言 / 言語">
+            <option value="zh" lang="zh">中文</option>
+            <option value="en" lang="en">English</option>
+            <option value="ja" lang="ja">日本語</option>
+          </select>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -53,8 +60,10 @@
   <main class="page container">
     <article class="article">
       <div class="article-header">
-        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span></h1>
-        <div class="article-meta"><span data-lang="zh">2026 年 1 月 16 日 · 舒屹扬</span><span data-lang="en">Jan 16, 2026 · Nick Shu</span></div>
+        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span>
+<span data-lang="ja" lang="ja">Evans 読書ノート</span></h1>
+        <div class="article-meta"><span data-lang="zh">2026 年 1 月 16 日 · 舒屹扬</span><span data-lang="en">Jan 16, 2026 · Nick Shu</span>
+<span data-lang="ja" lang="ja">2026年1月16日・舒屹扬</span></div>
       </div>
 
       <div data-lang="zh">
@@ -179,9 +188,61 @@
           Huygens' principle.
         </p>
       </div>
+<div data-lang="ja" lang="ja">
+        <p>Evans の <em>Partial Differential Equations（偏微分方程式）</em>の読書ノートです。第1章の内容を、原著とは少し異なる順序で簡単に復習します。</p>
+
+        <h2>特性曲線と輸送方程式</h2>
+
+        <p>一般に、ここで考える偏微分方程式は$$\begin{cases}Lu=f\quad\text{in}\quad\Omega,\\Bu=h\quad\text{on}\quad\Gamma\subseteq\partial\Omega,\end{cases}$$という形で、$L,B$は二つの作用素です。そこで、各曲線上で$Lu$を常微分方程式に書き換えられるような曲線族を探します。$\Omega$上の点と$\Gamma$上の点を結び、常微分方程式の手法で偏微分方程式を調べるわけです。この曲線を<strong>特性曲線</strong>、対応する常微分方程式を<strong>特性方程式</strong>と呼びます。</p>
+
+        <p>重要なのは、特性曲線をどう求めるかです。1階偏微分方程式$F(\mathbf{D}u,u,\boldsymbol{x})=0$に対して$z(s)=u(\boldsymbol{x}(s)),\boldsymbol{p}(s)=\mathbf{D}_{\boldsymbol{x}}u(\boldsymbol{x}(s))$とおくと、特性曲線の方程式は$$\begin{cases}\dot{\boldsymbol{p}}(s)=-\mathbf{D}_{\boldsymbol{x}}F(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s))-F_z(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s))\boldsymbol{p}(s),\\\dot{z}(s)=\mathbf{D}_{\boldsymbol{p}}F(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s))\cdot\boldsymbol{p}(s),\\\dot{\boldsymbol{x}}(s)=\mathbf{D}_{\boldsymbol{p}}F(\boldsymbol{p}(s),z(s),\boldsymbol{x}(s)).\end{cases}$$となります。この連立方程式は曲線族を定め、各曲線上で元の偏微分方程式を$s$についての常微分方程式に書き換えられます。</p>
+
+        <p>線形方程式、すなわち$F(\mathbf{D}u,u,\boldsymbol{x})=\boldsymbol{b}(\boldsymbol{c})\cdot\mathbf{D}u(\boldsymbol{x})+c(\boldsymbol{x})u(\boldsymbol{x})=0$では、特性方程式は$$\begin{cases}\dot{\boldsymbol{x}}(s)=\boldsymbol{b}(\boldsymbol{x}(s)),\\\dot{z}(s)=-c(\boldsymbol{x}(s))z(s).\end{cases}$$です。第1式から$\boldsymbol{x}$を$s$の関数として求め、第2式に代入すると$z(s)$が得られます。ただし最後に、$z(s)$を$\boldsymbol{x}$の関数として表し直す必要がある場合があります。</p>
+
+        <p><strong>例</strong>$\quad$ 方程式$$\begin{cases}x_1u_{x_2}-x_2u_{x_1}=u\quad\text{in}\quad\{x_1>0,x_2>0\},\\u(\boldsymbol{x})=g(\boldsymbol{x})\quad\text{on}\quad\{x_1>0,x_2=0\}.\end{cases}$$を解きます。</p>
+
+        <p><strong>解答</strong>$\quad$ 上の式から、特性方程式は$\dot{x}_1=-x_2,\dot{x}_2=x_1,\dot{z}=z$となります。$x_1(s)=(x_1^2+x_2^2)^{1/2}\cos s,x_2(s)=(x_1^2+x_2^2)^{1/2}\sin s$に注意すると、$z(s)=z_0\text{e}^s=g((x_1^2+x_2^2)^{1/2})\text{e}^{\arctan(x_2/x_1)}$が得られます。</p>
+
+        <p>準線形方程式は一般に$F(\mathbf{D}u,u,\boldsymbol{x})=\boldsymbol{b}(\boldsymbol{x},u(\boldsymbol{x}))\cdot\mathbf{D}u(\boldsymbol{x})\cdot\mathbf{D}u(\boldsymbol{x})+c(\boldsymbol{x},u(\boldsymbol{x}))=0$という形をしており、対応する特性方程式は$$\begin{cases}\dot{\boldsymbol{x}}(s)=\boldsymbol{b}(\boldsymbol{x}(s),z(s)),\\\dot{z}(s)=-c(\boldsymbol{x}(s),z(s)).\end{cases}$$です。実際には、この段階ですでに多くの場合は非常に難しくなります。以下では比較的簡単な例を示します。</p>
+
+        <p><strong>例</strong>$\quad$ $\Omega$と$\Gamma$は上の例と同じとし、方程式を$\begin{cases}u_{x_1}+u_{x_2}=u^2,\\u(x_1,0)=g(x_1).\end{cases}$に変えます。</p>
+
+        <p><strong>解答</strong>$\quad$ 先ほどの式に従うと、$\dot{x}_1(s)=1,\dot{x}_2(s)=1,\dot{z}(s)=z^2(s)$を求めればよいことになります。したがって$x_1(s)=x_1^0+s,x_2(s)=s$です（境界上では$x_2(0)=0$であることに注意）。よって$z(s)=\frac{z^0}{1-sz^0}=\frac{g(x_1-x_2)}{1-x_2g(x_1-x_2)}$となります。</p>
+
+        <p>完全非線形方程式では、通常は積分による処理が必要になります。ここでは一般的な解法はなく、多くの場合、有効な結論を得ること自体が困難です。</p>
+
+        <p><strong>例</strong> $\quad\Omega$は変えず、$\Gamma$を$\{x_1=0\}$に変え、方程式$$\begin{cases}u_{x_1}u_{x_2}=u,\\u(0,x_2)=x_2^2.\end{cases}$$を解きます。</p>
+
+        <p><strong>解答</strong>$\quad$ この場合は$F(\boldsymbol{p},z,\boldsymbol{x})=p_1p_2-z$なので、特性方程式は$$\begin{cases}\dot{p}_1=p_1,\;\dot{p}_2=p_2,\\\dot{z}=2p_1p_2,\\\dot{x}_1=p_2,\;\dot{x}_2=p_1.\end{cases}$$と書けます。したがって$x_1(s)=c(\text{e}^s-1)$より$c=p_2^0$、同様に$x_2(s)=x_2^0+p_1^0(\text{e}^s-1)$です。これで特性方程式の解が得られ、代入すると$u=\frac{(x_1+4x_2)^2}{16}$を求められます。</p>
+
+        <p>このように特性曲線法は偏微分方程式を常微分方程式に帰着させます。しかし特性曲線や特性方程式を求めることも、それらを解くことも難しく、この方法で扱える問題は限られます。一方、上の導出で見たように線形方程式は比較的簡単で、その代表例が<strong>輸送方程式</strong>です。</p>
+
+        <p>方程式$u_t+\boldsymbol{b}\cdot\mathbf{D}u=0$を考えます。ただし$(\boldsymbol{x},t)\in\mathbb{R}^n\times[0,+\infty)$です。$z(s)=u(\boldsymbol{x}+s\boldsymbol{b},t+s)$とおくと、特性曲線の方程式を使わなくても$\dot{z}(s)=0$が分かります。したがって$z(s)$は定数であり、直線$(\boldsymbol{x}+s\boldsymbol{b},t+s)$に沿って$z$は変化しません。すべての$(\boldsymbol{x},t)\in\mathbb{R}^n\times(0,+\infty)$を$(\boldsymbol{x}-t\boldsymbol{b},0)$によって$\mathbb{R}^n\times\{t=0\}$上に移せるので、この方程式の解は（通常の意味で$t=0$を境界とし、その上で$u=g$とすると）$$u(\boldsymbol{x},t)=g(\boldsymbol{x}-t\boldsymbol{b}).$$となります。</p>
+
+        <p>同様に、方程式が非斉次の形$u_t+\boldsymbol{b}\cdot\mathbf{D}u=f$になった場合は、$\dot{z}(s)=f$に注意すれば$$u(\boldsymbol{x},t)-g(\boldsymbol{x}-t\boldsymbol{b})=\int_0^tf(\boldsymbol{x}+(s-t)\boldsymbol{b},s)\text{d}s.$$が得られます。この公式は後で非常に役立ちます。</p>
+
+        <p>輸送方程式の応用として、空間1次元の波動方程式を考えます。非斉次輸送方程式と密接に関係しているため、まずこの場合を扱います。物理的背景には立ち入らず、方程式$u_{tt}-u_{xx}=0$の解法に注目します。作用素を因数分解すると$(\partial_t+\partial_x)(\partial_t-\partial_x)u=0$が必要です。まず$(\partial_t+\partial_x)$に輸送方程式の結果を適用して$(\partial_t-\partial_x)u=a(x-t)$を得ます。さらに同じ結果を使い、$f(x,t)=a(x-t)$とすれば$u(x,t)=b(x+t)+\int_0^ta(x+(t-s)-s)\text{d}s=b(x+t)+\frac{1}{2}\int_{x-t}^{x+t}a(y)\text{d}y$です。通常の初期条件の形に整理すると$$u(x,t)=\frac{1}{2}[g(x+t)+g(x-t)]+\frac{1}{2}\int_{x-t}^{x+t}h(y)\text{d}y,$$となり、初期条件は$u(x,0)=g(x),u_t(x,0)=h(x)$です。これを<strong>ダランベールの公式</strong>と呼びます。</p>
+
+        <p>波動方程式は高次元にも拡張できますが、より深い手法が必要です。同じようには因数分解できず、輸送方程式の公式をそのまま使えないためです。</p>
+
+        <h2>作用素の基本解</h2>
+
+        <p>基本解について簡単に述べます。<strong>定数係数線形微分作用素</strong>$L$に対して、$\mathbb{R}^n$上の超関数$E$が$LE=\delta$を満たすとき、$E$を$L$の<strong>基本解</strong>と呼びます。「基本」と呼ぶのは、方程式$Lu=f$の解を$$u(\boldsymbol{x})=\int_{\mathbb{R}^n}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y}.$$と書けるからです。以下では超関数の意味で$Lu=f$を示します。</p>
+
+        <p>$\varphi\in C_c^\infty(\mathbb{R}^n)$に対して$\langle Lu,\varphi\rangle=\langle f,\varphi\rangle$を示せば、超関数の意味で$Lu=f$となります。まず部分積分によって\[\langle\partial^{\boldsymbol{\alpha}}u,\varphi\rangle=(-1)^{|\boldsymbol{\alpha}|}\langle u,\partial^{\boldsymbol{\alpha}}\varphi\rangle.\]を確認できます。定義から$u=E*f$と書けるので、元の式は$=\langle E,\tilde{f}*L^*u\rangle$となります。ここで$L^*$は、$L$の各$\partial^{\boldsymbol{\alpha}}$の項に$(-1)^{|\boldsymbol{\alpha}|}$を掛けたものです。$L$を左側に戻すと$\langle LE,\tilde{f}*\varphi\rangle$になります。重要なのは$LE=\delta$で、残るのは$(\tilde{f}*\varphi)(0)$という項だけです。これはまさに$$\int_{\mathbb{R}^n}f(-\boldsymbol{y})\varphi(-\boldsymbol{y})\text{d}\boldsymbol{y}=\int_{\mathbb{R}^n}f(\boldsymbol{y})\varphi(\boldsymbol{y})\text{d}\boldsymbol{y}=\langle f,\varphi\rangle.$$なので、$Lu=f$が超関数の意味で成立します。</p>
+
+        <p>一般の場合には必ずしも成立しません。たとえば係数が$a_{\boldsymbol{\alpha}}=a_{\boldsymbol{\alpha}}(\boldsymbol{x})$であれば$$\begin{split}L(E*f)&=a_{\boldsymbol{\alpha}}\int\partial_{\boldsymbol{\alpha}}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y},\\(LE)*f&=\int a_{\boldsymbol{\alpha}}\partial_{\boldsymbol{\alpha}}E(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y}.\end{split}$$であり、両者は等しいとは限りません。係数を積分の外に出せないことが原因です。</p>
+
+        <p>基本解からは多くのことが分かります。代表例は、高次元の波動方程式、すなわち$L=\partial_t^2-\Delta$です。その基本解は次のようになります。</p>
+
+        \[E_L=\begin{cases}\frac{1}{2(2\pi)^m}\partial_t^{m-1}\left(\frac{\delta(t-|\boldsymbol{x}|)}{|\boldsymbol{x}|}\right),&n=2m+1;\\ \frac{1}{(2\pi)^m}\partial_t^{m-1}\left(\frac{\mathbf{1}_{\{t>|\boldsymbol{x}|\}}}{\sqrt{t^2-\boldsymbol{x}^2}}\right),&n=2m.\end{cases}\]
+
+        <p>ここから、奇数次元では<strong>ホイヘンスの原理</strong>が成立することが分かります。他にも基本解を持つ作用素は数多くあります。たとえば$L=\partial_t-\Delta$の基本解は<strong>熱核</strong>$E_L=\mathbf{1}_{\{t>0\}}\frac{1}{(4\pi t)^{n/2}}\exp\left(-\frac{|\boldsymbol{x}|^2}{4t}\right)$です。</p>
+      </div>
 
       <div style="margin-top: 3rem;">
-        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> <span data-lang="zh">返回博客</span><span data-lang="en">Back to Blog</span></a>
+        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> <span data-lang="zh">返回博客</span><span data-lang="en">Back to Blog</span>
+<span data-lang="ja" lang="ja">ブログへ戻る</span></a>
       </div>
     </article>
   </main>
@@ -189,14 +250,16 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
-        <span class="footer-meta">Mathematics · USTC</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></span>
+        <span class="footer-meta"><span data-lang="zh">数学 · 中国科大</span><span data-lang="en">Mathematics · USTC</span><span data-lang="ja" lang="ja">数学 · 中国科学技術大学</span></span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span>
+<span data-lang="ja" lang="ja">数学への情熱を込めて。</span></p>
     </div>
   </footer>
 
-  <script src="../script.js"></script>
+  <script src="../script.js?v=20261020-ja1"></script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
+<html lang="en" data-title-ja="Evans 読書ノート（第3回） | 舒屹扬" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evens-3 | Nick Shu</title>
   <link rel="icon" href="../favicon.jpg" type="image/jpeg">
   <script>
-    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'en';}catch(e){var d='light',l='en';}r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
+    (function(){var r=document.documentElement,d='light',l='en';try{var t=localStorage.getItem('theme');l=localStorage.getItem('lang');d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}var q=new URLSearchParams(location.search).get('lang');if(q==='zh'||q==='en'||q==='ja')l=q;if(l!=='zh'&&l!=='en'&&l!=='ja')l='en';r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <script>
     window.MathJax = {
@@ -19,25 +19,32 @@
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=20261020-ja1">
 </head>
 <body>
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="../index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
+      <a href="../index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="../about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
-          <a href="../research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
-          <a href="../blog.html" class="active" aria-current="page"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
-          <a href="../contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
+          <a href="../about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span>
+<span data-lang="ja" lang="ja">プロフィール</span></a>
+          <a href="../research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span>
+<span data-lang="ja" lang="ja">研究</span></a>
+          <a href="../blog.html" class="active" aria-current="page"><span data-lang="zh">博客</span><span data-lang="en">Blog</span>
+<span data-lang="ja" lang="ja">ブログ</span></a>
+          <a href="../contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span>
+<span data-lang="ja" lang="ja">お問い合わせ</span></a>
         </nav>
         <div class="nav-actions">
-          <button class="lang-toggle" aria-label="Switch language / 切换语言">
-            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
-          </button>
+          <select class="lang-select" aria-label="Language / 语言 / 言語">
+            <option value="zh" lang="zh">中文</option>
+            <option value="en" lang="en">English</option>
+            <option value="ja" lang="ja">日本語</option>
+          </select>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -53,8 +60,10 @@
   <main class="page container">
     <article class="article">
       <div class="article-header">
-        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span></h1>
-        <div class="article-meta"><span data-lang="zh">2026 年 1 月 18 日 · 舒屹扬</span><span data-lang="en">Jan 18, 2026 · Nick Shu</span></div>
+        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span>
+<span data-lang="ja" lang="ja">Evans 読書ノート</span></h1>
+        <div class="article-meta"><span data-lang="zh">2026 年 1 月 18 日 · 舒屹扬</span><span data-lang="en">Jan 18, 2026 · Nick Shu</span>
+<span data-lang="ja" lang="ja">2026年1月18日・舒屹扬</span></div>
       </div>
 
       <div data-lang="zh">
@@ -101,9 +110,30 @@
           the mean value formula on heat balls, and the maximum principle.
         </p>
       </div>
+<div data-lang="ja" lang="ja">
+        <h2>熱方程式（続き）</h2>
+
+        <p>$u$の式を展開すると、次のようになります。</p>
+
+        $$\begin{split}u(\boldsymbol{x},t)&=\int_0^t\int_{\mathbb{R}^n}\Phi(\boldsymbol{x}-\boldsymbol{y},t-s)f(\boldsymbol{y},s)\text{d}\boldsymbol{y}\text{d}s\\&=\int_0^t\frac{1}{(4\pi(t-s))^{n/2}}\int_{\mathbb{R}^n}\text{e}^{-\frac{|\boldsymbol{x}-\boldsymbol{y}|}{4(t-s)}}f(\boldsymbol{y},s)\text{d}\boldsymbol{y}\text{d}s.\end{split}$$
+
+        <p>これは連立方程式\[\begin{cases}u_t-\Delta u=0,&(\boldsymbol{x},t)\in\mathbb{R}^n\times(0,\infty),\\u(\boldsymbol{x},0)=0,&\boldsymbol{x}\in\mathbb{R}^n\end{cases}\]の解です。物理や関数解析の背景を使わずに直接証明することもできますが、計算は長くなります。この導出は簡潔で直感的であり、厳密さにも大きな問題がないため、ここでは証明として扱います。条件が$u(\boldsymbol{x},0)=g(\boldsymbol{x})$に変わる場合には、$g$との畳み込みを加えます。具体的には\[u(\boldsymbol{x},t)=\int_{\mathbb{R}^n}\Phi(\boldsymbol{x}-\boldsymbol{y},t)g(\boldsymbol{y})\text{d}\boldsymbol{y}+\int_0^t\int_{\mathbb{R}^n}\Phi(\boldsymbol{x}-\boldsymbol{y},t-s)f(\boldsymbol{y},s)\text{d}\boldsymbol{y}\text{d}s.\]で、後の項が外部からの寄与$f(\boldsymbol{x},t)$の重ね合わせ、前の項が初期条件の影響です。</p>
+
+        <h2>解の性質</h2>
+
+        <p>前と同様に、解の性質を調べます。まずは<strong>平均値公式</strong>です。球面がラプラス作用素の基本解の等位集合であることに注意すると、次の集合を考えたくなります。</p>
+
+        \[E(\boldsymbol{x},t;r):=\left\{(\boldsymbol{y},s)\in\mathbb{R}^{n+1}:s\leq t,\Phi(\boldsymbol{x}-\boldsymbol{y},t-s)\geq\frac{1}{r^n}\right\}\]
+
+
+        <p>この上での$\Phi$の積分は$\Phi(\boldsymbol{x})$と関係しているはずです。実際に\[u(\boldsymbol{x},t)=\frac{1}{4r^n}\int_{E(\boldsymbol{x},t;r)}u(\boldsymbol{y},s)\frac{|\boldsymbol{x}-\boldsymbol{y}|}{(t-s)^2}\text{d}\boldsymbol{y}\text{d}s.\]が証明でき、これが熱方程式の平均値公式です。時刻$t$の出来事は$t$より前の時刻にのみ依存するので、直感にも合っています。</p>
+
+        <p>同様に、対応する最大値原理を構成できます。ただし物理的には$t$と空間座標は同等ではないため、領域の形にも注意が必要です。時間と空間を分ける最も簡単な領域は$U_T=U\times(0,T]$で、$U\subseteq\mathbb{R}^n$、$T\geq0$とします。連結な$U$と$T\geq0$からなる$U_T$では、内点で最大値または最小値を取ると、$U_T$の内部で定数になります。物理的には、その点で極値を取るなら熱の移動がなく、温度が一様であるということです。証明では、$U_T$に完全に含まれる等位集合を繰り返し作り、その上で最大値が保たれることを示します。これを広げていくと、$U_T$全体で最大値を取ると分かります。</p>
+      </div>
 
       <div style="margin-top: 3rem;">
-        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> <span data-lang="zh">返回博客</span><span data-lang="en">Back to Blog</span></a>
+        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> <span data-lang="zh">返回博客</span><span data-lang="en">Back to Blog</span>
+<span data-lang="ja" lang="ja">ブログへ戻る</span></a>
       </div>
     </article>
   </main>
@@ -111,14 +141,16 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
-        <span class="footer-meta">Mathematics · USTC</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></span>
+        <span class="footer-meta"><span data-lang="zh">数学 · 中国科大</span><span data-lang="en">Mathematics · USTC</span><span data-lang="ja" lang="ja">数学 · 中国科学技術大学</span></span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span>
+<span data-lang="ja" lang="ja">数学への情熱を込めて。</span></p>
     </div>
   </footer>
 
-  <script src="../script.js"></script>
+  <script src="../script.js?v=20261020-ja1"></script>
 </body>
 </html>

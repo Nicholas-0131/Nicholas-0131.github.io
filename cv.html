@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-title-zh="简历 | 舒屹扬" data-title-en="CV | Shu Yiyang">
+<html lang="en" data-title-ja="学術履歴書 | 舒屹扬" data-title-zh="简历 | 舒屹扬" data-title-en="CV | Shu Yiyang">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,12 @@
   <meta name="description" content="Academic CV of Shu Yiyang — education, research, honors, and mathematical preparation.">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <script>
-    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'en';}catch(e){var d='light',l='en';}var q=new URLSearchParams(location.search).get('lang');if(q==='zh'||q==='en')l=q;r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
+    (function(){var r=document.documentElement,d='light',l='en';try{var t=localStorage.getItem('theme');l=localStorage.getItem('lang');d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}var q=new URLSearchParams(location.search).get('lang');if(q==='zh'||q==='en'||q==='ja')l=q;if(l!=='zh'&&l!=='en'&&l!=='ja')l='en';r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261020-cv3">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261020-ja1">
   <!-- Keep CV layout with its markup so an older shared stylesheet cannot break it. -->
   <style>
 /* ---------- HTML curriculum vitae ---------- */
@@ -53,7 +53,7 @@ html[data-theme="dark"] .cv-page { --cv-paper: #191b18; --cv-ink: #b6cbd5; }
 .cv-heading { text-align: left; padding-bottom: 2.25rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border-strong); }
 .cv-heading .eyebrow { font-size: 0.65rem; letter-spacing: 0.22em; color: var(--cv-ink); }
 .cv-heading h1 { font-size: clamp(2.3rem, 5vw, 3.2rem); line-height: 1.2; margin: 0; letter-spacing: -0.025em; }
-html[data-lang="zh"] .cv-heading h1 { letter-spacing: 0.12em; padding-left: 0.12em; }
+html[data-lang="zh"] .cv-heading h1, html[data-lang="ja"] .cv-heading h1 { letter-spacing: 0.12em; padding-left: 0.12em; }
 .cv-role { font-size: 0.96rem; margin-bottom: 0.3rem; }
 .cv-affiliation { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
 .cv-contact { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: baseline; gap: 0.45rem 1.2rem; margin-top: 1.1rem; font-size: 0.78rem; color: var(--muted); }
@@ -62,7 +62,7 @@ html[data-lang="zh"] .cv-heading h1 { letter-spacing: 0.12em; padding-left: 0.12
 .cv-section + .cv-section { margin-top: 2.15rem; }
 .cv-section h2 { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1rem; font-size: 1.15rem; font-weight: 600; line-height: 1.5; color: var(--cv-ink); }
 .cv-section h2::after { content: ""; height: 1px; background: var(--border); flex: 1; min-width: 1.5rem; align-self: center; }
-html[data-lang="zh"] .cv-section h2 { letter-spacing: 0.06em; }
+html[data-lang="zh"] .cv-section h2, html[data-lang="ja"] .cv-section h2 { letter-spacing: 0.06em; }
 .cv-section-body { min-width: 0; overflow-wrap: break-word; font-size: 0.9rem; line-height: 1.85; }
 .cv-section-body p { text-wrap: pretty; }
 .cv-section-body p + p { margin-top: 0.4rem; }
@@ -114,18 +114,25 @@ html[data-lang="zh"] .cv-section h2 { letter-spacing: 0.06em; }
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
+      <a href="index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
-          <a href="research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
-          <a href="blog.html"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
-          <a href="contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
+          <a href="about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span>
+<span data-lang="ja" lang="ja">プロフィール</span></a>
+          <a href="research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span>
+<span data-lang="ja" lang="ja">研究</span></a>
+          <a href="blog.html"><span data-lang="zh">博客</span><span data-lang="en">Blog</span>
+<span data-lang="ja" lang="ja">ブログ</span></a>
+          <a href="contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span>
+<span data-lang="ja" lang="ja">お問い合わせ</span></a>
         </nav>
         <div class="nav-actions">
-          <button class="lang-toggle" aria-label="Switch language / 切换语言">
-            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
-          </button>
+          <select class="lang-select" aria-label="Language / 语言 / 言語">
+            <option value="zh" lang="zh">中文</option>
+            <option value="en" lang="en">English</option>
+            <option value="ja" lang="ja">日本語</option>
+          </select>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -140,64 +147,118 @@ html[data-lang="zh"] .cv-section h2 { letter-spacing: 0.06em; }
 
   <main class="container cv-page">
     <div class="cv-toolbar">
-      <a class="arrow-link" href="index.html">← <span data-lang="zh">返回首页</span><span data-lang="en">Back to home</span></a>
+      <a class="arrow-link" href="index.html">← <span data-lang="zh">返回首页</span><span data-lang="en">Back to home</span>
+<span data-lang="ja" lang="ja">ホームへ戻る</span></a>
     </div>
     <article class="cv-document" aria-labelledby="cv-name">
       <header class="cv-heading">
-        <p class="eyebrow"><span data-lang="zh">学术简历</span><span data-lang="en">Curriculum Vitae</span></p>
+        <p class="eyebrow"><span data-lang="zh">学术简历</span><span data-lang="en">Curriculum Vitae</span>
+<span data-lang="ja" lang="ja">学術履歴書</span></p>
         <div class="cv-name-row">
-          <h1 id="cv-name"><span data-lang="zh">舒屹扬</span><span data-lang="en">Shu Yiyang</span></h1>
-          <button class="cv-trigger" id="cv-download-trigger" type="button" aria-haspopup="dialog" aria-controls="cv-dialog"><span data-lang="zh">下载简历</span><span data-lang="en">Download CV</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg></button>
+          <h1 id="cv-name"><span data-lang="zh">舒屹扬</span><span data-lang="en">Shu Yiyang</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></h1>
+          <button class="cv-trigger" id="cv-download-trigger" type="button" aria-haspopup="dialog" aria-controls="cv-dialog"><span data-lang="zh">下载简历</span><span data-lang="en">Download CV</span>
+<span data-lang="ja" lang="ja">CVをダウンロード</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg></button>
         </div>
-        <p class="cv-role"><span data-lang="zh">数学方向本科生</span><span data-lang="en">Undergraduate Student in Mathematics</span></p>
-        <p class="cv-affiliation"><span data-lang="zh">中国科学技术大学 · 少年班学院</span><span data-lang="en">University of Science and Technology of China · School of the Gifted Young</span></p>
-        <div class="cv-contact"><span data-lang="zh">中国 · 安徽合肥</span><span data-lang="en">Hefei, China</span><a href="mailto:shuyiy@mail.ustc.edu.cn">shuyiy@mail.ustc.edu.cn</a><a href="index.html"><span data-lang="zh">个人主页</span><span data-lang="en">My Website</span></a></div>
+        <p class="cv-role"><span data-lang="zh">数学方向本科生</span><span data-lang="en">Undergraduate Student in Mathematics</span>
+<span data-lang="ja" lang="ja">数学を学ぶ学部生</span></p>
+        <p class="cv-affiliation"><span data-lang="zh">中国科学技术大学 · 少年班学院</span><span data-lang="en">School of the Gifted Young, University of Science and Technology of China</span>
+<span data-lang="ja" lang="ja">中国科学技術大学・少年班学院</span></p>
+        <div class="cv-contact"><span data-lang="zh">中国 · 安徽合肥</span><span data-lang="en">Hefei, China</span>
+<span data-lang="ja" lang="ja">中国・合肥</span><a href="mailto:shuyiy@mail.ustc.edu.cn">shuyiy@mail.ustc.edu.cn</a><a href="https://nicholasshu.com"><span data-lang="zh">个人主页</span><span data-lang="en">My Website</span>
+<span data-lang="ja" lang="ja">個人ホームページ</span></a></div>
       </header>
-<section class="cv-section"><h2><span data-lang="zh">研究兴趣</span><span data-lang="en">Research Interests</span></h2><div class="cv-section-body"><p><span data-lang="zh">微分几何、几何分析、凸几何与 Kakeya 型问题。主要关注凸 Kakeya 集及相关变形问题、极值几何构型，以及凸性和几何约束与面积、直径、周长等几何量之间的关系。</span><span data-lang="en">Differential geometry, geometric analysis, convex geometry, and Kakeya-type problems. Particularly interested in convex Kakeya sets and related variants, extremal geometric configurations, and relationships among convexity, geometric constraints, area, diameter, and perimeter.</span></p></div></section>
+<section class="cv-section"><h2><span data-lang="zh">研究兴趣</span><span data-lang="en">Research Interests</span>
+<span data-lang="ja" lang="ja">研究関心</span></h2><div class="cv-section-body"><p><span data-lang="zh">微分几何、几何分析、凸几何与 Kakeya 型问题。主要关注凸 Kakeya 集及相关变形问题、极值几何构型，以及凸性和几何约束与面积、直径、周长等几何量之间的关系。</span><span data-lang="en">Differential geometry, geometric analysis, convex geometry, and Kakeya-type problems. Particularly interested in convex Kakeya sets and related variants, extremal geometric configurations, and relationships among convexity, geometric constraints, area, diameter, and perimeter.</span>
+<span data-lang="ja" lang="ja">微分幾何学、幾何解析、凸幾何学、および掛谷型問題。特に、凸掛谷集合とその変種、極値的な幾何学的配置、ならびに凸性・幾何学的制約と面積・直径・周長との関係に関心があります。</span></p></div></section>
 
-      <section class="cv-section"><h2><span data-lang="zh">教育背景</span><span data-lang="en">Education</span></h2><div class="cv-section-body"><div class="cv-entry"><div class="cv-entry-heading"><h3><span data-lang="zh">中国科学技术大学</span><span data-lang="en">University of Science and Technology of China (USTC)</span></h3><p class="cv-date"><span data-lang="zh">2025.09–至今</span><span data-lang="en">Sep 2025–Present</span></p></div><p><span data-lang="zh">少年班学院 · 数学方向本科生（纯数学方向）</span><span data-lang="en">School of the Gifted Young · Undergraduate studies in mathematics (pure mathematics track)</span></p><p><span data-lang="zh">2025 年获得中国科学技术大学少年班及创新试点班招生选拔 A 档资格并入学。</span><span data-lang="en">Admitted through the Special Class for Gifted Young Students selection process with Category A qualification.</span></p></div><div class="cv-entry"><div class="cv-entry-heading"><h3><span data-lang="zh">安徽省安庆市第一中学</span><span data-lang="en">Anqing No. 1 High School</span></h3><p class="cv-date"><span data-lang="zh">2023–2025</span><span data-lang="en">2023–2025</span></p></div><p><span data-lang="zh">安徽安庆</span><span data-lang="en">Anqing, Anhui, China</span></p><p><span data-lang="zh">2023、2024 年获高中数学联赛安徽省二等奖；2023 年通过西安交通大学少年班选拔，数学单科成绩全国前 20。</span><span data-lang="en">Second Prize in the Anhui provincial high school mathematics competition in both 2023 and 2024; ranked among the national top 20 in mathematics in the 2023 Xi’an Jiaotong University gifted-young-students selection examination.</span></p></div></div></section>
+      <section class="cv-section"><h2><span data-lang="zh">教育背景</span><span data-lang="en">Education</span>
+<span data-lang="ja" lang="ja">学歴</span></h2><div class="cv-section-body"><div class="cv-entry"><div class="cv-entry-heading"><h3><span data-lang="zh">中国科学技术大学</span><span data-lang="en">University of Science and Technology of China (USTC)</span>
+<span data-lang="ja" lang="ja">中国科学技術大学（USTC）</span></h3><p class="cv-date"><span data-lang="zh">2025.09–至今</span><span data-lang="en">Sep 2025–Present</span>
+<span data-lang="ja" lang="ja">2025年9月–現在</span></p></div><p><span data-lang="zh">少年班学院 · 数学方向本科生（纯数学方向）</span><span data-lang="en">School of the Gifted Young; Undergraduate studies in mathematics (pure mathematics track)</span>
+<span data-lang="ja" lang="ja">少年班学院・数学分野の学部課程（純粋数学）</span></p><p><span data-lang="zh">2025 年获得中国科学技术大学少年班及创新试点班招生选拔 A 档资格并入学。</span><span data-lang="en">Admitted through the Special Class for Gifted Young Students selection process with Category A qualification.</span>
+<span data-lang="ja" lang="ja">少年班の入学者選抜でA区分の資格を取得し、入学しました。</span></p></div><div class="cv-entry"><div class="cv-entry-heading"><h3><span data-lang="zh">安徽省安庆市第一中学</span><span data-lang="en">Anqing No. 1 High School</span>
+<span data-lang="ja" lang="ja">安徽省安慶市第一中学</span></h3><p class="cv-date"><span data-lang="zh">2023–2025</span><span data-lang="en">2023–2025</span>
+<span data-lang="ja" lang="ja">2023–2025年</span></p></div><p><span data-lang="zh">安徽安庆</span><span data-lang="en">Anqing, Anhui, China</span>
+<span data-lang="ja" lang="ja">中国・安徽省安慶市</span></p><p><span data-lang="zh">2023、2024 年获高中数学联赛安徽省二等奖；2023 年通过西安交通大学少年班选拔，数学单科成绩全国前 20。</span><span data-lang="en">Second Prize in the Anhui provincial high school mathematics competition in both 2023 and 2024; ranked among the national top 20 in mathematics in the 2023 Xi'an Jiaotong University gifted-young-students selection examination.</span>
+<span data-lang="ja" lang="ja">2023年・2024年の高校数学コンテストで安徽省二等賞を受賞。2023年の西安交通大学少年班選抜試験では、数学単科で全国上位20位に入りました。</span></p></div></div></section>
 
-      <section class="cv-section"><h2><span data-lang="zh">科研经历</span><span data-lang="en">Research Experience</span></h2><div class="cv-section-body"><div class="cv-entry"><div class="cv-entry-heading"><h3><span data-lang="zh">凸 Kakeya 集的研究</span><span data-lang="en">Research on Convex Kakeya Sets</span></h3><p class="cv-date"><span data-lang="zh">2026.09–至今</span><span data-lang="en">Sep 2026–Present</span></p></div><p><span data-lang="zh">指导教师：王作勤教授，中国科学技术大学</span><span data-lang="en">Advisor: Prof. Zuoqin Wang, USTC</span></p><ul><li><span data-lang="zh">研究在每个方向上均包含单位线段的凸集，关注其面积、直径、周长等几何量之间的定量关系。</span><span data-lang="en">Investigating convex sets containing unit line segments in every direction and quantitative relationships among area, diameter, and perimeter.</span></li><li><span data-lang="zh">探索极值构型、相关几何不等式及凸体在极限过程中的行为。</span><span data-lang="en">Exploring extremal configurations, geometric inequalities, and limiting behavior of convex bodies.</span></li><li><span data-lang="zh">学习并应用支撑超平面、支撑函数、凸包等凸几何工具。</span><span data-lang="en">Studying supporting hyperplanes, support functions, convex hulls, and related methods of convex geometry.</span></li></ul></div></div></section>
+      <section class="cv-section"><h2><span data-lang="zh">科研经历</span><span data-lang="en">Research Experience</span>
+<span data-lang="ja" lang="ja">研究経験</span></h2><div class="cv-section-body"><div class="cv-entry"><div class="cv-entry-heading"><h3><span data-lang="zh">凸 Kakeya 集的研究</span><span data-lang="en">Research on Convex Kakeya Sets</span>
+<span data-lang="ja" lang="ja">凸掛谷集合の研究</span></h3><p class="cv-date"><span data-lang="zh">2026.09–至今</span><span data-lang="en">Sep 2026–Present</span>
+<span data-lang="ja" lang="ja">2026年9月–現在</span></p></div><p><span data-lang="zh">指导教师：王作勤教授，中国科学技术大学</span><span data-lang="en">Advisor: Prof. Zuoqin Wang, USTC</span>
+<span data-lang="ja" lang="ja">指導教員：王作勤教授（中国科学技術大学）</span></p><ul><li><span data-lang="zh">研究在每个方向上均包含单位线段的凸集，关注其面积、直径、周长等几何量之间的定量关系。</span><span data-lang="en">Investigating convex sets containing unit line segments in every direction and quantitative relationships among area, diameter, and perimeter.</span>
+<span data-lang="ja" lang="ja">すべての方向の単位線分を含む凸集合を対象に、面積・直径・周長の定量的な関係を研究しています。</span></li><li><span data-lang="zh">探索极值构型、相关几何不等式及凸体在极限过程中的行为。</span><span data-lang="en">Exploring extremal configurations, geometric inequalities, and limiting behavior of convex bodies.</span>
+<span data-lang="ja" lang="ja">極値的な配置、幾何学的不等式、凸体の極限挙動を探究しています。</span></li><li><span data-lang="zh">学习并应用支撑超平面、支撑函数、凸包等凸几何工具。</span><span data-lang="en">Studying supporting hyperplanes, support functions, convex hulls, and related methods of convex geometry.</span>
+<span data-lang="ja" lang="ja">支持超平面、支持関数、凸包など、凸幾何学の手法を学び、活用しています。</span></li></ul></div></div></section>
 
-      <section class="cv-section"><h2><span data-lang="zh">独立数学论文写作</span><span data-lang="en">Independent Mathematical Manuscript</span></h2><div class="cv-section-body"><div class="cv-entry"><div class="cv-entry-heading"><h3><span data-lang="zh">《双曲平面的一些几何性质》</span><span data-lang="en">Some Geometric Properties of Hyperbolic Plane</span></h3><p class="cv-date"><span data-lang="zh">2026</span><span data-lang="en">2026</span></p></div><p><span data-lang="zh">独立撰写的数学手稿；发表在中国科学技术大学数学科学学院的学生刊物《蛙鸣》第 68 期。</span><span data-lang="en">Independent manuscript; published in Issue 68 of Wa Ming, a student-run publication of the School of Mathematical Sciences at USTC.</span></p><ul><li><span data-lang="zh">研究了双曲几何中 Poincaré 上半平面模型的性质，包括其与 Hilbert 公理系统的相容性，以及该模型上的变换群。</span><span data-lang="en">Studied the Poincaré upper half-plane model of hyperbolic geometry, including its compatibility with Hilbert’s axiomatic system and its transformation groups.</span></li><li><span data-lang="zh">探讨了双曲三角形的性质，包括双曲正弦定理和余弦定理，并研究了 Desargues 定理和 Pappus 定理。</span><span data-lang="en">Investigated properties of hyperbolic triangles, including the hyperbolic laws of sines and cosines, as well as Desargues’ theorem and Pappus’ theorem.</span></li></ul></div></div></section>
+      <section class="cv-section"><h2><span data-lang="zh">独立数学论文写作</span><span data-lang="en">Independent Mathematical Manuscript</span>
+<span data-lang="ja" lang="ja">自主執筆した数学論考</span></h2><div class="cv-section-body"><div class="cv-entry"><div class="cv-entry-heading"><h3><span data-lang="zh">《双曲平面的一些几何性质》</span><span data-lang="en">Some Geometric Properties of Hyperbolic Plane</span>
+<span data-lang="ja" lang="ja">双曲平面のいくつかの幾何学的性質</span></h3><p class="cv-date"><span data-lang="zh">2026</span><span data-lang="en">2026</span>
+<span data-lang="ja" lang="ja">2026年</span></p></div><p><span data-lang="zh">独立撰写的数学手稿；发表在中国科学技术大学数学科学学院的学生刊物《蛙鸣》第 68 期。</span><span data-lang="en">Independent manuscript; Published in Issue 68 of <em>Wa Ming</em>, a student-run publication of the School of Mathematical Sciences at USTC.</span>
+<span data-lang="ja" lang="ja">自主執筆の数学論考。中国科学技術大学数学科学学院の学生刊行物『蛙鳴』第68号に掲載。</span></p><ul><li><span data-lang="zh">研究了双曲几何中 Poincaré 上半平面模型的性质，包括其与 Hilbert 公理系统的相容性，以及该模型上的变换群。</span><span data-lang="en">Studied the Poincaré upper half-plane model of hyperbolic geometry, including its compatibility with Hilbert's axiomatic system and its transformation groups.</span>
+<span data-lang="ja" lang="ja">双曲幾何学のポアンカレ上半平面モデルについて、ヒルベルトの公理系との整合性や変換群などを考察しました。</span></li><li><span data-lang="zh">探讨了双曲三角形的性质，包括双曲正弦定理和余弦定理，并研究了 Desargues 定理和 Pappus 定理。</span><span data-lang="en">Investigated properties of hyperbolic triangles, including the hyperbolic laws of sines and cosines, as well as Desargues' theorem and Pappus' theorem.</span>
+<span data-lang="ja" lang="ja">双曲三角形の性質、双曲正弦定理・余弦定理、デザルグの定理、パップスの定理を調べました。</span></li></ul></div></div></section>
 
-      <section class="cv-section"><h2><span data-lang="zh">荣誉与奖项</span><span data-lang="en">Honors and Awards</span></h2><div class="cv-section-body"><ul><li><span data-lang="zh"><strong>2025 年：</strong>中国科学技术大学少年班及创新试点班招生选拔 A 档资格。</span><span data-lang="en"><strong>2025:</strong> Category A qualification, USTC Special Class for Gifted Young Students admission.</span></li><li><span data-lang="zh"><strong>2023、2024 年：</strong>高中数学联赛安徽省二等奖（各一次）。</span><span data-lang="en"><strong>2023, 2024:</strong> Second Prize (each year), Anhui provincial high school mathematics competition.</span></li><li><span data-lang="zh"><strong>2023 年：</strong>西安交通大学少年班选拔考试数学单科全国前 20。</span><span data-lang="en"><strong>2023:</strong> National top 20 in mathematics, Xi’an Jiaotong University gifted-young-students selection examination.</span></li><li><span data-lang="zh">丘成桐中学生数学夏令营顺利结业。</span><span data-lang="en">Successfully completed the Yau Mathematical Sciences Summer Camp.</span></li><li><span data-lang="zh"><strong>2019、2020 年：</strong>信息学竞赛省二等奖（各一次）。</span><span data-lang="en"><strong>2019, 2020:</strong> Second Prize (each year), provincial informatics competitions.</span></li><li><span data-lang="zh">高中期间曾获优秀学生干部、优秀团干部等荣誉。</span><span data-lang="en">Additional high-school honors for student leadership and Communist Youth League service.</span></li></ul></div></section>
+      <section class="cv-section"><h2><span data-lang="zh">荣誉与奖项</span><span data-lang="en">Honors and Awards</span>
+<span data-lang="ja" lang="ja">受賞・表彰</span></h2><div class="cv-section-body"><ul><li><span data-lang="zh"><strong>2025 年：</strong>中国科学技术大学少年班及创新试点班招生选拔 A 档资格。</span><span data-lang="en"><strong>2025:</strong> Category A qualification, USTC Special Class for Gifted Young Students admission.</span>
+<span data-lang="ja" lang="ja"><strong>2025年：</strong>中国科学技術大学少年班の入学者選抜でA区分の資格を取得。</span></li><li><span data-lang="zh"><strong>2023、2024 年：</strong>高中数学联赛安徽省二等奖（各一次）。</span><span data-lang="en"><strong>2023, 2024:</strong> Second Prize (each year), Anhui provincial high school mathematics competition.</span>
+<span data-lang="ja" lang="ja"><strong>2023年・2024年：</strong>高校数学コンテスト安徽省二等賞（各年1回）。</span></li><li><span data-lang="zh"><strong>2023 年：</strong>西安交通大学少年班选拔考试数学单科全国前 20。</span><span data-lang="en"><strong>2023:</strong> National top 20 in mathematics, Xi'an Jiaotong University gifted-young-students selection examination.</span>
+<span data-lang="ja" lang="ja"><strong>2023年：</strong>西安交通大学少年班選抜試験の数学単科で全国上位20位。</span></li><li><span data-lang="zh"><strong>2023 年：</strong>丘成桐中学生数学夏令营顺利结业。</span><span data-lang="en"><strong>2023:</strong> Successfully completed the Yau Mathematical Sciences Summer Camp.</span>
+<span data-lang="ja" lang="ja"><strong>2023年：</strong>丘成桐中高生数学サマーキャンプを修了。</span></li><li><span data-lang="zh"><strong>2019、2020 年：</strong>信息学竞赛省二等奖（各一次）。</span><span data-lang="en"><strong>2019, 2020:</strong> Second Prize (each year), provincial informatics competitions.</span>
+<span data-lang="ja" lang="ja"><strong>2019年・2020年：</strong>情報学コンテスト省二等賞（各年1回）。</span></li><li><span data-lang="zh">高中期间曾获优秀学生干部、优秀团干部等荣誉。</span><span data-lang="en">Additional high-school honors for student leadership and Communist Youth League service.</span>
+<span data-lang="ja" lang="ja">高校在学中に、学生リーダーおよび共青団活動に関する表彰を受けました。</span></li></ul></div></section>
 
-      <section class="cv-section"><h2><span data-lang="zh">数学学习背景</span><span data-lang="en">Mathematical Preparation</span></h2><div class="cv-section-body"><p><span data-lang="zh"><strong>基础课程及领域：</strong>数学分析、线性代数、常微分方程、经典微分几何、凸分析。</span><span data-lang="en"><strong>Foundations:</strong> Mathematical analysis, linear algebra, ordinary differential equations, classical differential geometry, convex analysis.</span></p><p><span data-lang="zh"><strong>高阶阅读与自主学习：</strong>光滑流形、微分拓扑、几何分析、偏微分方程、极小曲面、微分形式、de Rham 上同调。</span><span data-lang="en"><strong>Advanced reading / study:</strong> Smooth manifolds, differential topology, geometric analysis, partial differential equations, minimal surfaces, differential forms, de Rham cohomology.</span></p><p class="cv-note"><span data-lang="zh">以上兼含正式课程与自主学习内容，具体课程成绩尚未填写。</span><span data-lang="en">The list combines coursework and independent study; individual course grades are not specified.</span></p></div></section>
+      <section class="cv-section"><h2><span data-lang="zh">数学学习背景</span><span data-lang="en">Mathematical Preparation</span>
+<span data-lang="ja" lang="ja">数学の学習歴</span></h2><div class="cv-section-body"><p><span data-lang="zh"><strong>基础课程及领域：</strong>数学分析、线性代数、常微分方程、经典微分几何、凸分析。</span><span data-lang="en"><strong>Foundations:</strong> Mathematical analysis, linear algebra, ordinary differential equations, classical differential geometry, convex analysis.</span>
+<span data-lang="ja" lang="ja"><strong>基礎分野：</strong>数学解析、線形代数学、常微分方程式、古典的微分幾何学、凸解析。</span></p><p><span data-lang="zh"><strong>高阶阅读与自主学习：</strong>光滑流形、微分拓扑、几何分析、偏微分方程、极小曲面、微分形式、de Rham 上同调。</span><span data-lang="en"><strong>Advanced reading / study:</strong> Smooth manifolds, differential topology, geometric analysis, partial differential equations, minimal surfaces, differential forms, de Rham cohomology.</span>
+<span data-lang="ja" lang="ja"><strong>発展的な読書・自主学習：</strong>滑らかな多様体、微分位相幾何学、幾何解析、偏微分方程式、極小曲面、微分形式、ド・ラームコホモロジー。</span></p><p class="cv-note"><span data-lang="zh">以上兼含正式课程与自主学习内容，具体课程成绩尚未填写。</span><span data-lang="en"><em>Note: The list combines coursework and independent study; individual course grades are not specified.</em></span>
+<span data-lang="ja" lang="ja">正規の授業と自主学習の両方を含みます。個別の科目成績は記載していません。</span></p></div></section>
 
-      <section class="cv-section"><h2><span data-lang="zh">学生工作与技能</span><span data-lang="en">Leadership and Skills</span></h2><div class="cv-section-body"><p><span data-lang="zh"><strong>学生工作：</strong>少年班学院班级团支部书记（2025–至今）；少年班学院学生会学术实践部干事（2026–至今）。</span><span data-lang="en"><strong>Service:</strong> Class Communist Youth League Branch Secretary (2025–Present); Student Union, Academic and Practice Department member (2026–Present).</span></p><p><span data-lang="zh"><strong>技术工具：</strong>LaTeX、XeLaTeX、Beamer、SolidWorks。</span><span data-lang="en"><strong>Technical:</strong> LaTeX, XeLaTeX, Beamer, SolidWorks.</span></p><p><span data-lang="zh"><strong>语言：</strong>中文（母语）、英语（水平待补充）。</span><span data-lang="en"><strong>Languages:</strong> Mandarin Chinese (native); English (level to confirm).</span></p></div></section>
+      <section class="cv-section"><h2><span data-lang="zh">学生工作与技能</span><span data-lang="en">Leadership and Skills</span>
+<span data-lang="ja" lang="ja">学生活動・スキル</span></h2><div class="cv-section-body"><p><span data-lang="zh"><strong>学生工作：</strong>少年班学院班级团支部书记（2025–至今）；少年班学院学生会学术实践部干事（2026–至今）。</span><span data-lang="en"><strong>Service:</strong> Class Communist Youth League Branch Secretary (2025–Present); Student Union, Academic and Practice Department member (2026–Present).</span>
+<span data-lang="ja" lang="ja"><strong>学生活動：</strong>クラス共青団支部書記（2025年–現在）。学生会・学術実践部メンバー（2026年–現在）。</span></p><p><span data-lang="zh"><strong>技术工具：</strong>LaTeX、XeLaTeX、Beamer、SolidWorks。</span><span data-lang="en"><strong>Technical:</strong> LaTeX, XeLaTeX, Beamer, SolidWorks.</span>
+<span data-lang="ja" lang="ja"><strong>使用ツール：</strong>LaTeX、XeLaTeX、Beamer、SolidWorks。</span></p><p><span data-lang="zh"><strong>语言：</strong>中文（母语）、英语（水平待补充）。</span><span data-lang="en"><strong>Languages:</strong> Mandarin Chinese (native); English (level to confirm).</span>
+<span data-lang="ja" lang="ja"><strong>言語：</strong>中国語（母語）、英語（習熟度は追記予定）。</span></p></div></section>
     </article>
   </main>
 
   <dialog class="cv-dialog" id="cv-dialog" aria-labelledby="cv-dialog-title" aria-describedby="cv-dialog-description">
-    <h2 id="cv-dialog-title"><span data-lang="zh">下载简历</span><span data-lang="en">Download CV</span></h2>
-    <p id="cv-dialog-description"><span data-lang="zh">请选择简历语言，下载 PDF 文件。</span><span data-lang="en">Choose a language to download the PDF.</span></p>
+    <h2 id="cv-dialog-title"><span data-lang="zh">下载简历</span><span data-lang="en">Download CV</span>
+<span data-lang="ja" lang="ja">CVをダウンロード</span></h2>
+    <p id="cv-dialog-description"><span data-lang="zh">请选择简历语言，下载 PDF 文件。</span><span data-lang="en">Choose a language to download the PDF.</span>
+<span data-lang="ja" lang="ja">PDFの言語を選んでダウンロードしてください。</span></p>
     <div class="cv-options">
       <a class="cv-option" href="中文CV.pdf" download>
         <span data-lang="zh">下载中文版</span><span data-lang="en">Download Chinese CV</span>
+<span data-lang="ja" lang="ja">中国語版をダウンロード</span>
         <span class="cv-format" aria-hidden="true">PDF ↓</span>
       </a>
       <a class="cv-option" href="英文CV.pdf" download>
         <span data-lang="zh">下载英文版</span><span data-lang="en">Download English CV</span>
+<span data-lang="ja" lang="ja">英語版をダウンロード</span>
         <span class="cv-format" aria-hidden="true">PDF ↓</span>
       </a>
     </div>
     <form method="dialog">
-      <button class="cv-close" type="submit"><span data-lang="zh">取消</span><span data-lang="en">Cancel</span></button>
+      <button class="cv-close" type="submit"><span data-lang="zh">取消</span><span data-lang="en">Cancel</span>
+<span data-lang="ja" lang="ja">キャンセル</span></button>
     </form>
   </dialog>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
-        <span class="footer-meta">Mathematics · USTC</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></span>
+        <span class="footer-meta"><span data-lang="zh">数学 · 中国科大</span><span data-lang="en">Mathematics · USTC</span><span data-lang="ja" lang="ja">数学 · 中国科学技術大学</span></span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span>
+<span data-lang="ja" lang="ja">数学への情熱を込めて。</span></p>
     </div>
   </footer>
 
-  <script src="script.js?v=20261020-cv3"></script>
+  <script src="script.js?v=20261020-ja1"></script>
 </body>
 </html>

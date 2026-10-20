@@ -74,8 +74,15 @@ img, svg { display: block; max-width: 100%; }
 a { color: inherit; }
 
 /* ---------- Language visibility ---------- */
-html[data-lang="zh"] [data-lang="en"] { display: none !important; }
-html[data-lang="en"] [data-lang="zh"] { display: none !important; }
+html[data-lang="zh"] [data-lang]:not([data-lang="zh"]),
+html[data-lang="en"] [data-lang]:not([data-lang="en"]),
+html[data-lang="ja"] [data-lang]:not([data-lang="ja"]) { display: none !important; }
+html[data-lang="ja"] {
+  --font-ui: "Inter", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  --font-serif: "STIX Two Text", "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+html[data-lang="ja"] p { line-break: strict; word-break: normal; }
+
 
 /* ---------- CV download ---------- */
 .cv-trigger {
@@ -314,7 +321,7 @@ html[data-theme="light"] .icon-sun { display: none; }
 html[data-theme="dark"] .icon-moon { display: none; }
 
 /* Language toggle */
-.lang-toggle {
+.lang-select {
   height: 2.2rem;
   padding: 0 0.7rem;
   display: inline-flex;
@@ -325,17 +332,21 @@ html[data-theme="dark"] .icon-moon { display: none; }
   color: var(--muted);
   border-radius: 999px;
   cursor: pointer;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  letter-spacing: 0;
   transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.lang-toggle:hover {
+.lang-select:hover {
   color: var(--text);
   border-color: var(--border-strong);
   background: var(--accent-soft);
 }
+
+.lang-select { max-width: 6.4rem; background-color: var(--bg); }
+.lang-select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.lang-select option { color: var(--text); background: var(--bg); }
 
 /* Mobile toggle */
 .nav-toggle {

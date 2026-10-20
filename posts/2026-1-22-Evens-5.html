@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
+<html lang="en" data-title-ja="Evans 読書ノート（第5回） | 舒屹扬" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evens-5 | Nick Shu</title>
   <link rel="icon" href="../favicon.jpg" type="image/jpeg">
   <script>
-    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'en';}catch(e){var d='light',l='en';}r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
+    (function(){var r=document.documentElement,d='light',l='en';try{var t=localStorage.getItem('theme');l=localStorage.getItem('lang');d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}var q=new URLSearchParams(location.search).get('lang');if(q==='zh'||q==='en'||q==='ja')l=q;if(l!=='zh'&&l!=='en'&&l!=='ja')l='en';r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <script>
     window.MathJax = {
@@ -19,25 +19,32 @@
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=20261020-ja1">
 </head>
 <body>
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="../index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
+      <a href="../index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="../about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
-          <a href="../research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
-          <a href="../blog.html" class="active" aria-current="page"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
-          <a href="../contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
+          <a href="../about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span>
+<span data-lang="ja" lang="ja">プロフィール</span></a>
+          <a href="../research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span>
+<span data-lang="ja" lang="ja">研究</span></a>
+          <a href="../blog.html" class="active" aria-current="page"><span data-lang="zh">博客</span><span data-lang="en">Blog</span>
+<span data-lang="ja" lang="ja">ブログ</span></a>
+          <a href="../contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span>
+<span data-lang="ja" lang="ja">お問い合わせ</span></a>
         </nav>
         <div class="nav-actions">
-          <button class="lang-toggle" aria-label="Switch language / 切换语言">
-            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
-          </button>
+          <select class="lang-select" aria-label="Language / 语言 / 言語">
+            <option value="zh" lang="zh">中文</option>
+            <option value="en" lang="en">English</option>
+            <option value="ja" lang="ja">日本語</option>
+          </select>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -53,8 +60,10 @@
   <main class="page container">
     <article class="article">
       <div class="article-header">
-        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span></h1>
-        <div class="article-meta"><span data-lang="zh">2026 年 1 月 22 日 · 舒屹扬</span><span data-lang="en">Jan 22, 2026 · Nick Shu</span></div>
+        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span>
+<span data-lang="ja" lang="ja">Evans 読書ノート</span></h1>
+        <div class="article-meta"><span data-lang="zh">2026 年 1 月 22 日 · 舒屹扬</span><span data-lang="en">Jan 22, 2026 · Nick Shu</span>
+<span data-lang="ja" lang="ja">2026年1月22日・舒屹扬</span></div>
       </div>
 
       <div data-lang="zh">
@@ -116,9 +125,35 @@
           introduces Hölder and Sobolev spaces for the linear theory of PDEs.
         </p>
       </div>
+<div data-lang="ja" lang="ja">
+        <h2>一般の波動方程式（続き）</h2>
+
+        <p>偶数次元$n=2k$について、まず$n=2$を考えます。$\mathbb{R}^2$を$\mathbb{R}^3$に埋め込み、具体的には$\boldsymbol{x}$を$\bar{\boldsymbol{x}}=(\boldsymbol{x},0)$に移します。同様に$u(\boldsymbol{x},t)$を$\bar{u}(\bar{\boldsymbol{x}},t)$に拡張し、$\bar{g},\bar{h}$も定義します。$\bar{u}$は初期値$g,h$を持つ三次元の方程式の解となるので、前の公式から$\bar{u}(\bar{x},t)$の表示が得られます。次に射影を使います。点$\bar{y}=(\boldsymbol{y},z)\in\partial\bar{B}(\bar{\boldsymbol{x}},t)$は$z^2+|\boldsymbol{y}-\boldsymbol{x}|^2=t^2$を満たすため、外向き単位法線は$\boldsymbol{\nu}=(\boldsymbol{y}-\boldsymbol{x},z)/t$であり、$\text{d}\boldsymbol{y}=|\boldsymbol{\nu}\cdot\boldsymbol{e}_3|\text{d}\bar{S}_{\bar{\boldsymbol{y}}}=\frac{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}{t}\text{d}\bar{S}_{\bar{\boldsymbol{y}}}$となります。したがって、$n=2$の場合の解は次のとおりです。</p>
+
+        $$u(\boldsymbol{x},t)=\frac{t}{2}\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{g(\boldsymbol{y})+(\boldsymbol{y}-\boldsymbol{x})\cdot\mathbf{D}g(\boldsymbol{y})+h(\boldsymbol{y})t}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}.$$
+
+        <p>同じ方法で、すべての偶数次元$n=2k$を計算できます。結果は次のとおりです。</p>
+
+        $$u(\boldsymbol{x},t)=\frac{1}{n!!}\left[\frac{\partial}{\partial t}\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-2)/2}\left(t^n\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{g(\boldsymbol{y})}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}\right)+\left(\frac{1}{t}\frac{\partial}{\partial t}\right)^{(n-2)/2}\left(t^n\frac{1}{|B(\boldsymbol{x},t)|}\int_{B(\boldsymbol{x},t)}\frac{h(\boldsymbol{y})}{\sqrt{t^2-|\boldsymbol{y}-\boldsymbol{x}|^2}}\text{d}\boldsymbol{y}\right)\right].$$
+
+        <p>これで斉次波動方程式の解の表示が得られました。奇数$n\geq3$では、初期データ$g,h$のうち、円錐面$\partial\{(\boldsymbol{y},t):t>0,|\boldsymbol{x}-\boldsymbol{y}| &lt t\}=\{(\boldsymbol{y},t):t>0,|\boldsymbol{y}-\boldsymbol{x}|=t\}$上の値だけが影響します。一方、$n$が偶数の場合は円錐内部全体が影響します。奇数次元では擾乱は波面に沿って伝わり、偶数次元ではその後も影響が残るということです。これが<strong>ホイヘンスの原理</strong>です。</p>
+
+        <p>非斉次の場合には、デュアメルの原理によって積分すればよいことになります。通常は$u|_{t=0}=u_t|_{t=0}=0$とし、そうでない場合には非斉次問題の解と斉次問題の解に分けます。$u(\boldsymbol{x},t;s)$が初期値$u(\boldsymbol{x},s;s)=0,u_t(\boldsymbol{x},s;s)=f(\boldsymbol{x},s)$を持つ波動方程式の解なら、$u(\boldsymbol{x},t)=\int_0^tu(\boldsymbol{x},t;s)\text{d}s$は非斉次波動方程式の解です。特に$n=3$では$$u(\boldsymbol{x},t)=\frac{1}{4\pi}\int_{B(\boldsymbol{x},t)}\frac{f(\boldsymbol{y},t-|\boldsymbol{y}-\boldsymbol{x}|)}{|\boldsymbol{y}-\boldsymbol{x}|}\text{d}\boldsymbol{y},$$となり、物理学でいう<strong>遅延ポテンシャル</strong>に対応します。</p>
+
+        <p>次にエネルギー法を考え、エネルギーを$$E(t)=\frac{1}{2}\int_Uw_t^2+|\mathbf{D}w|^2\text{d}\boldsymbol{x},$$と定義します。$w$が境界条件$0$を持つ斉次方程式の解なら$$\dot{E}(t)=\int_Uw_tw_{tt}+\mathbf{D}w\cdot\mathbf{D}w_t\text{d}\boldsymbol{x}=\int_Uw_t(w_{tt}-\Delta w)\text{d}\boldsymbol{x}=0.$$なので、$E(t)\equiv E(0)=0$、したがって$w=0$です。これで初期値問題の解の一意性が再び示されます。さらに、解の<strong>依存領域</strong>、つまり点$(\boldsymbol{x}_0,t_0)$がどの点のデータに依存するかを考えます。この点は平面上の$B(\boldsymbol{x}_0,t_0)\times\{t=0\}$にのみ依存すると予想できますが、実際にはさらに強く、この円盤は<strong>$K(\boldsymbol{x}_0,t_0)=\{(\boldsymbol{x},t):t\in[0,t_0],|\boldsymbol{x}-\boldsymbol{x}_0|\leq t_0-t\}$全体を決定します</strong>。</p>
+
+        <p>ここまでで第2章の重要な内容を一通り復習しました。これ以降は、自分の必要と理解に合わせて、構成をかなり自由に組み替えていく予定です。</p>
+
+        <h2>線形偏微分方程式の理論</h2>
+
+        <p>まず関数空間について考えます。偏微分方程式でよく使うのは、<strong>H$\boldsymbol{\ddot{\text{o}}}$lder（ヘルダー）空間とソボレフ空間</strong>です。</p>
+
+        <p>H$\ddot{\text{o}}$lder（ヘルダー）空間は、$C^k(\bar{U})$に属し、さらに\[||u||_{C^{k,\gamma}(\bar{U})}=\sum_{|\boldsymbol{\alpha}|\leq k}||\mathbf{D}^{\boldsymbol{\alpha}}u||_{C(\bar{U})}+\sum_{|\boldsymbol{\alpha}|=k}[\mathbf{D}^{\boldsymbol{\alpha}}u]_{C^{0,\gamma}(\bar{U})}\]が有限である関数からなります。ここで\[[u]_{C^{0,\gamma}(\bar{U})}=\sup_{\boldsymbol{x},\boldsymbol{y}\in I}\left\{\frac{|u(\boldsymbol{x})-u(\boldsymbol{y})|}{|\boldsymbol{x}-\boldsymbol{y}|^{\gamma}}\right\}\]を<strong>H$\boldsymbol{\ddot{\text{o}}}$lder（ヘルダー）半ノルム</strong>と呼びます。</p>
+      </div>
 
       <div style="margin-top: 3rem;">
-        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> <span data-lang="zh">返回博客</span><span data-lang="en">Back to Blog</span></a>
+        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> <span data-lang="zh">返回博客</span><span data-lang="en">Back to Blog</span>
+<span data-lang="ja" lang="ja">ブログへ戻る</span></a>
       </div>
     </article>
   </main>
@@ -126,14 +161,16 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
-        <span class="footer-meta">Mathematics · USTC</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></span>
+        <span class="footer-meta"><span data-lang="zh">数学 · 中国科大</span><span data-lang="en">Mathematics · USTC</span><span data-lang="ja" lang="ja">数学 · 中国科学技術大学</span></span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span>
+<span data-lang="ja" lang="ja">数学への情熱を込めて。</span></p>
     </div>
   </footer>
 
-  <script src="../script.js"></script>
+  <script src="../script.js?v=20261020-ja1"></script>
 </body>
 </html>

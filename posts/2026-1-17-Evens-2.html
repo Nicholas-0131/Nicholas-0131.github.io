@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
+<html lang="en" data-title-ja="Evans 読書ノート（第2回） | 舒屹扬" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evens-2 | Nick Shu</title>
   <link rel="icon" href="../favicon.jpg" type="image/jpeg">
   <script>
-    (function(){var r=document.documentElement;try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');var d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');l=(l==='zh'||l==='en')?l:'en';}catch(e){var d='light',l='en';}r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
+    (function(){var r=document.documentElement,d='light',l='en';try{var t=localStorage.getItem('theme');l=localStorage.getItem('lang');d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}var q=new URLSearchParams(location.search).get('lang');if(q==='zh'||q==='en'||q==='ja')l=q;if(l!=='zh'&&l!=='en'&&l!=='ja')l='en';r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
   </script>
   <script>
     window.MathJax = {
@@ -19,25 +19,32 @@
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=20261020-ja1">
 </head>
 <body>
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="../index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></a>
+      <a href="../index.html" class="brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></a>
       <div class="header-right">
         <nav class="nav" id="nav" aria-label="Primary">
-          <a href="../about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span></a>
-          <a href="../research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span></a>
-          <a href="../blog.html" class="active" aria-current="page"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a>
-          <a href="../contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
+          <a href="../about.html"><span data-lang="zh">关于</span><span data-lang="en">About</span>
+<span data-lang="ja" lang="ja">プロフィール</span></a>
+          <a href="../research.html"><span data-lang="zh">研究</span><span data-lang="en">Research</span>
+<span data-lang="ja" lang="ja">研究</span></a>
+          <a href="../blog.html" class="active" aria-current="page"><span data-lang="zh">博客</span><span data-lang="en">Blog</span>
+<span data-lang="ja" lang="ja">ブログ</span></a>
+          <a href="../contact.html"><span data-lang="zh">联系</span><span data-lang="en">Contact</span>
+<span data-lang="ja" lang="ja">お問い合わせ</span></a>
         </nav>
         <div class="nav-actions">
-          <button class="lang-toggle" aria-label="Switch language / 切换语言">
-            <span data-lang="zh">EN</span><span data-lang="en">中文</span>
-          </button>
+          <select class="lang-select" aria-label="Language / 语言 / 言語">
+            <option value="zh" lang="zh">中文</option>
+            <option value="en" lang="en">English</option>
+            <option value="ja" lang="ja">日本語</option>
+          </select>
           <button class="theme-toggle" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -53,8 +60,10 @@
   <main class="page container">
     <article class="article">
       <div class="article-header">
-        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span></h1>
-        <div class="article-meta"><span data-lang="zh">2026 年 1 月 16 日 · 舒屹扬</span><span data-lang="en">Jan 16, 2026 · Nick Shu</span></div>
+        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span>
+<span data-lang="ja" lang="ja">Evans 読書ノート</span></h1>
+        <div class="article-meta"><span data-lang="zh">2026 年 1 月 17 日 · 舒屹扬</span><span data-lang="en">Jan 17, 2026 · Nick Shu</span>
+<span data-lang="ja" lang="ja">2026年1月17日・舒屹扬</span></div>
       </div>
 
       <div data-lang="zh">
@@ -154,9 +163,55 @@
           equation and its fundamental solution.
         </p>
       </div>
+<div data-lang="ja" lang="ja">
+        <p>Evans の <em>Partial Differential Equations（偏微分方程式）</em>の読書ノートです。前回の内容に続けてまとめます。</p>
+
+        <h2>ラプラス方程式とポアソン方程式</h2>
+
+        <h3>方程式の解</h3>
+
+        <p>ラプラス（ポアソン）方程式$-\Delta u=f$を解きます。まず$-\Delta$の基本解を導きます。$u(\boldsymbol{x})=v(r)$とし、$\mathbf{D}v(r)=\frac{v'(r)}{r}\boldsymbol{x}$に注意すると$\Delta v(r)=\frac{n-1}{r}v'(r)+v''(r)=\frac{1}{r^{n-1}}(r^{n-1}v'(r))'$が分かります。1回積分して$$v'(r)=-\frac{1}{n\alpha(n)r^{n-1}}\quad\text{where $n\alpha(n)$ is the area of $n-$dimension unit sphere}.$$、したがって基本解は$$\Phi(\boldsymbol{x})=\begin{cases}-\frac{1}{2\pi}\ln|\boldsymbol{x}|,&n=2;\\\frac{1}{n\alpha(n)(n-2)|\boldsymbol{x}|^{n-2}},&n\geq3.\end{cases}$$です。この解は放射対称であることに注意してください。</p>
+
+        <p>一般のポアソン方程式に対しては、前述の結果を使って畳み込みを取れます。得られる解は次のとおりです。</p>
+
+        $$u(\boldsymbol{x})=\begin{cases}-\frac{1}{2\pi}\int_{\mathbb{R}^2}\ln(|\boldsymbol{x}-\boldsymbol{y}|)f(\boldsymbol{y})\text{d}\boldsymbol{y},&n=2;\\ \frac{1}{n\alpha(n)(n-2)}\int_{\mathbb{R}^n}\frac{f(\boldsymbol{y})}{|\boldsymbol{x}-\boldsymbol{y}|^{n-2}}\text{d}\boldsymbol{y},&n\geq3.\end{cases}$$
+
+        <p>これがポアソン方程式の解の公式です。基本解の理論を使わず、直接証明することもできます。$\boldsymbol{0}$から離れた場所では定義を直接使い、$\boldsymbol{0}$の近くでは小球$B_{(\boldsymbol{0},\varepsilon)}$を切り離して近似します。</p>
+
+        <h3>重要な性質</h3>
+
+        <p>最も重要な性質は<strong>平均値公式</strong>です。$U$上の調和関数$u$について、各球$B(\boldsymbol{x},r)\subseteq U上面$で等式$$u(\boldsymbol{x})=\frac{1}{|\partial B(\boldsymbol{x},r)|}\int_{\partial B(\boldsymbol{x},r)}u\text{d}S=\frac{1}{|B(\boldsymbol{x},r)|}\int_{B(\boldsymbol{x},r)}u\text{d}\boldsymbol{y}$$が成立します。</p>
+
+        <p>平均値公式から多くの定理が得られます。点$\boldsymbol{x}^0\in U$で$\bar{U}$上の最大値$M$を取るとすると、任意の$r$に平均値公式を適用して、各点で値が$M$になると分かります。$\boldsymbol{x}^0$が$\partial U$に非常に近い場合も、この議論を繰り返します。これが<strong>強最大値原理</strong>です。連結領域の内部で調和関数が最大値または最小値を取れば、その関数は定数です。したがって最大値は境界で達成され、$$\max_{\bar{U}}u=\max_{\partial U}u.$$と書けます。これを<strong>最大値原理</strong>と呼びます。</p>
+
+        <p>調和関数の導関数について、評価$$|\mathbf{D}^{\boldsymbol{\alpha}}u(\boldsymbol{x}^0)\leq\frac{C_k}{r^{n+k}}||u||_{L^1(B(\boldsymbol{x}^0,r))},$$も証明できます。ここで$C_0=1/\alpha(n)$、$C_k=\frac{(2^{n+1}nk)^k}{\alpha(n)}$です。これより$$||\mathbf{D}^{\boldsymbol{\alpha}}u||_{L^{\infty}(B(\boldsymbol{x}^0,r))}\leq M\left(\frac{2^{n+1}n}{r}\right)^{|\boldsymbol{\alpha}|}|\boldsymbol{\alpha}|^{|\boldsymbol{\alpha}|}.$$が得られます。また$k^k &lt; k!\text{e}^k$は任意の正整数$k$に対して成立するので、さらに$M\left(\frac{2^{n+1}n^2\text{e}}{r}\right)^{|\boldsymbol{\alpha}|}\boldsymbol{\alpha}\!$と整理できます。テイラー展開の剰余項は、$|\boldsymbol{x}-\boldsymbol{x}^0| &lt; r/(2^{n+2}n^3\text{e})$のとき概ね$1/2^N$のオーダーです。したがって、<strong>調和関数は解析的</strong>です。</p>
+
+        <p>さらに、全空間の<strong>調和関数は定数であるか、または非有界である</strong>と主張できます。これが<strong>リウヴィルの定理</strong>です。先ほどの導関数評価で$r\to+\infty$とすれば$\mathbf{D}u\equiv0$となり、$u$は定数です。以上の二つの定理は、解析性と非有界性を示しています。$n=2$の場合、正則関数の実部と虚部は調和関数なので、それぞれ正則関数の解析性と、有界な整関数が定数になることに対応します。</p>
+
+        <p>最後に、重要な<strong>ハルナックの不等式</strong>を述べます。連結開集合$V\subseteq\subseteq U$に対し、$V$だけに依存する$C$が存在して$$\sup_Vu\leq C\inf_Vu,$$を満たします。つまり、対象となる調和関数の最大値と最小値の比は大きくなりすぎません。直感的には、$V$と境界$\partial U$との間に距離があるため、その範囲でラプラス方程式の性質が働くと考えられます。</p>
+
+        <p>$r=\frac{1}{4}\text{dist}(V,\partial U)$とし、距離が$r$より小さい2点$\boldsymbol{x}$と$\boldsymbol{y}$を取ると、$u(\boldsymbol{x})=\frac{1}{|B(\boldsymbol{x},2r)|}\int_{B(\boldsymbol{x},2r)}u\text{d}\boldsymbol{z}$ $\geq\frac{1}{\alpha(n)2^nr^n}\int_{B(\boldsymbol{y},r)}u\text{d}\boldsymbol{z}=\frac{1}{2^n}\frac{1}{|B(\boldsymbol{y},r)|}u\text{d}\boldsymbol{z}$ $=\frac{1}{2^n}u(\boldsymbol{y})$です。したがって、このような2点での関数値の比は高々$2^n$です。$V$を半径$r$の有限個（$N$個とする）の球で覆えば、任意の2点での関数値の比は高々$2^{n(N+1)}$となります。よってハルナックの不等式で$C=2^{n(N+1)}$とすればよいことになります。</p>
+
+        <p>基本解によってポアソン方程式の解を求められることを見ました。$n\geq3$では、有界解はすべて$$u(\boldsymbol{x})=\int_{\mathbb{R}^n}\Phi(\boldsymbol{x}-\boldsymbol{y})f(\boldsymbol{y})\text{d}\boldsymbol{y}+C$$によって与えられます。$\Phi(\boldsymbol{x})\to0(|\boldsymbol{x}|\to+\infty)$が有界性を保証し、一意性はリウヴィルの定理から従います。しかし$n=2$では$\ln|\boldsymbol{x}|$が非有界なので、この方法は使えません。</p>
+
+        <h2>熱方程式</h2>
+
+        <p>次に方程式$u_t-\Delta u=0$を考えます。ここでも放射対称な解と基本解が結びつきます。通常は$u(\boldsymbol{x},t)=\frac{1}{t^\alpha}v(|\boldsymbol{x}|/t^\beta)$という形の解を探し、作用素を$\left(r^{n-1}v'+\frac{1}{2}r^nv\right)'=0$と書き換えることで、次の関数を得ます。</p>
+
+        $$\Phi(\boldsymbol{x},t)=\begin{cases}\frac{1}{(4\pi t)^{n/2}}\text{e}^{-\frac{|\boldsymbol{x}|^2}{4t},& t>0;\\0,&t=0\end{cases}$$
+
+        <p>これは熱作用素$\partial_t-\Delta$の<strong>基本解</strong>です。物理的には、この基本解から得られる解$$u(\boldsymbol{x},t)=\frac{1}{(4\pi t)^{n/2}}\int_{\mathbb{R}^n}\text{e}^{-\frac{|\boldsymbol{x}-\boldsymbol{y}|}{4t}}g(\boldsymbol{y})\text{d}\boldsymbol{y}$$には、$g\geq0$かつ$g\not\equiv0$ならば、すべての$\boldsymbol{x}\in\mathbb{R}^n,t>0$で$u>0$となる性質があります。つまり、<strong>フーリエの法則$\boldsymbol{q}=-k\boldsymbol{\nabla}u$</strong>に従う熱伝導の伝播速度は<strong>無限大</strong>です。</p>
+
+        <p>非斉次の場合には<em>デュアメルの原理</em>が必要です。物理的には、連続的に作用する外力を、時刻$[\tau,\tau+\text{d}\tau]$の瞬間的な衝撃が$t-\tau$時間だけ伝播した効果の重ね合わせとして扱います。数学的には、非斉次項$f(\boldsymbol{x},t)$を各時刻$s$の寄与に分けて積分します。具体的には、次の連立方程式を考えます。</p>
+
+        $$\begin{cases}u_t(\boldsymbol{x},t;s)-\Delta u(\boldsymbol{x},t;s)=0,&(\boldsymbol{x},t)\in\mathbb{R}\times(s,\infty);\\u(\boldsymbol{x},s;s)=f(\boldsymbol{x},s),&\boldsymbol{x}\in\mathbb{R}^n.\end{cases}$$
+
+        <p>これを$s$について積分すると、求める解$u(\boldsymbol{x},t)=\int_0^tu(\boldsymbol{x},t;s)\text{d}s$が得られます。</p>
+      </div>
 
       <div style="margin-top: 3rem;">
-        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> <span data-lang="zh">返回博客</span><span data-lang="en">Back to Blog</span></a>
+        <a href="../blog.html" class="arrow-link"><span class="arrow">←</span> <span data-lang="zh">返回博客</span><span data-lang="en">Back to Blog</span>
+<span data-lang="ja" lang="ja">ブログへ戻る</span></a>
       </div>
     </article>
   </main>
@@ -164,14 +219,16 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-top">
-        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span></span>
-        <span class="footer-meta">Mathematics · USTC</span>
+        <span class="footer-brand"><span data-lang="zh">舒屹扬</span><span data-lang="en">Nick Shu</span>
+<span data-lang="ja" lang="ja">舒屹扬</span></span>
+        <span class="footer-meta"><span data-lang="zh">数学 · 中国科大</span><span data-lang="en">Mathematics · USTC</span><span data-lang="ja" lang="ja">数学 · 中国科学技術大学</span></span>
       </div>
       <p class="footer-meta">© 2026 Nick Shu</p>
-      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span></p>
+      <p class="footer-tagline"><span data-lang="zh">为数学而建。</span><span data-lang="en">Built with passion for Mathematics.</span>
+<span data-lang="ja" lang="ja">数学への情熱を込めて。</span></p>
     </div>
   </footer>
 
-  <script src="../script.js"></script>
+  <script src="../script.js?v=20261020-ja1"></script>
 </body>
 </html>
