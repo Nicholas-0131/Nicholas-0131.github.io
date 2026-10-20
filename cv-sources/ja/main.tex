@@ -1,0 +1,225 @@
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[
+  margin=1.8cm,
+  top=1.55cm,
+  bottom=1.55cm
+]{geometry}
+
+
+\usepackage{
+  fontspec,
+  xeCJK,
+  xcolor,
+  enumitem,
+  titlesec,
+  hyperref,
+  tabularx,
+  parskip
+}
+
+% English and Latin characters
+\setmainfont[
+  Ligatures=TeX
+]{TeX Gyre Termes}
+
+% Japanese serif font
+\setCJKmainfont[
+  BoldFont=HaranoAjiMincho-Bold.otf,
+  AutoFakeSlant=true
+]{HaranoAjiMincho-Regular.otf}
+
+% Japanese sans-serif font
+\setCJKsansfont[
+  BoldFont=HaranoAjiGothic-Bold.otf
+]{HaranoAjiGothic-Regular.otf}
+
+
+\definecolor{navy}{HTML}{183650}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=navy
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+\setlist[itemize]{
+  leftmargin=1.35em,
+  topsep=2pt,
+  itemsep=1pt,
+  parsep=0pt
+}
+
+\titleformat{\section}
+  {\large\bfseries\color{navy}}
+  {}{0pt}{}
+  [\vspace{-4pt}\color{navy}\titlerule]
+
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+\newcommand{\entry}[3]{
+  \textbf{#1}\hfill{\small #2}\\
+  {\emph{#3}}\par
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Shu Yiyang}\\[4pt]
+{\normalsize 数学専攻・学部学生}\\[2pt]
+中国科学技術大学 少年班学院\\[2pt]
+中国・合肥
+\quad\textbar\quad
+\href{mailto:shuyiy@mail.ustc.edu.cn}
+{shuyiy@mail.ustc.edu.cn}
+\quad\textbar\quad
+\href{https://nicholasshu.com}{個人ウェブサイト}
+\end{center}
+
+\vspace{-7pt}
+
+\section*{研究関心分野}
+
+微分幾何学、幾何解析学、凸幾何学、および
+カケヤ問題とその関連問題。
+特に、凸カケヤ集合とその変種、極値的な幾何配置、
+ならびに凸性や幾何学的制約のもとでの
+面積・直径・周長の相互関係に関心を持つ。
+
+\section*{学歴}
+
+\entry
+{中国科学技術大学（USTC）}
+{2025年9月～現在}
+{少年班学院・数学専攻（純粋数学コース）}
+
+中国科学技術大学少年班・少年創新班の
+選抜においてAランクの認定を受け、入学。
+
+\entry
+{安徽省安慶第一中学}
+{2023年～2025年}
+{中国・安徽省安慶市}
+
+2023年および2024年に安徽省の
+高校数学コンテストで省二等賞を受賞。
+2023年の西安交通大学少年班選抜試験では、
+数学科目で全国上位20位以内に入った。
+
+\section*{研究活動}
+
+\entry
+{凸カケヤ集合に関する研究}
+{2026年9月～現在}
+{指導教員：王作勤教授（中国科学技術大学）}
+
+\begin{itemize}
+  \item
+  あらゆる方向の長さ1の線分を含む凸集合について、
+  面積・直径・周長の間の定量的関係を研究している。
+
+  \item
+  極値的な幾何配置、幾何不等式、
+  および凸体の極限挙動を考察している。
+
+  \item
+  支持超平面、支持関数、凸包など、
+  凸幾何学の関連手法を研究している。
+\end{itemize}
+
+\section*{数学論文・執筆活動}
+
+\textbf{双曲平面のいくつかの幾何学的性質}
+\hfill{\small 2026年}\\
+\emph{
+個人研究論文。
+中国科学技術大学数学科学学院の
+学生刊行物『蛙鳴』第68号に掲載。
+}
+
+\begin{itemize}
+  \item
+  双曲幾何学のポアンカレ上半平面モデルについて、
+  ヒルベルトの公理体系との整合性や
+  その変換群などの性質を考察した。
+
+  \item
+  双曲三角形の正弦定理・余弦定理、
+  およびデザルグの定理、
+  パップスの定理などを研究した。
+\end{itemize}
+
+\section*{受賞歴・表彰}
+
+\begin{itemize}
+\item \textbf{2026年：} 中国科学技術大学 Robogame コンテスト第1位。
+\item \textbf{2025年：} CMC 数学コンテスト省二等賞。
+
+  \item
+  \textbf{2025年：}
+  中国科学技術大学少年創新班入学選抜において
+  Aランクの認定を取得。
+
+  \item
+  \textbf{2023年・2024年：}
+  安徽省高校数学コンテスト
+  省二等賞（各年）。
+
+  \item
+  \textbf{2023年：}
+  西安交通大学少年班選抜試験において、
+  数学科目全国上位20位以内。
+
+  \item
+  \textbf{2023年：}
+  丘成桐中学生数学サマーキャンプを修了。
+
+  \item
+  \textbf{2019年・2020年：}
+  情報オリンピック関連の省級大会で
+  二等賞（各年）。
+
+  \item
+  その他、高校在学中に学生自治活動や
+  中国共産主義青年団での活動に関する
+  複数の表彰を受けた。
+
+\item \textbf{2025年：} 中国科学技術大学「九章杯」三等賞。
+\end{itemize}
+
+\section*{数学の学習歴}
+
+\textbf{基礎科目：}
+数学解析、線形代数学、常微分方程式論、
+古典微分幾何学、凸解析。\\
+
+\textbf{発展的な学習・自主研究：}
+滑らかな多様体、微分位相幾何学、
+幾何解析学、偏微分方程式論、
+極小曲面論、微分形式、
+ド・ラームコホモロジー。\\
+
+\emph{
+注：上記には大学での履修科目と
+自主学習の内容の両方を含む。
+個々の科目の成績は記載していない。
+}
+
+\section*{学内活動・スキル}
+
+\textbf{学内活動：}
+クラス共産主義青年団支部書記
+（2025年～現在）；
+学生会学術実践部部員
+（2026年～現在）。\\
+
+\textbf{技術スキル：}
+LaTeX、XeLaTeX、Beamer、SolidWorks。\\
+
+\textbf{言語：}
+中国語（母語）；
+英語（習熟度未記載）。
+
+\end{document}

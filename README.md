@@ -20,16 +20,18 @@
 - `blog.html`、`posts/*.html`：博客列表和文章；日语版包含数学文章正文，保留原有公式
 - `contact.html`：联系页
 - `cv.html`：中文、英文、日文 HTML 简历
-- `cv-source.tex`：用户提供的英文 LaTeX 简历源代码；可用 XeLaTeX 编译，字体为 TeX Gyre Termes
+- `cv-source.tex`：按用户提供内容更新的英文 LaTeX 简历源代码；可用 XeLaTeX 编译，字体为 TeX Gyre Termes
+- `cv-sources/zh/main.tex`、`cv-sources/en/main.tex`、`cv-sources/ja/main.tex`：同步新增奖项后的三语 LaTeX 源码；对应的中、英、日 CV 压缩包也已更新
 - `style.css`、`script.js`：全站样式与交互
 - `image/`、`favicon.jpg`、`posts/*.pdf`：原有图片与阅读材料
 
 ## 简历内容
 
 HTML 简历已按提供的 LaTeX 内容更新，包括科研开始时间为 2026 年 9 月、丘成桐数学夏令营年份为 2023、个人主页链接为 https://nicholasshu.com。
-“下载简历”按钮保留在姓名右侧，点击后选择中文或英文 PDF。
+新增荣誉：2026 年中国科学技术大学 Robogame 比赛第一名、2025 年 CMC 数学竞赛省二等奖、2025 年学校九章杯三等奖；已同步三语 HTML 和 LaTeX 源码。
+“下载简历”按钮保留在姓名右侧，点击后选择中文、英文或日文 PDF。
 
-本次交付为网站及 LaTeX 源码。`中文CV.pdf`、`英文CV.pdf` 和学术论文 PDF 保留原文件，没有重新编译或翻译；若要同步下载文件，请编译或更新相应 PDF 后替换。
+本次交付为网站及 LaTeX 源码。`中文CV.pdf`、`英文CV.pdf`、`日文CV.pdf` 和学术论文 PDF 保留原文件，没有重新编译或翻译；若要同步下载文件，请编译或更新相应 PDF 后替换。
 
 ## 维护
 

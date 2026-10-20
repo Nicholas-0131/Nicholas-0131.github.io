@@ -1,0 +1,103 @@
+\documentclass[10pt,a4paper,fontset=fandol]{ctexart}
+
+\usepackage[
+  margin=1.8cm,
+  top=1.55cm,
+  bottom=1.55cm
+]{geometry}
+
+\usepackage{
+  fontspec,
+  xcolor,
+  enumitem,
+  titlesec,
+  hyperref,
+  parskip
+}
+
+% English font
+\setmainfont{TeX Gyre Termes}
+
+% Chinese fonts are automatically
+% configured by ctex (fontset=fandol).
+
+\definecolor{navy}{HTML}{183650}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=navy
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+\setlist[itemize]{
+  leftmargin=1.55em,
+  topsep=2pt,
+  itemsep=1pt,
+  parsep=0pt
+}
+
+\titleformat{\section}
+  {\large\bfseries\color{navy}}
+  {}
+  {0pt}
+  {}
+  [\vspace{-4pt}\color{navy}\titlerule]
+
+\titlespacing*{\section}
+  {0pt}{10pt}{6pt}
+\newcommand{\entry}[3]{%
+  \textbf{#1}\hfill{\small #2}\\%
+  {\emph{#3}}\par%
+}
+
+\begin{document}
+\begin{center}
+{\LARGE\bfseries 舒屹扬}\\[4pt]
+{\normalsize 数学方向本科生｜学术简历}\\[2pt]
+中国科学技术大学 · 少年班学院\\[2pt]
+中国·安徽合肥 \quad\textbar\quad \href{mailto:shuyiy@mail.ustc.edu.cn}{shuyiy@mail.ustc.edu.cn} \quad\textbar\quad \href{https://nicholasshu.com}{个人主页}
+\end{center}
+\vspace{-7pt}
+\section*{研究兴趣}
+微分几何、几何分析、凸几何与 Kakeya 型问题。主要关注凸 Kakeya 集及相关变形问题、极值几何构型，以及凸性和几何约束与面积、直径、周长等几何量之间的关系。
+\section*{教育背景}
+\entry{中国科学技术大学}{2025.09--至今}{少年班学院 · 数学方向本科生（纯数学方向）}
+2025 年获得中国科学技术大学少年班及创新试点班招生选拔 A 档资格并入学。
+\entry{安徽省安庆市第一中学}{2023--2025}{安徽安庆}
+2023、2024 年获高中数学联赛安徽省二等奖；2023 年通过西安交通大学少年班选拔，数学单科成绩全国前 20。
+\section*{科研经历}
+\entry{凸 Kakeya 集的研究}{2026.09--至今}{指导教师：王作勤教授，中国科学技术大学}
+\begin{itemize}
+\item 研究在每个方向上均包含单位线段的凸集，关注其面积、直径、周长等几何量之间的定量关系。
+\item 探索极值构型、相关几何不等式及凸体在极限过程中的行为。
+\item 学习并应用支撑超平面、支撑函数、凸包等凸几何工具。
+\end{itemize}
+\section*{独立数学论文写作}
+\textbf{《双曲平面的一些几何性质》}\hfill{\small 2026}\\
+\emph{独立撰写的数学手稿；发表在校数学院的学生刊物《蛙鸣》第68期。}
+\begin{itemize}
+\item 研究了双曲几何中 Poincaré 上半平面模型的性质，包括其与 Hilbert 公理系统的相容性，以及该模型上的变换群。
+\item 探讨了双曲三角形的性质，包括双曲正弦定理和余弦定理，并研究了 Desargues 定理和 Pappus 定理。
+\end{itemize}
+\section*{荣誉与奖项}
+\begin{itemize}
+\item \textbf{2026 年：} 中国科学技术大学 Robogame 比赛第一名。
+\item \textbf{2025 年：} CMC 数学竞赛省二等奖。
+\item \textbf{2025 年：} 中国科学技术大学少年班及创新试点班招生选拔 A 档资格。
+\item \textbf{2023、2024 年：} 高中数学联赛安徽省二等奖（各一次）。
+\item \textbf{2023 年：} 西安交通大学少年班选拔考试数学单科全国前 20。
+\item \textbf{2023 年：} 丘成桐中学生数学夏令营顺利结业。
+\item \textbf{2019、2020 年：} 信息学竞赛省二等奖（各一次）。
+\item 高中期间曾获优秀学生干部、优秀团干部等荣誉。
+\item \textbf{2025 年：} 中国科学技术大学九章杯三等奖。
+\end{itemize}
+\section*{数学学习背景}
+\textbf{基础课程及领域：} 数学分析、线性代数、常微分方程、经典微分几何、凸分析。\\
+\textbf{高阶阅读与自主学习：} 光滑流形、微分拓扑、几何分析、偏微分方程、极小曲面、微分形式、de Rham 上同调。\\
+\emph{说明：以上兼含正式课程与自主学习内容，具体课程成绩尚未填写。}
+\section*{学生工作与技能}
+\textbf{学生工作：} 少年班学院班级团支部书记（2025--至今）；少年班学院学生会学术实践部干事（2026--至今）。\\
+\textbf{技术工具：} LaTeX、XeLaTeX、Beamer、SolidWorks。\quad\textbf{语言：} 中文（母语）、英语（水平待补充）。
+\end{document}
