@@ -38,6 +38,16 @@
     root.setAttribute("data-lang", lang);
     var t = root.getAttribute("data-title-" + lang);
     if (t) document.title = t;
+    document.querySelectorAll("[data-cv-link]").forEach(function (link) {
+      link.setAttribute("href", "cv.html?lang=" + lang);
+    });
+    if (document.querySelector(".cv-page")) {
+      try {
+        var url = new URL(window.location.href);
+        url.searchParams.set("lang", lang);
+        window.history.replaceState(null, "", url.href);
+      } catch (e) {}
+    }
     try { localStorage.setItem("lang", lang); } catch (e) {}
   }
 
@@ -52,7 +62,7 @@
   applyLang(getLang());
 
   /* ---------- CV language picker ---------- */
-  var cvTrigger = document.getElementById("cv-trigger");
+  var cvTrigger = document.getElementById("cv-download-trigger");
   var cvDialog = document.getElementById("cv-dialog");
   if (cvTrigger && cvDialog) {
     cvTrigger.addEventListener("click", function () {
