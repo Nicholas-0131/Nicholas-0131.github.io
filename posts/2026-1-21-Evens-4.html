@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-title-ja="Evans 読書ノート（第4回） | 舒屹扬" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
+<html lang="en" data-title-ja="Evans 読書ノート（第4回） | 舒屹扬" data-title-zh="Evans 读书笔记（四） | 舒屹扬" data-title-en="Evans Notes 4 — Energy methods &amp; spherical means | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evens-4 | Nick Shu</title>
+  <title>Evans-4 | Nick Shu</title>
   <link rel="icon" href="../favicon.jpg" type="image/jpeg">
   <script>
     (function(){var r=document.documentElement,d='light',l='en';try{var t=localStorage.getItem('theme');l=localStorage.getItem('lang');d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}var q=new URLSearchParams(location.search).get('lang');if(q==='zh'||q==='en'||q==='ja')l=q;if(l!=='zh'&&l!=='en'&&l!=='ja')l='en';r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=20261020-ja1">
+  <link rel="stylesheet" href="../style.css?v=20261022-refresh1">
 </head>
 <body>
 
@@ -60,7 +60,7 @@
   <main class="page container">
     <article class="article">
       <div class="article-header">
-        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span>
+        <h1><span data-lang="zh">Evans 读书笔记</span><span data-lang="en">Evans Notes 4<small class="article-subtitle">Energy methods &amp; spherical means</small></span>
 <span data-lang="ja" lang="ja">Evans 読書ノート</span></h1>
         <div class="article-meta"><span data-lang="zh">2026 年 1 月 21 日 · 舒屹扬</span><span data-lang="en">Jan 21, 2026 · Nick Shu</span>
 <span data-lang="ja" lang="ja">2026年1月21日・舒屹扬</span></div>
@@ -122,14 +122,62 @@
         </p>
       </div>
 
-      <div data-lang="en">
-        <p>
-          This note covers uniqueness for the heat equation (via the maximum principle and
-          energy methods), a backward-uniqueness argument, and the general
-          \(n\)-dimensional wave equation through the Euler–Poisson–Darboux equation and
-          Kirchhoff's formula in odd dimensions.
-        </p>
-      </div>
+      <div data-lang="en" lang="en">
+
+<p class="article-lead">Uniqueness and regularity for heat flow, forward and backward energy arguments, and the spherical-means method for waves.</p>
+<h2>Uniqueness and regularity of heat solutions</h2>
+<p>On a bounded cylinder, two classical heat solutions with identical initial and boundary data must agree. Apply the maximum principle to both $u-\widetilde u$ and its negative.</p>
+<p>On $\mathbb R^n$, behavior at infinity also matters. In the class satisfying a uniform bound $|u(x,t)|\leq Ae^{a|x|^2}$ on a finite time interval, a whole-space maximum principle yields uniqueness. For bounded initial data $g$, a subsolution satisfying the corresponding one-sided growth bound obeys
+$$\sup_{\mathbb R^n\times[0,T]}u\leq\sup_{\mathbb R^n}g.$$
+Gaussian barriers first prove this on short intervals; iteration covers the prescribed finite interval. Without any control at infinity, nonzero smooth heat solutions with zero initial data exist. This is why the class of admissible solutions is part of a uniqueness statement.</p>
+<p>Interior heat solutions are smooth. For a backward parabolic cylinder
+$$C(x,t;r)=B(x,r)\times(t-r^2,t],$$
+contained in the domain, derivative estimates have the form
+$$\sup_{C(x,t;r/2)}|D_x^k\partial_t^l u|
+\leq\frac{C_{kl}}{r^{k+2l+n+2}}\|u\|_{L^1(C(x,t;r))}.$$
+The exponent counts one spatial derivative as one power of $r$ and one time derivative as two. At a fixed positive time, heat solutions are locally analytic in space, but smoothness does not in general imply joint analyticity in space and time.</p>
+<h2>Energy methods</h2>
+<h3>Forward uniqueness</h3>
+<p>Let $w$ solve $w_t-\Delta w=0$ with zero spatial boundary values, and suppose the regularity and integrability needed for the following integrations by parts hold. Set
+$$e(t)=\int_U w(x,t)^2\,dx.$$
+This is the squared $L^2$ norm, a measure of the size of the solution rather than literal thermal energy. Then
+$$e'(t)=2\int_Uww_t=2\int_Uw\Delta w=-2\int_U|Dw|^2\leq0.$$
+If $w(\cdot,0)=0$, nonnegativity of $e$ gives $e\equiv0$. Applying this to a difference proves uniqueness in the corresponding energy class. On the whole space, one must also justify that the boundary terms at infinity vanish; an isolated assertion of $L^2$ membership is not a substitute for these hypotheses.</p>
+<h3>Backward uniqueness</h3>
+<p>Suppose two sufficiently smooth solutions on a bounded smooth domain have the same lateral boundary values and the same values at time $T$. For their difference, the energy also satisfies
+$$e''(t)=4\int_U(\Delta w)^2.$$
+By Cauchy–Schwarz,
+$$\left(\int_U|Dw|^2\right)^2=\left(-\int_Uw\Delta w\right)^2
+\leq\left(\int_Uw^2\right)\left(\int_U(\Delta w)^2\right),$$
+so $e''e\geq(e')^2$. Wherever $e>0$, this means $(\log e)''\geq0$. Consequently,
+$$e((1-\theta)t_1+\theta t_2)\leq e(t_1)^{1-\theta}e(t_2)^\theta,\qquad0&lt;\theta&lt;1.$$
+Taking a limit toward a time at which $e=0$ rules out positive energy at any earlier time. This proves backward uniqueness in this setting; it does not assert stability of reconstructing the past from noisy final data.</p>
+<h2>Waves in higher dimensions</h2>
+<p>Consider
+$$u_{tt}-\Delta u=0,\qquad u(x,0)=g(x),\qquad u_t(x,0)=h(x).$$
+For a fixed center $x$, define the spherical mean
+$$U(x;r,t)=\frac1{|\partial B(x,r)|}\int_{\partial B(x,r)}u(y,t)\,dS_y.$$
+Let $G(x;r)$ and $H(x;r)$ be the corresponding means of $g$ and $h$. The divergence theorem gives the <strong>Euler–Poisson–Darboux equation</strong>
+$$U_{tt}-U_{rr}-\frac{n-1}{r}U_r=0,\qquad U(r,0)=G(r),\quad U_t(r,0)=H(r).$$
+The spatial part is exactly the radial Laplacian.</p>
+<h3>Three dimensions: Kirchhoff's formula</h3>
+<p>When $n=3$, set $V=rU$. Then $V_{tt}-V_{rr}=0$ and $V(0,t)=0$. Extend $rG(r)$ and $rH(r)$ oddly across zero and apply d'Alembert's formula:
+$$V(r,t)=\frac{\widetilde G(r+t)+\widetilde G(r-t)}2
++\frac12\int_{r-t}^{r+t}\widetilde H(\rho)\,d\rho.$$
+Recovering $u(x,t)$ by taking $r\to0$ gives
+$$u(x,t)=\frac1{4\pi t^2}\int_{\partial B(x,t)}
+\big[g(y)+(y-x)\cdot Dg(y)+t h(y)\big],dS_y.$$
+This is Kirchhoff's formula.</p>
+<h3>Odd spatial dimensions</h3>
+<p>For $n=2k+1\geq3$, the substitution
+$$V=\left(\frac1r\partial_r\right)^{k-1}(r^{2k-1}U)$$
+again reduces the problem to a one-dimensional wave equation. Write $M_t f(x)=|\partial B(x,t)|^{-1}\int_{\partial B(x,t)}f\,dS$. Then
+$$u(x,t)=\frac1{(n-2)!!}\left[
+\partial_t\left(\frac1t\partial_t\right)^{(n-3)/2}\big(t^{n-2}M_tg(x)\big)
++\left(\frac1t\partial_t\right)^{(n-3)/2}\big(t^{n-2}M_th(x)\big)\right].$$
+Here $(n-2)!!$ is the product of positive odd integers up to $n-2$. The reduction depends on the parity of $n$; even dimensions call for the method of descent.</p>
+<p class="edition-note">English edition expanded from the original reading notes, with notation and evident formula slips corrected. Reference: Lawrence C. Evans, <em>Partial Differential Equations</em>, Chapters 2–3.</p>
+</div>
 <div data-lang="ja" lang="ja">
         <h2>解の性質（続き）</h2>
 
@@ -170,6 +218,6 @@
     </div>
   </footer>
 
-  <script src="../script.js?v=20261020-ja1"></script>
+  <script src="../script.js?v=20261022-refresh1"></script>
 </body>
 </html>

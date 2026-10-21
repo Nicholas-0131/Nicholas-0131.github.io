@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-title-ja="Evans 読書ノート（第3回） | 舒屹扬" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
+<html lang="en" data-title-ja="Evans 読書ノート（第3回） | 舒屹扬" data-title-zh="Evans 读书笔记（三） | 舒屹扬" data-title-en="Evans Notes 3 — Heat flow &amp; maximum principles | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evens-3 | Nick Shu</title>
+  <title>Evans-3 | Nick Shu</title>
   <link rel="icon" href="../favicon.jpg" type="image/jpeg">
   <script>
     (function(){var r=document.documentElement,d='light',l='en';try{var t=localStorage.getItem('theme');l=localStorage.getItem('lang');d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}var q=new URLSearchParams(location.search).get('lang');if(q==='zh'||q==='en'||q==='ja')l=q;if(l!=='zh'&&l!=='en'&&l!=='ja')l='en';r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=20261020-ja1">
+  <link rel="stylesheet" href="../style.css?v=20261022-refresh1">
 </head>
 <body>
 
@@ -60,7 +60,7 @@
   <main class="page container">
     <article class="article">
       <div class="article-header">
-        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span>
+        <h1><span data-lang="zh">Evans 读书笔记</span><span data-lang="en">Evans Notes 3<small class="article-subtitle">Heat flow &amp; maximum principles</small></span>
 <span data-lang="ja" lang="ja">Evans 読書ノート</span></h1>
         <div class="article-meta"><span data-lang="zh">2026 年 1 月 18 日 · 舒屹扬</span><span data-lang="en">Jan 18, 2026 · Nick Shu</span>
 <span data-lang="ja" lang="ja">2026年1月18日・舒屹扬</span></div>
@@ -103,13 +103,35 @@
         </p>
       </div>
 
-      <div data-lang="en">
-        <p>
-          This note continues the study of the heat equation: the expression of solutions
-          via the fundamental solution, Duhamel's principle for the nonhomogeneous problem,
-          the mean value formula on heat balls, and the maximum principle.
-        </p>
-      </div>
+      <div data-lang="en" lang="en">
+
+<p class="article-lead">The inhomogeneous heat equation, heat balls, and the direction of time in the parabolic maximum principle.</p>
+<h2>The heat equation, continued</h2>
+<p>Expanding Duhamel's principle gives
+$$\begin{aligned}u(x,t)&=\int_0^t\int_{\mathbb R^n}\Phi(x-y,t-s)f(y,s)\,dy\,ds\\
+&=\int_0^t\frac1{(4\pi(t-s))^{n/2}}\int_{\mathbb R^n}e^{-|x-y|^2/(4(t-s))}f(y,s)\,dy\,ds.\end{aligned}$$
+For sufficiently regular data this solves
+$$\begin{cases}u_t-\Delta u=f&\text{in }\mathbb R^n\times(0,\infty),\\u(x,0)=0.&\end{cases}$$
+The source on the right-hand side is $f$, and the Gaussian exponent contains the <em>squared</em> distance. Both are needed for consistency with the formula.</p>
+<p>The calculation can be justified by first cutting the time integral off at $t-\varepsilon$, differentiating, and passing to the limit using the approximate-identity property of the heat kernel. The contribution from the upper endpoint supplies $f(x,t)$.</p>
+<p>With nonzero initial data $g$, linearity gives
+$$\begin{aligned}u(x,t)={}&\int_{\mathbb R^n}\Phi(x-y,t)g(y)\,dy\\
+&+\int_0^t\int_{\mathbb R^n}\Phi(x-y,t-s)f(y,s)\,dy\,ds.\end{aligned}$$
+The first term evolves the initial temperature; the second adds the contributions of the source at each earlier time.</p>
+<h2>Mean values on heat balls</h2>
+<p>For harmonic functions, spheres are level sets of the Laplace fundamental solution. The analogous objects for the heat equation are the backward <strong>heat balls</strong>
+$$E(x,t;r)=\{(y,s):s&lt;t,\ \Phi(x-y,t-s)>r^{-n}\}.$$
+If $u$ solves the homogeneous heat equation in a neighborhood of the closure of this set, then
+$$u(x,t)=\frac1{4r^n}\iint_{E(x,t;r)}u(y,s)\frac{|x-y|^2}{(t-s)^2}\,dy\,ds.$$
+Unlike the harmonic mean value property, this is a weighted average in space and time. Only earlier times occur, reflecting the direction of heat flow.</p>
+<h2>Maximum principles and the parabolic boundary</h2>
+<p>Let $U_T=U\times(0,T]$, with $U$ bounded and connected. The relevant boundary is
+$$\partial_pU_T=(\overline U\times\{0\})\cup(\partial U\times[0,T]).$$
+It includes the initial time and the spatial boundary, but not the final-time interior. For a classical heat solution continuous on the closure, the weak maximum principle bounds its values by those on this parabolic boundary.</p>
+<p>The strong principle respects this time direction: if a global maximum is attained at an interior spatial point $(x_0,t_0)$, then the solution is constant throughout $U\times(0,t_0]$. The same holds for a minimum by considering $-u$. It does <em>not</em> force constancy at later times if the boundary data subsequently change.</p>
+<p>The intuition comes from the heat-ball identity. An average with positive weights can equal a maximum only when the values contributing to it also equal the maximum. Chains of backward heat balls propagate this equality through the connected region at earlier times. Physically, an interior temperature cannot exceed all the temperatures supplying it.</p>
+<p class="edition-note">English edition expanded from the original reading notes, with notation and evident formula slips corrected. Reference: Lawrence C. Evans, <em>Partial Differential Equations</em>, Chapters 2–3.</p>
+</div>
 <div data-lang="ja" lang="ja">
         <h2>熱方程式（続き）</h2>
 
@@ -151,6 +173,6 @@
     </div>
   </footer>
 
-  <script src="../script.js?v=20261020-ja1"></script>
+  <script src="../script.js?v=20261022-refresh1"></script>
 </body>
 </html>

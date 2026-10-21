@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-title-ja="Evans 読書ノート（第5回） | 舒屹扬" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
+<html lang="en" data-title-ja="Evans 読書ノート（第5回） | 舒屹扬" data-title-zh="Evans 读书笔记（五） | 舒屹扬" data-title-en="Evans Notes 5 — Wave propagation &amp; Hölder spaces | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evens-5 | Nick Shu</title>
+  <title>Evans-5 | Nick Shu</title>
   <link rel="icon" href="../favicon.jpg" type="image/jpeg">
   <script>
     (function(){var r=document.documentElement,d='light',l='en';try{var t=localStorage.getItem('theme');l=localStorage.getItem('lang');d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}var q=new URLSearchParams(location.search).get('lang');if(q==='zh'||q==='en'||q==='ja')l=q;if(l!=='zh'&&l!=='en'&&l!=='ja')l='en';r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=20261020-ja1">
+  <link rel="stylesheet" href="../style.css?v=20261022-refresh1">
 </head>
 <body>
 
@@ -60,7 +60,7 @@
   <main class="page container">
     <article class="article">
       <div class="article-header">
-        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span>
+        <h1><span data-lang="zh">Evans 读书笔记</span><span data-lang="en">Evans Notes 5<small class="article-subtitle">Wave propagation &amp; Hölder spaces</small></span>
 <span data-lang="ja" lang="ja">Evans 読書ノート</span></h1>
         <div class="article-meta"><span data-lang="zh">2026 年 1 月 22 日 · 舒屹扬</span><span data-lang="en">Jan 22, 2026 · Nick Shu</span>
 <span data-lang="ja" lang="ja">2026年1月22日・舒屹扬</span></div>
@@ -118,13 +118,58 @@
         </p>
       </div>
 
-      <div data-lang="en">
-        <p>
-          This note treats the wave equation in even dimensions via the method of descent
-          and Huygens' principle, the energy method and domains of dependence, and
-          introduces Hölder and Sobolev spaces for the linear theory of PDEs.
-        </p>
-      </div>
+      <div data-lang="en" lang="en">
+
+<p class="article-lead">Even-dimensional wave formulas, Huygens' principle, retarded potentials, and energy estimates; then a first look at Hölder spaces.</p>
+<h2>Even-dimensional waves: the method of descent</h2>
+<p>Start in two spatial dimensions and extend $u(x_1,x_2,t)$ to three by making it independent of $x_3$. Extend $g,h$ in the same way. The extended function solves the three-dimensional <em>wave</em> equation, so Kirchhoff's formula applies.</p>
+<p>Project the upper and lower hemispheres onto the disk $B(x,t)$. On the sphere, $z^2+|y-x|^2=t^2$, and its outward unit normal is $(y-x,z)/t$. Hence
+$$dy=\frac{\sqrt{t^2-|y-x|^2}}t\,dS.$$
+Accounting for both hemispheres yields the two-dimensional formula
+$$u(x,t)=\frac1{2\pi t}\int_{B(x,t)}
+\frac{g(y)+(y-x)\cdot Dg(y)+t h(y)}{\sqrt{t^2-|y-x|^2}}\,dy.$$
+Unlike the three-dimensional formula, it integrates over a disk, not just its boundary.</p>
+<p>For any even $n\geq2$, write
+$$A_tf(x)=\frac1{|B(x,t)|}\int_{B(x,t)}\frac{f(y)}{\sqrt{t^2-|y-x|^2}}\,dy.$$
+Descending from dimension $n+1$ gives
+$$u(x,t)=\frac1{n!!}\left[
+\partial_t\left(\frac1t\partial_t\right)^{(n-2)/2}\big(t^nA_tg(x)\big)
++\left(\frac1t\partial_t\right)^{(n-2)/2}\big(t^nA_th(x)\big)\right].$$
+Here $n!!=n(n-2)\cdots2$.</p>
+<h3>Huygens' principle</h3>
+<p>For odd $n\geq3$, the value at $(x,t)$ depends only on the initial data on the sphere $\partial B(x,t)$, including the derivatives appearing in the representation formula. For even $n$, it depends on data throughout $B(x,t)$. Thus odd-dimensional waves have a sharp wave front, while even-dimensional waves leave a tail. This is the distinction expressed by the strong Huygens principle. Both cases still have finite propagation speed.</p>
+<h3>Sources and retarded potentials</h3>
+<p>For $u_{tt}-\Delta u=f$ with zero initial position and velocity, solve, for each $s$, a homogeneous wave equation for $v(x,t;s)$ with
+$$v(x,s;s)=0,\qquad v_t(x,s;s)=f(x,s).$$
+Duhamel's principle gives $u(x,t)=\int_0^t v(x,t;s)\,ds$. In three dimensions this becomes
+$$u(x,t)=\frac1{4\pi}\int_{B(x,t)}\frac{f(y,t-|y-x|)}{|y-x|}\,dy.$$
+This is the <strong>retarded potential</strong>: the source is evaluated at the earlier time needed for a disturbance to travel from $y$ to $x$. For nonzero initial data, add the homogeneous solution.</p>
+<h2>Energy, uniqueness, and finite propagation</h2>
+<p>For a homogeneous wave solution $w$ with zero spatial boundary values, define
+$$E(t)=\frac12\int_U\big(w_t^2+|Dw|^2\big)\,dx.$$
+Under the regularity assumptions permitting integration by parts,
+$$E'(t)=\int_U\big(w_tw_{tt}+Dw\cdot Dw_t\big)\,dx
+=\int_Uw_t(w_{tt}-\Delta w)\,dx=0.$$
+If both initial data vanish, $E(0)=0$, so $w_t=Dw=0$; the initial displacement then fixes the constant as zero. Taking differences proves uniqueness.</p>
+<p>The localized version uses a shrinking ball $B(x_0,t_0-t)$. Its energy derivative has a boundary contribution
+$$E_K'(t)=\int_{\partial B(x_0,t_0-t)}
+\left[w_t\partial_\nu w-\tfrac12\big(w_t^2+|Dw|^2\big)\right]dS\leq0,$$
+because $2w_t\partial_\nu w\leq w_t^2+|Dw|^2$. Therefore initial data on $B(x_0,t_0)$ determine the solution throughout the backward cone
+$$K(x_0,t_0)=\{(x,t):0\leq t\leq t_0,\ |x-x_0|\leq t_0-t\}.$$
+This energy argument explains the domain of dependence without requiring an explicit solution formula.</p>
+<p>This completes the review of the main classical equations in Chapter 2. Subsequent reading will follow the topics most useful for my current interests.</p>
+<h2>Beginning the theory of linear PDEs</h2>
+<p>Two central families of function spaces in PDE theory are Hölder spaces and Sobolev spaces. This note starts with the former. For $0&lt;\gamma\leq1$, define the <strong>Hölder seminorm</strong>
+$$[u]_{C^{0,\gamma}(\overline U)}=
+\sup_{\substack{x,y\in\overline U\\x\ne y}}\frac{|u(x)-u(y)|}{|x-y|^\gamma}.$$
+The exclusion $x\ne y$ is necessary to avoid division by zero.</p>
+<p>The space $C^{k,\gamma}(\overline U)$ consists of functions with continuous derivatives through order $k$ for which
+$$\|u\|_{C^{k,\gamma}(\overline U)}=
+\sum_{|\alpha|\leq k}\|D^\alpha u\|_{C(\overline U)}
++\sum_{|\alpha|=k}[D^\alpha u]_{C^{0,\gamma}(\overline U)}$$
+is finite. The first sum controls the size of the derivatives; the second controls how rapidly the highest derivatives vary. The seminorm alone vanishes on constants, which is why the full norm includes the supremum terms.</p>
+<p class="edition-note">English edition expanded from the original reading notes, with notation and evident formula slips corrected. Reference: Lawrence C. Evans, <em>Partial Differential Equations</em>, Chapters 2–3.</p>
+</div>
 <div data-lang="ja" lang="ja">
         <h2>一般の波動方程式（続き）</h2>
 
@@ -171,6 +216,6 @@
     </div>
   </footer>
 
-  <script src="../script.js?v=20261020-ja1"></script>
+  <script src="../script.js?v=20261022-refresh1"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-title-ja="Evans 読書ノート（第2回） | 舒屹扬" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
+<html lang="en" data-title-ja="Evans 読書ノート（第2回） | 舒屹扬" data-title-zh="Evans 读书笔记（二） | 舒屹扬" data-title-en="Evans Notes 2 — Laplace, Poisson &amp; the heat kernel | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evens-2 | Nick Shu</title>
+  <title>Evans-2 | Nick Shu</title>
   <link rel="icon" href="../favicon.jpg" type="image/jpeg">
   <script>
     (function(){var r=document.documentElement,d='light',l='en';try{var t=localStorage.getItem('theme');l=localStorage.getItem('lang');d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}var q=new URLSearchParams(location.search).get('lang');if(q==='zh'||q==='en'||q==='ja')l=q;if(l!=='zh'&&l!=='en'&&l!=='ja')l='en';r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=20261020-ja1">
+  <link rel="stylesheet" href="../style.css?v=20261022-refresh1">
 </head>
 <body>
 
@@ -60,7 +60,7 @@
   <main class="page container">
     <article class="article">
       <div class="article-header">
-        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span>
+        <h1><span data-lang="zh">Evans 读书笔记</span><span data-lang="en">Evans Notes 2<small class="article-subtitle">Laplace, Poisson &amp; the heat kernel</small></span>
 <span data-lang="ja" lang="ja">Evans 読書ノート</span></h1>
         <div class="article-meta"><span data-lang="zh">2026 年 1 月 17 日 · 舒屹扬</span><span data-lang="en">Jan 17, 2026 · Nick Shu</span>
 <span data-lang="ja" lang="ja">2026年1月17日・舒屹扬</span></div>
@@ -68,7 +68,7 @@
 
       <div data-lang="zh">
         <p>
-          这是Evens的<em>偏微分方程（Partial Differential Equation）</em>的读书笔记。我继续昨天的内容进行总结。
+          这是Evans的<em>偏微分方程（Partial Differential Equation）</em>的读书笔记。我继续昨天的内容进行总结。
         </p>
 
         <h2>
@@ -155,14 +155,51 @@
         </p>
       </div>
 
-      <div data-lang="en">
-        <p>
-          This note studies the Laplace and Poisson equations: the fundamental solution,
-          the mean value formula, the maximum principle, Liouville's theorem, the Harnack
-          inequality, and the uniqueness of bounded solutions; it then introduces the heat
-          equation and its fundamental solution.
-        </p>
-      </div>
+      <div data-lang="en" lang="en">
+
+<p class="article-lead">From the fundamental solution of the Laplacian to the qualitative behavior of harmonic functions, then on to the heat kernel and Duhamel's principle.</p>
+<h2>Laplace's and Poisson's equations</h2>
+<h3>The fundamental solution</h3>
+<p>To solve $-\Delta u=f$, first look for a radial fundamental solution $\Phi(x)=v(r)$, $r=|x|$. Away from the origin,
+$$\Delta v=v''+\frac{n-1}{r}v'=\frac1{r^{n-1}}(r^{n-1}v')'.$$
+Let $\alpha(n)$ denote the volume of the unit ball, so $n\alpha(n)$ is the area of the unit sphere. Normalizing the outward flux for $-\Delta\Phi=\delta_0$ gives $v'(r)=-1/(n\alpha(n)r^{n-1})$, and thus
+$$\Phi(x)=\begin{cases}-\dfrac1{2\pi}\log|x|,&n=2,\\\dfrac1{n(n-2)\alpha(n)|x|^{n-2}},&n\geq3.\end{cases}$$</p>
+<p>For smooth, compactly supported $f$, the Newtonian potential is
+$$u(x)=(\Phi*f)(x)=\begin{cases}-\dfrac1{2\pi}\displaystyle\int_{\mathbb R^2}\log|x-y|f(y)\,dy,&n=2,\\\dfrac1{n(n-2)\alpha(n)}\displaystyle\int_{\mathbb R^n}\dfrac{f(y)}{|x-y|^{n-2}}\,dy,&n\geq3.\end{cases}$$
+It solves $-\Delta u=f$. A direct proof separates a small ball around the singularity from the region where the kernel is smooth, applies integration by parts, and then lets the ball's radius tend to zero.</p>
+<h3>Mean values and maximum principles</h3>
+<p>If $u$ is harmonic in $U$ and $\overline{B(x,r)}\subset U$, then
+$$u(x)=\frac1{|\partial B(x,r)|}\int_{\partial B(x,r)}u\,dS
+=\frac1{|B(x,r)|}\int_{B(x,r)}u\,dy.$$
+This is the <strong>mean value property</strong>. If an interior point attains the maximum, the average can equal that maximum only if all nearby values agree. Connectedness propagates this conclusion through the domain: a harmonic function attaining an interior maximum or minimum is constant.</p>
+<p>Consequently, if $U$ is bounded and $u$ is continuous on $\overline U$, then $\max_{\overline U}u=\max_{\partial U}u$. Applying this to a difference of two solutions proves uniqueness for the Dirichlet problem.</p>
+<h3>Derivative estimates, analyticity, and Liouville's theorem</h3>
+<p>For a multi-index $\alpha$ of length $k$, interior estimates take the form
+$$|D^\alpha u(x_0)|\leq\frac{C_k}{r^{n+k}}\|u\|_{L^1(B(x_0,r))}.$$
+One possible choice is $C_0=1/\alpha(n)$ and $C_k=(2^{n+1}nk)^k/\alpha(n)$ for $k\geq1$. On a smaller ball, these estimates bound derivatives by a constant times $k^k r^{-k}$. Since $k^k\leq e^k k!$, the Taylor remainder tends to zero sufficiently close to the center. Thus harmonic functions are <strong>real analytic</strong>.</p>
+<p>A bounded harmonic function on all of $\mathbb R^n$ is constant. Indeed, the first-derivative estimate gives $|Du(x_0)|\leq C\|u\|_\infty/r$, and letting $r\to\infty$ gives $Du=0$. This is <strong>Liouville's theorem</strong>; the whole-space hypothesis is essential. In two dimensions, the real and imaginary parts of holomorphic functions provide a connection with the corresponding theorems in complex analysis.</p>
+<h3>Harnack's inequality</h3>
+<p>For a <em>nonnegative</em> harmonic function on a connected domain $U$, and a connected open set $V$ compactly contained in $U$, there is a constant $C=C(V,U,n)$ such that
+$$\sup_Vu\leq C\inf_Vu.$$
+The sign assumption is essential. To see the mechanism, take $r$ smaller than a fixed fraction of the distance to $\partial U$. If $|x-y|&lt;r$, then $B(y,r)\subset B(x,2r)$, so the mean value property and nonnegativity give
+$$u(x)\geq\frac1{|B(x,2r)|}\int_{B(y,r)}u=2^{-n}u(y).$$
+A finite chain of overlapping balls compares any two points in the interior set. This explains why the constant depends on the geometry of the domains, but not on $u$.</p>
+<p>For $n\geq3$ and smooth compactly supported $f$, the Newtonian potential is bounded and decays at infinity. Every bounded solution of $-\Delta u=f$ therefore has the form $\Phi*f+C$, because the difference is a bounded entire harmonic function. In dimension two the logarithmic kernel does not generally decay, so this boundedness argument needs additional conditions.</p>
+<h2>The heat equation</h2>
+<p>For $u_t-\Delta u=0$, seek a self-similar solution $t^{-\alpha}v(|x|/t^\beta)$. Parabolic scaling gives $\beta=1/2$, and conservation of mass gives $\alpha=n/2$. The radial equation becomes
+$$\left(r^{n-1}v'+\tfrac12r^nv\right)'=0.$$
+After normalization, the fundamental solution is
+$$\Phi(x,t)=\begin{cases}(4\pi t)^{-n/2}\exp\!\left(-\dfrac{|x|^2}{4t}\right),&t>0,\\0,&t&lt;0.\end{cases}$$
+At $t=0$ its initial trace is a Dirac mass, rather than an ordinary function value.</p>
+<p>For suitable initial data $g$, convolution gives
+$$u(x,t)=\frac1{(4\pi t)^{n/2}}\int_{\mathbb R^n}e^{-|x-y|^2/(4t)}g(y)\,dy.$$
+If $g$ is continuous, nonnegative, and not identically zero, then $u(x,t)>0$ everywhere for $t>0$. Thus the heat equation has infinite propagation speed, a feature of the diffusion model associated with Fourier's law $q=-k\nabla u$.</p>
+<h3>Duhamel's principle</h3>
+<p>A time-dependent source can be viewed as a succession of instantaneous inputs. For each $s$, solve
+$$v_t-\Delta v=0\quad(t>s),\qquad v(x,s;s)=f(x,s).$$
+Then $u(x,t)=\int_0^t v(x,t;s)\,ds$ solves $u_t-\Delta u=f$ with zero initial data. The next note expands this formula and examines the qualitative properties of heat flow.</p>
+<p class="edition-note">English edition expanded from the original reading notes, with notation and evident formula slips corrected. Reference: Lawrence C. Evans, <em>Partial Differential Equations</em>, Chapters 2–3.</p>
+</div>
 <div data-lang="ja" lang="ja">
         <p>Evans の <em>Partial Differential Equations（偏微分方程式）</em>の読書ノートです。前回の内容に続けてまとめます。</p>
 
@@ -229,6 +266,6 @@
     </div>
   </footer>
 
-  <script src="../script.js?v=20261020-ja1"></script>
+  <script src="../script.js?v=20261022-refresh1"></script>
 </body>
 </html>

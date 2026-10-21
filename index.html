@@ -12,9 +12,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261020-ja1">
+  <link rel="stylesheet" href="style.css?v=20261022-refresh1">
 </head>
-<body>
+<body class="home-page">
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
@@ -52,15 +52,33 @@
   <main>
     <!-- Hero -->
     <section class="hero">
-      <svg class="hero-viz" viewBox="0 0 400 400" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
-        <circle cx="200" cy="200" r="150" class="viz-line" opacity="0.5"></circle>
-        <circle cx="200" cy="200" r="186" class="viz-line" opacity="0.22"></circle>
-        <g class="spin-slow">
-          <line x1="50" y1="200" x2="350" y2="200" class="viz-line" opacity="0.9"></line>
-          <circle cx="50" cy="200" r="3.5" class="viz-fill"></circle>
-          <circle cx="350" cy="200" r="3.5" class="viz-fill"></circle>
-        </g>
-      </svg>
+<div class="geometry-scene" aria-hidden="true">
+ <div class="geometry-halo"></div>
+ <svg viewBox="0 0 520 520" class="geometry-art" fill="none">
+  <defs><radialGradient id="sphere-glow"><stop stop-color="currentColor" stop-opacity=".16"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></radialGradient></defs>
+  <circle cx="260" cy="260" r="245" fill="url(#sphere-glow)"/>
+  <g class="geometry-grid"><path d="M20 260H500M260 20V500"/><circle cx="260" cy="260" r="225"/><circle cx="260" cy="260" r="175"/></g>
+  <g class="geometry-orbit"><ellipse cx="260" cy="260" rx="52" ry="125" transform="rotate(0 260 260)"/>
+<ellipse cx="260" cy="260" rx="63" ry="121" transform="rotate(12 260 260)"/>
+<ellipse cx="260" cy="260" rx="74" ry="117" transform="rotate(24 260 260)"/>
+<ellipse cx="260" cy="260" rx="85" ry="113" transform="rotate(36 260 260)"/>
+<ellipse cx="260" cy="260" rx="96" ry="109" transform="rotate(48 260 260)"/>
+<ellipse cx="260" cy="260" rx="107" ry="105" transform="rotate(60 260 260)"/>
+<ellipse cx="260" cy="260" rx="118" ry="101" transform="rotate(72 260 260)"/>
+<ellipse cx="260" cy="260" rx="129" ry="97" transform="rotate(84 260 260)"/>
+<ellipse cx="260" cy="260" rx="140" ry="93" transform="rotate(96 260 260)"/>
+<ellipse cx="260" cy="260" rx="151" ry="89" transform="rotate(108 260 260)"/>
+<ellipse cx="260" cy="260" rx="162" ry="85" transform="rotate(120 260 260)"/>
+<ellipse cx="260" cy="260" rx="173" ry="81" transform="rotate(132 260 260)"/>
+<ellipse cx="260" cy="260" rx="184" ry="77" transform="rotate(144 260 260)"/>
+<ellipse cx="260" cy="260" rx="195" ry="73" transform="rotate(156 260 260)"/>
+<ellipse cx="260" cy="260" rx="206" ry="69" transform="rotate(168 260 260)"/></g>
+  <g class="geometry-satellite"><circle cx="260" cy="35" r="5" fill="currentColor"/><circle cx="260" cy="35" r="12" opacity=".25" stroke="currentColor"/></g>
+  <circle cx="260" cy="260" r="3" fill="currentColor"/>
+ </svg>
+ <span class="geometry-label label-top">01 / GEOMETRY</span>
+ <span class="geometry-label label-bottom">∂Ω &nbsp; · &nbsp; Δu = 0 &nbsp; · &nbsp; ℝⁿ</span>
+</div>
 
       <div class="container hero-inner">
         <p class="hero-eyebrow"><span data-lang="zh">数学</span><span data-lang="en">Mathematics</span>
@@ -77,22 +95,25 @@
           <span data-lang="en">Undergraduate student in Mathematics at the <a href="https://www.ustc.edu.cn" target="_blank" rel="noopener">University of Science and Technology of China</a>, <a href="https://sgy.ustc.edu.cn" target="_blank" rel="noopener">School of the Gifted Young</a>.</span>
 <span data-lang="ja" lang="ja"><a href="https://www.ustc.edu.cn" target="_blank" rel="noopener">中国科学技術大学</a><a href="https://sgy.ustc.edu.cn" target="_blank" rel="noopener">少年班学院</a>で数学を学ぶ学部生です。</span>
         </p>
+        <div class="hero-interests"><span data-lang="zh">几何分析 · 偏微分方程 · 凸几何</span><span data-lang="en">Geometric analysis · PDEs · Convex geometry</span><span data-lang="ja">幾何解析 · 偏微分方程式 · 凸幾何学</span></div>
         <p class="hero-meta">
           <span data-lang="zh">中国安徽省合肥市金寨路 96 号，230026</span>
           <span data-lang="en">96 Jinzhai Road, Hefei, Anhui 230026, P. R. China</span>
 <span data-lang="ja" lang="ja">中国安徽省合肥市金寨路96号、郵便番号230026</span>
         </p>
+        <div class="hero-actions"><a href="blog.html" class="primary-link"><span data-lang="zh">阅读数学笔记</span><span data-lang="en">Explore my notes</span><span data-lang="ja">数学ノートを読む</span><span aria-hidden="true">↗</span></a>
         <a class="cv-trigger" href="cv.html" data-cv-link>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg>
           <span data-lang="zh">我的简历</span><span data-lang="en">My CV</span>
 <span data-lang="ja" lang="ja">履歴書</span>
           <span aria-hidden="true">→</span>
-        </a>
+        </a></div>
       </div>
+      <a class="scroll-cue" href="#about-preview"><span data-lang="zh">向下探索</span><span data-lang="en">SCROLL TO EXPLORE</span><span data-lang="ja">下へスクロール</span><span aria-hidden="true">↓</span></a>
     </section>
 
     <!-- About preview -->
-    <section class="section container">
+    <section class="section container" id="about-preview">
       <div class="section-head">
         <span class="eyebrow"><span data-lang="zh">关于</span><span data-lang="en">About</span>
 <span data-lang="ja" lang="ja">プロフィール</span></span>
@@ -165,10 +186,10 @@
       </div>
       <div class="post-list">
         <article>
-          <a class="post-item" href="posts/Gidas-Spruck.pdf" target="_blank" rel="noopener">
+          <a class="post-item" href="posts/Gidas-Spruck.pdf" target="_blank" rel="noopener"><span class="post-format">PDF ↗</span>
             <span class="post-date"><span data-lang="zh">2026年3月15日</span><span data-lang="en">Mar 15, 2026</span><span data-lang="ja" lang="ja">2026年3月15日</span></span>
             <span class="post-main">
-              <span class="post-title"><span data-lang="zh">《Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations》笔记</span><span data-lang="en">Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations 笔记</span>
+              <span class="post-title"><span data-lang="zh">《Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations》笔记</span><span data-lang="en">Reading Notes on Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations</span>
 <span data-lang="ja" lang="ja">Global and Local Behavior of Positive Solutions of Nonlinear Elliptic Equations 読書ノート</span></span>
               <span class="post-desc"><span data-lang="zh">对这篇经典论文的阅读笔记，写于 2026 年 1 月 30 日至 3 月 15 日。</span><span data-lang="en">Reading note on the classical paper, written from Jan. 30 to Mar. 15, 2026.</span>
 <span data-lang="ja" lang="ja">2026年1月30日から3月15日に執筆した、古典的論文の読書ノート。</span></span>
@@ -180,7 +201,7 @@
           <a class="post-item" href="posts/2026-1-22-Evens-5.html">
             <span class="post-date"><span data-lang="zh">2026年1月22日</span><span data-lang="en">Jan 22, 2026</span><span data-lang="ja" lang="ja">2026年1月22日</span></span>
             <span class="post-main">
-              <span class="post-title"><span data-lang="zh">Evens读书笔记（第五次）</span><span data-lang="en">Evens Reading Notes (5th)</span>
+              <span class="post-title"><span data-lang="zh">Evans读书笔记（第五次）</span><span data-lang="en">Evans 05 — Wave propagation &amp; Hölder spaces</span>
 <span data-lang="ja" lang="ja">Evans 読書ノート（第5回）</span></span>
               <span class="post-desc"><span data-lang="zh">Evans《偏微分方程》读书笔记。</span><span data-lang="en">Reading notes on Evans, Partial Differential Equations.</span>
 <span data-lang="ja" lang="ja">Evans『Partial Differential Equations』の読書ノート。</span></span>
@@ -192,7 +213,7 @@
           <a class="post-item" href="posts/2026-1-21-Evens-4.html">
             <span class="post-date"><span data-lang="zh">2026年1月21日</span><span data-lang="en">Jan 21, 2026</span><span data-lang="ja" lang="ja">2026年1月21日</span></span>
             <span class="post-main">
-              <span class="post-title"><span data-lang="zh">Evens读书笔记（第四次）</span><span data-lang="en">Evens Reading Notes (4th)</span>
+              <span class="post-title"><span data-lang="zh">Evans读书笔记（第四次）</span><span data-lang="en">Evans 04 — Energy methods &amp; spherical means</span>
 <span data-lang="ja" lang="ja">Evans 読書ノート（第4回）</span></span>
               <span class="post-desc"><span data-lang="zh">Evans《偏微分方程》读书笔记。</span><span data-lang="en">Reading notes on Evans, Partial Differential Equations.</span>
 <span data-lang="ja" lang="ja">Evans『Partial Differential Equations』の読書ノート。</span></span>
@@ -254,6 +275,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261020-ja1"></script>
+  <script src="script.js?v=20261022-refresh1"></script>
 </body>
 </html>

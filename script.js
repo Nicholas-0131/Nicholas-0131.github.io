@@ -74,6 +74,7 @@
       window.history.replaceState(null, "", url.href);
     } catch (e) {}
     try { localStorage.setItem("lang", lang); } catch (e) {}
+    document.dispatchEvent(new CustomEvent("site:language", { detail: lang }));
   }
 
   document.querySelectorAll(".lang-select").forEach(function (select) {
@@ -125,6 +126,118 @@
         nav.classList.remove("open");
         navToggle.setAttribute("aria-expanded", "false");
       });
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && nav.classList.contains("open")) {
+        nav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.focus();
+      }
+    });
+  }
+
+  /* ---------- Article navigation and reading progress ---------- */
+  var article = document.querySelector(".article");
+  if (article) {
+    var tocLabels = { zh: "本文目录", en: "On this page", ja: "目次" };
+    var toc = document.createElement("details");
+    toc.className = "article-toc";
+    function buildContents() {
+      var lang = getLang();
+      var sections = article.querySelectorAll('div[data-lang="' + lang + '"] h2');
+      toc.replaceChildren();
+      toc.hidden = sections.length === 0;
+      if (!sections.length) return;
+      var summary = document.createElement("summary");
+      summary.textContent = tocLabels[lang];
+      var list = document.createElement("ol");
+      sections.forEach(function (heading, index) {
+        heading.id = "section-" + lang + "-" + (index + 1);
+        var item = document.createElement("li");
+        var link = document.createElement("a");
+        link.href = "#" + heading.id;
+        link.textContent = heading.textContent.trim();
+        item.appendChild(link);
+        list.appendChild(item);
+      });
+      toc.append(summary, list);
+    }
+    var articleHeader = article.querySelector(".article-header");
+    if (articleHeader) articleHeader.after(toc);
+    buildContents();
+    document.addEventListener("site:language", buildContents);
+    var progress = document.createElement("div");
+    progress.className = "reading-progress";
+    progress.setAttribute("aria-hidden", "true");
+    document.body.appendChild(progress);
+    var progressQueued = false;
+    function updateProgress() {
+      progressQueued = false;
+      var start = article.getBoundingClientRect().top + window.scrollY;
+      var range = Math.max(1, article.offsetHeight - window.innerHeight);
+      var value = Math.min(1, Math.max(0, (window.scrollY - start) / range));
+      progress.style.transform = "scaleX(" + value + ")";
+    }
+    function queueProgress() {
+      if (!progressQueued) { progressQueued = true; requestAnimationFrame(updateProgress); }
+    }
+    window.addEventListener("scroll", queueProgress, { passive: true });
+    window.addEventListener("resize", queueProgress);
+    document.addEventListener("site:language", queueProgress);
+    if ("ResizeObserver" in window) new ResizeObserver(queueProgress).observe(article);
+    queueProgress();
+  }
+
+  /* ---------- Progressive motion: content stays visible without JS ---------- */
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (!reducedMotion.matches && "IntersectionObserver" in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("reveal-pending");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll(".home-page .section, .post-list > article, .r-block, .project, .tl-item").forEach(function (element) {
+      element.classList.add("reveal", "reveal-pending");
+      revealObserver.observe(element);
+    });
+    reducedMotion.addEventListener("change", function (event) {
+      if (event.matches) {
+        document.querySelectorAll(".reveal-pending").forEach(function (el) { el.classList.remove("reveal-pending"); });
+        revealObserver.disconnect();
+      }
+    });
+  }
+  var scene = document.querySelector(".geometry-scene");
+  if (scene) {
+    var hero = document.querySelector(".hero");
+    var pause = document.createElement("button");
+    pause.type = "button";
+    pause.className = "motion-toggle";
+    pause.setAttribute("aria-pressed", "false");
+    function motionLabel() {
+      var paused = hero.classList.contains("motion-paused");
+      var names = { zh: ["暂停动画", "播放动画"], en: ["Pause motion", "Play motion"], ja: ["動きを停止", "動きを再生"] };
+      pause.textContent = names[getLang()][paused ? 1 : 0];
+      pause.setAttribute("aria-pressed", String(paused));
+    }
+    pause.addEventListener("click", function () { hero.classList.toggle("motion-paused"); motionLabel(); });
+    document.addEventListener("site:language", motionLabel);
+    motionLabel();
+    hero.appendChild(pause);
+    hero.addEventListener("pointermove", function (event) {
+      if (reducedMotion.matches || hero.classList.contains("motion-paused") || event.pointerType !== "mouse") return;
+      var bounds = scene.getBoundingClientRect();
+      var x = Math.max(-1, Math.min(1, (event.clientX - bounds.left) / bounds.width * 2 - 1));
+      var y = Math.max(-1, Math.min(1, (event.clientY - bounds.top) / bounds.height * 2 - 1));
+      scene.style.setProperty("--scene-x", (-y * 8) + "deg");
+      scene.style.setProperty("--scene-y", (x * 8) + "deg");
+    });
+    hero.addEventListener("pointerleave", function () {
+      scene.style.setProperty("--scene-x", "0deg");
+      scene.style.setProperty("--scene-y", "0deg");
     });
   }
 

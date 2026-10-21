@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-title-ja="Evans 読書ノート（第1回） | 舒屹扬" data-title-zh="Evens 读书笔记 | 舒屹扬" data-title-en="EVENS NOTES | Nick Shu">
+<html lang="en" data-title-ja="Evans 読書ノート（第1回） | 舒屹扬" data-title-zh="Evans 读书笔记（一） | 舒屹扬" data-title-en="Evans Notes 1 — Characteristics &amp; fundamental solutions | Nick Shu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evens-1 | Nick Shu</title>
+  <title>Evans-1 | Nick Shu</title>
   <link rel="icon" href="../favicon.jpg" type="image/jpeg">
   <script>
     (function(){var r=document.documentElement,d='light',l='en';try{var t=localStorage.getItem('theme');l=localStorage.getItem('lang');d=(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}var q=new URLSearchParams(location.search).get('lang');if(q==='zh'||q==='en'||q==='ja')l=q;if(l!=='zh'&&l!=='en'&&l!=='ja')l='en';r.setAttribute('data-theme',d);r.setAttribute('data-lang',l);r.setAttribute('lang',l);})();
@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=20261020-ja1">
+  <link rel="stylesheet" href="../style.css?v=20261022-refresh1">
 </head>
 <body>
 
@@ -60,7 +60,7 @@
   <main class="page container">
     <article class="article">
       <div class="article-header">
-        <h1><span data-lang="zh">Evens 读书笔记</span><span data-lang="en">EVENS NOTES</span>
+        <h1><span data-lang="zh">Evans 读书笔记</span><span data-lang="en">Evans Notes 1<small class="article-subtitle">Characteristics &amp; fundamental solutions</small></span>
 <span data-lang="ja" lang="ja">Evans 読書ノート</span></h1>
         <div class="article-meta"><span data-lang="zh">2026 年 1 月 16 日 · 舒屹扬</span><span data-lang="en">Jan 16, 2026 · Nick Shu</span>
 <span data-lang="ja" lang="ja">2026年1月16日・舒屹扬</span></div>
@@ -68,7 +68,7 @@
 
       <div data-lang="zh">
         <p>
-          这是Evens的<em>偏微分方程（Partial Differential Equation）</em>的读书笔记。我对正文的第一章进行了一个简单的回顾，顺序和书上不太一样。
+          这是Evans的<em>偏微分方程（Partial Differential Equation）</em>的读书笔记。我对正文的第一章进行了一个简单的回顾，顺序和书上不太一样。
         </p>
 
         <h2>
@@ -178,16 +178,64 @@
         </p>
       </div>
 
-      <div data-lang="en">
-        <p>
-          This note reviews the first chapter of Evans's <em>Partial Differential Equations</em>,
-          in an order slightly different from the book. It covers the method of characteristics
-          for first-order PDEs — linear, quasilinear, and fully nonlinear equations — the
-          transport equation, d'Alembert's formula for the one-dimensional wave equation, and
-          the notion of fundamental solutions, including the wave and heat kernels and
-          Huygens' principle.
-        </p>
-      </div>
+      <div data-lang="en" lang="en">
+
+<p class="article-lead">A review of first-order equations, the method of characteristics, and fundamental solutions, following Lawrence C. Evans's <em>Partial Differential Equations</em>. The order here follows the connections between the ideas rather than the order of the book.</p>
+<h2>Characteristics and transport equations</h2>
+<p>A typical boundary-value problem has the form
+$$\begin{cases}Lu=f&\text{in }\Omega,\\Bu=h&\text{on }\Gamma\subseteq\partial\Omega.\end{cases}$$
+The method of characteristics seeks curves along which a PDE becomes an ODE. If these curves connect points of the domain to the prescribed data on $\Gamma$, we can recover the solution by integrating along them. Locally, this requires suitable noncharacteristic data and an invertible parametrization.</p>
+<p>For a first-order equation $F(Du,u,x)=0$, set $z(s)=u(x(s))$ and $p(s)=Du(x(s))$. The characteristic system is
+$$\begin{cases}\dot p=-D_xF(p,z,x)-F_z(p,z,x)p,\\\dot z=D_pF(p,z,x)\cdot p,\\\dot x=D_pF(p,z,x).\end{cases}$$
+Thus the unknown function and its gradient evolve together along each characteristic.</p>
+<h3>Linear and quasilinear examples</h3>
+<p>For $b(x)\cdot Du+c(x)u=0$, the system reduces to
+$$\dot x=b(x),\qquad \dot z=-c(x)z.$$
+First solve for the curve $x(s)$, then for $z(s)$, and finally eliminate the parameter to express the answer as a function of $x$.</p>
+<p><strong>Example.</strong> Consider $x_1u_{x_2}-x_2u_{x_1}=u$ in the first quadrant, with $u(x_1,0)=g(x_1)$. The equations are $\dot x_1=-x_2$, $\dot x_2=x_1$, and $\dot z=z$. Writing $r=(x_1^2+x_2^2)^{1/2}$, the characteristics are circles: $x_1=r\cos s$, $x_2=r\sin s$. Consequently,
+$$u(x_1,x_2)=g(r)\exp\!\left(\arctan\frac{x_2}{x_1}\right).$$</p>
+<p>A quasilinear equation $b(x,u)\cdot Du+c(x,u)=0$ instead gives
+$$\dot x=b(x,z),\qquad\dot z=-c(x,z).$$
+Now the geometry of the curves depends on the solution itself, and the two equations generally have to be solved together.</p>
+<p><strong>Example.</strong> For $u_{x_1}+u_{x_2}=u^2$, with $u(x_1,0)=g(x_1)$, we have $x_1=a+s$, $x_2=s$, and $\dot z=z^2$. Hence
+$$u(x_1,x_2)=\frac{g(x_1-x_2)}{1-x_2g(x_1-x_2)}.$$
+This expression is valid where the characteristic reaches the prescribed boundary and the denominator remains nonzero. The denominator also makes possible blow-up visible.</p>
+<h3>A fully nonlinear example</h3>
+<p>For $u_{x_1}u_{x_2}=u$, with $u(0,x_2)=x_2^2$, take $F(p,z,x)=p_1p_2-z$. Then
+$$\dot p_1=p_1,\quad\dot p_2=p_2,\quad\dot z=2p_1p_2,\quad\dot x_1=p_2,\quad\dot x_2=p_1.$$
+At $(0,a)$, $a>0$, the data give $z(0)=a^2$, $p_2(0)=2a$, and $p_1(0)=a/2$. Integration yields
+$$x_1=2a(e^s-1),\quad x_2=a+\tfrac a2(e^s-1),\quad z=a^2e^{2s}.$$
+Eliminating $a,s$ gives
+$$u(x_1,x_2)=\frac{(x_1+4x_2)^2}{16}.$$
+Direct substitution verifies both the PDE and the boundary data. General fully nonlinear characteristic systems need not admit such explicit solutions.</p>
+<h3>Transport and the one-dimensional wave equation</h3>
+<p>For constant $b$, the transport equation $u_t+b\cdot Du=0$ says that $u(x+sb,t+s)$ is constant in $s$. Tracing the line back to time zero gives $u(x,t)=g(x-tb)$. With a source term,
+$$u_t+b\cdot Du=f,\qquad u(x,0)=g(x),$$
+the same calculation gives
+$$u(x,t)=g(x-tb)+\int_0^t f(x+(s-t)b,s)\,ds.$$</p>
+<p>The one-dimensional wave operator factors as
+$$\partial_t^2-\partial_x^2=(\partial_t+\partial_x)(\partial_t-\partial_x).$$
+Applying the transport formula twice leads to <strong>d'Alembert's formula</strong>:
+$$u(x,t)=\frac{g(x+t)+g(x-t)}2+\frac12\int_{x-t}^{x+t}h(y)\,dy,$$
+where $u(x,0)=g(x)$ and $u_t(x,0)=h(x)$. In higher spatial dimensions, we need other tools, such as spherical means.</p>
+<h2>Fundamental solutions</h2>
+<p>For a constant-coefficient linear differential operator $L$, a distribution $E$ satisfying $LE=\delta$ is called a <strong>fundamental solution</strong>. When convolution is defined, it produces a solution $u=E*f$ of $Lu=f$. For example, one may first take $f\in C_c^\infty(\mathbb R^n)$.</p>
+<p>Here is the distributional calculation. Let $\varphi$ be a test function, let $\widetilde f(x)=f(-x)$, and let $L^*$ be the formal transpose of $L$. Integration by parts gives
+$$\begin{aligned}\langle Lu,\varphi\rangle
+&=\langle E*f,L^*\varphi\rangle\\
+&=\langle E,\widetilde f*L^*\varphi\rangle\\
+&=\langle LE,\widetilde f*\varphi\rangle\\
+&=(\widetilde f*\varphi)(0)=\langle f,\varphi\rangle.
+\end{aligned}$$
+The constant-coefficient assumption matters: if $L=a_\alpha(x)\partial^\alpha$, the factor in $L(E*f)$ is $a_\alpha(x)$, whereas the corresponding factor in $(LE)*f$ is $a_\alpha(x-y)$. These need not agree.</p>
+<p>Two useful examples are the heat kernel
+$$E_{\rm heat}(x,t)=\mathbf1_{\{t>0\}}(4\pi t)^{-n/2}e^{-|x|^2/(4t)}$$
+and the causal wave kernels, in two and three spatial dimensions,
+$$E_2(x,t)=\frac{\mathbf1_{\{t>|x|\}}}{2\pi\sqrt{t^2-|x|^2}},\qquad
+E_3(x,t)=\frac{\delta(t-|x|)}{4\pi|x|}.$$
+For radial kernels in higher dimensions, the distributional recurrence $E_{n+2}(r,t)=-(2\pi r)^{-1}\partial_rE_n(r,t)$ gives the corresponding formulas. In odd dimensions $n\geq3$, the wave kernel is supported on the light cone; this is the origin of Huygens' principle. In even dimensions, it also has a tail inside the cone.</p>
+<p class="edition-note">English edition expanded from the original reading notes, with notation and evident formula slips corrected. Reference: Lawrence C. Evans, <em>Partial Differential Equations</em>, Chapters 2–3.</p>
+</div>
 <div data-lang="ja" lang="ja">
         <p>Evans の <em>Partial Differential Equations（偏微分方程式）</em>の読書ノートです。第1章の内容を、原著とは少し異なる順序で簡単に復習します。</p>
 
@@ -260,6 +308,6 @@
     </div>
   </footer>
 
-  <script src="../script.js?v=20261020-ja1"></script>
+  <script src="../script.js?v=20261022-refresh1"></script>
 </body>
 </html>
