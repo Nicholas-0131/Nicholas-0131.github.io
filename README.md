@@ -31,7 +31,7 @@ HTML 简历已按提供的 LaTeX 内容更新，包括科研开始时间为 2026
 新增荣誉：2026 年中国科学技术大学 Robogame 比赛第一名、2025 年 CMC 数学竞赛省二等奖、2025 年学校九章杯三等奖；已同步三语 HTML 和 LaTeX 源码。
 “下载简历”按钮保留在姓名右侧，点击后选择中文、英文或日文 PDF。
 
-本次交付为网站及 LaTeX 源码。`中文CV.pdf`、`英文CV.pdf`、`日文CV.pdf` 和学术论文 PDF 保留原文件，没有重新编译或翻译；若要同步下载文件，请编译或更新相应 PDF 后替换。
+2026-11-08：已同步更新三语 HTML、LaTeX 源码及中英日 PDF：发表情况移入列表，删除 2023 年以前的奖项，教育背景移除高中并补充数学与物理课程，网站显示为 My Website:nicholasshu.com，新增计划参加 2026 年 11 月 20–22 日深圳 Riemann200 会议。PDF 使用 XeLaTeX 编译；中文使用 Windows 字体集，日文使用 Yu Mincho / Yu Gothic，西文使用 TeX Gyre Termes。学术论文 PDF 未改动。
 
 ## 维护
 
